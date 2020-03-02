@@ -1,0 +1,21 @@
+%landingDiv {
+  .landingDiv {
+    color: white;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    opacity: 0.5;
+    display: flex;
+    justify-content: space-evenly;
+    background-image: url('https://res.cloudinary.com/hezzie/image/upload/v1583167266/Screen_Shot_2020-03-02_at_18.38.12_ckm6n3.png');
+    background-size: 100% 100%;
+    div {
+      width: 70%;
+      height: 70%;
+      margin-top: 7%;
+      text-align: center;
+      font-size: 50px;
+      border-radius: 7px;
+    }
+  }
+}

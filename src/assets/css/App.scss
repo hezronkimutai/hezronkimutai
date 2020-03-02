@@ -1,0 +1,27 @@
+@import 'LandingDiv.scss';
+@import 'Profile.scss';
+@import 'Experiences.scss';
+@import 'Abilities.scss';
+@import 'Projects.scss';
+@import 'Footer.scss';
+body {
+  margin: 0px;
+  #app {
+    width: 100%;
+    height: 100%;
+    .container {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      background-image: url('https://media.giphy.com/media/BHNfhgU63qrks/giphy.gif');
+      background-size: 100% 100%;
+      @extend %landingDiv;
+      @extend %profile;
+      @extend %experiences;
+      @extend %abilities;
+      @extend %projects;
+      @extend %footer;
+    }
+  }
+}

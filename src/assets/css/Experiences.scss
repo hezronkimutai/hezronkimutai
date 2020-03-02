@@ -1,0 +1,17 @@
+%experiences {
+  .experiences {
+    background-color: #e6d5ce;
+    height: auto;
+    min-height: 70%;
+    width: 100%;
+    text-align: center;
+    .career {
+      display: flex;
+      flex-direction: row;
+    }
+    .education {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
