@@ -6,9 +6,9 @@ const images = [
 ];
 
 const Projects = () => (
-  <div className="projects">
+  <div className="projects" id="projects">
     <div className="projectsContainer">
-      <div className="projectsHeader">Hell</div>
+      <div className="projectsHeader"><h1>Projects</h1></div>
       {images.map((image) => (
         <div key={image}>
           <img alt={image} src={image} />

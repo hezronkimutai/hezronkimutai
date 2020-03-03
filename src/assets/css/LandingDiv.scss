@@ -1,23 +1,88 @@
 %landingDiv {
   .landingDiv {
-    color: white;
-    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    color: #f6f7e9;
+    min-height: 40% !important;
     width: 100%;
     z-index: 1;
-    opacity: 0.5;
     display: flex;
-    justify-content: space-evenly;
-    background-image: url('https://res.cloudinary.com/hezzie/image/upload/v1583167266/Screen_Shot_2020-03-02_at_18.38.12_ckm6n3.png');
-    background-size: 100% 100%;
+    // background-color: purple;
+    background-image: url('https://res.cloudinary.com/hezzie/image/upload/v1583343349/Screen_Shot_2020-03-04_at_18.58.45_3_1_eqi6ia.png');
+    background-size:13% 70%;
+    border-radius: 50% 0% 0% 0%;
+    opacity: 0.9;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-position: top center;
+    position: relative;
+    // background-attachment: fixed;
     div {
-      width: 70%;
-      height: 70%;
-      margin-top: 7%;
+      position: absolute;
+      font-family: 'Nosifer', cursive;
+      width: 100%;
+      height: 30%;
       text-align: center;
       font-size: 50px;
       border-radius: 7px;
+      bottom:10px;
+    }
+    .indicator{
+      position:absolute;
+      width:50px;
+      height:50px;
+      top:0%;
+      left: 49%;
+      transform:rotate(45deg);
+      span{
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+        height:100%;
+        box-sizing:border-box;
+        border:none;
+        border-bottom:10px solid #fff;
+        border-right:10px solid #fff;
+        animation:animate 1s linear infinite;
+        &:nth-child(1){
+          top:-30px;
+          left:-30px;
+          animation-delay:0s;
+        }
+        &:nth-child(2){
+          top:-15px;
+          left:-15px;
+          animation-delay:0.2s;
+        }
+        &:nth-child(3){
+          top:0;
+          left:0;
+          animation-delay:0.4s;
+        }
+        &:nth-child(4){
+          top:15px;
+          left:15px;
+          animation-delay:0.6s;
+        }
+        &:nth-child(5){
+          top:30px;
+          left:30px;
+          animation-delay:0.8s;
+        }
+      }
+    }
+  }
+  @keyframes animate{
+    0%{
+      border-color:#fff;
+      transform:translate(0,0);
+    }
+     20%{
+      border-color:#fff;
+       transform:translate(15px,15px);
+    }
+     20.1%,100%{
+      border-color:#ffd64a;
     }
   }
 }
