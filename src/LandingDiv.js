@@ -5,5 +5,4 @@ const LandingDiv = () => (
     <div>Hello I am Hezron</div>
   </div>
 );
-
 export default LandingDiv;

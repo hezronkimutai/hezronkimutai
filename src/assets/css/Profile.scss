@@ -1,25 +1,29 @@
 %profile {
   .profile {
-    background-color: #e9ead6;
-    // min-height: 70%;
+    background-color: #f6f7e9;
+    min-height: 110%;
     width: 100%;
+    background-image: url('https://res.cloudinary.com/hezzie/image/upload/v1583319407/imageedit_1_7757526538_q7slat.png');
+    background-size: 30% 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     .detailsHeader {
       min-height: 10% !important;
       width: 70%;
-      margin: auto;
+      margin-left: 30%;
     }
     .detailsFooter {
       min-height: 10%;
       height: 10% !important;
       width: 70%;
 
-      margin: auto;
+      margin-left: 30%;
     }
     .details {
       display: flex;
       flex-direction: row;
       width: 70%;
-      margin: auto;
+      margin-left: 30%;
       min-height: 80% !important;
       justify-content: space-between;
 

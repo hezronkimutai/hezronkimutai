@@ -9,9 +9,9 @@ const Projects = () => (
   <div className="projects">
     <div className="projectsContainer">
       <div className="projectsHeader">Hell</div>
-      {images.map((image, index) => (
-        <div key={index} className="">
-          <img alt={index} src={image} />
+      {images.map((image) => (
+        <div key={image}>
+          <img alt={image} src={image} />
         </div>
       ))}
     </div>
