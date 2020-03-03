@@ -1,48 +1,94 @@
 %profile {
   .profile {
     background-color: #f6f7e9;
-    min-height: 110%;
-    width: 100%;
+    width: 98%;
+    padding: 1%;
+    margin: auto;
+    // border-radius: 10px;
+    // margin-top: 1%;
+
     background-image: url('https://res.cloudinary.com/hezzie/image/upload/v1583319407/imageedit_1_7757526538_q7slat.png');
-    background-size: 30% 100%;
+    background-size: 30% 50%;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    .detailsHeader {
-      min-height: 10% !important;
-      width: 70%;
+    background-position: bottom left;
+    .profileContainer {
+      border-radius: 5px;
+      box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+      height: auto !important;
+      overflow-y: auto;
+      width: 68%;
       margin-left: 30%;
-    }
-    .detailsFooter {
-      min-height: 10%;
-      height: 10% !important;
-      width: 70%;
-
-      margin-left: 30%;
-    }
-    .details {
-      display: flex;
-      flex-direction: row;
-      width: 70%;
-      margin-left: 30%;
-      min-height: 80% !important;
-      justify-content: space-between;
-
-      div {
-        margin: 1px;
-        width: 30%;
-      }
-      .image {
-        height: 100%;
+      padding: 1%;
+      .detailsHeader {
+        color: #403454;
         div {
-          height: 200px;
-          width: 200px;
-          margin: auto;
-          background-image: url('https://res.cloudinary.com/hezzie/image/upload/v1583167266/Screen_Shot_2020-03-02_at_18.38.12_ckm6n3.png');
-          background-size: 100% 100%;
-          border-radius: 50%;
-          padding: 50px;
+          h1 {
+            font-family: 'Nosifer', cursive !important;
+          }
+        }
+      }
+      .detailsFooter {
+        min-height: 10%;
+        height: 10% !important;
+      }
+      .details {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        min-height: 80% !important;
+        justify-content: space-between;
+        .contacts {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: row;
+          div {
+            width: 50%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+          }
+          .contactsHeader{
+            width: 100%;
+          }
+        }
+
+        .image {
+          height: 100%;
+          div {
+            height: 200px;
+            width: 200px;
+            margin: auto;
+            background-image: url('https://res.cloudinary.com/hezzie/image/upload/v1583167266/Screen_Shot_2020-03-02_at_18.38.12_ckm6n3.png');
+            background-size: 100% 100%;
+            border-radius: 50%;
+            padding: 50px;
+          }
         }
       }
     }
+  }
+  .profile::after {
+    /* Display and position the pseudo-element */
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    /* Move the pseudo-element back away from the camera,
+     * then scale it back up to fill the viewport.
+     * Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
+    transform: translateZ(-1px) scale(1.5);
+    /* Force the background image to fill the whole element. */
+    background-size: 100%;
+    /* Keep the image from overlapping sibling elements. */
+    z-index: -1;
   }
 }
