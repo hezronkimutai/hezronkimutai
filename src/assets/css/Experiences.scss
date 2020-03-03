@@ -6,12 +6,18 @@
     width: 100%;
     text-align: center;
     .career {
+      width: 70%;
       display: flex;
       flex-direction: row;
+      margin: auto;
+      justify-content: space-evenly;
     }
     .education {
+      width: 70%;
       display: flex;
       flex-direction: row;
+      margin: auto;
+      justify-content: space-evenly;
     }
   }
 }
