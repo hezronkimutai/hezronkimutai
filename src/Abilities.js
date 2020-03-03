@@ -7,16 +7,16 @@ const skills = [
   { skill: 'THML5', stars: '5' },
 ];
 const languages = [
-  { skill: 'THML5', stars: '5' },
-  { skill: 'THML5', stars: '5' },
-  { skill: 'THML5', stars: '5' },
-  { skill: 'THML5', stars: '5' },
+  { language: 'THML5', stars: '5' },
+  { language: 'THML5', stars: '5' },
+  { language: 'THML5', stars: '5' },
+  { language: 'THML5', stars: '5' },
 ];
 const tools = [
-  { skill: 'THML5', stars: '5' },
-  { skill: 'THML5', stars: '5' },
-  { skill: 'THML5', stars: '5' },
-  { skill: 'THML5', stars: '5' },
+  { tool: 'THML5', stars: '5' },
+  { tool: 'THML5', stars: '5' },
+  { tool: 'THML5', stars: '5' },
+  { tool: 'THML5', stars: '5' },
 ];
 
 const Abilities = () => (
@@ -37,19 +37,19 @@ const Abilities = () => (
     </div>
     <div className="abilityRatings">
       <div className="abilityRatingsHeader">Languages</div>
-      {languages.map((skill, index) => (
+      {languages.map((language, index) => (
         <div key={index} className="">
-          <div>{skill.skill}</div>
-          <div>{skill.stars}</div>
+          <div>{language.language}</div>
+          <div>{language.stars}</div>
         </div>
       ))}
     </div>
     <div className="abilityRatings">
       <div className="abilityRatingsHeader">Tools</div>
-      {tools.map((skill, index) => (
+      {tools.map((tool, index) => (
         <div key={index} className="">
-          <div>{skill.skill}</div>
-          <div>{skill.stars}</div>
+          <div>{tool.tool}</div>
+          <div>{tool.stars}</div>
         </div>
       ))}
     </div>
