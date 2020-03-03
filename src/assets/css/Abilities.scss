@@ -4,5 +4,26 @@
     height: auto;
     min-height: 70%;
     width: 100%;
+    div {
+      width: 70%;
+      margin: auto;
+    }
+    .abilitiesHeader {
+    }
+    .abilityRatings {
+      display: flex;
+      flex-wrap: wrap;
+      div {
+        margin: 0px;
+        padding: 0px;
+        width: 50%;
+      }
+      .abilityRatingsHeader {
+        width: 100%;
+      }
+      .abilityRatingsFooter {
+        width: 100%;
+      }
+    }
   }
 }
