@@ -8,71 +8,138 @@ import Projects from './Projects';
 import Footer from './Footer';
 
 const App = () => {
-  const [profileActiveColor, setProfileActiveColor] = useState('white');
-  const [experienceActiveColor, setexperienceActiveColor] = useState('white');
-  const [abilitiesActiveColor, setabilitiesActiveColor] = useState('white');
-  const [projectActiveColor, setprojectActiveColor] = useState('white');
+  const [profileNav, setProfileActiveColor] = useState({
+    color: '#f6f7e9',
+    backgroundColor: 'transparent',
+  });
+  const [experienceNav, setexperienceActiveColor] = useState({
+    color: '#f6f7e9',
+    backgroundColor: 'transparent',
+  });
+  const [abilitiesNav, setabilitiesActiveColor] = useState({
+    color: '#f6f7e9',
+    backgroundColor: 'transparent',
+  });
+  const [projectNav, setprojectActiveColor] = useState({
+    color: '#f6f7e9',
+    backgroundColor: 'transparent',
+  });
   return (
     <>
       <div className="container">
+
+        <LandingDiv />
         <div className="sidebar">
-          <div className="sidebar" style={{ color: profileActiveColor }}>
+          <div className="sidebar">
             <button
               type="button"
               onClick={() => {
-                setProfileActiveColor('red');
-                setexperienceActiveColor('white');
-                setabilitiesActiveColor('white');
-                setprojectActiveColor('white');
+                setProfileActiveColor({
+                  color: '#403454',
+                  backgroundColor: '#f6f7e9',
+                });
+                setexperienceActiveColor({
+                  color: '#f6f7e9',
+                  backgroundColor: 'transparent',
+                });
+                setabilitiesActiveColor({
+                  color: '#f6f7e9',
+                  backgroundColor: 'transparent',
+                });
+                setprojectActiveColor({
+                  color: '#f6f7e9',
+                  backgroundColor: 'transparent',
+                });
               }}
+              style={profileNav}
             >
               <a href="#profile">Profile</a>
             </button>
           </div>
-          <div className="sidebar" style={{ color: experienceActiveColor }}>
+          <div className="sidebar">
             <button
               type="button"
               onClick={() => {
-                setProfileActiveColor('white');
-                setexperienceActiveColor('red');
-                setabilitiesActiveColor('white');
-                setprojectActiveColor('white');
+                setProfileActiveColor({
+                  color: '#f6f7e9',
+                  backgroundColor: 'transparent',
+                });
+                setexperienceActiveColor({
+                  color: '#403454',
+                  backgroundColor: '#f6f7e9',
+                });
+                setabilitiesActiveColor({
+                  color: '#f6f7e9',
+                  backgroundColor: 'transparent',
+                });
+                setprojectActiveColor({
+                  color: '#f6f7e9',
+                  backgroundColor: 'transparent',
+                });
               }}
+              style={experienceNav}
             >
               <a href="#experiences">Experience</a>
             </button>
           </div>
-          <div className="sidebar" style={{ color: abilitiesActiveColor }}>
+          <div className="sidebar">
             <button
               type="button"
               onClick={() => {
-                setProfileActiveColor('white');
-                setexperienceActiveColor('white');
-                setabilitiesActiveColor('red');
-                setprojectActiveColor('white');
+                setProfileActiveColor({
+                  color: '#f6f7e9',
+                  backgroundColor: 'transparent',
+                });
+                setexperienceActiveColor({
+                  color: '#f6f7e9',
+                  backgroundColor: 'transparent',
+                });
+                setabilitiesActiveColor({
+                  color: '#403454',
+                  backgroundColor: '#f6f7e9',
+                });
+                setprojectActiveColor({
+                  color: '#f6f7e9',
+                  backgroundColor: 'transparent',
+                });
               }}
+              style={abilitiesNav}
             >
               <a href="#abilities">Abilities</a>
             </button>
           </div>
-          <div className="sidebar" style={{ color: projectActiveColor }}>
+          <div className="sidebar">
             <button
               type="button"
               onClick={() => {
-                setProfileActiveColor('white');
-                setexperienceActiveColor('white');
-                setabilitiesActiveColor('white');
-                setprojectActiveColor('red');
+                setProfileActiveColor({
+                  color: '#f6f7e9',
+                  backgroundColor: 'transparent',
+                });
+                setexperienceActiveColor({
+                  color: '#f6f7e9',
+                  backgroundColor: 'transparent',
+                });
+                setabilitiesActiveColor({
+                  color: '#f6f7e9',
+                  backgroundColor: 'transparent',
+                });
+                setprojectActiveColor({
+                  color: '#403454',
+                  backgroundColor: '#f6f7e9',
+                });
               }}
+              style={projectNav}
             >
               <a href="#projects">Projects</a>
             </button>
           </div>
-          <div className="sidebar" style={{ color: profileActiveColor }}>
-            <a href="#blog">blog</a>
+          <div className="sidebar" style={{ color: '#f6f7e9' }}>
+            <button type="button">
+              <a href="#blog">blog</a>
+            </button>
           </div>
         </div>
-        <LandingDiv />
         <Profile />
         <Experiences />
         <Abilities />

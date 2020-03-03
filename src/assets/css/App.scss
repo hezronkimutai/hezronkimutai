@@ -18,8 +18,7 @@ body {
     height: 100%;
 
     .container {
-
-    // border-radius: 40px 40px 40px 40px;
+      // border-radius: 40px 40px 40px 40px;
       .sidebar {
         display: flex;
         flex-direction: row;
@@ -32,22 +31,25 @@ body {
         top: 0;
         z-index: 999;
 
-    background-blend-mode: lighten;
+        background-blend-mode: lighten;
         div {
           background-color: transparent;
           margin: 4px;
-          button{
+          button {
             background-color: inherit;
             outline: none;
             border: none;
-            a{
-
+            color: inherit;
+            height: 80%;
+            width: auto;
+            padding: 0px 20px;
+            border-radius: 5px;
+            a {
               font-family: 'Nosifer', cursive;
-                  text-decoration: none;
-                  color: inherit;
-                }
+              text-decoration: none;
+              color: inherit;
+            }
           }
-         
         }
       }
       position: fixed;
@@ -60,12 +62,12 @@ body {
       overflow-y: auto;
       overflow-x: hidden;
       background-color: #403454;
-      background-image: url('https://res.cloudinary.com/hezzie/image/upload/v1583434599/ezgif.com-gif-maker_1_brjdhb.gif');;
+      background-image: url('https://res.cloudinary.com/hezzie/image/upload/v1583434599/ezgif.com-gif-maker_1_brjdhb.gif');
       background-size: 100% 100%;
       background-repeat: no-repeat;
       background-attachment: fixed;
 
-    background-blend-mode: overlay;
+      background-blend-mode: overlay;
       @extend %landingDiv;
       @extend %profile;
       @extend %experiences;
