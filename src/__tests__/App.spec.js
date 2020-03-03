@@ -1,9 +1,9 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import App from '../App';
 
 describe('Test App', () => {
   test('renders without crashing', () => {
-    expect(shallow(<App />)).toMatchSnapshot();
+    expect(mount(<App />)).toMatchSnapshot();
   });
 });
