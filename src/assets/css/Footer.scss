@@ -1,7 +1,28 @@
 %footer {
   .footer {
+    color:#e9ead6;
     background-color: rgb(34, 34, 34);
-    height: 70%;
+    // height: 70%;
     width: 100%;
+    .footerHeader {
+      width: 70%;
+      margin: auto;
+      border-bottom: 1px #e9ead6 solid;
+    }
+    .footerBody {
+      display: flex;
+      flex-wrap: wrap;
+      width: 70%;
+      margin: auto;
+      border-bottom: 1px #e9ead6 solid;
+      div{
+        width: 30%;
+      }
+    }
+    .footerFooter {
+      width: 70%;
+      margin: auto;
+      border-bottom: 1px #e9ead6 solid;
+    }
   }
 }

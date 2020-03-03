@@ -2,11 +2,14 @@
   .abilities {
     background-color: #e9ead6;
     height: auto;
-    min-height: 70%;
+    // min-height: 70%;
     width: 100%;
     div {
       width: 70%;
       margin: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
     }
     .abilitiesHeader {
     }
