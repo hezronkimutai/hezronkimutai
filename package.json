@@ -6,11 +6,11 @@
   "scripts": {
     "coveralls": "jest  --coverage --coverageReporters=text-lcov | coveralls",
     "test": "jest --coverage",
-    "storybook": "start-storybook",
     "dev": "webpack-dev-server --mode development --hot --open --config webpack.config.babel.js",
     "build": "webpack --mode production --config webpack.config.babel.js",
     "start": "HTTPS=true serve -s ./dist",
-    "snap:fix": "npm test -- -u"
+    "snap:fix": "npm test -- -u",
+    "lint": "eslint --fix ./"
   },
   "repository": {
     "type": "git",
@@ -37,12 +37,6 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^24.9.0",
     "babel-plugin-require-context-hook": "^1.0.0",
-    "bootstrap": "^4.4.1",
-    "cloudinary": "^1.18.1",
-    "cloudinary-core": "^2.8.0",
-    "cloudinary-react": "^1.3.0",
-    "countries-api": "^2.0.2",
-    "custom_react_pages": "^1.3.5",
     "dotenv": "^8.2.0",
     "dotenv-webpack": "^1.7.0",
     "enzyme": "^3.11.0",
@@ -66,27 +60,7 @@
     "prop-types": "^15.7.2",
     "query-string": "^6.9.0",
     "react": "^16.12.0",
-    "react-alice-carousel": "^1.17.3",
-    "react-confirm-alert": "^2.4.1",
-    "react-dom": "^16.12.0",
-    "react-facebook-login": "^4.1.1",
-    "react-file-reader": "^1.1.4",
-    "react-flags": "^0.1.18",
-    "react-google-login": "^5.0.7",
-    "react-hot-loader": "^4.12.18",
-    "react-js-pagination": "^3.0.2",
-    "react-loader-spinner": "^3.1.5",
-    "react-map-gl": "^5.2.2",
-    "react-moment": "^0.9.7",
-    "react-paginate": "^6.3.2",
-    "react-pagination": "^1.0.0",
-    "react-rating": "^2.0.4",
-    "react-redux": "^7.1.3",
-    "react-router": "^5.1.2",
-    "react-router-dom": "^5.1.2",
-    "react-star-ratings": "^2.3.0",
-    "react-test-renderer": "^16.12.0",
-    "react-toastify": "^5.5.0",
+    "react-dom": "^16.13.0",
     "redux": "^4.0.4",
     "redux-api-handling-middleware": "^1.2.0",
     "redux-devtools-extension": "^2.13.8",
@@ -121,8 +95,10 @@
     "fetch-mock": "^8.3.1",
     "file-loader": "^5.0.2",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^4.2.3",
     "image-webpack-loader": "^6.0.0",
     "jest-localstorage-mock": "^2.4.0",
+    "lint-staged": "^10.0.8",
     "mock-local-storage": "^1.1.11",
     "moxios": "^0.4.0",
     "node-sass": "^4.13.1",
@@ -136,5 +112,10 @@
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0",
     "webpack-merge": "^4.2.2"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "npm run lint"
+    ]
   }
 }

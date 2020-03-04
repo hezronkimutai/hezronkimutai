@@ -2,21 +2,20 @@ import React from 'react';
 
 const skills = [
   { skill: 'THML5', stars: '5' },
-  { skill: 'THML5', stars: '5' },
-  { skill: 'THML5', stars: '5' },
-  { skill: 'THML5', stars: '5' },
+  { skill: 'THffML5', stars: '5' },
+  { skill: 'THssML5', stars: '5' },
+  { skill: 'f', stars: '5' },
 ];
 const languages = [
-  { language: 'THML5', stars: '5' },
-  { language: 'THML5', stars: '5' },
-  { language: 'THML5', stars: '5' },
-  { language: 'THML5', stars: '5' },
+  { language: 'English', stars: '5' },
+  { language: 'Kiswahili', stars: '5' },
+  { language: 'Kalenjin', stars: '5' },
 ];
 const tools = [
-  { tool: 'THML5', stars: '5' },
-  { tool: 'THML5', stars: '5' },
-  { tool: 'THML5', stars: '5' },
-  { tool: 'THML5', stars: '5' },
+  { tool: 'Figma', stars: '5' },
+  { tool: 'Vs code', stars: '5' },
+  { tool: 'mac', stars: '5' },
+  { tool: 'Linux', stars: '5' },
 ];
 
 const Abilities = () => (
@@ -27,8 +26,8 @@ const Abilities = () => (
     </div>
     <div className="abilityRatings">
       <div className="abilityRatingsHeader">Skills</div>
-      {skills.map((skill, index) => (
-        <div key={index} className="">
+      {skills.map((skill) => (
+        <div key={skill.skill}>
           <div>{skill.skill}</div>
           <div>{skill.stars}</div>
         </div>
@@ -37,8 +36,8 @@ const Abilities = () => (
     </div>
     <div className="abilityRatings">
       <div className="abilityRatingsHeader">Languages</div>
-      {languages.map((language, index) => (
-        <div key={index} className="">
+      {languages.map((language) => (
+        <div key={language.language}>
           <div>{language.language}</div>
           <div>{language.stars}</div>
         </div>
@@ -46,8 +45,8 @@ const Abilities = () => (
     </div>
     <div className="abilityRatings">
       <div className="abilityRatingsHeader">Tools</div>
-      {tools.map((tool, index) => (
-        <div key={index} className="">
+      {tools.map((tool) => (
+        <div key={tool.tool}>
           <div>{tool.tool}</div>
           <div>{tool.stars}</div>
         </div>
