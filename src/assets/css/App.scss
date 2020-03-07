@@ -4,18 +4,68 @@
 @import 'Abilities.scss';
 @import 'Projects.scss';
 @import 'Footer.scss';
+@import url('https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
+* {
+  font-family: 'Poiret One', cursive;
+}
 body {
   margin: 0px;
   #app {
     width: 100%;
     height: 100%;
+
     .container {
+
+    // border-radius: 40px 40px 40px 40px;
+      .sidebar {
+        display: flex;
+        flex-direction: row;
+        min-height: 40px !important;
+        width: 100%;
+        color: #f6f7e9;
+        background-color: #403454;
+        // opacity: 0.4;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+
+    background-blend-mode: lighten;
+        div {
+          background-color: transparent;
+          margin: 4px;
+          button{
+            background-color: inherit;
+            outline: none;
+            border: none;
+            a{
+
+              font-family: 'Nosifer', cursive;
+                  text-decoration: none;
+                  color: inherit;
+                }
+          }
+         
+        }
+      }
       position: fixed;
+      padding: 0px;
+      margin: 0px;
+      display: flex;
+      flex-direction: column;
       width: 100%;
       height: 100%;
       overflow-y: auto;
-      background-image: url('https://media.giphy.com/media/BHNfhgU63qrks/giphy.gif');
+      overflow-x: hidden;
+      background-color: #403454;
+      background-image: url('https://res.cloudinary.com/hezzie/image/upload/v1583434599/ezgif.com-gif-maker_1_brjdhb.gif');;
       background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+
+    background-blend-mode: overlay;
       @extend %landingDiv;
       @extend %profile;
       @extend %experiences;
