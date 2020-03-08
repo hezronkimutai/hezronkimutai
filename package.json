@@ -30,8 +30,11 @@
     "babel-plugin-require-context-hook": "^1.0.0",
     "dotenv": "^8.2.0",
     "dotenv-webpack": "^1.7.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.1",
     "identity-obj-proxy": "^3.0.0",
     "less-loader": "^5.0.0",
+    "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.13.0",
     "react-router-dom": "^5.1.2",
@@ -41,9 +44,7 @@
     "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.3.0",
     "sass-loader": "^8.0.0",
-    "serve": "^11.2.0",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.1"
+    "serve": "^11.2.0"
   },
   "devDependencies": {
     "jest": "^24.9.0",

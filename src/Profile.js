@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import propTypes from 'prop-types';
 
 const contactInfo = [
   { key: 'First name', value: 'Hezron' },
@@ -11,30 +12,33 @@ const contactInfo = [
   { key: 'Web', value: 'link' },
 ];
 
-const Profile = () => (
-  <div className="profile" id="profile">
-    <div className="profileContainer">
-      <div className="detailsHeader">
-        <div>
-          <h1>Profile</h1>
-        </div>
-      </div>
-      <div className="details">
-        <div className="contacts">
-          <div className="contactsHeader">
-            <h1>About</h1>
+const Profile = ({ prof }) => {
+  const profileRef = useRef();
+  prof(profileRef);
+  return (
+    <div className="profile" id="profile" ref={profileRef}>
+      <div className="profileContainer">
+        <div className="detailsHeader">
+          <div>
+            <h1>Profile</h1>
           </div>
-          {contactInfo.map((item) => (
-            <div>
-              <div>{item.key}</div>
-              <div>{item.value}</div>
+        </div>
+        <div className="details">
+          <div className="contacts">
+            <div className="contactsHeader">
+              <h1>About</h1>
             </div>
-          ))}
-        </div>
-        <div className="about">
-          <div className="contactsHeader">
-            <h1>Biography</h1>
+            {contactInfo.map((item) => (
+              <div>
+                <div>{item.key}</div>
+                <div>{item.value}</div>
+              </div>
+            ))}
           </div>
+          <div className="about">
+            <div className="contactsHeader">
+              <h1>Biography</h1>
+            </div>
           I was born in Eldoret town in Kenya, Since I was young I have been
           playing with computers, I wrote my first computer program when I was
           10 I was born in Eldoret town in Kenya, Since I was young I have been
@@ -50,15 +54,21 @@ const Profile = () => (
           10 I was born in Eldoret town in Kenya, Since I was young I have been
           playing with computers, I wrote my first computer program when I was
           10
+          </div>
         </div>
-      </div>
-      <div className="detailsFooter">
+        <div className="detailsFooter">
         Got inspired? Copied the theme? Or do you just like the website? No
         problem, just buy me a beer and make me happy! PayPal - The safer,
         easier way to pay online!
+        </div>
       </div>
     </div>
-  </div>
-);
-
+  );
+};
+Profile.propTypes = {
+  prof: propTypes.func,
+};
+Profile.defaultProps = {
+  prof: null,
+};
 export default Profile;
