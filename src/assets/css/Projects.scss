@@ -1,16 +1,16 @@
 %projects {
-  .projects{
+  .projects {
     height: auto;
     padding: 2%;
     width: 96%;
-    margin:auto;
+    margin: auto;
     background-color: #f6f7e9;
     .projectsContainer {
       display: flex;
       flex-wrap: wrap;
       width: 70%;
       justify-content: space-evenly;
-      margin:auto;
+      margin: auto;
       div {
         width: 48%;
         height: 300px;
@@ -23,6 +23,10 @@
       .projectsHeader {
         height: auto;
         width: 100%;
+        color: #403454;
+        h1 {
+          font-family: 'Nosifer', cursive !important;
+        }
       }
     }
   }
