@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import propTypes from 'prop-types';
 
 const skills = [
   { skill: 'HTML5', stars: '5' },
@@ -39,51 +40,60 @@ const tools = [
   { tool: 'Docker', stars: '5' },
 ];
 
-const Abilities = () => (
-  <div className="abilities" id="abilities">
-    <div className="abilitiesContainer">
-      <div className="abilitiesHeader">
-        <div>
-          <h1>Abilities</h1>
-        </div>
-        {/* <div>“Life without knowledge is death in disguise.” - Talib Kweli</div> */}
-      </div>
-      <div className="abilityRatings">
-        <div className="abilityRatingsHeader">
-          <h2>Skills</h2>
-        </div>
-        {skills.map((skill) => (
-          <div key={skill.skill}>
-            <div>{skill.skill}</div>
-            <div>{skill.stars}</div>
+const Abilities = ({ abl }) => {
+  const abilitiesRef = useRef();
+  abl(abilitiesRef);
+  return (
+    <div className="abilities" id="abilities" ref={abilitiesRef}>
+      <div className="abilitiesContainer">
+        <div className="abilitiesHeader">
+          <div>
+            <h1>Abilities</h1>
           </div>
-        ))}
-        <div className="abilityRatingsFooter">footer</div>
-      </div>
-      <div className="abilityRatings">
-        <div className="abilityRatingsHeader">
-          <h2>Languages</h2>
+          {/* <div>“Life without knowledge is death in disguise.” - Talib Kweli</div> */}
         </div>
-        {languages.map((language) => (
-          <div key={language.language}>
-            <div>{language.language}</div>
-            <div>{language.stars}</div>
+        <div className="abilityRatings">
+          <div className="abilityRatingsHeader">
+            <h2>Skills</h2>
           </div>
-        ))}
-      </div>
-      <div className="abilityRatings">
-        <div className="abilityRatingsHeader">
-          <h2>Tools</h2>
+          {skills.map((skill) => (
+            <div key={skill.skill}>
+              <div>{skill.skill}</div>
+              <div>{skill.stars}</div>
+            </div>
+          ))}
+          <div className="abilityRatingsFooter">footer</div>
         </div>
-        {tools.map((tool) => (
-          <div key={tool.tool}>
-            <div>{tool.tool}</div>
-            <div>{tool.stars}</div>
+        <div className="abilityRatings">
+          <div className="abilityRatingsHeader">
+            <h2>Languages</h2>
           </div>
-        ))}
+          {languages.map((language) => (
+            <div key={language.language}>
+              <div>{language.language}</div>
+              <div>{language.stars}</div>
+            </div>
+          ))}
+        </div>
+        <div className="abilityRatings">
+          <div className="abilityRatingsHeader">
+            <h2>Tools</h2>
+          </div>
+          {tools.map((tool) => (
+            <div key={tool.tool}>
+              <div>{tool.tool}</div>
+              <div>{tool.stars}</div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
-  </div>
-);
-
+  );
+};
+Abilities.propTypes = {
+  abl: propTypes.func,
+};
+Abilities.defaultProps = {
+  abl: null,
+};
 export default Abilities;

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import propTypes from 'prop-types';
 
 const educations = [
   {
@@ -47,55 +48,64 @@ const careers = [
     roleDescription: 'Software development trainee at Andela',
   },
 ];
-const Experiences = () => (
-  <div className="experiences" id="experiences">
-    <div className="experiencesContainer">
-      <div>
-        <div className="experiencesHeader">
-          <h1>Experience</h1>
-        </div>
-        <div className="experiencesQuote">
+const Experiences = ({ exp }) => {
+  const experienceRef = useRef();
+  exp(experienceRef);
+  return (
+    <div className="experiences" id="experiences" ref={experienceRef}>
+      <div className="experiencesContainer">
+        <div>
+          <div className="experiencesHeader">
+            <h1>Experience</h1>
+          </div>
+          <div className="experiencesQuote">
           “Protons give an atom its identity, electrons its personality.” - Bill
           Bryson, A short history of nearly everything
+          </div>
         </div>
-      </div>
-      <div className="education">
-        <div>
-          <h1>Education</h1>
+        <div className="education">
+          <div>
+            <h1>Education</h1>
+          </div>
         </div>
-      </div>
 
-      {educations.map((education) => (
-        <div key={education.date} className="education">
-          <div>
-            <div>{education.school}</div>
-            <div>{education.date}</div>
+        {educations.map((education) => (
+          <div key={education.date} className="education">
+            <div>
+              <div>{education.school}</div>
+              <div>{education.date}</div>
+            </div>
+            <div>
+              <div>{education.course}</div>
+              <div>{education.courseDescription}</div>
+            </div>
           </div>
+        ))}
+        <div className="career">
           <div>
-            <div>{education.course}</div>
-            <div>{education.courseDescription}</div>
+            <h1>Career</h1>
           </div>
         </div>
-      ))}
-      <div className="career">
-        <div>
-          <h1>Career</h1>
-        </div>
+        {careers.map((career) => (
+          <div key={career.date} className="career">
+            <div>
+              <div>{career.institution}</div>
+              <div>{career.date}</div>
+            </div>
+            <div>
+              <div>{career.role}</div>
+              <div>{career.roleDescription}</div>
+            </div>
+          </div>
+        ))}
       </div>
-      {careers.map((career) => (
-        <div key={career.date} className="career">
-          <div>
-            <div>{career.institution}</div>
-            <div>{career.date}</div>
-          </div>
-          <div>
-            <div>{career.role}</div>
-            <div>{career.roleDescription}</div>
-          </div>
-        </div>
-      ))}
     </div>
-  </div>
-);
-
+  );
+};
+Experiences.propTypes = {
+  exp: propTypes.func,
+};
+Experiences.defaultProps = {
+  exp: null,
+};
 export default Experiences;
