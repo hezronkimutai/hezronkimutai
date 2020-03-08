@@ -2,42 +2,42 @@ import React, { useRef } from 'react';
 import propTypes from 'prop-types';
 
 const skills = [
-  { skill: 'HTML5', stars: '5' },
-  { skill: 'CSS3', stars: '5' },
-  { skill: 'Javascript', stars: '5' },
-  { skill: 'NodeJs', stars: '5' },
-  { skill: 'Express', stars: '5' },
-  { skill: 'Python', stars: '5' },
-  { skill: 'Flask', stars: '5' },
-  { skill: 'Django', stars: '5' },
-  { skill: 'NestJs', stars: '5' },
-  { skill: 'ReactJs', stars: '5' },
-  { skill: 'SCSS', stars: '5' },
-  { skill: 'SQL', stars: '5' },
-  { skill: 'No SQL', stars: '5' },
+  { skill: 'HTML5', stars: 5 },
+  { skill: 'CSS3', stars: 5 },
+  { skill: 'Javascript', stars: 5 },
+  { skill: 'NodeJs', stars: 5 },
+  { skill: 'Express', stars: 5 },
+  { skill: 'Python', stars: 5 },
+  { skill: 'Flask', stars: 5 },
+  { skill: 'Django', stars: 5 },
+  { skill: 'NestJs', stars: 5 },
+  { skill: 'ReactJs', stars: 5 },
+  { skill: 'SCSS', stars: 5 },
+  { skill: 'SQL', stars: 5 },
+  { skill: 'No SQL', stars: 5 },
 ];
 const languages = [
-  { language: 'English', stars: '5' },
-  { language: 'Kiswahili', stars: '5' },
-  { language: 'Kalenjin', stars: '5' },
+  { language: 'English', stars: 5 },
+  { language: 'Kiswahili', stars: 5 },
+  { language: 'Kalenjin', stars: 5 },
 ];
 const tools = [
-  { tool: 'Figma', stars: '5' },
-  { tool: 'Vs code', stars: '5' },
-  { tool: 'mac', stars: '5' },
-  { tool: 'Linux', stars: '5' },
-  { tool: 'Docker', stars: '5' },
-  { tool: 'Heroku', stars: '5' },
-  { tool: 'Git & Github', stars: '5' },
-  { tool: 'Code Climate', stars: '5' },
-  { tool: 'Travis Ci', stars: '5' },
-  { tool: 'Circle Ci', stars: '5' },
-  { tool: 'Coveralls', stars: '5' },
-  { tool: 'Postgres', stars: '5' },
-  { tool: 'My sql', stars: '5' },
-  { tool: 'Mongo db', stars: '5' },
-  { tool: 'Amazon web service', stars: '5' },
-  { tool: 'Docker', stars: '5' },
+  { tool: 'Figma', stars: 5 },
+  { tool: 'Vs code', stars: 5 },
+  { tool: 'mac', stars: 5 },
+  { tool: 'Linux', stars: 5 },
+  { tool: 'Docker', stars: 5 },
+  { tool: 'Heroku', stars: 5 },
+  { tool: 'Git & Github', stars: 5 },
+  { tool: 'Code Climate', stars: 5 },
+  { tool: 'Travis Ci', stars: 5 },
+  { tool: 'Circle Ci', stars: 5 },
+  { tool: 'Coveralls', stars: 5 },
+  { tool: 'Postgres', stars: 5 },
+  { tool: 'My sql', stars: 5 },
+  { tool: 'Mongo db', stars: 5 },
+  { tool: 'Amazon web service', stars: 5 },
+  { tool: 'Docker', stars: 5 },
 ];
 
 const Abilities = ({ abl }) => {
@@ -59,7 +59,14 @@ const Abilities = ({ abl }) => {
           {skills.map((skill) => (
             <div key={skill.skill}>
               <div>{skill.skill}</div>
-              <div>{skill.stars}</div>
+              <div>
+                {Array.from(Array(skill.stars).keys()).map((star) => (
+                  <img
+                    style={{ width: '20px', height: '20px' }}
+                    src="https://res.cloudinary.com/hezzie/image/upload/v1585803467/star_ckwxst.svg"
+                  />
+                ))}
+              </div>
             </div>
           ))}
           <div className="abilityRatingsFooter">footer</div>
@@ -71,7 +78,14 @@ const Abilities = ({ abl }) => {
           {languages.map((language) => (
             <div key={language.language}>
               <div>{language.language}</div>
-              <div>{language.stars}</div>
+              <div>
+                {Array.from(Array(language.stars).keys()).map((star) => (
+                  <img
+                    style={{ width: '20px', height: '20px' }}
+                    src="https://res.cloudinary.com/hezzie/image/upload/v1585803467/star_ckwxst.svg"
+                  />
+                ))}
+              </div>
             </div>
           ))}
         </div>
@@ -82,7 +96,14 @@ const Abilities = ({ abl }) => {
           {tools.map((tool) => (
             <div key={tool.tool}>
               <div>{tool.tool}</div>
-              <div>{tool.stars}</div>
+              <div>
+                {Array.from(Array(tool.stars).keys()).map((star) => (
+                  <img
+                    style={{ width: '20px', height: '20px' }}
+                    src="https://res.cloudinary.com/hezzie/image/upload/v1585803467/star_ckwxst.svg"
+                  />
+                ))}
+              </div>
             </div>
           ))}
         </div>

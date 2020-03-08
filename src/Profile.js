@@ -39,27 +39,19 @@ const Profile = ({ prof }) => {
             <div className="contactsHeader">
               <h1>Biography</h1>
             </div>
-          I was born in Eldoret town in Kenya, Since I was young I have been
-          playing with computers, I wrote my first computer program when I was
-          10 I was born in Eldoret town in Kenya, Since I was young I have been
-          playing with computers, I wrote my first computer program when I was
-          10 I was born in Eldoret town in Kenya, Since I was young I have been
-          playing with computers, I wrote my first computer program when I was
-          10 I was born in Eldoret town in Kenya, Since I was young I have been
-          playing with computers, I wrote my first computer program when I was
-          10 I was born in Eldoret town in Kenya, Since I was young I have been
-          playing with computers, I wrote my first computer program when I was
-          10 I was born in Eldoret town in Kenya, Since I was young I have been
-          playing with computers, I wrote my first computer program when I was
-          10 I was born in Eldoret town in Kenya, Since I was young I have been
-          playing with computers, I wrote my first computer program when I was
-          10
+            I am a goal-oriented, hardworking person who likes exploring new
+            stuff. I am a full-stack engineer specialized in
+            NodeJs/ExpressJs/NestJs and React. But I do have significant
+            experience in Python/Flask/Django. I also have some interests in
+            Java. I believe that I am a team player and I have spent the past
+            two years working with different agile teams. Moreover, I am an Open
+            Source enthusiast.
           </div>
         </div>
         <div className="detailsFooter">
-        Got inspired? Copied the theme? Or do you just like the website? No
-        problem, just buy me a beer and make me happy! PayPal - The safer,
-        easier way to pay online!
+          Got inspired? Copied the theme? Or do you just like the website? No
+          problem, just buy me a beer and make me happy! PayPal - The safer,
+          easier way to pay online!
         </div>
       </div>
     </div>

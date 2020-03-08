@@ -44,7 +44,8 @@
     "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.3.0",
     "sass-loader": "^8.0.0",
-    "serve": "^11.2.0"
+    "serve": "^11.2.0",
+    "social-media-icons-react": "^1.0.10"
   },
   "devDependencies": {
     "jest": "^24.9.0",

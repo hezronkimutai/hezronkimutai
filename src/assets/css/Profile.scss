@@ -42,12 +42,16 @@
         flex-direction: row;
         min-height: 80% !important;
         justify-content: space-between;
+        line-height: 30px;
+
         .contacts {
           width: 100%;
           display: flex;
           flex-wrap: wrap;
           flex-direction: row;
           div {
+            line-height: 30px;
+
             width: 50%;
             display: flex;
             flex-wrap: wrap;
@@ -61,6 +65,8 @@
         .image {
           height: 100%;
           div {
+            line-height: 30px;
+
             height: 200px;
             width: 200px;
             margin: auto;
