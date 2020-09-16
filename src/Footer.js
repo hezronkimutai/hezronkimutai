@@ -16,5 +16,4 @@ const App = () => (
     <div className="footerFooter">Hell</div>
   </div>
 );
-
 export default App;

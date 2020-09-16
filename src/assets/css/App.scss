@@ -19,13 +19,14 @@ body {
 
     .container {
       // border-radius: 40px 40px 40px 40px;
+      height: 100%;
       .sidebar {
         display: flex;
         flex-direction: row;
         min-height: 40px !important;
         width: 100%;
         color: #f6f7e9;
-        background-color: #403454;
+        background-color: #f6f7e9;
         // opacity: 0.4;
         position: sticky;
         top: 0;
@@ -36,7 +37,7 @@ body {
           background-color: transparent;
           margin: 4px;
           button {
-            background-color: inherit;
+            background-color: #403454;
             outline: none;
             border: none;
             color: inherit;
@@ -57,8 +58,8 @@ body {
       height: 100%;
       overflow-y: auto;
       overflow-x: hidden;
-      background-color: #403454;
-      background-image: url('https://res.cloudinary.com/hezzie/image/upload/v1583434599/ezgif.com-gif-maker_1_brjdhb.gif');
+      // background-color: #403454;
+      // background-image: url('https://res.cloudinary.com/hezzie/image/upload/v1583434599/ezgif.com-gif-maker_1_brjdhb.gif');
       background-size: 100% 100%;
       background-repeat: no-repeat;
       background-attachment: fixed;
@@ -73,3 +74,5 @@ body {
     }
   }
 }
+
+
