@@ -59,8 +59,8 @@ const Experiences = ({ exp }) => {
             <h1>Experience</h1>
           </div>
           <div className="experiencesQuote">
-          “Protons give an atom its identity, electrons its personality.” - Bill
-          Bryson, A short history of nearly everything
+            “Protons give an atom its identity, electrons its personality.” - Bill
+            Bryson, A short history of nearly everything
           </div>
         </div>
         <div className="education">
