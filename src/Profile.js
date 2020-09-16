@@ -39,27 +39,27 @@ const Profile = ({ prof }) => {
             <div className="contactsHeader">
               <h1>Biography</h1>
             </div>
-          I was born in Eldoret town in Kenya, Since I was young I have been
-          playing with computers, I wrote my first computer program when I was
-          10 I was born in Eldoret town in Kenya, Since I was young I have been
-          playing with computers, I wrote my first computer program when I was
-          10 I was born in Eldoret town in Kenya, Since I was young I have been
-          playing with computers, I wrote my first computer program when I was
-          10 I was born in Eldoret town in Kenya, Since I was young I have been
-          playing with computers, I wrote my first computer program when I was
-          10 I was born in Eldoret town in Kenya, Since I was young I have been
-          playing with computers, I wrote my first computer program when I was
-          10 I was born in Eldoret town in Kenya, Since I was young I have been
-          playing with computers, I wrote my first computer program when I was
-          10 I was born in Eldoret town in Kenya, Since I was young I have been
-          playing with computers, I wrote my first computer program when I was
-          10
+            I was born in Eldoret town in Kenya, Since I was young I have been
+            playing with computers, I wrote my first computer program when I was
+            10 I was born in Eldoret town in Kenya, Since I was young I have been
+            playing with computers, I wrote my first computer program when I was
+            10 I was born in Eldoret town in Kenya, Since I was young I have been
+            playing with computers, I wrote my first computer program when I was
+            10 I was born in Eldoret town in Kenya, Since I was young I have been
+            playing with computers, I wrote my first computer program when I was
+            10 I was born in Eldoret town in Kenya, Since I was young I have been
+            playing with computers, I wrote my first computer program when I was
+            10 I was born in Eldoret town in Kenya, Since I was young I have been
+            playing with computers, I wrote my first computer program when I was
+            10 I was born in Eldoret town in Kenya, Since I was young I have been
+            playing with computers, I wrote my first computer program when I was
+            10
           </div>
         </div>
         <div className="detailsFooter">
-        Got inspired? Copied the theme? Or do you just like the website? No
-        problem, just buy me a beer and make me happy! PayPal - The safer,
-        easier way to pay online!
+          Got inspired? Copied the theme? Or do you just like the website? No
+          problem, just buy me a beer and make me happy! PayPal - The safer,
+          easier way to pay online!
         </div>
       </div>
     </div>

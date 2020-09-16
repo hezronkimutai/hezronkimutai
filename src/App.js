@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import './assets/css/App.scss';
-import LandingDiv from './LandingDiv';
+// import LandingDiv from './LandingDiv';
 import Profile from './Profile';
 import Experiences from './Experiences';
 import Abilities from './Abilities';
@@ -19,7 +19,7 @@ const App = () => {
   const [abilitiesRef, setAbilitiesRef] = useState({});
   const [currentFormat, setCurrentFormat] = useState([1, 0, 0, 0, 0]);
   const [projectsRef, setProjectsRef] = useState({});
-  const [landingDivRef, setLandingDivRef] = useState({});
+  // const [landingDivRef, setLandingDivRef] = useState({});
   const navData = [
     {
       navItemStyle: {},
@@ -79,12 +79,12 @@ const App = () => {
           ) {
             setCurrentFormat([0, 0, 0, 0, 1]);
           }
-          if (landingDivRef.current.getBoundingClientRect().y > -50) {
-            setCurrentFormat([1, 0, 0, 0, 0]);
-          }
+          // if (landingDivRef.current.getBoundingClientRect().y > -50) {
+          //   setCurrentFormat([1, 0, 0, 0, 0]);
+          // }
         }}
       >
-        <LandingDiv land={(e) => setLandingDivRef(e)} />
+        {/* <LandingDiv land={(e) => setLandingDivRef(e)} /> */}
         <div className="sidebar">
           {sideBarData.map((item, index) => (
             <div className="sidebar">
@@ -92,14 +92,17 @@ const App = () => {
                 type="button"
                 onClick={() => {
                   const relativePositions = [
-                    landingDivRef.current.getBoundingClientRect().y,
+                    // landingDivRef.current.getBoundingClientRect().y,
                     profileRef.current.getBoundingClientRect().y,
                     experienceRef.current.getBoundingClientRect().y,
                     abilitiesRef.current.getBoundingClientRect().y,
                     projectsRef.current.getBoundingClientRect().y,
                   ];
                   setCurrentFormat(item.format);
-                  containerRef.current.scrollTo(0, actualPositions(relativePositions)[index]);
+                  containerRef.current.scrollTo(
+                    0,
+                    actualPositions(relativePositions)[index],
+                  );
                 }}
                 style={item.navItemStyle}
               >
