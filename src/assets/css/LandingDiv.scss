@@ -1,5 +1,13 @@
 %landingDiv {
+ 
   .landingDiv {
+    .welcome{
+      width: 100%;
+display:flex;
+flex-direction: row;
+justify-content: space-between !important;
+color:#fff
+}
     margin: 0px;
     padding: 0px;
     // color: #f6f7e9;
@@ -15,17 +23,43 @@
     background-repeat: no-repeat;
     background-position: top center;
     position: relative;
-    // background-attachment: fixed;
-    div {
-      position: absolute;
-      font-family: 'Nosifer', cursive;
-      width: 100%;
-      height: 30%;
-      text-align: center;
-      font-size: 50px;
-      border-radius: 7px;
-      bottom:10px;
-    }
+  *,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+
+
+@keyframes dot {
+	0% {
+		transform: scale(.75);
+		opacity: .25;
+	}
+	25% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(.75);
+		opacity: .25;
+	}
+}
+
+@keyframes arrow {
+	0% {
+		transform: scale(.75) rotate(45deg);
+		opacity: .25;
+	}
+	25% {
+		transform: scale(1) rotate(45deg);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(.75) rotate(45deg);
+		opacity: .25;
+	}
+}
     .indicator{
       position:absolute;
       width:50px;
@@ -85,4 +119,64 @@
       border-color:#ffd64a;
     }
   }
+}
+
+
+
+.scroll-indicator {
+bottom:0;
+// right:0;
+// text-align: center;
+  width: 80px;
+  padding:20px;
+	margin: 0 auto;
+	position: absolute;
+	opacity: .5;
+	&::before,
+	&::after {
+		content: '';
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	&::before {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		border: 10px solid #fff;
+		animation: dot 3s infinite ease-in-out;
+	}
+	&::after {
+		width: 18px;
+		height: 18px;
+		border-right: 5px solid #fff;
+		border-bottom: 5px solid #fff;
+		transform: rotate(45deg);
+		animation: arrow 3s infinite ease-in-out;
+		animation-delay: .75s;
+		opacity: .25;
+	}
+	& > div {
+		display: block;
+		&::before,
+		&::after {
+			content: '';
+			display: block;
+			margin: 5px auto;
+			border-radius: 50%;
+			border: 6px solid #fff;
+			animation: dot 3s infinite ease-in-out;
+		}
+		&::before {
+			width: 25px;
+			height: 25px;
+			animation-delay: .25s;
+		}
+		&::after {
+      border: 5px solid #fff;
+			width: 17px;
+			height: 17px;
+			animation-delay: .5s;
+		}
+	}
 }
