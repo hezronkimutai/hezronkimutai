@@ -31,7 +31,12 @@ const Abilities = ({ abl }) => {
   abl(abilitiesRef);
   return (
     <div className="projects" id="abilities" ref={abilitiesRef}>
-      <div className="abilitiesContainer">
+      <div
+        data-aos="fade-down"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        className="abilitiesContainer"
+      >
         <div className="abilitiesHeader">
           <div>
             <h1>Featured Works and case studies</h1>

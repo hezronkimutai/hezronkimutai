@@ -11,7 +11,7 @@ import Blogs from './Blogs';
 import Footer from './Footer';
 import navDisplayData from './helpers/navActivestyle';
 
-AOS.init();
+AOS.init({ delay: 10 });
 
 const actualPositions = (arr) => arr.map((item) => {
   const res = item + Math.abs(Math.min(...arr));

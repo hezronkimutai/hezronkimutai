@@ -15,7 +15,8 @@ const contactInfo = [
 const Profile = ({ prof }) => {
   const profileRef = useRef();
   prof(profileRef);
-  // data-aos="fade-down-right"
+  // data-aos="fade-down" data-aos-delay="50"
+  // data-aos-duration="1000"
   // data-aos-offset="200"
   // data-aos-delay="50"
   // data-aos-duration="1000"
@@ -29,9 +30,14 @@ const Profile = ({ prof }) => {
       id="profile"
       ref={profileRef}
     >
-      <div className="profileContainer">
+      <div
+        data-aos="fade-down"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        className="profileContainer"
+      >
         <div className="detailsHeader">
-          <div data-aos="fade-down-right">
+          <div>
             <h1>Profile</h1>
           </div>
         </div>

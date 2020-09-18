@@ -12,7 +12,12 @@ const LandingDiv = ({ land }) => {
         <div className="dots" />
       </div>
       <div className="welcome">
-        <div data-aos="fade-down-right" className="left">
+        <div
+          data-aos="fade-down"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          className="left"
+        >
           <div>
             <h1>Hezron Kimutai</h1>
             <h3>
@@ -24,7 +29,14 @@ const LandingDiv = ({ land }) => {
             <CallToactionBtn onClick={() => 0} displayText="Hire Me" />
           </div>
         </div>
-        <img data-aos="fade-down-left" style={{ width: '40%', height: '70%', margin: 'auto' }} src="https://res.cloudinary.com/hezzie/image/upload/v1600409821/2479_xblseh.jpg" alt="welcomePage" />
+        <img
+          data-aos="fade-down"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          style={{ width: '40%', height: '70%', margin: 'auto' }}
+          src="https://res.cloudinary.com/hezzie/image/upload/v1600409306/213885-P07ZKE-271_roalp3.jpg"
+          alt="welcomePage"
+        />
       </div>
 
     </div>
