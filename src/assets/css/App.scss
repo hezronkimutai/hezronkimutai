@@ -18,20 +18,28 @@
   animation-duration: 2s; /* don't forget to set a duration! */
 
 }
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
 body {
   margin: 0px;
+  width: 100%;
+    height: 100%;
   #app {
     width: 100%;
     height: 100%;
-
-    .container {
+    ._container {
+      // width: 90%;
       // border-radius: 40px 40px 40px 40px;
-      height: 100%;
+      // height: 100%;
+      // position: fixed;
+
       .sidebar {
-        display: flex;
-        flex-direction: row;
+        // display: flex;
+        // flex-direction: row;
         min-height: 40px !important;
-    justify-content: flex-end;
+    // justify-content: flex-end;
         color: #f6f7e9;
         // background-color: #f6f7e9;
         // opacity: 0.4;
@@ -56,12 +64,11 @@ body {
           }
         }
       }
-      position: fixed;
-      padding: 0px;
-      margin: 0px;
-      display: flex;
-      flex-direction: column;
-      width: 100%;
+      // position: fixed;
+      // padding: 0px;
+      // margin: 0px;
+      // display: flex;
+      // flex-direction: column;
       height: 100%;
       overflow-y: scroll;
       overflow-x: hidden;

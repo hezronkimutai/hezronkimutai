@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import './assets/css/App.scss';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
-import LandingDiv from './LandingDiv';
+import LandingDiv, { CallToactionBtn } from './LandingDiv';
 import Profile from './Profile';
 import Experiences from './Experiences';
 import Abilities from './Abilities';
@@ -64,7 +64,7 @@ const App = () => {
   return (
 
     <div
-      className="container"
+      className="_container h-full w-full m-auto fixed"
       onScroll={() => {
         AOS.refresh();
       }}
@@ -105,34 +105,37 @@ const App = () => {
         }
       }}
     >
-      {' '}
-
-      <div className="sidebar">
-        {sideBarData.map((item, index) => (
-          <div className="_sidebar">
-            <button
-              type="button"
-              onClick={() => {
-                const relativePositions = [
-                  landingDivRef.current.getBoundingClientRect().y,
-                  profileRef.current.getBoundingClientRect().y,
-                  experienceRef.current.getBoundingClientRect().y,
-                  abilitiesRef.current.getBoundingClientRect().y,
-                  projectsRef.current.getBoundingClientRect().y,
-                  blogRef.current.getBoundingClientRect().y,
-                ];
-                setCurrentFormat(item.format);
-                containerRef.current.scrollTo(
-                  0,
-                  actualPositions(relativePositions)[index],
-                );
-              }}
-              style={item.navItemStyle}
-            >
-              {item.displayText}
-            </button>
-          </div>
-        ))}
+      <div className="sidebar justify-between flex flex-row">
+        <div className="">
+          <CallToactionBtn className="transition font-semibold m-2 px-2 py-1 delay-150  text-gray-100 bg-orange-700 rounded duration-300 ease-in-out " onClick={() => 0} displayText="DONATE" />
+        </div>
+        <div className="flex justify-between m-auto flex-row">
+          {sideBarData.map((item, index) => (
+            <div className="_sidebar">
+              <button
+                type="button"
+                onClick={() => {
+                  const relativePositions = [
+                    landingDivRef.current.getBoundingClientRect().y,
+                    profileRef.current.getBoundingClientRect().y,
+                    experienceRef.current.getBoundingClientRect().y,
+                    abilitiesRef.current.getBoundingClientRect().y,
+                    projectsRef.current.getBoundingClientRect().y,
+                    blogRef.current.getBoundingClientRect().y,
+                  ];
+                  setCurrentFormat(item.format);
+                  containerRef.current.scrollTo(
+                    0,
+                    actualPositions(relativePositions)[index],
+                  );
+                }}
+                style={item.navItemStyle}
+              >
+                {item.displayText}
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
       <LandingDiv land={(e) => setLandingDivRef(e)} />
       <Profile prof={(e) => setProfileRef(e)} />
