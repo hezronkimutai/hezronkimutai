@@ -13,12 +13,12 @@ const LandingDiv = ({ land }) => {
       </div>
       <div className="welcome">
         <div
-          data-aos="fade-down"
-          data-aos-delay="50"
+          data-aos="zoom-in"
+          data-aos-delay="100"
           data-aos-duration="1000"
           className="left"
         >
-          <div>
+          <span>
             <h1>Hezron Kimutai</h1>
             <h3>
               Hi,
@@ -27,14 +27,14 @@ const LandingDiv = ({ land }) => {
             </h3>
             <CallToactionBtn onClick={() => 0} displayText="Download Resume" />
             <CallToactionBtn onClick={() => 0} displayText="Hire Me" />
-          </div>
+          </span>
         </div>
         <img
-          data-aos="fade-down"
-          data-aos-delay="50"
+          data-aos="zoom-in"
+          data-aos-delay="100"
           data-aos-duration="1000"
-          style={{ width: '40%', height: '70%', margin: 'auto' }}
-          src="https://res.cloudinary.com/hezzie/image/upload/v1600409306/213885-P07ZKE-271_roalp3.jpg"
+          style={{ width: '50%', height: '80%', margin: 'auto' }}
+          src="https://res.cloudinary.com/hezzie/image/upload/v1600446790/imageedit_3_8141677005_oyxp66.png"
           alt="welcomePage"
         />
       </div>

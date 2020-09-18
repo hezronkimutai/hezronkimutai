@@ -12,12 +12,12 @@ justify-content: space-between !important;
   width:50%;
   position: relative;
   display:flex;
-  div{
+  span{
 margin:auto;
   height: min-content;
   text-align: center;
    max-width: 80%;
-    margin: 25% auto
+    // margin: 25% auto
 
   }
 }
@@ -25,7 +25,7 @@ margin:auto;
     margin: 0px;
     padding: 0px;
     // color: #f6f7e9;
-    min-height: 100% !important;
+    min-height: 93% !important;
     width: 100%;
     z-index: 1;
     display: flex;
@@ -37,101 +37,7 @@ margin:auto;
     background-repeat: no-repeat;
     background-position: top center;
     position: relative;
-  *,
-*::before,
-*::after {
-	box-sizing: border-box;
-}
 
-
-
-@keyframes dot {
-	0% {
-		transform: scale(.75);
-		opacity: .25;
-	}
-	25% {
-		transform: scale(1);
-		opacity: 1;
-	}
-	100% {
-		transform: scale(.75);
-		opacity: .25;
-	}
-}
-
-@keyframes arrow {
-	0% {
-		transform: scale(.75) rotate(45deg);
-		opacity: .25;
-	}
-	25% {
-		transform: scale(1) rotate(45deg);
-		opacity: 1;
-	}
-	100% {
-		transform: scale(.75) rotate(45deg);
-		opacity: .25;
-	}
-}
-    .indicator{
-      position:absolute;
-      width:50px;
-      height:50px;
-      top:0%;
-      left: 49%;
-      transform:rotate(45deg);
-      span{
-        position:absolute;
-        left:0;
-        top:0;
-        width:100%;
-        height:100%;
-        box-sizing:border-box;
-        border:none;
-        border-bottom:10px solid black;
-        border-right:10px solid black;
-        animation:animate 1s linear infinite;
-        &:nth-child(1){
-          top:-30px;
-          left:-30px;
-          animation-delay:0s;
-        }
-        &:nth-child(2){
-          top:-15px;
-          left:-15px;
-          animation-delay:0.2s;
-        }
-        &:nth-child(3){
-          top:0;
-          left:0;
-          animation-delay:0.4s;
-        }
-        &:nth-child(4){
-          top:15px;
-          left:15px;
-          animation-delay:0.6s;
-        }
-        &:nth-child(5){
-          top:30px;
-          left:30px;
-          animation-delay:0.8s;
-        }
-      }
-    }
-  }
-  @keyframes animate{
-    0%{
-      border-color:black;
-      transform:translate(0,0);
-    }
-     20%{
-      border-color:black;
-       transform:translate(15px,15px);
-    }
-     20.1%,100%{
-      border-color:#ffd64a;
-    }
   }
 }
 
@@ -192,5 +98,34 @@ right:50%;
 			height: 17px;
 			animation-delay: .5s;
 		}
+	}
+}
+@keyframes dot {
+	0% {
+		transform: scale(.75);
+		opacity: .25;
+	}
+	25% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(.75);
+		opacity: .25;
+	}
+}
+
+@keyframes arrow {
+	0% {
+		transform: scale(.75) rotate(45deg);
+		opacity: .25;
+	}
+	25% {
+		transform: scale(1) rotate(45deg);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(.75) rotate(45deg);
+		opacity: .25;
 	}
 }

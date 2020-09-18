@@ -46,8 +46,8 @@ const Abilities = ({ abl }) => {
   return (
     <div className="abilities" id="abilities" ref={abilitiesRef}>
       <div
-        data-aos="fade-down"
-        data-aos-delay="50"
+        data-aos="zoom-in"
+        data-aos-delay="100"
         data-aos-duration="1000"
         className="abilitiesContainer"
       >

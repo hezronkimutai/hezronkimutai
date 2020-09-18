@@ -1,6 +1,7 @@
 import path from 'path';
 import Dotenv from 'dotenv-webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 const webpack = {
   mode: 'development',
@@ -62,6 +63,14 @@ const webpack = {
           'sass-loader',
         ],
       },
+      {
+        exclude: /node_modules/,
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader', 'postcss-loader',
+        ],
+      },
     ],
   },
   resolve: {
@@ -73,6 +82,10 @@ const webpack = {
     port: 4000,
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'styles.css',
+      chunkFilename: 'styles.css',
+    }),
     new HtmlWebpackPlugin({
       template: 'public/index.html',
     }),

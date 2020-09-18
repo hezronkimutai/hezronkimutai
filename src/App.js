@@ -107,8 +107,6 @@ const App = () => {
     >
       {' '}
 
-      <LandingDiv land={(e) => setLandingDivRef(e)} />
-
       <div className="sidebar">
         {sideBarData.map((item, index) => (
           <div className="_sidebar">
@@ -136,6 +134,7 @@ const App = () => {
           </div>
         ))}
       </div>
+      <LandingDiv land={(e) => setLandingDivRef(e)} />
       <Profile prof={(e) => setProfileRef(e)} />
       <Experiences exp={(e) => setExperienceRef(e)} />
       <Abilities abl={(e) => setAbilitiesRef(e)} />
