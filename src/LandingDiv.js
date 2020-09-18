@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import propTypes from 'prop-types';
 
+const CallToactionBtn = ({ onClick, displayText }) => <button onClick={onClick} type="button">{displayText}</button>;
+
 const LandingDiv = ({ land }) => {
   const landingDivRef = useRef();
   land(landingDivRef);
@@ -10,17 +12,19 @@ const LandingDiv = ({ land }) => {
         <div className="dots" />
       </div>
       <div className="welcome">
-        <div>
-          <h1>I am Hezron Kimutai</h1>
-          <h1>I am a web developer</h1>
-          <p>
-            Hi,
-            I am Hezzie, a professional web developer with four years of experience. Need any help?
-          </p>
-          <button type="button">Download Resume</button>
-          <button type="button">Hire Me</button>
+        <div data-aos="fade-down-right" className="left">
+          <div>
+            <h1>Hezron Kimutai</h1>
+            <h3>
+              Hi,
+              <span role="img" aria-label="hi">👋</span>
+              I am a FullStack Web developer, an open source enthusiast and a blogger
+            </h3>
+            <CallToactionBtn onClick={() => 0} displayText="Download Resume" />
+            <CallToactionBtn onClick={() => 0} displayText="Hire Me" />
+          </div>
         </div>
-        <img src="https://res.cloudinary.com/hezzie/image/upload/v1600326551/pp-removebg_1_nosery.png" alt="welcomePage" />
+        <img data-aos="fade-down-left" style={{ width: '40%', height: '70%', margin: 'auto' }} src="https://res.cloudinary.com/hezzie/image/upload/v1600409821/2479_xblseh.jpg" alt="welcomePage" />
       </div>
 
     </div>
@@ -28,6 +32,10 @@ const LandingDiv = ({ land }) => {
 };
 LandingDiv.propTypes = {
   land: propTypes.func,
+};
+CallToactionBtn.propTypes = {
+  onClick: propTypes.func.isRequired,
+  displayText: propTypes.string.isRequired,
 };
 LandingDiv.defaultProps = {
   land: null,

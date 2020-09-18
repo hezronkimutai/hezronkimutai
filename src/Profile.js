@@ -15,11 +15,23 @@ const contactInfo = [
 const Profile = ({ prof }) => {
   const profileRef = useRef();
   prof(profileRef);
+  // data-aos="fade-down-right"
+  // data-aos-offset="200"
+  // data-aos-delay="50"
+  // data-aos-duration="1000"
+  // data-aos-easing="ease-in-out"
+  // data-aos-mirror="true"
+  // data-aos-once="false"
+  // data-aos-anchor-placement="top-center"
   return (
-    <div className="profile" id="profile" ref={profileRef}>
+    <div
+      className="profile"
+      id="profile"
+      ref={profileRef}
+    >
       <div className="profileContainer">
         <div className="detailsHeader">
-          <div>
+          <div data-aos="fade-down-right">
             <h1>Profile</h1>
           </div>
         </div>

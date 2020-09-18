@@ -34,7 +34,7 @@ const Abilities = ({ abl }) => {
       <div className="abilitiesContainer">
         <div className="abilitiesHeader">
           <div>
-            <h1>Projects</h1>
+            <h1>Featured Works and case studies</h1>
           </div>
         </div>
         <Pagination

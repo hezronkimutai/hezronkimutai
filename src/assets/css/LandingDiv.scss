@@ -1,12 +1,26 @@
 %landingDiv {
  
   .landingDiv {
+    // background-color: azure;
     .welcome{
       width: 100%;
 display:flex;
 flex-direction: row;
 justify-content: space-between !important;
-color:#fff
+// color:#fff;
+.left{
+  width:50%;
+  position: relative;
+  display:flex;
+  div{
+margin:auto;
+  height: min-content;
+  text-align: center;
+   max-width: 80%;
+    margin: 25% auto
+
+  }
+}
 }
     margin: 0px;
     padding: 0px;
@@ -75,8 +89,8 @@ color:#fff
         height:100%;
         box-sizing:border-box;
         border:none;
-        border-bottom:10px solid #fff;
-        border-right:10px solid #fff;
+        border-bottom:10px solid black;
+        border-right:10px solid black;
         animation:animate 1s linear infinite;
         &:nth-child(1){
           top:-30px;
@@ -108,11 +122,11 @@ color:#fff
   }
   @keyframes animate{
     0%{
-      border-color:#fff;
+      border-color:black;
       transform:translate(0,0);
     }
      20%{
-      border-color:#fff;
+      border-color:black;
        transform:translate(15px,15px);
     }
      20.1%,100%{
@@ -125,7 +139,7 @@ color:#fff
 
 .scroll-indicator {
 bottom:0;
-// right:0;
+right:50%;
 // text-align: center;
   width: 80px;
   padding:20px;
@@ -143,14 +157,14 @@ bottom:0;
 		width: 40px;
 		height: 40px;
 		border-radius: 50%;
-		border: 10px solid #fff;
+		border: 10px solid black;
 		animation: dot 3s infinite ease-in-out;
 	}
 	&::after {
 		width: 18px;
 		height: 18px;
-		border-right: 5px solid #fff;
-		border-bottom: 5px solid #fff;
+		border-right: 5px solid black;
+		border-bottom: 5px solid black;
 		transform: rotate(45deg);
 		animation: arrow 3s infinite ease-in-out;
 		animation-delay: .75s;
@@ -164,7 +178,7 @@ bottom:0;
 			display: block;
 			margin: 5px auto;
 			border-radius: 50%;
-			border: 6px solid #fff;
+			border: 6px solid black;
 			animation: dot 3s infinite ease-in-out;
 		}
 		&::before {
@@ -173,7 +187,7 @@ bottom:0;
 			animation-delay: .25s;
 		}
 		&::after {
-      border: 5px solid #fff;
+      border: 5px solid black;
 			width: 17px;
 			height: 17px;
 			animation-delay: .5s;

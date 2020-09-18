@@ -44,6 +44,24 @@ const webpack = {
           'sass-loader',
         ],
       },
+      {
+        include: path.resolve(__dirname, './node_modules/animate.css/animate.min.css'),
+        test: /\.(s[ac]ss|css)$/i,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
+      },
+      {
+        include: path.resolve(__dirname, './node_modules/aos/dist/aos.css'),
+        test: /\.(s[ac]ss|css)$/i,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
+      },
     ],
   },
   resolve: {

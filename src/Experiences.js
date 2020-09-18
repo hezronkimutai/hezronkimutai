@@ -54,7 +54,7 @@ const Experiences = ({ exp }) => {
   return (
     <div className="experiences" id="experiences" ref={experienceRef}>
       <div className="experiencesContainer">
-        <div>
+        <div data-aos="fade-down-right">
           <div className="experiencesHeader">
             <h1>Experience</h1>
           </div>

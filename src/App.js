@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react';
 import './assets/css/App.scss';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
 import LandingDiv from './LandingDiv';
 import Profile from './Profile';
 import Experiences from './Experiences';
@@ -8,6 +10,8 @@ import Projects from './Projects';
 import Blogs from './Blogs';
 import Footer from './Footer';
 import navDisplayData from './helpers/navActivestyle';
+
+AOS.init();
 
 const actualPositions = (arr) => arr.map((item) => {
   const res = item + Math.abs(Math.min(...arr));
@@ -58,82 +62,92 @@ const App = () => {
   const containerRef = useRef();
   const sideBarData = navDisplayData(currentFormat, navData);
   return (
-    <>
-      <div
-        className="container"
-        ref={containerRef}
-        onScrollCapture={() => {
-          if (
-            experienceRef.current.getBoundingClientRect().y < 500
+
+    <div
+      className="container"
+      onScroll={() => {
+        AOS.refresh();
+      }}
+      ref={containerRef}
+      onScrollCapture={() => {
+        if (
+          experienceRef.current.getBoundingClientRect().y < 500
             && experienceRef.current.getBoundingClientRect().y > 0
-          ) {
-            setCurrentFormat([0, 0, 1, 0, 0, 0]);
-          }
-          if (
-            profileRef.current.getBoundingClientRect().y < 150
+        ) {
+          setCurrentFormat([0, 0, 1, 0, 0, 0]);
+        }
+        if (
+          profileRef.current.getBoundingClientRect().y < 150
             && profileRef.current.getBoundingClientRect().y > 0
-          ) {
-            setCurrentFormat([0, 1, 0, 0, 0, 0]);
-          }
-          if (
-            abilitiesRef.current.getBoundingClientRect().y < 500
+        ) {
+          setCurrentFormat([0, 1, 0, 0, 0, 0]);
+        }
+        if (
+          abilitiesRef.current.getBoundingClientRect().y < 500
             && abilitiesRef.current.getBoundingClientRect().y > 0
-          ) {
-            setCurrentFormat([0, 0, 0, 1, 0, 0]);
-          }
-          if (
-            projectsRef.current.getBoundingClientRect().y < 500
+        ) {
+          setCurrentFormat([0, 0, 0, 1, 0, 0]);
+        }
+        if (
+          projectsRef.current.getBoundingClientRect().y < 500
             && projectsRef.current.getBoundingClientRect().y > 0
-          ) {
-            setCurrentFormat([0, 0, 0, 0, 1, 0]);
-          }
-          if (
-            blogRef.current.getBoundingClientRect().y < 500
+        ) {
+          setCurrentFormat([0, 0, 0, 0, 1, 0]);
+        }
+        if (
+          blogRef.current.getBoundingClientRect().y < 500
             && blogRef.current.getBoundingClientRect().y > 0
-          ) {
-            setCurrentFormat([0, 0, 0, 0, 0, 1]);
-          }
-          if (landingDivRef.current.getBoundingClientRect().y > -50) {
-            setCurrentFormat([1, 0, 0, 0, 0, 0]);
-          }
-        }}
-      >
-        <LandingDiv land={(e) => setLandingDivRef(e)} />
-        <div className="sidebar">
-          {sideBarData.map((item, index) => (
-            <div className="sidebar">
-              <button
-                type="button"
-                onClick={() => {
-                  const relativePositions = [
-                    landingDivRef.current.getBoundingClientRect().y,
-                    profileRef.current.getBoundingClientRect().y,
-                    experienceRef.current.getBoundingClientRect().y,
-                    abilitiesRef.current.getBoundingClientRect().y,
-                    projectsRef.current.getBoundingClientRect().y,
-                    blogRef.current.getBoundingClientRect().y,
-                  ];
-                  setCurrentFormat(item.format);
-                  containerRef.current.scrollTo(
-                    0,
-                    actualPositions(relativePositions)[index],
-                  );
-                }}
-                style={item.navItemStyle}
-              >
-                {item.displayText}
-              </button>
-            </div>
-          ))}
-        </div>
-        <Profile prof={(e) => setProfileRef(e)} />
-        <Experiences exp={(e) => setExperienceRef(e)} />
-        <Abilities abl={(e) => setAbilitiesRef(e)} />
-        <Projects abl={(e) => setProjectsRef(e)} />
-        <Blogs abl={(e) => setBlogRef(e)} />
-        <Footer />
+        ) {
+          setCurrentFormat([0, 0, 0, 0, 0, 1]);
+        }
+        if (landingDivRef.current.getBoundingClientRect().y > -50) {
+          setCurrentFormat([1, 0, 0, 0, 0, 0]);
+        }
+      }}
+    >
+      {' '}
+
+      <LandingDiv land={(e) => setLandingDivRef(e)} />
+
+      <div className="sidebar">
+        {sideBarData.map((item, index) => (
+          <div className="_sidebar">
+            <button
+              type="button"
+              onClick={() => {
+                const relativePositions = [
+                  landingDivRef.current.getBoundingClientRect().y,
+                  profileRef.current.getBoundingClientRect().y,
+                  experienceRef.current.getBoundingClientRect().y,
+                  abilitiesRef.current.getBoundingClientRect().y,
+                  projectsRef.current.getBoundingClientRect().y,
+                  blogRef.current.getBoundingClientRect().y,
+                ];
+                setCurrentFormat(item.format);
+                containerRef.current.scrollTo(
+                  0,
+                  actualPositions(relativePositions)[index],
+                );
+              }}
+              style={item.navItemStyle}
+            >
+              {item.displayText}
+            </button>
+          </div>
+        ))}
       </div>
-    </>
+      <Profile prof={(e) => setProfileRef(e)} />
+      <Experiences exp={(e) => setExperienceRef(e)} />
+      <Abilities abl={(e) => setAbilitiesRef(e)} />
+      <Projects abl={(e) => setProjectsRef(e)} />
+      <Blogs abl={(e) => setBlogRef(e)} />
+      {/* <ScrollAnimation animateIn='flipInY'
+  animateOut='flipOutY' >
+       <h1> Haaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahahahh</h1>
+      </ScrollAnimation> */}
+      <Footer />
+
+    </div>
   );
 };
 

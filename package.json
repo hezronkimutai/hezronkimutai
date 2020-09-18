@@ -25,6 +25,8 @@
   "homepage": "https://github.com/andela/team-odd-bn-frontend#readme",
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "animate.css": "^4.1.1",
+    "aos": "^3.0.0-beta.6",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^24.9.0",
     "babel-plugin-require-context-hook": "^1.0.0",
@@ -37,6 +39,7 @@
     "less-loader": "^5.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
+    "react-animate-on-scroll": "^2.1.5",
     "react-dom": "^16.13.0",
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.4",
@@ -45,6 +48,7 @@
     "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.3.0",
     "sass-loader": "^8.0.0",
+    "scroll-behavior": "^0.11.0",
     "serve": "^11.2.0"
   },
   "devDependencies": {
