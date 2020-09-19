@@ -9,14 +9,14 @@ import Abilities from './Abilities';
 import Projects from './Projects';
 import Blogs from './Blogs';
 import Footer from './Footer';
-import navDisplayData from './helpers/navActivestyle';
+// import navDisplayData from './helpers/navActivestyle';
 
 AOS.init({ delay: 10 });
 
-const actualPositions = (arr) => arr.map((item) => {
-  const res = item + Math.abs(Math.min(...arr));
-  return res;
-});
+// const actualPositions = (arr) => arr.map((item) => {
+//   const res = item + Math.abs(Math.min(...arr));
+//   return res;
+// });
 
 const App = () => {
   const [experienceRef, setExperienceRef] = useState({});
@@ -26,41 +26,41 @@ const App = () => {
   const [projectsRef, setProjectsRef] = useState({});
   const [landingDivRef, setLandingDivRef] = useState({});
   const [blogRef, setBlogRef] = useState({});
-
-  const navData = [
-    {
-      navItemStyle: {},
-      displayText: 'Home',
-      format: [1, 0, 0, 0, 0, 0],
-    },
-    {
-      navItemStyle: {},
-      displayText: 'Profile',
-      format: [0, 1, 0, 0, 0, 0],
-    },
-    {
-      navItemStyle: {},
-      displayText: 'Experience',
-      format: [0, 0, 1, 0, 0, 0],
-    },
-    {
-      navItemStyle: {},
-      displayText: 'Abilities',
-      format: [0, 0, 0, 1, 0, 0],
-    },
-    {
-      navItemStyle: {},
-      displayText: 'Projects',
-      format: [0, 0, 0, 0, 1, 0],
-    },
-    {
-      navItemStyle: {},
-      displayText: 'Blog',
-      format: [0, 0, 0, 0, 0, 1],
-    },
-  ];
+  console.log(currentFormat);
+  // const navData = [
+  //   {
+  //     navItemStyle: {},
+  //     displayText: 'Home',
+  //     format: [1, 0, 0, 0, 0, 0],
+  //   },
+  //   {
+  //     navItemStyle: {},
+  //     displayText: 'Profile',
+  //     format: [0, 1, 0, 0, 0, 0],
+  //   },
+  //   {
+  //     navItemStyle: {},
+  //     displayText: 'Experience',
+  //     format: [0, 0, 1, 0, 0, 0],
+  //   },
+  //   {
+  //     navItemStyle: {},
+  //     displayText: 'Abilities',
+  //     format: [0, 0, 0, 1, 0, 0],
+  //   },
+  //   {
+  //     navItemStyle: {},
+  //     displayText: 'Projects',
+  //     format: [0, 0, 0, 0, 1, 0],
+  //   },
+  //   {
+  //     navItemStyle: {},
+  //     displayText: 'Blog',
+  //     format: [0, 0, 0, 0, 0, 1],
+  //   },
+  // ];
   const containerRef = useRef();
-  const sideBarData = navDisplayData(currentFormat, navData);
+  // const sideBarData = navDisplayData(currentFormat, navData);
   return (
 
     <div
@@ -106,11 +106,8 @@ const App = () => {
       }}
     >
       <div className="sidebar justify-between flex flex-row">
-        <div className="">
-          <CallToactionBtn className="transition font-semibold m-2 px-2 py-1 delay-150  text-gray-100 bg-orange-700 rounded duration-300 ease-in-out " onClick={() => 0} displayText="DONATE" />
-        </div>
         <div className="flex justify-between m-auto flex-row">
-          {sideBarData.map((item, index) => (
+          {/* {sideBarData.map((item, index) => (
             <div className="_sidebar">
               <button
                 type="button"
@@ -135,14 +132,18 @@ const App = () => {
               </button>
             </div>
           ))}
+        */}
+        </div>
+        <div className="">
+          <CallToactionBtn className="transition font-semibold m-2 px-2 py-1 delay-150  text-gray-100 bg-orange-700 rounded duration-300 ease-in-out " onClick={() => 0} displayText="DONATE" />
         </div>
       </div>
       <LandingDiv land={(e) => setLandingDivRef(e)} />
       <Profile prof={(e) => setProfileRef(e)} />
       <Experiences exp={(e) => setExperienceRef(e)} />
       <Abilities abl={(e) => setAbilitiesRef(e)} />
-      <Projects abl={(e) => setProjectsRef(e)} />
       <Blogs abl={(e) => setBlogRef(e)} />
+      <Projects abl={(e) => setProjectsRef(e)} />
       {/* <ScrollAnimation animateIn='flipInY'
   animateOut='flipOutY' >
        <h1> Haaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahahahh</h1>

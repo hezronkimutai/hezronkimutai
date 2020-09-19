@@ -42,13 +42,23 @@ const Profile = ({ prof }) => {
         style={{ overflow: 'visible' }}
       >
         <h1 className="w-1/2  mx-auto text-4xl text-center font-bold">Services</h1>
-        <div className="flex flex-wrap justify-evenly">
-          {services.map((service) => (
-            <div className="m-2 p-2  w-1/3 rounded bg-white shadow">
-              <h1 className="w-1/2 font-bold" style={{ }}>{service.name}</h1>
-              <p className=" ">{service.description}</p>
-            </div>
-          ))}
+        <div className="flex flex-row">
+          <img
+            data-aos="zoom-in"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            style={{ width: '50%', height: '80%', margin: 'auto' }}
+            src="https://res.cloudinary.com/hezzie/image/upload/v1600446790/imageedit_3_8141677005_oyxp66.png"
+            alt="welcomePage"
+          />
+          <div className="flex flex-wrap justify-evenly">
+            {services.map((service) => (
+              <div className="m-2 p-2  w-full rounded bg-white shadow">
+                <h1 className="w-1/2 font-bold" style={{ }}>{service.name}</h1>
+                <p className=" ">{service.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
