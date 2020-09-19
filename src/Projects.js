@@ -37,11 +37,8 @@ const Abilities = ({ abl }) => {
         data-aos-duration="1000"
         className="abilitiesContainer"
       >
-        <div className="abilitiesHeader">
-          <div>
-            <h1>Featured Works and case studies</h1>
-          </div>
-        </div>
+        <h1 className="w-1/2  mx-auto text-4xl text-center font-bold">Featured Works and case studies</h1>
+
         <Pagination
           itemsPerPage={5}
           activePageStyle={{ backgroundColor: '#00b9f2', color: 'white' }}

@@ -1,108 +1,51 @@
 import React, { useRef } from 'react';
 import propTypes from 'prop-types';
 
-const educations = [
+const services = [
   {
-    school: 'Chebororwa Primary school',
-    date: '1998- 2010',
-    course: 'Primary education',
-    courseDescription: 'Did basic things',
-  },
-  {
-    school: 'Chebara High school',
-    date: '2010- 2013',
-    course: 'Mathematics,Physics,Chemistry,Geography,English,Kiswahili,History',
-    courseDescription: 'High school education',
-  },
-  {
-    school: 'Machakos university',
-    date: '2014- 2019',
-    course: 'Electrical and electronics engineering',
-    courseDescription: 'Bsc electrical and electronics engineering',
-  },
-  {
-    school: 'Andela',
-    date: '2019',
-    course: 'web development',
-    courseDescription:
-      'Participated in two andela bootcamps one in Nairobi and the other one in Kigali',
-  },
-];
-const careers = [
-  {
-    institution: 'East Africa portland cement(Blue triangle)',
-    date: '2018',
-    role: 'Intern',
-    roleDescription: 'Electrical engineer intern',
-  },
-  {
-    institution: 'Self employed',
-    date: '2019',
-    role: 'Python and Javascript web developer',
-    roleDescription: 'Web developer',
-  },
-  {
-    institution: 'Andela',
-    date: '2019- 2020',
-    role: 'Trainee',
-    roleDescription: 'Software development trainee at Andela',
+    name: 'Ui Design',
+    description: 'I design user friendly user interfaces',
+  }, {
+    name: 'Ui Design',
+    description: 'I design user friendly user interfaces',
+  }, {
+    name: 'Ui Design',
+    description: 'I design user friendly user interfaces',
+  }, {
+    name: 'Ui Design',
+    description: 'I design user friendly user interfaces',
+  }, {
+    name: 'Ui Design',
+    description: 'I design user friendly user interfaces',
+  }, {
+    name: 'Ui Design',
+    description: 'I design user friendly user interfaces',
+  }, {
+    name: 'Ui Design',
+    description: 'I design user friendly user interfaces',
   },
 ];
 const Experiences = ({ exp }) => {
   const experienceRef = useRef();
   exp(experienceRef);
   return (
-    <div className="experiences" id="experiences" ref={experienceRef}>
+    <div className="profile w-full" id="experiences" ref={experienceRef}>
       <div
         data-aos="zoom-in"
         data-aos-delay="100"
         data-aos-duration="1000"
-        className="experiencesContainer"
+        className="profileContainer"
+        style={{ overflow: 'visible' }}
       >
-        <div>
-          <div className="experiencesHeader">
-            <h1>Experience</h1>
-          </div>
-          <div className="experiencesQuote">
-            “Protons give an atom its identity, electrons its personality.” - Bill
-            Bryson, A short history of nearly everything
-          </div>
+        <h1 className="w-1/2  mx-auto text-4xl text-center font-bold">Experience</h1>
+        <div className="flex flex-wrap justify-evenly">
+          {services.map((service) => (
+            <div className="m-2 p-2  w-full rounded bg-white shadow">
+              <h1 className="w-1/2 font-bold" style={{ }}>{service.name}</h1>
+              <p className=" ">{service.description}</p>
+            </div>
+          ))}
         </div>
-        <div className="education">
-          <div>
-            <h1>Education</h1>
-          </div>
-        </div>
-
-        {educations.map((education) => (
-          <div key={education.date} className="education">
-            <div>
-              <div>{education.school}</div>
-              <div>{education.date}</div>
-            </div>
-            <div>
-              <div>{education.course}</div>
-              <div>{education.courseDescription}</div>
-            </div>
-          </div>
-        ))}
-        <div className="career">
-          <div>
-            <h1>Career</h1>
-          </div>
-        </div>
-        {careers.map((career) => (
-          <div key={career.date} className="career">
-            <div>
-              <div>{career.institution}</div>
-              <div>{career.date}</div>
-            </div>
-            <div>
-              <div>{career.role}</div>
-              <div>{career.roleDescription}</div>
-            </div>
-          </div>
-        ))}
       </div>
     </div>
   );
