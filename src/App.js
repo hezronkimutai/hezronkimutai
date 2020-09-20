@@ -1,22 +1,27 @@
+/* eslint-disable react/forbid-prop-types */
 import React, { useState, useRef } from 'react';
 import './assets/css/App.scss';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
+import propTypes from 'prop-types';
 import LandingDiv, { CallToactionBtn } from './LandingDiv';
-import Profile from './Profile';
+import Profile from './Services';
 import Experiences from './Experiences';
 import Abilities from './Abilities';
 import Projects from './Projects';
 import Blogs from './Blogs';
 import Footer from './Footer';
-// import navDisplayData from './helpers/navActivestyle';
+import navDisplayData from './helpers/navActivestyle';
+import CancelIcon from './assets/icons/cancel';
+// import ShowIcon from './assets/icons/show';
+import ListIcon from './assets/icons/list';
 
 AOS.init({ delay: 10 });
 
-// const actualPositions = (arr) => arr.map((item) => {
-//   const res = item + Math.abs(Math.min(...arr));
-//   return res;
-// });
+const actualPositions = (arr) => arr.map((item) => {
+  const res = item + Math.abs(Math.min(...arr));
+  return res;
+});
 
 const App = () => {
   const [experienceRef, setExperienceRef] = useState({});
@@ -27,44 +32,44 @@ const App = () => {
   const [landingDivRef, setLandingDivRef] = useState({});
   const [blogRef, setBlogRef] = useState({});
   console.log(currentFormat);
-  // const navData = [
-  //   {
-  //     navItemStyle: {},
-  //     displayText: 'Home',
-  //     format: [1, 0, 0, 0, 0, 0],
-  //   },
-  //   {
-  //     navItemStyle: {},
-  //     displayText: 'Profile',
-  //     format: [0, 1, 0, 0, 0, 0],
-  //   },
-  //   {
-  //     navItemStyle: {},
-  //     displayText: 'Experience',
-  //     format: [0, 0, 1, 0, 0, 0],
-  //   },
-  //   {
-  //     navItemStyle: {},
-  //     displayText: 'Abilities',
-  //     format: [0, 0, 0, 1, 0, 0],
-  //   },
-  //   {
-  //     navItemStyle: {},
-  //     displayText: 'Projects',
-  //     format: [0, 0, 0, 0, 1, 0],
-  //   },
-  //   {
-  //     navItemStyle: {},
-  //     displayText: 'Blog',
-  //     format: [0, 0, 0, 0, 0, 1],
-  //   },
-  // ];
+  const navData = [
+    {
+      navItemStyle: {},
+      displayText: 'Home',
+      format: [1, 0, 0, 0, 0, 0],
+    },
+    {
+      navItemStyle: {},
+      displayText: 'Profile',
+      format: [0, 1, 0, 0, 0, 0],
+    },
+    {
+      navItemStyle: {},
+      displayText: 'Experience',
+      format: [0, 0, 1, 0, 0, 0],
+    },
+    {
+      navItemStyle: {},
+      displayText: 'Abilities',
+      format: [0, 0, 0, 1, 0, 0],
+    },
+    {
+      navItemStyle: {},
+      displayText: 'Projects',
+      format: [0, 0, 0, 0, 1, 0],
+    },
+    {
+      navItemStyle: {},
+      displayText: 'Blog',
+      format: [0, 0, 0, 0, 0, 1],
+    },
+  ];
   const containerRef = useRef();
-  // const sideBarData = navDisplayData(currentFormat, navData);
+  const sideBarData = navDisplayData(currentFormat, navData);
   return (
 
     <div
-      className="_container h-full w-full fixed"
+      className="_container h-full w-full m-auto fixed"
       onScroll={() => {
         AOS.refresh();
       }}
@@ -105,35 +110,18 @@ const App = () => {
         }
       }}
     >
-      <div className="sidebar  mx-auto w-11/12 justify-between flex flex-row">
-        <div className="flex justify-between m-auto flex-row">
-          {/* {sideBarData.map((item, index) => (
-            <div className="_sidebar">
-              <button
-                type="button"
-                onClick={() => {
-                  const relativePositions = [
-                    landingDivRef.current.getBoundingClientRect().y,
-                    profileRef.current.getBoundingClientRect().y,
-                    experienceRef.current.getBoundingClientRect().y,
-                    abilitiesRef.current.getBoundingClientRect().y,
-                    projectsRef.current.getBoundingClientRect().y,
-                    blogRef.current.getBoundingClientRect().y,
-                  ];
-                  setCurrentFormat(item.format);
-                  containerRef.current.scrollTo(
-                    0,
-                    actualPositions(relativePositions)[index],
-                  );
-                }}
-                style={item.navItemStyle}
-              >
-                {item.displayText}
-              </button>
-            </div>
-          ))}
-        */}
-        </div>
+      <div className="sidebar justify-between flex flex-row">
+        <Sidebar
+          sideBarData={sideBarData}
+          landingDivRef={landingDivRef}
+          profileRef={profileRef}
+          experienceRef={experienceRef}
+          abilitiesRef={abilitiesRef}
+          projectsRef={projectsRef}
+          blogRef={blogRef}
+          setCurrentFormat={setCurrentFormat}
+          containerRef={containerRef}
+        />
         <div className="">
           <CallToactionBtn className="transition font-semibold m-2 px-2 py-1 delay-150  text-gray-100 bg-orange-700 rounded duration-300 ease-in-out " onClick={() => 0} displayText="DONATE" />
         </div>
@@ -144,10 +132,6 @@ const App = () => {
       <Abilities abl={(e) => setAbilitiesRef(e)} />
       <Blogs abl={(e) => setBlogRef(e)} />
       <Projects abl={(e) => setProjectsRef(e)} />
-      {/* <ScrollAnimation animateIn='flipInY'
-  animateOut='flipOutY' >
-       <h1> Haaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahahahh</h1>
-      </ScrollAnimation> */}
       <Footer />
 
     </div>
@@ -155,3 +139,70 @@ const App = () => {
 };
 
 export default App;
+
+const Sidebar = (props) => {
+  const {
+    sideBarData,
+    landingDivRef, profileRef,
+    experienceRef, abilitiesRef,
+    projectsRef, blogRef,
+    setCurrentFormat, containerRef,
+  } = props;
+  const [showSideBar, setShowSideBar] = useState(false);
+  return (
+    <div className="flex  justify-between m-auto flex-col">
+      { !showSideBar && (
+      <button className="bg-transparent" style={{ background: 'transparent' }} onClick={() => setShowSideBar(!showSideBar)} type="button">
+        {/* <CancelIcon /> */}
+        {/* <ShowIcon /> */}
+        <ListIcon />
+      </button>
+      )}
+      { showSideBar && (
+      <div className="flex absolute justify-between m-auto flex-col">
+        <button className="bg-transparent" style={{ background: 'transparent' }} onClick={() => setShowSideBar(!showSideBar)} type="button">
+          <CancelIcon />
+          {/* <ShowIcon />
+          <ListIcon /> */}
+        </button>
+        {sideBarData.map((item, index) => (
+          <div className="_sidebar absol">
+            <button
+              type="button"
+              onClick={() => {
+                const relativePositions = [
+                  landingDivRef.current.getBoundingClientRect().y,
+                  profileRef.current.getBoundingClientRect().y,
+                  experienceRef.current.getBoundingClientRect().y,
+                  abilitiesRef.current.getBoundingClientRect().y,
+                  projectsRef.current.getBoundingClientRect().y,
+                  blogRef.current.getBoundingClientRect().y,
+                ];
+                setCurrentFormat(item.format);
+                containerRef.current.scrollTo(
+                  0,
+                  actualPositions(relativePositions)[index],
+                );
+              }}
+              style={item.navItemStyle}
+            >
+              {item.displayText}
+            </button>
+          </div>
+        ))}
+      </div>
+      )}
+    </div>
+  );
+};
+Sidebar.propTypes = {
+  sideBarData: propTypes.array.isRequired,
+  landingDivRef: propTypes.object.isRequired,
+  profileRef: propTypes.object.isRequired,
+  experienceRef: propTypes.object.isRequired,
+  abilitiesRef: propTypes.object.isRequired,
+  projectsRef: propTypes.object.isRequired,
+  blogRef: propTypes.object.isRequired,
+  setCurrentFormat: propTypes.object.isRequired,
+  containerRef: propTypes.object.isRequired,
+};
