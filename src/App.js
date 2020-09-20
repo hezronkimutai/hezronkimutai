@@ -4,7 +4,7 @@ import './assets/css/App.scss';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import propTypes from 'prop-types';
-import LandingDiv, { CallToactionBtn } from './LandingDiv';
+import LandingDiv from './LandingDiv';
 import Profile from './Services';
 import Experiences from './Experiences';
 import Abilities from './Abilities';
@@ -69,7 +69,7 @@ const App = () => {
   return (
 
     <div
-      className="_container h-full w-full m-auto fixed"
+      className="_container h-full text-gray-800 w-full m-auto fixed"
       onScroll={() => {
         AOS.refresh();
       }}
@@ -123,7 +123,12 @@ const App = () => {
           containerRef={containerRef}
         />
         <div className="">
-          <CallToactionBtn className="transition font-semibold m-2 px-2 py-1 delay-150  text-gray-100 bg-orange-700 rounded duration-300 ease-in-out " onClick={() => 0} displayText="DONATE" />
+          {/* <CallToactionBtn
+          className=`transition
+          font-semibold m-2 px-2 py-1 delay-150
+          text-gray-100 bg-orange-700
+          rounded duration-300 ease-in-out`
+           onClick={() => 0} displayText="DONATE" /> */}
         </div>
       </div>
       <LandingDiv land={(e) => setLandingDivRef(e)} />

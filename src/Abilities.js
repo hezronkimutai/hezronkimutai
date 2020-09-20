@@ -48,7 +48,7 @@ const Abilities = ({ abl }) => {
       {/* <div
         data-aos="zoom-in"
         data-aos-delay="100"
-        data-aos-duration="1000"
+        data-aos-duration="700"
         className="abilitiesContainer"
       >
         <div className="abilitiesHeader">

@@ -32,17 +32,22 @@ const Abilities = ({ abl }) => {
   return (
     <div className="projects mx-auto w-11/12" id="abilities" ref={abilitiesRef}>
       <div
-        data-aos="zoom-in"
-        data-aos-delay="100"
-        data-aos-duration="1000"
+
         className="abilitiesContainer"
       >
-        <h1 className="w-1/2  mx-auto text-4xl text-center font-bold">Featured Works and case studies</h1>
+        <h1
+          data-aos="fade-down"
+          data-aos-delay="100"
+          data-aos-duration="700"
+          className="w-1/2  mx-auto text-4xl text-center font-bold"
+        >
+          Featured Works and case studies
+        </h1>
         {/* <div className="flex flex-row">
           <img
             data-aos="zoom-in"
             data-aos-delay="100"
-            data-aos-duration="1000"
+            data-aos-duration="700"
             style={{ width: '30%', height: '50%', margin: 'auto' }}
             src="https://res.cloudinary.com/hezzie/image/upload/v1600446790/imageedit_3_8141677005_oyxp66.png"
             alt="welcomePage"
@@ -56,7 +61,13 @@ const Abilities = ({ abl }) => {
           pageButtons={10}
           onePage={
           (item, index) => (
-            <div key={index} className="oneItem">
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="100"
+              data-aos-duration="700"
+              key={index}
+              className="oneItem"
+            >
               <a href={item.link} rel="noreferrer" target="_blank">
                 <img style={{ width: 300, height: 200 }} src={item.imageUrl} alt={item.link} />
               </a>
