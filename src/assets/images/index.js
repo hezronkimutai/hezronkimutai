@@ -8,7 +8,8 @@ import react from './react.png';
 import html from './html.png';
 import python from './python.png';
 import nodeJs from './nodejs.png';
+import contact from './contact.png';
 
 export default {
-  andela, eap, pmu, fiverr, noLogo, html, react, python, nodeJs, css3,
+  andela, eap, pmu, fiverr, noLogo, html, react, python, nodeJs, css3, contact,
 };

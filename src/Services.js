@@ -14,7 +14,8 @@ const services = [
     in the latest frontend technologies. I am an expert
      in building any specific technology that
     you have in mind.`,
-    links: [{ url: '', img: python }, { url: '', img: nodeJs }],
+    links: [{ url: '', img: react }, { url: '', img: html }, { url: '', img: css3 }],
+
   }, {
     name: 'Backend Development',
     description: `I have the experience you need 
@@ -22,8 +23,7 @@ const services = [
      with the new technologies and the most recent trends
       in backend web development. I make sure that my method 
       generates a finished product that is built to last.`,
-    links: [{ url: '', img: react }, { url: '', img: html }, { url: '', img: css3 }],
-
+    links: [{ url: '', img: python }, { url: '', img: nodeJs }],
   },
 ];
 const Profile = ({ prof }) => {
@@ -43,7 +43,7 @@ const Profile = ({ prof }) => {
           data-aos="fade-down"
           data-aos-delay="100"
           data-aos-duration="700"
-          className="w-1/2  mx-auto text-4xl text-center font-bold"
+          className="w-1/2  text-gray-700 mx-auto text-4xl text-center font-bold"
         >
           Services I offer
         </h1>

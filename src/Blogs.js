@@ -37,7 +37,7 @@ const Abilities = ({ abl }) => {
           data-aos="fade-down"
           data-aos-delay="100"
           data-aos-duration="700"
-          className="w-1/2  mx-auto text-4xl text-center font-bold"
+          className="w-1/2 text-gray-700 mx-auto text-4xl text-center font-bold"
         >
           Blogs
         </h1>

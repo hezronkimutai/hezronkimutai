@@ -49,7 +49,7 @@ const Experiences = ({ exp }) => {
           data-aos="fade-down"
           data-aos-delay="100"
           data-aos-duration="700"
-          className="w-1/2  mx-auto text-4xl text-center font-bold"
+          className="w-1/2 text-gray-700 mx-auto text-4xl text-center font-bold"
         >
           Experience
         </h1>
@@ -70,7 +70,7 @@ const Experiences = ({ exp }) => {
               >
                 <div className="flex flex-row">
                   <img className="w-10 h-10" src={service.img} alt={service.name} />
-                  <h1 className="font-bold mx-2 text-xl my-auto" style={{ }}>{service.name}</h1>
+                  <h1 className="font-bold mx-2 text-2xl my-auto" style={{ }}>{service.name}</h1>
                 </div>
                 <p className=" ">{service.description}</p>
               </div>

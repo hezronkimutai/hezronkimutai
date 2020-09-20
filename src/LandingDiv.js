@@ -21,7 +21,7 @@ const LandingDiv = ({ land }) => {
               data-aos="fade-right"
               data-aos-delay="100"
               data-aos-duration="700"
-              className="text-4xl mb-5 font-bold"
+              className="text-4xl text-gray-700 mb-5 font-bold"
             >
               Hezron Kimutai
             </h1>
@@ -29,13 +29,13 @@ const LandingDiv = ({ land }) => {
               data-aos="fade-right"
               data-aos-delay="100"
               data-aos-duration="700"
-              className="text-2xl font-semibold"
+              className="text-2xl text-gray-800 font-semibold"
             >
               Hi,
               <span role="img" aria-label="hi">👋</span>
               I am a FullStack Web developer, an open source enthusiast and a blogger
             </h1>
-            <CallToactionBtn className="transition   text-2xl font-semibold m-2 p-4 bg-blue-700 rounded text-gray-100 delay-150 duration-300 ease-in-out " onClick={() => 0} displayText="DOWNLOAD RESUME" />
+            <CallToactionBtn className="transition   text-2xl font-semibold m-2 p-3 px-4 bg-blue-700 rounded text-gray-100 delay-150 duration-300 ease-in-out " onClick={() => 0} displayText="RESUME" />
           </span>
         </div>
         <img

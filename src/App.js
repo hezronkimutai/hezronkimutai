@@ -4,7 +4,7 @@ import './assets/css/App.scss';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import propTypes from 'prop-types';
-import LandingDiv from './LandingDiv';
+import LandingDiv, { CallToactionBtn } from './LandingDiv';
 import Profile from './Services';
 import Experiences from './Experiences';
 import Abilities from './Abilities';
@@ -133,11 +133,14 @@ const App = () => {
       </div>
       <LandingDiv land={(e) => setLandingDivRef(e)} />
       <Profile prof={(e) => setProfileRef(e)} />
+      <Footer />
+      <Projects abl={(e) => setProjectsRef(e)} />
+      <section style={{ width: 'fit-content' }} className="mx-auto mb-5 mt-0">
+        <CallToactionBtn className="transition   text-2xl font-semibold m-1 p-3 bg-blue-700 rounded text-gray-100 delay-150 duration-300 ease-in-out " onClick={() => 0} displayText="HIRE ME" />
+      </section>
       <Experiences exp={(e) => setExperienceRef(e)} />
       <Abilities abl={(e) => setAbilitiesRef(e)} />
       <Blogs abl={(e) => setBlogRef(e)} />
-      <Projects abl={(e) => setProjectsRef(e)} />
-      <Footer />
 
     </div>
   );
@@ -157,21 +160,28 @@ const Sidebar = (props) => {
   return (
     <div className="flex w-11/12  justify-between m-auto flex-col">
       { !showSideBar && (
-      <button className="bg-transparent" style={{ background: 'transparent' }} onClick={() => setShowSideBar(!showSideBar)} type="button">
+      <button className="bg-transparent border-transparent" style={{ background: 'transparent', width: 'fit-content' }} onClick={() => setShowSideBar(!showSideBar)} type="button">
         {/* <CancelIcon /> */}
         {/* <ShowIcon /> */}
         <ListIcon />
       </button>
       )}
       { showSideBar && (
-      <div className="flex absolute justify-between m-auto flex-col">
-        <button className="bg-transparent" style={{ background: 'transparent' }} onClick={() => setShowSideBar(!showSideBar)} type="button">
+      <div className="flex absolute shadow px-4 py-2 bg-blue-700 text-white rounded justify-between m-auto flex-col">
+        <button
+          className="bg-transparent"
+          style={{
+            background: 'transparent', float: 'right', right: '0px', width: 'min-content',
+          }}
+          onClick={() => setShowSideBar(!showSideBar)}
+          type="button"
+        >
           <CancelIcon />
           {/* <ShowIcon />
           <ListIcon /> */}
         </button>
         {sideBarData.map((item, index) => (
-          <div className="_sidebar absol">
+          <div className="_sidebar absol w-full">
             <button
               type="button"
               onClick={() => {

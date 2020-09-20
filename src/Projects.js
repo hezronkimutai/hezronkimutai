@@ -39,7 +39,7 @@ const Abilities = ({ abl }) => {
           data-aos="fade-down"
           data-aos-delay="100"
           data-aos-duration="700"
-          className="w-1/2  mx-auto text-4xl text-center font-bold"
+          className="w-1/2  mx-auto text-4xl text-center text-gray-700  font-bold"
         >
           Featured Works and case studies
         </h1>
@@ -53,7 +53,7 @@ const Abilities = ({ abl }) => {
             alt="welcomePage"
           /> */}
         <Pagination
-          itemsPerPage={5}
+          itemsPerPage={3}
           activePageStyle={{ backgroundColor: '#00b9f2', color: 'white' }}
           next="next"
           prev="prev"
