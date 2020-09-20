@@ -15,6 +15,9 @@ import navDisplayData from './helpers/navActivestyle';
 import CancelIcon from './assets/icons/cancel';
 // import ShowIcon from './assets/icons/show';
 import ListIcon from './assets/icons/list';
+import images from './assets/images';
+
+const { github } = images;
 
 AOS.init({ delay: 10 });
 
@@ -122,18 +125,20 @@ const App = () => {
           setCurrentFormat={setCurrentFormat}
           containerRef={containerRef}
         />
-        <div className="">
+        <div className="flex flex-row">
           {/* <CallToactionBtn
           className=`transition
           font-semibold m-2 px-2 py-1 delay-150
           text-gray-100 bg-orange-700
           rounded duration-300 ease-in-out`
            onClick={() => 0} displayText="DONATE" /> */}
+          <a href="https://github.com/hezronkimutai/portfolio"><img className="w-8 h-8 mx-3" src={github} alt="github" /></a>
+          {/* <img className="w-8 h-8 mx-1" src={fork} alt="fork" /> */}
+
         </div>
       </div>
       <LandingDiv land={(e) => setLandingDivRef(e)} />
       <Profile prof={(e) => setProfileRef(e)} />
-      <Footer />
       <Projects abl={(e) => setProjectsRef(e)} />
       <section style={{ width: 'fit-content' }} className="mx-auto mb-5 mt-0">
         <CallToactionBtn className="transition   text-2xl font-semibold m-1 p-3 bg-blue-700 rounded text-gray-100 delay-150 duration-300 ease-in-out " onClick={() => 0} displayText="HIRE ME" />
@@ -141,7 +146,7 @@ const App = () => {
       <Experiences exp={(e) => setExperienceRef(e)} />
       <Abilities abl={(e) => setAbilitiesRef(e)} />
       <Blogs abl={(e) => setBlogRef(e)} />
-
+      <Footer />
     </div>
   );
 };

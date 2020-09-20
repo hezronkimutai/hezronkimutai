@@ -9,7 +9,9 @@ import html from './html.png';
 import python from './python.png';
 import nodeJs from './nodejs.png';
 import contact from './contact.png';
+import fork from './fork.png';
+import github from './github.png';
 
 export default {
-  andela, eap, pmu, fiverr, noLogo, html, react, python, nodeJs, css3, contact,
+  andela, eap, pmu, fiverr, noLogo, html, react, python, nodeJs, css3, contact, github, fork,
 };
