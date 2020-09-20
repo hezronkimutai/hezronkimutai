@@ -1,6 +1,12 @@
 import React, { useRef } from 'react';
 import propTypes from 'prop-types';
+import images from './assets/images';
 
+const {
+  html, react, python, nodeJs, css3,
+} = images;
+
+// const imgs = [css,html,]
 const services = [
   {
     name: 'Frontend Development',
@@ -8,6 +14,7 @@ const services = [
     in the latest frontend technologies. I am an expert
      in building any specific technology that
     you have in mind.`,
+    links: [{ url: '', img: python }, { url: '', img: nodeJs }],
   }, {
     name: 'Backend Development',
     description: `I have the experience you need 
@@ -15,6 +22,8 @@ const services = [
      with the new technologies and the most recent trends
       in backend web development. I make sure that my method 
       generates a finished product that is built to last.`,
+    links: [{ url: '', img: react }, { url: '', img: html }, { url: '', img: css3 }],
+
   },
 ];
 const Profile = ({ prof }) => {
@@ -36,7 +45,7 @@ const Profile = ({ prof }) => {
           data-aos-duration="700"
           className="w-1/2  mx-auto text-4xl text-center font-bold"
         >
-          Services
+          Services I offer
         </h1>
         <div className="flex flex-row">
           <img
@@ -52,17 +61,23 @@ const Profile = ({ prof }) => {
             data-aos-delay="100"
             data-aos-duration="700"
             // className="profileContainer"
-            className="flex flex-wrap justify-evenly"
+            className="flex flex-col justify-start"
           >
             {services.map((service) => (
               <div
                 data-aos="fade-left"
                 data-aos-delay="100"
                 data-aos-duration="700"
+                style={{ height: 'min-content' }}
                 className="m-2 p-2  w-full rounded bg-white "
               >
                 <h1 className="w-1/2 font-bold" style={{ }}>{service.name}</h1>
                 <p className=" ">{service.description}</p>
+                <div className="flex flex-row ">
+                  {
+                service.links.map((link) => <img className="h-10 mx-2 my-3 p-1 w-10" src={link.img} key={link.url} alt={link.url} />)
+                }
+                </div>
               </div>
             ))}
           </div>

@@ -110,7 +110,7 @@ const App = () => {
         }
       }}
     >
-      <div className="sidebar justify-between flex flex-row">
+      <div className="z-10 fixed w-full py-3 justify-between flex flex-row">
         <Sidebar
           sideBarData={sideBarData}
           landingDivRef={landingDivRef}
@@ -155,7 +155,7 @@ const Sidebar = (props) => {
   } = props;
   const [showSideBar, setShowSideBar] = useState(false);
   return (
-    <div className="flex  justify-between m-auto flex-col">
+    <div className="flex w-11/12  justify-between m-auto flex-col">
       { !showSideBar && (
       <button className="bg-transparent" style={{ background: 'transparent' }} onClick={() => setShowSideBar(!showSideBar)} type="button">
         {/* <CancelIcon /> */}

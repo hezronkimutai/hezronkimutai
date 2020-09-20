@@ -21,7 +21,7 @@ const LandingDiv = ({ land }) => {
               data-aos="fade-right"
               data-aos-delay="100"
               data-aos-duration="700"
-              className="text-4xl my-5 font-bold"
+              className="text-4xl mb-5 font-bold"
             >
               Hezron Kimutai
             </h1>
@@ -29,7 +29,7 @@ const LandingDiv = ({ land }) => {
               data-aos="fade-right"
               data-aos-delay="100"
               data-aos-duration="700"
-              className="text-xl font-semibold"
+              className="text-2xl font-semibold"
             >
               Hi,
               <span role="img" aria-label="hi">👋</span>
