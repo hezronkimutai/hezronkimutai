@@ -7,7 +7,7 @@ const LandingDiv = ({ land }) => {
   const landingDivRef = useRef();
   land(landingDivRef);
   return (
-    <div style={{ position: 'relative', minHeight: '90%' }} className="landingDiv " ref={landingDivRef}>
+    <div style={{ position: 'relative', minHeight: '90%' }} className="landingDiv mx-auto w-11/12" ref={landingDivRef}>
       {/* <div className="scroll-indicator">
         <div className="dots" />
       </div> */}

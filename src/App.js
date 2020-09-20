@@ -64,7 +64,7 @@ const App = () => {
   return (
 
     <div
-      className="_container h-full w-full m-auto fixed"
+      className="_container h-full w-full fixed"
       onScroll={() => {
         AOS.refresh();
       }}
@@ -105,7 +105,7 @@ const App = () => {
         }
       }}
     >
-      <div className="sidebar justify-between flex flex-row">
+      <div className="sidebar  mx-auto w-11/12 justify-between flex flex-row">
         <div className="flex justify-between m-auto flex-row">
           {/* {sideBarData.map((item, index) => (
             <div className="_sidebar">

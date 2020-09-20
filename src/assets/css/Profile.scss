@@ -1,16 +1,12 @@
 %profile {
   .profile {
-    margin: auto;
+    // margin: auto;
     // border-radius: 100px 100px 0% 0%;
-    float:right;
-    background-size: 30% auto;
-    background-repeat: no-repeat;
-    background-position: center left;
     .profileContainer {
       border-radius: 5px;
       height: auto !important;
       overflow-y: auto;
-      padding: 1%;
+      // padding: 1%;
       .detailsHeader {
         color: #031e39;
         div {

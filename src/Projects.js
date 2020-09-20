@@ -30,7 +30,7 @@ const Abilities = ({ abl }) => {
   const abilitiesRef = useRef();
   abl(abilitiesRef);
   return (
-    <div className="projects" id="abilities" ref={abilitiesRef}>
+    <div className="projects mx-auto w-11/12" id="abilities" ref={abilitiesRef}>
       <div
         data-aos="zoom-in"
         data-aos-delay="100"

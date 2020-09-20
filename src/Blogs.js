@@ -29,17 +29,26 @@ const Abilities = ({ abl }) => {
   const abilitiesRef = useRef();
   abl(abilitiesRef);
   return (
-    <div className="abilities" id="abilities" ref={abilitiesRef}>
+    <div className="abilities mx-auto w-11/12" id="abilities" ref={abilitiesRef}>
       <div
-        data-aos="zoom-in"
-        data-aos-delay="100"
-        data-aos-duration="1000"
-        className="profileContainer"
         style={{ overflow: 'visible' }}
       >
         <h1 className="w-1/2  mx-auto text-4xl text-center font-bold">Blogs</h1>
         <div className="flex flex-row">
-          <div className="flex flex-wrap justify-evenly">
+          <img
+            data-aos="zoom-in"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            style={{ width: '30%', margin: 'auto' }}
+            src="https://res.cloudinary.com/hezzie/image/upload/v1600565550/3236267_n45wja.jpg"
+            alt="welcomePage"
+          />
+          <div
+            data-aos="fade-right"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            className="flex flex-wrap justify-evenly"
+          >
             {services.map((service) => (
               <div className="m-2 p-2  w-full rounded bg-white shadow">
                 <h1 className="w-1/2 font-bold" style={{ }}>{service.name}</h1>
@@ -47,14 +56,6 @@ const Abilities = ({ abl }) => {
               </div>
             ))}
           </div>
-          <img
-            data-aos="zoom-in"
-            data-aos-delay="100"
-            data-aos-duration="1000"
-            style={{ width: '50%', height: '80%', margin: 'auto' }}
-            src="https://res.cloudinary.com/hezzie/image/upload/v1600446790/imageedit_3_8141677005_oyxp66.png"
-            alt="welcomePage"
-          />
         </div>
       </div>
     </div>
