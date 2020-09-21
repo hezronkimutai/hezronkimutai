@@ -4,7 +4,7 @@ import './assets/css/App.scss';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import propTypes from 'prop-types';
-import LandingDiv, { CallToactionBtn } from './LandingDiv';
+import LandingDiv from './LandingDiv';
 import Profile from './Services';
 import Experiences from './Experiences';
 import Abilities from './Abilities';
@@ -15,11 +15,9 @@ import navDisplayData from './helpers/navActivestyle';
 import CancelIcon from './assets/icons/cancel';
 // import ShowIcon from './assets/icons/show';
 import ListIcon from './assets/icons/list';
-import images from './assets/images';
+import images from './components/images';
 
 const { github } = images;
-
-AOS.init({ delay: 10 });
 
 const actualPositions = (arr) => arr.map((item) => {
   const res = item + Math.abs(Math.min(...arr));
@@ -43,7 +41,7 @@ const App = () => {
     },
     {
       navItemStyle: {},
-      displayText: 'Profile',
+      displayText: 'Services',
       format: [0, 1, 0, 0, 0, 0],
     },
     {
@@ -53,7 +51,7 @@ const App = () => {
     },
     {
       navItemStyle: {},
-      displayText: 'Abilities',
+      displayText: 'Why Me',
       format: [0, 0, 0, 1, 0, 0],
     },
     {
@@ -63,7 +61,7 @@ const App = () => {
     },
     {
       navItemStyle: {},
-      displayText: 'Blog',
+      displayText: 'Blogs',
       format: [0, 0, 0, 0, 0, 1],
     },
   ];
@@ -126,50 +124,13 @@ const App = () => {
           containerRef={containerRef}
         />
         <div className="flex flex-row">
-          {/* <CallToactionBtn
-          className=`transition
-          font-semibold m-2 px-2 py-1 delay-150
-          text-gray-100 bg-orange-700
-          rounded duration-300 ease-in-out`
-           onClick={() => 0} displayText="DONATE" /> */}
-          <a href="https://github.com/hezronkimutai/portfolio"><img className="w-8 h-8 mx-3" src={github} alt="github" /></a>
-          {/* <img className="w-8 h-8 mx-1" src={fork} alt="fork" /> */}
-
+          <a rel="noreferrer" href="https://github.com/hezronkimutai/portfolio" target="_blank"><img className="w-8 h-8 mx-3" src={github} alt="github" /></a>
         </div>
       </div>
       <LandingDiv land={(e) => setLandingDivRef(e)} />
       <Profile prof={(e) => setProfileRef(e)} />
       <Projects abl={(e) => setProjectsRef(e)} />
       <Experiences exp={(e) => setExperienceRef(e)} />
-      <section style={{ width: 'fit-content', backgroundColor: '#DEECF7' }} className="mx-auto py-8">
-        <h1
-          data-aos="fade-down"
-          data-aos-delay="100"
-          data-aos-duration="700"
-          className="w-1/2 text-gray-700 mx-auto text-4xl text-center font-bold"
-        >
-          WHY ME?
-        </h1>
-        <section style={{ }} className="mx-auto w-11/12 flex flex-row">
-          <img src="https://res.cloudinary.com/hezzie/image/upload/v1600694200/ezgif.com-gif-maker_bgs3rk.png" alt="hezronKimutai" className="h-48  my-auto" />
-          <div>
-            <h3 className="text-l">
-              Over the years, I have acquired relevant skills and experience,
-              which I shall bring to your organization.
-              I have also worked tirelessly on my
-              communication abilities and teamwork
-              skills, which I will put to use in my future career,
-              which would be in your organization if I am selected for the position.
-              I have given my 100% effort in my past
-              companies, and this has enabled me to
-              recognize my capabilities and limitations.
-              If I channelize them further, they will
-              bring fruitful results to me and also to your esteemed organization.
-            </h3>
-            <CallToactionBtn className="transition   text-2xl font-semibold m-1 p-3 bg-blue-700 rounded text-gray-100 delay-150 duration-300 ease-in-out " onClick={() => 0} displayText="HIRE ME" />
-          </div>
-        </section>
-      </section>
       <Abilities abl={(e) => setAbilitiesRef(e)} />
       <Blogs abl={(e) => setBlogRef(e)} />
       <Footer />
@@ -252,3 +213,4 @@ Sidebar.propTypes = {
   setCurrentFormat: propTypes.object.isRequired,
   containerRef: propTypes.object.isRequired,
 };
+AOS.init({ delay: 200, duration: 600 });

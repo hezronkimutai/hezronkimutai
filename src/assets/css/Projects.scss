@@ -1,37 +1,23 @@
+// @import 'App.scss';
+
+$breakpoint-tablet: 768px;
+
 %projects {
   .projects {
-// background-color: #f6f7e9;
-    // background-image: url('https://res.cloudinary.com/hezzie/image/upload/v1583314741/output-onlinepngtools_ricmka.png');
-    background-size: 30% 70%;
-    background-repeat: no-repeat;
-    //background-attachment: fixed;
-    background-position: right center;
-    // background-color: #DEECF7; 
-    // height: auto;
-    // min-height: 90%;
+ background-size: 30% 70%;
+      background-repeat: no-repeat;
+      background-position: right center;
     padding: 2%;
     width: 96%;
     margin: auto;
-    // border-radius: 10px;
-    // margin-top: 1%;
     .abilitiesContainer {
       border-radius: 5px;
-      // box-: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-      //   0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
-      //   0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-      //   0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
-      height: auto !important;
+     height: auto !important;
       overflow-y: auto;
-      //width: 68%;
-      //margin-right: 30%;
-      padding: 1%;
-
+  // padding: 1%;
       div {
-        // width: 70%;
-        // //margin-left: 30%;
         display: flex;
         flex-direction: row;
-        // justify-content: space-evenly;
       }
       .abilitiesHeader {
         width: 100%;
@@ -61,13 +47,18 @@
       flex-wrap: wrap;
       justify-content: space-evenly;
       .oneItem{
-        margin:20px 10px
+        margin:20px 10px;
+        width: 45%;
+        @media screen {
+        @media (max-width: $breakpoint-tablet) {
+          width: 100%;
+        }
+        }
   
       }
       .pagination-buttons{
         min-width: 100%;
-        
-        justify-content: center;
+justify-content: center;
         .arrows{
   
         }

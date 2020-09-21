@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import propTypes from 'prop-types';
 import Pagination from 'custom_react_pages';
-// import { NavLink } from 'react-router-dom';
 
 const projects = [
   {
@@ -30,30 +29,21 @@ const Abilities = ({ abl }) => {
   const abilitiesRef = useRef();
   abl(abilitiesRef);
   return (
-    <div className="projects mx-auto w-11/12" id="abilities" ref={abilitiesRef}>
+    <div className="projects mx-auto w-11/12 py-5" id="abilities" ref={abilitiesRef}>
       <div
 
         className="abilitiesContainer"
+        style={{ overflow: 'visible' }}
+
       >
         <h1
-          data-aos="fade-down"
-          data-aos-delay="100"
-          data-aos-duration="700"
+          data-aos="flip-right"
           className="w-1/2  mx-auto text-4xl text-center text-gray-700  font-bold"
         >
           Featured Works and case studies
         </h1>
-        {/* <div className="flex flex-row">
-          <img
-            data-aos="zoom-in"
-            data-aos-delay="100"
-            data-aos-duration="700"
-            style={{ width: '30%', height: '50%', margin: 'auto' }}
-            src="https://res.cloudinary.com/hezzie/image/upload/v1600446790/imageedit_3_8141677005_oyxp66.png"
-            alt="welcomePage"
-          /> */}
         <Pagination
-          itemsPerPage={3}
+          itemsPerPage={4}
           activePageStyle={{ backgroundColor: '#00b9f2', color: 'white' }}
           next="next"
           prev="prev"
@@ -61,22 +51,20 @@ const Abilities = ({ abl }) => {
           pageButtons={10}
           onePage={
           (item, index) => (
-            <div
+            <a
               data-aos="zoom-in"
-              data-aos-delay="100"
-              data-aos-duration="700"
               key={index}
-              className="oneItem w-full"
+              className="oneItem flex"
               style={{ backgroundColor: '#DEECF7' }}
+              href={item.link}
+              rel="noreferrer"
+              target="_blank"
             >
-              <a href={item.link} rel="noreferrer" target="_blank">
-                <img style={{ width: 300, height: 200 }} src={item.imageUrl} alt={item.link} />
-              </a>
-            </div>
+              <img className="w-56 h-56" src={item.imageUrl} alt={item.link} />
+            </a>
           )
 }
         />
-        {/* </div> */}
       </div>
     </div>
   );

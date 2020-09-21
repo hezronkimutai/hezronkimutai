@@ -1,12 +1,11 @@
 import React, { useRef } from 'react';
 import propTypes from 'prop-types';
-import images from './assets/images';
+import images from './components/images';
 
 const {
   html, react, python, nodeJs, css3,
 } = images;
 
-// const imgs = [css,html,]
 const services = [
   {
     name: 'Frontend Development',
@@ -31,43 +30,33 @@ const Profile = ({ prof }) => {
   prof(profileRef);
   return (
     <div
-      className="profile mx-auto w-11/12"
+      className="profile py-5 mx-auto w-11/12"
       id="profile"
       ref={profileRef}
     >
       <div
-
         style={{ overflow: 'visible' }}
       >
         <h1
-          data-aos="fade-down"
-          data-aos-delay="100"
-          data-aos-duration="700"
+          data-aos="flip-right"
           className="w-1/2  text-gray-700 mx-auto text-4xl text-center font-bold"
         >
           Services I offer
         </h1>
         <div className="flex flex-row">
           <img
-            // data-aos="zoom-in"
-            // data-aos-delay="100"
-            // data-aos-duration="700"
             style={{ width: '30%', margin: 'auto' }}
             src="https://res.cloudinary.com/hezzie/image/upload/v1600443473/3937434_dygngh.jpg"
             alt="welcomePage"
           />
           <div
             data-aos="fade-left"
-            data-aos-delay="100"
-            data-aos-duration="700"
-            // className="profileContainer"
             className="flex flex-col justify-start"
           >
             {services.map((service) => (
               <div
                 data-aos="fade-left"
-                data-aos-delay="100"
-                data-aos-duration="700"
+
                 style={{ height: 'min-content' }}
                 className="m-2 p-2  w-full rounded bg-white "
               >

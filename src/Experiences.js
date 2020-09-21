@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import propTypes from 'prop-types';
-import images from './assets/images';
+import images from './components/images';
 
 const {
   andela, eap, pmu, fiverr, noLogo,
@@ -41,14 +41,13 @@ const Experiences = ({ exp }) => {
   const experienceRef = useRef();
   exp(experienceRef);
   return (
-    <div className="profile mx-auto w-11/12" id="experiences" ref={experienceRef}>
+    <div className="profile mx-auto py-5 w-11/12" id="experiences" ref={experienceRef}>
       <div
         style={{ overflow: 'visible' }}
       >
         <h1
-          data-aos="fade-down"
-          data-aos-delay="100"
-          data-aos-duration="700"
+          data-aos="flip-right"
+
           className="w-1/2 text-gray-700 mx-auto text-4xl text-center font-bold"
         >
           Experience
@@ -56,16 +55,14 @@ const Experiences = ({ exp }) => {
         <div className="flex flex-row">
           <div
             // data-aos="fade-right"
-            // data-aos-delay="100"
-            // data-aos-duration="700"
+            //
+            //
             // className="profileContainer"
             className="flex flex-wrap justify-evenly"
           >
             {services.map((service) => (
               <div
                 data-aos="fade-right"
-                data-aos-delay="100"
-                data-aos-duration="700"
                 className="m-2 p-2  w-full rounded bg-white"
               >
                 <div className="flex flex-row">
@@ -77,11 +74,11 @@ const Experiences = ({ exp }) => {
             ))}
           </div>
           <img
-            data-aos="zoom-in"
-            data-aos-delay="100"
-            data-aos-duration="700"
+            // data-aos="zoom-in"
+            //
+            //
             style={{ width: '30%', margin: 'auto' }}
-            src="https://res.cloudinary.com/hezzie/image/upload/v1600443475/343320-PALLZR-795_xkzgus.jpg"
+            src="https://res.cloudinary.com/hezzie/image/upload/v1600446377/343320-PALLZR-795_2_rvvkyb.jpg"
             alt="welcomePage"
           />
         </div>
