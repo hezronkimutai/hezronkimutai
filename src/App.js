@@ -140,10 +140,36 @@ const App = () => {
       <LandingDiv land={(e) => setLandingDivRef(e)} />
       <Profile prof={(e) => setProfileRef(e)} />
       <Projects abl={(e) => setProjectsRef(e)} />
-      <section style={{ width: 'fit-content' }} className="mx-auto mb-5 mt-0">
-        <CallToactionBtn className="transition   text-2xl font-semibold m-1 p-3 bg-blue-700 rounded text-gray-100 delay-150 duration-300 ease-in-out " onClick={() => 0} displayText="HIRE ME" />
-      </section>
       <Experiences exp={(e) => setExperienceRef(e)} />
+      <section style={{ width: 'fit-content', backgroundColor: '#DEECF7' }} className="mx-auto py-8">
+        <h1
+          data-aos="fade-down"
+          data-aos-delay="100"
+          data-aos-duration="700"
+          className="w-1/2 text-gray-700 mx-auto text-4xl text-center font-bold"
+        >
+          WHY ME?
+        </h1>
+        <section style={{ }} className="mx-auto w-11/12 flex flex-row">
+          <img src="https://res.cloudinary.com/hezzie/image/upload/v1600694200/ezgif.com-gif-maker_bgs3rk.png" alt="hezronKimutai" className="h-48  my-auto" />
+          <div>
+            <h3 className="text-l">
+              Over the years, I have acquired relevant skills and experience,
+              which I shall bring to your organization.
+              I have also worked tirelessly on my
+              communication abilities and teamwork
+              skills, which I will put to use in my future career,
+              which would be in your organization if I am selected for the position.
+              I have given my 100% effort in my past
+              companies, and this has enabled me to
+              recognize my capabilities and limitations.
+              If I channelize them further, they will
+              bring fruitful results to me and also to your esteemed organization.
+            </h3>
+            <CallToactionBtn className="transition   text-2xl font-semibold m-1 p-3 bg-blue-700 rounded text-gray-100 delay-150 duration-300 ease-in-out " onClick={() => 0} displayText="HIRE ME" />
+          </div>
+        </section>
+      </section>
       <Abilities abl={(e) => setAbilitiesRef(e)} />
       <Blogs abl={(e) => setBlogRef(e)} />
       <Footer />

@@ -66,7 +66,8 @@ const Abilities = ({ abl }) => {
               data-aos-delay="100"
               data-aos-duration="700"
               key={index}
-              className="oneItem"
+              className="oneItem w-full"
+              style={{ backgroundColor: '#DEECF7' }}
             >
               <a href={item.link} rel="noreferrer" target="_blank">
                 <img style={{ width: 300, height: 200 }} src={item.imageUrl} alt={item.link} />
