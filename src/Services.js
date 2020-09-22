@@ -39,19 +39,20 @@ const Profile = ({ prof }) => {
       >
         <h1
           data-aos="flip-right"
-          className="w-1/2  text-gray-700 mx-auto text-4xl text-center font-bold"
+          className="text-gray-700 mx-auto text-4xl text-center font-bold"
         >
           Services I offer
         </h1>
         <div className="flex flex-row">
           <img
+            className="servicesLeft"
             style={{ width: '30%', margin: 'auto' }}
             src="https://res.cloudinary.com/hezzie/image/upload/v1600443473/3937434_dygngh.jpg"
             alt="welcomePage"
           />
           <div
-            data-aos="fade-left"
-            className="flex flex-col justify-start"
+            // data-aos="fade-left"
+            className="flex servicesRight flex-col justify-start"
           >
             {services.map((service) => (
               <div

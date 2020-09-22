@@ -6,17 +6,17 @@ const Abilities = ({ abl }) => {
   const abilitiesRef = useRef();
   abl(abilitiesRef);
   return (
-    <div className="" id="" ref={abilitiesRef}>
-      <section style={{ width: 'fit-content', backgroundColor: '#DEECF7' }} className="mx-auto py-8">
+    <div className="abilities" id="" ref={abilitiesRef}>
+      <div style={{ width: 'fit-content', backgroundColor: '#DEECF7' }} className="mx-auto py-8">
         <h1
           data-aos="flip-right"
-          className="w-1/2 text-gray-700 mx-auto text-4xl text-center font-bold"
+          className="text-gray-700 mx-auto text-4xl text-center font-bold"
         >
           WHY ME?
         </h1>
-        <section style={{ }} className="mx-auto w-11/12 flex flex-row">
-          <img src="https://res.cloudinary.com/hezzie/image/upload/v1600694200/ezgif.com-gif-maker_bgs3rk.png" alt="hezronKimutai" className="h-48  my-auto" />
-          <div>
+        <div style={{ }} className="mx-auto w-11/12 flex flex-row">
+          <img className="whyMeLeft h-48  my-auto" src="https://res.cloudinary.com/hezzie/image/upload/v1600694200/ezgif.com-gif-maker_bgs3rk.png" alt="hezronKimutai" />
+          <div className="whyMeRight">
             <h3
               className="text-l"
               data-aos="fade-left"
@@ -35,8 +35,8 @@ const Abilities = ({ abl }) => {
             </h3>
             <CallToactionBtn className="   text-2xl font-semibold m-1 p-3 bg-blue-700 rounded text-gray-100 delay-150 duration-300 ease-in-out " onClick={() => 0} displayText="HIRE ME" />
           </div>
-        </section>
-      </section>
+        </div>
+      </div>
 
     </div>
   );

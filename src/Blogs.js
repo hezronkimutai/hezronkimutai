@@ -35,7 +35,7 @@ const Abilities = ({ abl }) => {
       >
         <h1
           data-aos="flip-right"
-    
+
           className="w-1/2 text-gray-700 mx-auto text-4xl text-center font-bold"
         >
           Blogs
@@ -58,8 +58,8 @@ const Abilities = ({ abl }) => {
           </div>
           <img
             // data-aos="zoom-in"
-            // 
-            // 
+            //
+            //
             style={{ width: '30%', margin: 'auto' }}
             src="https://res.cloudinary.com/hezzie/image/upload/v1600565550/3236267_n45wja.jpg"
             alt="welcomePage"

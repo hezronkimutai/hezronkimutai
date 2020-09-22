@@ -7,7 +7,7 @@ const {
 } = images;
 const services = [
   {
-    name: 'PickMeUp Technologies Inc',
+    name: 'PickMeUp Technologies',
     description: `Worked with, 
     Typescript to build microservices
      communicating via AMQP(RabitMq) and Http.`,
@@ -48,7 +48,7 @@ const Experiences = ({ exp }) => {
         <h1
           data-aos="flip-right"
 
-          className="w-1/2 text-gray-700 mx-auto text-4xl text-center font-bold"
+          className="text-gray-700 mx-auto text-4xl text-center font-bold"
         >
           Experience
         </h1>
@@ -58,7 +58,7 @@ const Experiences = ({ exp }) => {
             //
             //
             // className="profileContainer"
-            className="flex flex-wrap justify-evenly"
+            className="flex flex-wrap justify-evenly experienceLeft"
           >
             {services.map((service) => (
               <div
@@ -77,6 +77,7 @@ const Experiences = ({ exp }) => {
             // data-aos="zoom-in"
             //
             //
+            className="experienceRight"
             style={{ width: '30%', margin: 'auto' }}
             src="https://res.cloudinary.com/hezzie/image/upload/v1600446377/343320-PALLZR-795_2_rvvkyb.jpg"
             alt="welcomePage"

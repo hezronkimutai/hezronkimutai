@@ -95,15 +95,15 @@ body {
       // display: flex;
       // flex-direction: column;
       height: 100%;
-      overflow-y: scroll;
-      overflow-x: hidden;
+      overflow-y: auto;
+      // overflow-x: hidden;
       // background-color: #031e39;
       // background-image: url('https://res.cloudinary.com/hezzie/image/upload/v1600322845/oie_XGxfKSGKRnM7_qvcefo.jpg');
       background-size: 100% 100%;
       background-repeat: no-repeat;
       //background-attachment: fixed;
       background-blend-mode: overlay;
-      scroll-behavior: smooth;
+      // scroll-behavior: smooth;
       @extend %landingDiv;
       @extend %profile;
       @extend %experiences;

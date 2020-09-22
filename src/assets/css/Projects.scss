@@ -1,6 +1,5 @@
 // @import 'App.scss';
 
-$breakpoint-tablet: 768px;
 
 %projects {
   .projects {
@@ -50,10 +49,10 @@ $breakpoint-tablet: 768px;
         margin:20px 10px;
         width: 45%;
         @media screen {
-        @media (max-width: $breakpoint-tablet) {
-          width: 100%;
-        }
-        }
+          @media (max-width: $breakpoint-tablet) {
+            width: 100%;
+          }
+          }
   
       }
       .pagination-buttons{

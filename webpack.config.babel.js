@@ -20,7 +20,7 @@ const webpack = {
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
-        include: path.resolve(__dirname, 'src'),
+        include: path.resolve(__dirname, './src/assets'),
         use: [
           {
             loader: 'file-loader',

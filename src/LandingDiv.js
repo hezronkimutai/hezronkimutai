@@ -32,6 +32,7 @@ const LandingDiv = ({ land }) => {
           </span>
         </div>
         <img
+          className="right"
           style={{ width: '50%', margin: 'auto' }}
           src="https://res.cloudinary.com/hezzie/image/upload/v1600446790/imageedit_3_8141677005_oyxp66.png"
           alt="welcomePage"

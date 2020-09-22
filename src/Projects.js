@@ -38,7 +38,7 @@ const Abilities = ({ abl }) => {
       >
         <h1
           data-aos="flip-right"
-          className="w-1/2  mx-auto text-4xl text-center text-gray-700  font-bold"
+          className="mx-auto text-4xl text-center text-gray-700  font-bold"
         >
           Featured Works and case studies
         </h1>

@@ -71,11 +71,13 @@ const App = () => {
 
     <div
       className="_container h-full text-gray-800 w-full m-auto fixed"
-      onScroll={() => {
-        AOS.refresh();
-      }}
+      // onScroll={() => {
+      //   AOS.refresh();
+      // }}
       ref={containerRef}
-      onScrollCapture={() => {
+      onScrollCapture={(e) => {
+        e.preventDefault();
+        AOS.refresh();
         if (
           experienceRef.current.getBoundingClientRect().y < 500
             && experienceRef.current.getBoundingClientRect().y > 0

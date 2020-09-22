@@ -2,11 +2,44 @@
   .profile {
     // margin: auto;
     // border-radius: 100px 100px 0% 0%;
+    >div{
+      .experienceLeft{
+        @media screen {
+          @media (max-width: $breakpoint-tablet) {
+            width:100%;
+            height: 100%;
+          }
+          }
+      }
+      .experienceRight{
+        @media screen {
+          @media (max-width: $breakpoint-tablet) {
+      display:none;
+      height: 0px;		}
+          }
+      }
+      .servicesRight{
+        @media screen {
+          @media (max-width: $breakpoint-tablet) {
+            width:100%;
+            height: 100%;
+          }
+          }
+      }
+      .servicesLeft{
+        @media screen {
+          @media (max-width: $breakpoint-tablet) {
+      display:none;
+      height: 0px;		}
+          }
+      }
+    }
     .profileContainer {
       border-radius: 5px;
       height: auto !important;
       overflow-y: auto;
       // padding: 1%;
+  
       .detailsHeader {
         color: #031e39;
         div {
