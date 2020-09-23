@@ -44,7 +44,7 @@ const Abilities = ({ abl }) => {
 
           <div
 
-            className="flex flex-wrap justify-evenly"
+            className="flex flex-wrap justify-start"
           >
             {services.map((service) => (
               <div

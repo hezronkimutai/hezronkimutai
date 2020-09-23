@@ -68,52 +68,8 @@ const App = () => {
   const containerRef = useRef();
   const sideBarData = navDisplayData(currentFormat, navData);
   return (
-
-    <div
-      className="_container text-gray-800 w-full m-auto"
-      // onScroll={() => {
-      //   AOS.refresh();
-      // }}
-      ref={containerRef}
-      onScrollCapture={(e) => {
-        e.preventDefault();
-        AOS.refresh();
-        if (
-          experienceRef.current.getBoundingClientRect().y < 500
-            && experienceRef.current.getBoundingClientRect().y > 0
-        ) {
-          setCurrentFormat([0, 0, 1, 0, 0, 0]);
-        }
-        if (
-          profileRef.current.getBoundingClientRect().y < 150
-            && profileRef.current.getBoundingClientRect().y > 0
-        ) {
-          setCurrentFormat([0, 1, 0, 0, 0, 0]);
-        }
-        if (
-          abilitiesRef.current.getBoundingClientRect().y < 500
-            && abilitiesRef.current.getBoundingClientRect().y > 0
-        ) {
-          setCurrentFormat([0, 0, 0, 1, 0, 0]);
-        }
-        if (
-          projectsRef.current.getBoundingClientRect().y < 500
-            && projectsRef.current.getBoundingClientRect().y > 0
-        ) {
-          setCurrentFormat([0, 0, 0, 0, 1, 0]);
-        }
-        if (
-          blogRef.current.getBoundingClientRect().y < 500
-            && blogRef.current.getBoundingClientRect().y > 0
-        ) {
-          setCurrentFormat([0, 0, 0, 0, 0, 1]);
-        }
-        if (landingDivRef.current.getBoundingClientRect().y > -50) {
-          setCurrentFormat([1, 0, 0, 0, 0, 0]);
-        }
-      }}
-    >
-      <div style={{ position: 'sticky', top: '0px' }} className="z-10 w-full py-3 justify-between flex flex-row">
+    <>
+      <div style={{ width: '98%' }} className="z-10 fixed py-3 justify-between flex flex-row">
         <Sidebar
           sideBarData={sideBarData}
           landingDivRef={landingDivRef}
@@ -129,14 +85,60 @@ const App = () => {
           <a rel="noreferrer" href="https://github.com/hezronkimutai/portfolio" target="_blank"><img className="w-8 h-8 mx-3" src={github} alt="github" /></a>
         </div>
       </div>
-      <LandingDiv land={(e) => setLandingDivRef(e)} />
-      <Profile prof={(e) => setProfileRef(e)} />
-      <Projects abl={(e) => setProjectsRef(e)} />
-      <Experiences exp={(e) => setExperienceRef(e)} />
-      <Abilities abl={(e) => setAbilitiesRef(e)} />
-      <Blogs abl={(e) => setBlogRef(e)} />
-      <Footer />
-    </div>
+      <div
+        className="_container text-gray-800 w-full m-auto"
+      // onScroll={() => {
+      //   AOS.refresh();
+      // }}
+        ref={containerRef}
+        onScrollCapture={(e) => {
+          e.preventDefault();
+          AOS.refresh();
+          if (
+            experienceRef.current.getBoundingClientRect().y < 500
+            && experienceRef.current.getBoundingClientRect().y > 0
+          ) {
+            setCurrentFormat([0, 0, 1, 0, 0, 0]);
+          }
+          if (
+            profileRef.current.getBoundingClientRect().y < 150
+            && profileRef.current.getBoundingClientRect().y > 0
+          ) {
+            setCurrentFormat([0, 1, 0, 0, 0, 0]);
+          }
+          if (
+            abilitiesRef.current.getBoundingClientRect().y < 500
+            && abilitiesRef.current.getBoundingClientRect().y > 0
+          ) {
+            setCurrentFormat([0, 0, 0, 1, 0, 0]);
+          }
+          if (
+            projectsRef.current.getBoundingClientRect().y < 500
+            && projectsRef.current.getBoundingClientRect().y > 0
+          ) {
+            setCurrentFormat([0, 0, 0, 0, 1, 0]);
+          }
+          if (
+            blogRef.current.getBoundingClientRect().y < 500
+            && blogRef.current.getBoundingClientRect().y > 0
+          ) {
+            setCurrentFormat([0, 0, 0, 0, 0, 1]);
+          }
+          if (landingDivRef.current.getBoundingClientRect().y > -50) {
+            setCurrentFormat([1, 0, 0, 0, 0, 0]);
+          }
+        }}
+      >
+
+        <LandingDiv land={(e) => setLandingDivRef(e)} />
+        <Profile prof={(e) => setProfileRef(e)} />
+        <Projects abl={(e) => setProjectsRef(e)} />
+        <Experiences exp={(e) => setExperienceRef(e)} />
+        <Abilities abl={(e) => setAbilitiesRef(e)} />
+        <Blogs abl={(e) => setBlogRef(e)} />
+        <Footer />
+      </div>
+    </>
   );
 };
 
@@ -152,7 +154,7 @@ const Sidebar = (props) => {
   } = props;
   const [showSideBar, setShowSideBar] = useState(false);
   return (
-    <div className="flex w-11/12  justify-between m-auto flex-col">
+    <div className="flex justify-between flex-col">
       { !showSideBar && (
       <button className="bg-transparent border-transparent" style={{ background: 'transparent', width: 'fit-content' }} onClick={() => setShowSideBar(!showSideBar)} type="button">
         {/* <CancelIcon /> */}
