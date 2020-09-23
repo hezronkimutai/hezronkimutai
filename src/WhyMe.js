@@ -6,8 +6,8 @@ const Abilities = ({ abl }) => {
   const abilitiesRef = useRef();
   abl(abilitiesRef);
   return (
-    <div className="abilities" id="" ref={abilitiesRef}>
-      <div style={{ width: 'fit-content', backgroundColor: '#DEECF7' }} className="mx-auto py-8">
+    <div className="" id="" ref={abilitiesRef}>
+      <div style={{ backgroundColor: '#DEECF7' }} className="mx-auto py-8">
         <h1
           data-aos="flip-right"
           className="text-gray-700 mx-auto text-4xl text-center font-bold"

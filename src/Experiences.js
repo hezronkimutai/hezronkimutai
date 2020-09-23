@@ -41,23 +41,16 @@ const Experiences = ({ exp }) => {
   const experienceRef = useRef();
   exp(experienceRef);
   return (
-    <div className="profile mx-auto py-5 w-11/12" id="experiences" ref={experienceRef}>
-      <div
-        style={{ overflow: 'visible' }}
-      >
+    <div className="" id="" ref={experienceRef}>
+      <div className="mx-auto py-8">
         <h1
           data-aos="flip-right"
-
           className="text-gray-700 mx-auto text-4xl text-center font-bold"
         >
           Experience
         </h1>
-        <div className="flex flex-row">
+        <div style={{ }} className="mx-auto w-11/12 flex flex-row">
           <div
-            // data-aos="fade-right"
-            //
-            //
-            // className="profileContainer"
             className="flex flex-wrap justify-evenly experienceLeft"
           >
             {services.map((service) => (
@@ -73,6 +66,7 @@ const Experiences = ({ exp }) => {
               </div>
             ))}
           </div>
+          {' '}
           <img
             // data-aos="zoom-in"
             //
@@ -85,6 +79,7 @@ const Experiences = ({ exp }) => {
         </div>
       </div>
     </div>
+
   );
 };
 Experiences.propTypes = {

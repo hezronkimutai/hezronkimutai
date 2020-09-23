@@ -31,43 +31,35 @@
     transform: translateY(-5px);
   }
 }
-
-// @import url('https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
 * {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300 ;
   line-height: 1.4;
-  animation-name: bounce; /* referring directly to the animation's @keyframe declaration */
-  animation-duration: 1s; /* don't forget to set a duration! */
-
+  animation-name: bounce;
+  animation-duration: 1s;
 }
 ::-webkit-scrollbar {
   width: 0px;
-  background: transparent; /* make scrollbar transparent */
+  background: transparent;
+}
+html{
+  margin: 0px;
+  width: 100%;
+    height: 100%;
 }
 body {
   margin: 0px;
   width: 100%;
     height: 100%;
   #app {
-    width: 100%;
-    height: 100%;
+    width: 98%;
+    overflow: hidden;
+    margin:auto;
+    // height: 100%;
     ._container {
-      // border-radius: 40px 40px 40px 40px;
-      // height: 100%;
-      // position: fixed;
-
       .sidebar {
-        // display: flex;
-        // flex-direction: row;
         min-height: 40px !important;
-    // justify-content: flex-end;
         color: #f6f7e9;
-        // background-color: #f6f7e9;
-        // opacity: 0.4;
         position: sticky;
         top: 0;
         z-index: 999;
@@ -89,21 +81,6 @@ body {
           }
         }
       }
-      // position: fixed;
-      // padding: 0px;
-      // margin: 0px;
-      // display: flex;
-      // flex-direction: column;
-      height: 100%;
-      overflow-y: auto;
-      // overflow-x: hidden;
-      // background-color: #031e39;
-      // background-image: url('https://res.cloudinary.com/hezzie/image/upload/v1600322845/oie_XGxfKSGKRnM7_qvcefo.jpg');
-      background-size: 100% 100%;
-      background-repeat: no-repeat;
-      //background-attachment: fixed;
-      background-blend-mode: overlay;
-      // scroll-behavior: smooth;
       @extend %landingDiv;
       @extend %profile;
       @extend %experiences;
@@ -114,4 +91,36 @@ body {
   }
 }
 
+
+
+.experienceLeft{
+  @media screen {
+    @media (max-width: $breakpoint-tablet) {
+      width:100%;
+      height: 100%;
+    }
+    }
+}
+.experienceRight{
+  @media screen {
+    @media (max-width: $breakpoint-tablet) {
+display:none;
+height: 0px;		}
+    }
+}
+.servicesRight{
+  @media screen {
+    @media (max-width: $breakpoint-tablet) {
+      width:100%;
+      height: 100%;
+    }
+    }
+}
+.servicesLeft{
+  @media screen {
+    @media (max-width: $breakpoint-tablet) {
+display:none;
+height: 0px;		}
+    }
+}
 

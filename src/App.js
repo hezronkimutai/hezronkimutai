@@ -7,7 +7,7 @@ import propTypes from 'prop-types';
 import LandingDiv from './LandingDiv';
 import Profile from './Services';
 import Experiences from './Experiences';
-import Abilities from './Abilities';
+import Abilities from './WhyMe';
 import Projects from './Projects';
 import Blogs from './Blogs';
 import Footer from './Footer';
@@ -70,7 +70,7 @@ const App = () => {
   return (
 
     <div
-      className="_container h-full text-gray-800 w-full m-auto fixed"
+      className="_container text-gray-800 w-full m-auto"
       // onScroll={() => {
       //   AOS.refresh();
       // }}
@@ -113,7 +113,7 @@ const App = () => {
         }
       }}
     >
-      <div className="z-10 fixed w-full py-3 justify-between flex flex-row">
+      <div style={{ position: 'sticky', top: '0px' }} className="z-10 w-full py-3 justify-between flex flex-row">
         <Sidebar
           sideBarData={sideBarData}
           landingDivRef={landingDivRef}
