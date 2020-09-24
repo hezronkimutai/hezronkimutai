@@ -15,7 +15,7 @@ const Abilities = ({ abl }) => {
           WHY ME?
         </h1>
         <div style={{ }} className="mx-auto w-11/12 flex flex-row">
-          <img className="whyMeLeft h-48  my-auto" src="https://res.cloudinary.com/hezzie/image/upload/v1600694200/ezgif.com-gif-maker_bgs3rk.png" alt="hezronKimutai" />
+          <img className="whyMeLeft h-48  my-auto" src="https://res.cloudinary.com/hezzie/image/upload/v1600969619/imageedit_41_7430976344_lijyjt.png" alt="hezronKimutai" />
           <div className="whyMeRight">
             <h3
               className="text-l"

@@ -56,13 +56,10 @@ body {
   #app {
     width: 98%;
     overflow: hidden;
-    margin:auto;
-    height: 100%;
+    margin:auto; 
     ._container {
-      overflow-y: scroll;
-      scroll-behavior: smooth;
-      height: 100%;
-      position: absolute;
+
+      
       .sidebar {
         min-height: 40px !important;
         color: #f6f7e9;
@@ -130,3 +127,11 @@ height: 0px;		}
     }
 }
 
+.blogContainer{
+  width: 30%;
+  @media screen {
+   @media (max-width: $breakpoint-tablet) {
+     width: 100%;
+   }
+   }
+ }

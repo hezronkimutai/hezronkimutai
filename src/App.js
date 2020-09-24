@@ -11,7 +11,7 @@ import Abilities from './WhyMe';
 import Projects from './Projects';
 import Blogs from './Blogs';
 import Footer from './Footer';
-import navDisplayData from './helpers/navActivestyle';
+// import navDisplayData from './helpers/navActivestyle';
 import CancelIcon from './assets/icons/cancel';
 // import ShowIcon from './assets/icons/show';
 import ListIcon from './assets/icons/list';
@@ -32,7 +32,6 @@ const App = () => {
   const [projectsRef, setProjectsRef] = useState({});
   const [landingDivRef, setLandingDivRef] = useState({});
   const [blogRef, setBlogRef] = useState({});
-  console.log(currentFormat);
   const navData = [
     {
       navItemStyle: {},
@@ -65,12 +64,13 @@ const App = () => {
       format: [0, 0, 0, 0, 0, 1],
     },
   ];
+  console.log(currentFormat, navData);
   const containerRef = useRef();
-  const sideBarData = navDisplayData(currentFormat, navData);
+  // const sideBarData = navDisplayData(currentFormat, navData);
   return (
     <>
       <div style={{ width: '98%' }} className="z-10 fixed py-3 justify-between flex flex-row">
-        <Sidebar
+        {/* <Sidebar
           sideBarData={sideBarData}
           landingDivRef={landingDivRef}
           profileRef={profileRef}
@@ -80,7 +80,7 @@ const App = () => {
           blogRef={blogRef}
           setCurrentFormat={setCurrentFormat}
           containerRef={containerRef}
-        />
+        /> */}
         <div className="flex flex-row">
           <a rel="noreferrer" href="https://github.com/hezronkimutai/portfolio" target="_blank"><img className="w-8 h-8 mx-3" src={github} alt="github" /></a>
         </div>
