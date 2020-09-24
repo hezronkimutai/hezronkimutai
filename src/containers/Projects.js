@@ -1,7 +1,7 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import propTypes from 'prop-types';
 import Pagination from 'custom_react_pages';
-import Next from './assets/icons/next';
+import Next from '../components/icons/next';
 
 const projects = [
   {
@@ -36,7 +36,9 @@ const projects = [
 
 const Abilities = ({ abl }) => {
   const abilitiesRef = useRef();
-  abl(abilitiesRef);
+  useEffect(() => {
+    abl(abilitiesRef);
+  }, []);
   return (
     <div className="projects mx-auto w-11/12 py-5" id="abilities" ref={abilitiesRef}>
       <div

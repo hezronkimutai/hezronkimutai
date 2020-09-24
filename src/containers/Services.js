@@ -1,6 +1,7 @@
-import React, { useRef } from 'react';
+/* eslint-disable react/no-array-index-key */
+import React, { useEffect, useRef } from 'react';
 import propTypes from 'prop-types';
-import images from './components/images';
+import images from '../components/images';
 
 const {
   html, react, python, nodeJs, css3,
@@ -27,7 +28,9 @@ const services = [
 ];
 const Profile = ({ prof }) => {
   const profileRef = useRef();
-  prof(profileRef);
+  useEffect(() => {
+    prof(profileRef);
+  }, []);
   return (
     <div
       className="profile py-5 mx-auto w-11/12"
@@ -54,10 +57,10 @@ const Profile = ({ prof }) => {
             // data-aos="fade-left"
             className="flex servicesRight flex-col justify-start"
           >
-            {services.map((service) => (
+            {services.map((service, index) => (
               <div
                 data-aos="fade-left"
-
+                key={index}
                 style={{ height: 'min-content' }}
                 className="m-2 p-2  w-full rounded bg-white "
               >
@@ -65,7 +68,7 @@ const Profile = ({ prof }) => {
                 <p className=" ">{service.description}</p>
                 <div className="flex flex-row ">
                   {
-                service.links.map((link) => <img className="h-10 mx-2 my-3 p-1 w-10" src={link.img} key={link.url} alt={link.url} />)
+                service.links.map((link, key) => <img className="h-10 mx-2 my-3 p-1 w-10" src={link.img} key={key} alt={link.url} />)
                 }
                 </div>
               </div>

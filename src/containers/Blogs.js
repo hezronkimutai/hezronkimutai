@@ -1,4 +1,5 @@
-import React, { useRef } from 'react';
+/* eslint-disable react/no-array-index-key */
+import React, { useEffect, useRef } from 'react';
 import propTypes from 'prop-types';
 
 const services = [
@@ -26,7 +27,9 @@ const services = [
 ];
 const Abilities = ({ abl }) => {
   const abilitiesRef = useRef();
-  abl(abilitiesRef);
+  useEffect(() => {
+    abl(abilitiesRef);
+  }, []);
   return (
     <div className=" mx-auto w-11/12 py-5" id="blogs" ref={abilitiesRef}>
       <div
@@ -45,15 +48,16 @@ const Abilities = ({ abl }) => {
 
             className="flex flex-wrap justify-around"
           >
-            {services.map((service) => (
+            {services.map((service, index) => (
               <a
+                key={index}
                 className=" my-2 shadow blogContainer p-2 block  rounded"
                 data-aos="fade-left"
                 href={service.link}
                 target="_blank"
                 rel="noreferrer"
               >
-                <h1 className="w-1/2 font-bold" style={{ }}>{service.name}</h1>
+                <h1 className="font-bold" style={{ }}>{service.name}</h1>
                 <p className=" ">{service.description}</p>
               </a>
             ))}

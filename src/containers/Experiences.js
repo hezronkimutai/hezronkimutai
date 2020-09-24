@@ -1,6 +1,7 @@
-import React, { useRef } from 'react';
+/* eslint-disable react/no-array-index-key */
+import React, { useEffect, useRef } from 'react';
 import propTypes from 'prop-types';
-import images from './components/images';
+import images from '../components/images';
 
 const {
   andela, eap, pmu, fiverr, noLogo,
@@ -39,7 +40,9 @@ const services = [
 ];
 const Experiences = ({ exp }) => {
   const experienceRef = useRef();
-  exp(experienceRef);
+  useEffect(() => {
+    exp(experienceRef);
+  }, []);
   return (
     <div className="" id="" ref={experienceRef}>
       <div className="mx-auto py-8">
@@ -53,8 +56,9 @@ const Experiences = ({ exp }) => {
           <div
             className="flex flex-wrap justify-evenly experienceLeft"
           >
-            {services.map((service) => (
+            {services.map((service, index) => (
               <div
+                key={index}
                 data-aos="fade-right"
                 className="m-2 p-2 w-full rounded bg-white"
               >

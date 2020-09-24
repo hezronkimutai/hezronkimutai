@@ -1,11 +1,13 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import propTypes from 'prop-types';
 
 export const CallToactionBtn = ({ onClick, displayText, className }) => <button className={className} onClick={onClick} type="button">{displayText}</button>;
 
 const LandingDiv = ({ land }) => {
   const landingDivRef = useRef();
-  land(landingDivRef);
+  useEffect(() => {
+    land(landingDivRef);
+  }, []);
   return (
     <div className="landingDiv min-h-full relative mx-auto w-11/12" ref={landingDivRef}>
       <div className="welcome">

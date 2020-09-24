@@ -1,10 +1,12 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import propTypes from 'prop-types';
 import { CallToactionBtn } from './LandingDiv';
 
 const Abilities = ({ abl }) => {
   const abilitiesRef = useRef();
-  abl(abilitiesRef);
+  useEffect(() => {
+    abl(abilitiesRef);
+  }, []);
   return (
     <div className="" id="" ref={abilitiesRef}>
       <div style={{ backgroundColor: '#DEECF7' }} className="mx-auto py-8">
