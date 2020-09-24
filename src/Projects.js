@@ -1,27 +1,36 @@
 import React, { useRef } from 'react';
 import propTypes from 'prop-types';
 import Pagination from 'custom_react_pages';
+import Next from './assets/icons/next';
 
 const projects = [
   {
-    imageUrl: 'https://res.cloudinary.com/hezzie/image/upload/v1600258923/Screenshot_from_2020-09-16_13-36-47_zcowyb.png',
+    imageUrl: 'https://res.cloudinary.com/hezzie/image/upload/v1600904576/Screenshot_from_2020-09-24_01-42-03_svfftx.png',
     link: 'https://www.evenhelp.io/',
+    description: `EvenHelp is a platform that help people get their Resumes, and portfolios quickly at an affordable price, EvenHelp provides a variety of Resume and portfolio templates that you can choose from. It also provides a sub dormain for every portfolios which you can upgrade and use your own domain Name.
+    The future plan is to enable other developers create Resume and portfolio templates and sell it in EvenHelp platform`,
   },
   {
-    imageUrl: 'https://res.cloudinary.com/hezzie/image/upload/v1600258927/Screenshot_from_2020-09-16_13-36-09_zp0ppl.png',
+    imageUrl: 'https://res.cloudinary.com/hezzie/image/upload/v1600905050/goal_lgqofp.png',
     link: 'https://havascore.netlify.app/',
+    description: `EvenHelp is a platform that help people get their Resumes, and portfolios quickly at an affordable price, EvenHelp provides a variety of Resume and portfolio templates that you can choose from. It also provides a sub dormain for every portfolios which you can upgrade and use your own domain Name.
+    The future plan is to enable other developers create Resume and portfolio templates and sell it in EvenHelp platform`,
+
   },
+
   {
-    imageUrl: 'https://res.cloudinary.com/hezzie/image/upload/v1577619008/Screen_Shot_2019-12-29_at_13.26.26_reywu7.png',
-    link: 'https://barefoot-nomad-fn.herokuapp.com/',
-  },
-  {
-    imageUrl: 'https://res.cloudinary.com/hezzie/image/upload/v1600260449/Screenshot_from_2020-09-16_14-47-01_d2o4qz.png',
+    imageUrl: 'https://res.cloudinary.com/hezzie/image/upload/v1600905285/logo_zfkswk.png',
     link: 'https://spectaclecleanandfumigationservices.co.ke/',
+    description: `EvenHelp is a platform that help people get their Resumes, and portfolios quickly at an affordable price, EvenHelp provides a variety of Resume and portfolio templates that you can choose from. It also provides a sub dormain for every portfolios which you can upgrade and use your own domain Name.
+    The future plan is to enable other developers create Resume and portfolio templates and sell it in EvenHelp platform`,
+
   },
   {
     imageUrl: 'https://res.cloudinary.com/hezzie/image/upload/v1600260595/Screenshot_from_2020-09-16_14-49-19_jbnhre.png',
     link: 'http://speechdictionary.herokuapp.com/',
+    description: `EvenHelp is a platform that help people get their Resumes, and portfolios quickly at an affordable price, EvenHelp provides a variety of Resume and portfolio templates that you can choose from. It also provides a sub dormain for every portfolios which you can upgrade and use your own domain Name.
+    The future plan is to enable other developers create Resume and portfolio templates and sell it in EvenHelp platform`,
+
   },
 ];
 
@@ -43,10 +52,10 @@ const Abilities = ({ abl }) => {
           Featured Works and case studies
         </h1>
         <Pagination
-          itemsPerPage={4}
-          activePageStyle={{ backgroundColor: '#00b9f2', color: 'white' }}
-          next="next"
-          prev="prev"
+          itemsPerPage={2}
+          activePageStyle={{ backgroundColor: '#1d83d4', color: 'white' }}
+          next={<Next left={false} />}
+          prev={<Next left />}
           data={projects}
           pageButtons={10}
           onePage={
@@ -54,13 +63,14 @@ const Abilities = ({ abl }) => {
             <a
               data-aos="zoom-in"
               key={index}
-              className="oneItem flex"
-              style={{ backgroundColor: '#DEECF7' }}
+              className="oneItem shadow flex flex-row"
+              style={{}}
               href={item.link}
               rel="noreferrer"
               target="_blank"
             >
-              <img className="w-56 h-56" src={item.imageUrl} alt={item.link} />
+              <img className="w-24 mx-3 my-auto h-24" src={item.imageUrl} alt={item.link} />
+              <p className="p-2">{item.description}</p>
             </a>
           )
 }

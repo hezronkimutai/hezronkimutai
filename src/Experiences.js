@@ -66,11 +66,7 @@ const Experiences = ({ exp }) => {
               </div>
             ))}
           </div>
-          {' '}
           <img
-            // data-aos="zoom-in"
-            //
-            //
             className="experienceRight"
             style={{ width: '30%', margin: 'auto' }}
             src="https://res.cloudinary.com/hezzie/image/upload/v1600446377/343320-PALLZR-795_2_rvvkyb.jpg"

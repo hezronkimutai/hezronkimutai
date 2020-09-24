@@ -4,9 +4,11 @@
 %landingDiv {
 
   .landingDiv {
-    // background-color: azure;
+	// background-color: azure;
+	min-height: 100vh;
+
     .welcome{
-      width: 100%;
+	  width: 100%;
 display:flex;
 flex-direction: row;
 justify-content: space-between !important;

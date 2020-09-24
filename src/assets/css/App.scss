@@ -4,7 +4,9 @@
 @import 'Abilities.scss';
 @import 'Projects.scss';
 @import 'Footer.scss';
-
+button{
+  outline:none !important;
+}
 .animated {
   -webkit-animation-duration: .5s;
   animation-duration: .5s;
