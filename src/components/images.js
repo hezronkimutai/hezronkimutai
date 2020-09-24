@@ -11,7 +11,25 @@ import nodeJs from '../assets/images/nodejs.png';
 import contact from '../assets/images/contact.png';
 import fork from '../assets/images/fork.png';
 import github from '../assets/images/github.png';
+import linkedIn from '../assets/images/linkedIn.png';
+import facebook from '../assets/images/facebook.png';
+import twitter from '../assets/images/twitter.png';
 
 export default {
-  andela, eap, pmu, fiverr, noLogo, html, react, python, nodeJs, css3, contact, github, fork,
+  andela,
+  eap,
+  pmu,
+  fiverr,
+  noLogo,
+  html,
+  react,
+  python,
+  nodeJs,
+  css3,
+  contact,
+  github,
+  fork,
+  linkedIn,
+  facebook,
+  twitter,
 };
