@@ -29,7 +29,7 @@ const Abilities = ({ abl }) => {
   const abilitiesRef = useRef();
   abl(abilitiesRef);
   return (
-    <div className=" mx-auto w-11/12 py-5" id="abilities" ref={abilitiesRef}>
+    <div className=" mx-auto w-11/12 py-5" id="blogs" ref={abilitiesRef}>
       <div
         style={{ overflow: 'visible' }}
       >

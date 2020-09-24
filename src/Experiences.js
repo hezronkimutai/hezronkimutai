@@ -56,7 +56,7 @@ const Experiences = ({ exp }) => {
             {services.map((service) => (
               <div
                 data-aos="fade-right"
-                className="m-2 p-2  w-full rounded bg-white"
+                className="m-2 p-2 w-full rounded bg-white"
               >
                 <div className="flex flex-row">
                   <img className="w-10 h-10" src={service.img} alt={service.name} />

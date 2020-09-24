@@ -28,8 +28,7 @@ const LandingDiv = ({ land }) => {
               <span role="img" aria-label="hi">👋</span>
               I am a FullStack Web developer, an open source enthusiast and a blogger
             </h1>
-            <a className="   text-2xl font-semibold m-2 p-3 px-4 bg-blue-700 rounded text-gray-100 delay-150 duration-300 ease-in-out " href="https://docs.google.com/document/u/0/?usp=docs_web" download>Resume</a>
-            <CallToactionBtn className="   text-2xl font-semibold m-2 p-3 px-4 bg-blue-700 rounded text-gray-100 delay-150 duration-300 ease-in-out " onClick={() => 0} displayText="RESUME" />
+            <a className="   text-2xl font-semibold m-2 inline-block p-3 px-4 bg-blue-700 rounded text-gray-100 delay-150 duration-300 ease-in-out " href="/pdf/HezronKimutaiChelimo-Resume.pdf" download>Resume</a>
           </span>
         </div>
         <img
