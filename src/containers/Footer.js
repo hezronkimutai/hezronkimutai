@@ -3,7 +3,7 @@ import images from '../components/images';
 
 const {
   github, linkedIn, facebook, twitter, instagram,
-  stackoverflow,
+  stackoverflow, fiverr,
 } = images;
 
 const socialLinks = [{
@@ -24,6 +24,9 @@ const socialLinks = [{
 }, {
   link: 'https://stackoverflow.com/users/10624555/h-kim',
   imgUrl: stackoverflow,
+}, {
+  link: 'https://www.fiverr.com/sqkemboi',
+  imgUrl: fiverr,
 }];
 const App = () => (
   <div className="footer py-3 flex flex-row justify-center">

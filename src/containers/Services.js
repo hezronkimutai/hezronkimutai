@@ -57,7 +57,7 @@ const Profile = () => (
               style={{ height: 'min-content' }}
               className="m-2 p-2  w-full rounded bg-white "
             >
-              <h1 className="w-1/2 font-bold" style={{ }}>{service.name}</h1>
+              <h1 className="font-bold" style={{ }}>{service.name}</h1>
               <p className=" ">{service.description}</p>
               <div className="flex flex-row ">
                 {
