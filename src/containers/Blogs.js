@@ -1,6 +1,5 @@
 /* eslint-disable react/no-array-index-key */
-import React, { useEffect, useRef } from 'react';
-import propTypes from 'prop-types';
+import React from 'react';
 
 const services = [
   {
@@ -25,44 +24,39 @@ const services = [
     link: 'https://serverlogics.blogspot.com/2020/04/flask-app-connected-to-postgresql.html',
   },
 ];
-const Abilities = ({ abl }) => {
-  const abilitiesRef = useRef();
-  useEffect(() => {
-    abl(abilitiesRef);
-  }, []);
-  return (
-    <div className=" mx-auto w-11/12 py-5" id="blogs" ref={abilitiesRef}>
-      <div
-        style={{ overflow: 'visible' }}
+const Abilities = () => (
+  <div className=" mx-auto w-11/12 py-5" id="blogs">
+    <div
+      style={{ overflow: 'visible' }}
+    >
+      <h1
+        data-aos="flip-right"
+
+        className=" text-gray-700 mx-auto text-4xl text-center font-bold"
       >
-        <h1
-          data-aos="flip-right"
+        Blogs
+      </h1>
+      <div className="flex flex-row">
 
-          className=" text-gray-700 mx-auto text-4xl text-center font-bold"
+        <div
+
+          className="flex flex-wrap justify-around"
         >
-          Blogs
-        </h1>
-        <div className="flex flex-row">
-
-          <div
-
-            className="flex flex-wrap justify-around"
-          >
-            {services.map((service, index) => (
-              <a
-                key={index}
-                className=" my-2 shadow blogContainer p-2 block  rounded"
-                data-aos="fade-left"
-                href={service.link}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <h1 className="font-bold" style={{ }}>{service.name}</h1>
-                <p className=" ">{service.description}</p>
-              </a>
-            ))}
-          </div>
-          {/* <img
+          {services.map((service, index) => (
+            <a
+              key={index}
+              className=" my-2 shadow blogContainer p-2 block  rounded"
+              data-aos="fade-left"
+              href={service.link}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <h1 className="font-bold" style={{ }}>{service.name}</h1>
+              <p className=" ">{service.description}</p>
+            </a>
+          ))}
+        </div>
+        {/* <img
             // data-aos="zoom-in"
             //
             //
@@ -70,13 +64,11 @@ const Abilities = ({ abl }) => {
             src="https://res.cloudinary.com/hezzie/image/upload/v1600565550/3236267_n45wja.jpg"
             alt="welcomePage"
           /> */}
-        </div>
       </div>
     </div>
-  );
-};
+  </div>
+);
 Abilities.propTypes = {
-  abl: propTypes.func,
 };
 Abilities.defaultProps = {
   abl: null,

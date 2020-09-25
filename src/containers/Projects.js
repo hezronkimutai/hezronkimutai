@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from 'react';
-import propTypes from 'prop-types';
+import React from 'react';
 import Pagination from 'custom_react_pages';
 import Next from '../components/icons/next';
 
@@ -33,58 +32,43 @@ const projects = [
 
   },
 ];
+const onePage = (item, index) => (
+  <a
+    data-aos="zoom-in"
+    key={index}
+    className="oneItem shadow flex flex-row"
+    style={{}}
+    href={item.link}
+    rel="noreferrer"
+    target="_blank"
+  >
+    <img className="w-24 mx-3 my-auto h-24" src={item.imageUrl} alt={item.link} />
+    <p className="p-2">{item.description}</p>
+  </a>
+);
 
-const Abilities = ({ abl }) => {
-  const abilitiesRef = useRef();
-  useEffect(() => {
-    abl(abilitiesRef);
-  }, []);
-  return (
-    <div className="projects mx-auto w-11/12 py-5" id="abilities" ref={abilitiesRef}>
-      <div
-
-        className="abilitiesContainer"
-        style={{ overflow: 'visible' }}
-
+const Projects = () => (
+  <div className="projects mx-auto w-11/12 py-5" id="abilities">
+    <div
+      className="abilitiesContainer"
+      style={{ overflow: 'visible' }}
+    >
+      <h1
+        data-aos="flip-right"
+        className="mx-auto text-4xl text-center text-gray-700  font-bold"
       >
-        <h1
-          data-aos="flip-right"
-          className="mx-auto text-4xl text-center text-gray-700  font-bold"
-        >
-          Featured Works and case studies
-        </h1>
-        <Pagination
-          itemsPerPage={2}
-          activePageStyle={{ backgroundColor: '#1d83d4', color: 'white' }}
-          next={<Next left={false} />}
-          prev={<Next left />}
-          data={projects}
-          pageButtons={10}
-          onePage={
-          (item, index) => (
-            <a
-              data-aos="zoom-in"
-              key={index}
-              className="oneItem shadow flex flex-row"
-              style={{}}
-              href={item.link}
-              rel="noreferrer"
-              target="_blank"
-            >
-              <img className="w-24 mx-3 my-auto h-24" src={item.imageUrl} alt={item.link} />
-              <p className="p-2">{item.description}</p>
-            </a>
-          )
-}
-        />
-      </div>
+        Featured Works and case studies
+      </h1>
+      <Pagination
+        itemsPerPage={2}
+        activePageStyle={{ backgroundColor: '#1d83d4', color: 'white' }}
+        next={<Next left={false} />}
+        prev={<Next left />}
+        data={projects}
+        pageButtons={10}
+        onePage={onePage}
+      />
     </div>
-  );
-};
-Abilities.propTypes = {
-  abl: propTypes.func,
-};
-Abilities.defaultProps = {
-  abl: null,
-};
-export default Abilities;
+  </div>
+);
+export default Projects;

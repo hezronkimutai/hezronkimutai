@@ -5,8 +5,6 @@ const {
   github, linkedIn, facebook, twitter,
 } = images;
 
-// const { contact } = images;
-// style={{ backgroundImage: 'url(https://res.cloudinary.com/hezzie/image/upload/v1600642810/imageedit_18_9683881518_jsavyg.png)' }}
 const socialLinks = [{
   link: 'https://github.com/hezronkimutai/portfolio',
   imgUrl: github,

@@ -1,6 +1,5 @@
 /* eslint-disable react/no-array-index-key */
-import React, { useEffect, useRef } from 'react';
-import propTypes from 'prop-types';
+import React from 'react';
 import images from '../components/images';
 
 const {
@@ -38,52 +37,45 @@ const services = [
     - Installed electrical machines.`,
   },
 ];
-const Experiences = ({ exp }) => {
-  const experienceRef = useRef();
-  useEffect(() => {
-    exp(experienceRef);
-  }, []);
-  return (
-    <div className="" id="" ref={experienceRef}>
-      <div className="mx-auto py-8">
-        <h1
-          data-aos="flip-right"
-          className="text-gray-700 mx-auto text-4xl text-center font-bold"
+const Experiences = () => (
+  <div className="" id="">
+    <div className="mx-auto py-8">
+      <h1
+        data-aos="flip-right"
+        className="text-gray-700 mx-auto text-4xl text-center font-bold"
+      >
+        Experience
+      </h1>
+      <div style={{ }} className="mx-auto w-11/12 flex flex-row">
+        <div
+          className="flex flex-wrap justify-evenly experienceLeft"
         >
-          Experience
-        </h1>
-        <div style={{ }} className="mx-auto w-11/12 flex flex-row">
-          <div
-            className="flex flex-wrap justify-evenly experienceLeft"
-          >
-            {services.map((service, index) => (
-              <div
-                key={index}
-                data-aos="fade-right"
-                className="m-2 p-2 w-full rounded bg-white"
-              >
-                <div className="flex flex-row">
-                  <img className="w-10 h-10" src={service.img} alt={service.name} />
-                  <h1 className="font-bold mx-2 text-2xl my-auto" style={{ }}>{service.name}</h1>
-                </div>
-                <p className=" ">{service.description}</p>
+          {services.map((service, index) => (
+            <div
+              key={index}
+              data-aos="fade-right"
+              className="m-2 p-2 w-full rounded bg-white"
+            >
+              <div className="flex flex-row">
+                <img className="w-10 h-10" src={service.img} alt={service.name} />
+                <h1 className="font-bold mx-2 text-2xl my-auto" style={{ }}>{service.name}</h1>
               </div>
-            ))}
-          </div>
-          <img
-            className="experienceRight"
-            style={{ width: '30%', margin: 'auto' }}
-            src="https://res.cloudinary.com/hezzie/image/upload/v1600446377/343320-PALLZR-795_2_rvvkyb.jpg"
-            alt="welcomePage"
-          />
+              <p className=" ">{service.description}</p>
+            </div>
+          ))}
         </div>
+        <img
+          className="experienceRight"
+          style={{ width: '30%', margin: 'auto' }}
+          src="https://res.cloudinary.com/hezzie/image/upload/v1600446377/343320-PALLZR-795_2_rvvkyb.jpg"
+          alt="welcomePage"
+        />
       </div>
     </div>
+  </div>
 
-  );
-};
+);
 Experiences.propTypes = {
-  exp: propTypes.func,
 };
 Experiences.defaultProps = {
   exp: null,
