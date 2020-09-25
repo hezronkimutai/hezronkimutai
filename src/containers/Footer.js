@@ -2,11 +2,12 @@ import React from 'react';
 import images from '../components/images';
 
 const {
-  github, linkedIn, facebook, twitter,
+  github, linkedIn, facebook, twitter, instagram,
+  stackoverflow,
 } = images;
 
 const socialLinks = [{
-  link: 'https://github.com/hezronkimutai/portfolio',
+  link: 'https://github.com/hezronkimutai',
   imgUrl: github,
 }, {
   link: 'https://twitter.com/theHClerk',
@@ -16,13 +17,13 @@ const socialLinks = [{
   imgUrl: facebook,
 }, {
   link: 'https://www.instagram.com/hezzkimutai/',
-  imgUrl: github,
+  imgUrl: instagram,
 }, {
   link: 'https://www.linkedin.com/in/hezron-kimutai-603b62173/',
   imgUrl: linkedIn,
 }, {
   link: 'https://stackoverflow.com/users/10624555/h-kim',
-  imgUrl: github,
+  imgUrl: stackoverflow,
 }];
 const App = () => (
   <div className="footer py-3 flex flex-row justify-center">

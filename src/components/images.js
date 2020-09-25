@@ -14,6 +14,8 @@ import github from '../assets/images/github.png';
 import linkedIn from '../assets/images/linkedIn.png';
 import facebook from '../assets/images/facebook.png';
 import twitter from '../assets/images/twitter.png';
+import instagram from '../assets/images/instagram.png';
+import stackoverflow from '../assets/images/stackoverflow.png';
 
 export default {
   andela,
@@ -32,4 +34,6 @@ export default {
   linkedIn,
   facebook,
   twitter,
+  instagram,
+  stackoverflow,
 };
