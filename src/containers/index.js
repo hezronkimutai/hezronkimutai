@@ -10,6 +10,7 @@ import Abilities from './WhyMe';
 import Projects from './Projects';
 import Blogs from './Blogs';
 import Footer from './Footer';
+import Team from './Team';
 import images from '../components/images';
 
 const { github } = images;
@@ -40,6 +41,7 @@ const App = () => (
       <Experiences />
       <Abilities />
       <Blogs />
+      <Team />
       <Footer />
     </div>
   </>

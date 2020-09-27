@@ -16,8 +16,20 @@ import facebook from '../assets/images/facebook.png';
 import twitter from '../assets/images/twitter.png';
 import instagram from '../assets/images/instagram.png';
 import stackoverflow from '../assets/images/stackoverflow.png';
+import bena from '../assets/images/bena.png';
+import bon from '../assets/images/bon.jpeg';
+import ivy from '../assets/images/ivy.jpeg';
+import victor from '../assets/images/victor.jpeg';
+import willy from '../assets/images/willy.jpeg';
+import ezrqn from '../assets/images/ezrqn.jpeg';
 
 export default {
+  bena,
+  bon,
+  ivy,
+  victor,
+  willy,
+  ezrqn,
   andela,
   eap,
   pmu,
