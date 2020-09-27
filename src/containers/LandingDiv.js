@@ -26,7 +26,15 @@ const LandingDiv = () => (
             <span role="img" aria-label="hi">👋</span>
             I am a FullStack Web developer, an open source enthusiast and a blogger
           </h1>
-          <a className="   text-2xl font-semibold m-2 inline-block p-3 px-4 bg-blue-700 rounded text-gray-100 delay-150 duration-300 ease-in-out " href="/pdf/HezronKimutaiChelimo-Resume.pdf" download>Resume</a>
+          <a
+            className="text-2xl font-semibold m-2 inline-block p-3 px-4 bg-blue-700 rounded text-gray-100 delay-150 duration-300 ease-in-out"
+            href="https://res.cloudinary.com/hezzie/image/upload/v1601236612/Hezron_Kimutai_Chelimo-Resume_vkewua.pdf"
+            rel="noreferrer"
+            target="_blank"
+            download
+          >
+            Resume
+          </a>
         </span>
       </div>
       <img

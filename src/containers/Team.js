@@ -15,7 +15,7 @@ const patners = [
   {
     imageUrl: ezrqn,
     name: 'Ezrqn Kemboi',
-    webUrl: 'www.ezrqnkemboi.dev',
+    webUrl: 'https://github.com/ezkemboi',
   }, {
     imageUrl: bon,
     name: 'BonVic Bundi',
@@ -51,9 +51,9 @@ const WhyMe = () => (
       <div style={{ }} className="mx-auto w-11/12 flex flex-wrap justify-around">
         {
      patners.map((patner) => (
-       <a className="flex flex-col m-2" href={patner.webUrl} key={patner.webUrl}>
+       <a className="flex flex-col m-2" target="_blank" rel="noreferrer" href={patner.webUrl} key={patner.webUrl}>
          <img className="rounded-full m-auto h-20 w-20" src={patner.imageUrl} alt={patner.webUrl} />
-         <a className="text-blue-700 p-2" href={patner.webUrl}>
+         <a className="text-blue-700 p-2" target="_blank" rel="noreferrer" href={patner.webUrl}>
            {patner.name}
          </a>
        </a>
