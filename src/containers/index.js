@@ -37,7 +37,7 @@ const App = () => {
           <div className="flex flex-row">
             {socialLinks.map((lnk) => <a rel="noreferrer" href={lnk.link} key={lnk.link} target="_blank"><img alt={lnk.link} className="w-8 h-8 mx-3" src={lnk.imgUrl} /></a>)}
           </div>
-          <div><button onClick={() => setMode(mode === 'light' ? 'dark' : 'light')} className={`w-10 mx-3 rounded-full h-6 ${mode === 'light' ? 'bg-gray-700' : 'bg-gray-100 '}`} type="button"><div className={`w-6 h-6 bg-blue-700  rounded-full ${mode === 'light' ? 'float-left' : 'float-right'}`} /></button></div>
+          <div><button onClick={() => setMode(mode === 'light' ? 'dark' : 'light')} className={`w-10 rounded-full h-6 ${mode === 'light' ? 'bg-gray-700' : 'bg-gray-100 '}`} type="button"><div className={`w-6 h-6 bg-blue-700  rounded-full ${mode === 'light' ? 'float-left' : 'float-right'}`} /></button></div>
         </div>
         <LandingDiv />
         <Profile />
