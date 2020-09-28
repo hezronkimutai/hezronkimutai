@@ -35,7 +35,7 @@ const Profile = () => (
     >
       <h1
         data-aos="flip-right"
-        className="text-gray-700 mx-auto text-4xl text-center font-bold"
+        className=" mx-auto text-4xl text-center font-bold"
       >
         Services I offer
       </h1>
@@ -43,7 +43,7 @@ const Profile = () => (
         <img
           className="servicesLeft"
           style={{ width: '30%', margin: 'auto' }}
-          src="https://res.cloudinary.com/hezzie/image/upload/v1600443473/3937434_dygngh.jpg"
+          src="https://res.cloudinary.com/hezzie/image/upload/v1601262365/imageedit_49_2747896347_mnj3v1.png"
           alt="welcomePage"
         />
         <div
@@ -55,7 +55,7 @@ const Profile = () => (
               data-aos="fade-left"
               key={index}
               style={{ height: 'min-content' }}
-              className="m-2 p-2  w-full rounded bg-white "
+              className="m-2 p-2  w-full rounded"
             >
               <h1 className="font-bold" style={{ }}>{service.name}</h1>
               <p className=" ">{service.description}</p>

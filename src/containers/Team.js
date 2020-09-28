@@ -44,7 +44,7 @@ const WhyMe = () => (
     <div className="mx-auto py-8">
       <h1
         data-aos="flip-right"
-        className="text-gray-700 mx-auto text-4xl text-center font-bold"
+        className=" mx-auto text-4xl text-center font-bold"
       >
         PATNERS
       </h1>

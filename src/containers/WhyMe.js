@@ -1,12 +1,14 @@
 import React from 'react';
 import { CallToactionBtn } from './LandingDiv';
 
+// backgroundColor: '#DEECF7'
+
 const WhyMe = () => (
   <div className="" id="">
-    <div style={{ backgroundColor: '#DEECF7' }} className="mx-auto py-8">
+    <div style={{ }} className="mx-auto py-8">
       <h1
         data-aos="flip-right"
-        className="text-gray-700 mx-auto text-4xl text-center font-bold"
+        className=" mx-auto text-4xl text-center font-bold"
       >
         WHY ME?
       </h1>
@@ -29,7 +31,7 @@ const WhyMe = () => (
             If I channelize them further, they will
             bring fruitful results to me and also to your esteemed organization.
           </h3>
-          <CallToactionBtn className="   text-2xl font-semibold m-1 p-3 bg-blue-700 rounded text-gray-100 delay-150 duration-300 ease-in-out " onClick={() => 0} displayText="HIRE ME" />
+          <CallToactionBtn className="   text-2xl font-semibold m-1 p-3 bg-blue-700 rounded text-gray-300 delay-150 duration-300 ease-in-out " onClick={() => 0} displayText="HIRE ME" />
         </div>
       </div>
     </div>

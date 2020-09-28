@@ -32,7 +32,7 @@ const Abilities = () => (
       <h1
         data-aos="flip-right"
 
-        className=" text-gray-700 mx-auto text-4xl text-center font-bold"
+        className="  mx-auto text-4xl text-center font-bold"
       >
         Blogs
       </h1>

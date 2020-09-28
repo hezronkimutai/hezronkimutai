@@ -55,7 +55,7 @@ const Projects = () => (
     >
       <h1
         data-aos="flip-right"
-        className="mx-auto text-4xl text-center text-gray-700  font-bold"
+        className="mx-auto text-4xl text-center   font-bold"
       >
         Featured Works and case studies
       </h1>

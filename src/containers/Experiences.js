@@ -42,7 +42,7 @@ const Experiences = () => (
     <div className="mx-auto py-8">
       <h1
         data-aos="flip-right"
-        className="text-gray-700 mx-auto text-4xl text-center font-bold"
+        className="mx-auto text-4xl text-center font-bold"
       >
         Experience
       </h1>
@@ -54,7 +54,7 @@ const Experiences = () => (
             <div
               key={index}
               data-aos="fade-right"
-              className="m-2 p-2 w-full rounded bg-white"
+              className="m-2 p-2 w-full rounded"
             >
               <div className="flex flex-row">
                 <img className="w-10 h-10" src={service.img} alt={service.name} />
@@ -67,7 +67,7 @@ const Experiences = () => (
         <img
           className="experienceRight"
           style={{ width: '30%', margin: 'auto' }}
-          src="https://res.cloudinary.com/hezzie/image/upload/v1600446377/343320-PALLZR-795_2_rvvkyb.jpg"
+          src="https://res.cloudinary.com/hezzie/image/upload/v1601262141/imageedit_44_2080892859_lnyhdu.png"
           alt="welcomePage"
         />
       </div>
