@@ -13,13 +13,13 @@ const LandingDiv = () => (
         <span>
           <i>The best way to predict the future is by comparing today and yesterday</i>
           <h1
-            data-aos="fade-right"
+            // data-aos="fade-right"
             className="text-4xl  mb-5 font-bold"
           >
             Hezron Kimutai
           </h1>
           <h1
-            data-aos="fade-right"
+            // data-aos="fade-right"
             className="text-2xl font-semibold"
           >
             Hi,
