@@ -135,3 +135,11 @@ height: 0px;		}
    }
    }
  }
+.whyMe{
+  flex-direction: row;
+  @media screen {
+    @media (max-width: $breakpoint-tablet) {
+      flex-direction: column;
+    }
+    }
+}

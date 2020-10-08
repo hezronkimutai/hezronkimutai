@@ -12,8 +12,8 @@ const WhyMe = () => (
       >
         WHY ME?
       </h1>
-      <div style={{ }} className="mx-auto w-11/12 flex flex-row">
-        <img className="whyMeLeft h-48  my-auto" src="https://res.cloudinary.com/hezzie/image/upload/v1600969619/imageedit_41_7430976344_lijyjt.png" alt="hezronKimutai" />
+      <div style={{ }} className="mx-auto w-11/12 flex whyMe">
+        <img className="whyMeLeft h-48 w-48 p-3 m-auto" src="https://res.cloudinary.com/hezzie/image/upload/v1602164222/imageedit_88_7354735526_ctyjka.png" alt="hezronKimutai" />
         <div className="whyMeRight">
           <h3
             className="text-l"
@@ -31,7 +31,7 @@ const WhyMe = () => (
             If I channelize them further, they will
             bring fruitful results to me and also to your esteemed organization.
           </h3>
-          <CallToactionBtn className="   text-2xl font-semibold m-1 p-3 bg-blue-700 rounded text-gray-300 delay-150 duration-300 ease-in-out " onClick={() => 0} displayText="HIRE ME" />
+          <CallToactionBtn className="text-2xl flex font-semibold my-1 mx-auto p-3 bg-blue-700 rounded text-gray-300 delay-150 duration-300 ease-in-out " onClick={() => 0} displayText="HIRE ME" />
         </div>
       </div>
     </div>
