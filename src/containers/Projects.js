@@ -5,7 +5,7 @@ import Next from '../components/icons/next';
 const projects = [
   {
     imageUrl: 'https://res.cloudinary.com/hezzie/image/upload/v1600904576/Screenshot_from_2020-09-24_01-42-03_svfftx.png',
-    link: 'https://www.evenhelp.io/',
+    link: 'http://www.evenhelp.io/',
     description: `EvenHelp is a platform that help people get their Resumes, and portfolios quickly at an affordable price, EvenHelp provides a variety of Resume and portfolio templates that you can choose from. It also provides a sub dormain for every portfolios which you can upgrade and use your own domain Name.
     The future plan is to enable other developers create Resume and portfolio templates and sell it in EvenHelp platform`,
   },
