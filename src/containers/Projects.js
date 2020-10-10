@@ -36,13 +36,13 @@ const onePage = (item, index) => (
   <a
     data-aos="zoom-in"
     key={index}
-    className="oneItem shadow flex flex-row"
+    className="oneItem whyMe shadow flex flex-row"
     style={{}}
     href={item.link}
     rel="noreferrer"
     target="_blank"
   >
-    <img className="w-24 mx-3 my-auto h-24" src={item.imageUrl} alt={item.link} />
+    <img className="w-24 p-3 m-auto h-24" src={item.imageUrl} alt={item.link} />
     <p className="p-2">{item.description}</p>
   </a>
 );

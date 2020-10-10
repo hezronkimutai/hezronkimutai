@@ -139,6 +139,7 @@ height: 0px;		}
   flex-direction: row;
   @media screen {
     @media (max-width: $breakpoint-tablet) {
+      text-align: center;
       flex-direction: column;
     }
     }
