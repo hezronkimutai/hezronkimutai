@@ -35,29 +35,30 @@ const Profile = () => (
     >
       <h1
         data-aos="flip-right"
-        className=" mx-auto text-4xl text-center font-bold"
+        className=" mx-auto text-gray-800 text-4xl text-center font-bold"
       >
         Services I offer
       </h1>
       <div className="flex flex-row">
         <img
           className="servicesLeft"
-          style={{ width: '30%', margin: 'auto' }}
+          style={{ width: '300px', margin: 'auto' }}
           src="https://res.cloudinary.com/hezzie/image/upload/v1601262365/imageedit_49_2747896347_mnj3v1.png"
           alt="welcomePage"
         />
         <div
             // data-aos="fade-left"
-          className="flex servicesRight flex-col justify-start"
+          className="flex servicesRight flex-wrap justify-evenly"
         >
           {services.map((service, index) => (
+
             <div
               data-aos="fade-left"
               key={index}
-              style={{ height: 'min-content' }}
-              className="m-2 p-2  w-full rounded"
+              style={{ width: '300px' }}
+              className="m-2 p-4 shadow w-full rounded"
             >
-              <h1 className="font-bold" style={{ }}>{service.name}</h1>
+              <h1 className="font-bold text-gray-800" style={{ }}>{service.name}</h1>
               <p className=" ">{service.description}</p>
               <div className="flex flex-row ">
                 {

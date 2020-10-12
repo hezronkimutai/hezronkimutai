@@ -5,7 +5,7 @@ import { CallToactionBtn } from './LandingDiv';
 
 const WhyMe = () => (
   <div className="" id="">
-    <div style={{ }} className="mx-auto py-8">
+    <div style={{ }} className="mx-auto  py-8">
       <h1
         data-aos="flip-right"
         className=" mx-auto text-4xl text-center font-bold"
@@ -14,7 +14,7 @@ const WhyMe = () => (
       </h1>
       <div style={{ }} className="mx-auto w-11/12 flex whyMe">
         <img className="whyMeLeft h-48 w-48 p-3 m-auto" src="https://res.cloudinary.com/hezzie/image/upload/v1602164222/imageedit_88_7354735526_ctyjka.png" alt="hezronKimutai" />
-        <div className="whyMeRight">
+        <div className="whyMeRight shadow p-4">
           <h3
             className="text-l"
             data-aos="fade-left"

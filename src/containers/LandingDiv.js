@@ -14,20 +14,20 @@ const LandingDiv = () => (
           <i>The best way to predict the future is by comparing today and yesterday</i>
           <h1
             // data-aos="fade-right"
-            className="text-4xl  mb-5 font-bold"
+            className="text-4xl text-gray-900  font-bold"
           >
             Hezron Kimutai
           </h1>
           <h1
             // data-aos="fade-right"
-            className="text-2xl font-semibold"
+            className="text-2xl text-gray-900 font-semibold"
           >
             Hi,
             <span role="img" aria-label="hi">👋</span>
             I am a FullStack Web developer, an open source enthusiast and a blogger
           </h1>
           <a
-            className="text-2xl font-semibold m-2 inline-block p-3 px-4 bg-blue-700 rounded text-gray-300 delay-150 duration-300 ease-in-out"
+            className="text-2xl font-semibold m-2 inline-block py-3 px-5 bg-blue-700 rounded-full text-gray-300 delay-150 duration-300 ease-in-out"
             href="https://res.cloudinary.com/hezzie/image/upload/v1601236612/Hezron_Kimutai_Chelimo-Resume_vkewua.pdf"
             rel="noreferrer"
             target="_blank"
