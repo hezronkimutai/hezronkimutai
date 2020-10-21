@@ -7,19 +7,16 @@ const LandingDiv = () => (
   <div className="landingDiv min-h-full relative mx-auto w-11/12">
     <div className="welcome">
       <div
-
         className="left"
       >
         <span>
           <i>The best way to predict the future is by comparing today and yesterday</i>
           <h1
-            // data-aos="fade-right"
             className="text-4xl text-gray-900  font-bold"
           >
             Hezron Kimutai
           </h1>
           <h1
-            // data-aos="fade-right"
             className="text-2xl text-gray-900 font-semibold"
           >
             Hi,

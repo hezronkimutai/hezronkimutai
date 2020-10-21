@@ -31,7 +31,6 @@ const Abilities = () => (
     >
       <h1
         data-aos="flip-right"
-
         className="  mx-auto text-4xl text-center font-bold"
       >
         Blogs
@@ -39,7 +38,6 @@ const Abilities = () => (
       <div className="flex flex-row">
 
         <div
-
           className="flex flex-wrap justify-around"
         >
           {services.map((service, index) => (
@@ -58,8 +56,6 @@ const Abilities = () => (
         </div>
         {/* <img
             // data-aos="zoom-in"
-            //
-            //
             style={{ width: '30%', margin: 'auto' }}
             src="https://res.cloudinary.com/hezzie/image/upload/v1600565550/3236267_n45wja.jpg"
             alt="welcomePage"

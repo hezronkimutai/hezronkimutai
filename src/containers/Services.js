@@ -5,7 +5,6 @@ import images from '../components/images';
 const {
   html, react, python, nodeJs, css3,
 } = images;
-
 const services = [
   {
     name: 'Frontend Development',
@@ -39,15 +38,15 @@ const Profile = () => (
       >
         Services I offer
       </h1>
-      <div className="flex flex-row">
-        <img
+      <div className="flex flex-row justify-evenly">
+        {/* <img
           className="servicesLeft"
           style={{ width: '300px', margin: 'auto' }}
           src="https://res.cloudinary.com/hezzie/image/upload/v1601262365/imageedit_49_2747896347_mnj3v1.png"
           alt="welcomePage"
-        />
+        /> */}
         <div
-            // data-aos="fade-left"
+          // data-aos="fade-left"
           className="flex servicesRight flex-wrap justify-evenly"
         >
           {services.map((service, index) => (
@@ -55,14 +54,14 @@ const Profile = () => (
             <div
               data-aos="fade-left"
               key={index}
-              style={{ width: '300px' }}
-              className="m-2 p-4 shadow w-full rounded"
+              // style={{ width: '300px' }}
+              className="m-2 p-4 shadow w-1/3 rounded"
             >
-              <h1 className="font-bold text-gray-800" style={{ }}>{service.name}</h1>
+              <h1 className="font-bold text-gray-800" style={{}}>{service.name}</h1>
               <p className=" ">{service.description}</p>
               <div className="flex flex-row ">
                 {
-                service.links.map((link, key) => <img className="h-10 mx-2 my-3 p-1 w-10" src={link.img} key={key} alt={link.url} />)
+                  service.links.map((link, key) => <img className="h-10 mx-2 my-3 p-1 w-10" src={link.img} key={key} alt={link.url} />)
                 }
               </div>
             </div>

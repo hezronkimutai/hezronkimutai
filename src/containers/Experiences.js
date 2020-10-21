@@ -65,12 +65,12 @@ const Experiences = () => (
             </div>
           ))}
         </div>
-        <img
+        {/* <img
           className="experienceRight"
           style={{ width: '300px', margin: 'auto' }}
           src="https://res.cloudinary.com/hezzie/image/upload/v1601262141/imageedit_44_2080892859_lnyhdu.png"
           alt="welcomePage"
-        />
+        /> */}
       </div>
     </div>
   </div>
