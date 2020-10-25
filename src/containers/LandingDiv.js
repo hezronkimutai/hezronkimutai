@@ -12,12 +12,12 @@ const LandingDiv = () => (
         <span>
           <i>The best way to predict the future is by comparing today and yesterday</i>
           <h1
-            className="text-4xl text-gray-900  font-bold"
+            className="text-4xl   font-bold"
           >
             Hezron Kimutai
           </h1>
           <h1
-            className="text-2xl text-gray-900 font-semibold"
+            className="text-2xl  font-semibold"
           >
             Hi,
             <span role="img" aria-label="hi">👋</span>
@@ -51,6 +51,7 @@ CallToactionBtn.propTypes = {
   onClick: propTypes.func.isRequired,
   displayText: propTypes.string.isRequired,
   className: propTypes.string.isRequired,
+
 };
 LandingDiv.defaultProps = {
   land: null,

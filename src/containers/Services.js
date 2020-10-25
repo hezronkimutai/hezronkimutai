@@ -34,7 +34,7 @@ const Profile = () => (
     >
       <h1
         data-aos="flip-right"
-        className=" mx-auto text-gray-800 text-4xl text-center font-bold"
+        className=" mx-auto text-4xl text-center font-bold"
       >
         Services I offer
       </h1>
@@ -56,8 +56,11 @@ const Profile = () => (
               key={index}
               // style={{ width: '300px' }}
               className="m-2 p-4 shadow w-1/3 rounded"
+              style={{
+                minWidth: '300px',
+              }}
             >
-              <h1 className="font-bold text-gray-800" style={{}}>{service.name}</h1>
+              <h1 className="font-bold" style={{}}>{service.name}</h1>
               <p className=" ">{service.description}</p>
               <div className="flex flex-row ">
                 {
