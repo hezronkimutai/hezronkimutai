@@ -37,7 +37,7 @@ const onePage = (item, index) => (
     data-aos="zoom-in"
     key={index}
     className="oneItem whyMe w-5/12 shadow"
-    style={{}}
+    style={{ minWidth: '300px' }}
     href={item.link}
     rel="noreferrer"
     target="_blank"

@@ -46,7 +46,7 @@ const Experiences = () => (
       >
         Experience
       </h1>
-      <div style={{ }} className="mx-auto w-11/12 flex flex-row">
+      <div style={{}} className="mx-auto w-11/12 flex flex-row">
         <div
           className="flex flex-wrap justify-evenly experienceLeft"
         >
@@ -55,21 +55,16 @@ const Experiences = () => (
               key={index}
               data-aos="fade-right"
               className="m-2 shadow p-2 w-5/12 rounded"
+              style={{ minWidth: '300px' }}
             >
               <div className="flex flex-row">
                 <img className="w-10 h-10" src={service.img} alt={service.name} />
-                <h1 className="font-bold mx-2 text-2xl my-auto" style={{ }}>{service.name}</h1>
+                <h1 className="font-bold mx-2 text-2xl my-auto" style={{}}>{service.name}</h1>
               </div>
               <p className=" ">{service.description}</p>
             </div>
           ))}
         </div>
-        {/* <img
-          className="experienceRight"
-          style={{ width: '300px', margin: 'auto' }}
-          src="https://res.cloudinary.com/hezzie/image/upload/v1601262141/imageedit_44_2080892859_lnyhdu.png"
-          alt="welcomePage"
-        /> */}
       </div>
     </div>
   </div>
