@@ -60,7 +60,7 @@ const WhyMe = () => (
          key={patner.webUrl}
        >
          <img className="rounded-full m-auto h-20 w-20" src={patner.imageUrl} alt={patner.webUrl} />
-         <a className="text-blue-700 p-2" target="_blank" rel="noreferrer" href={patner.webUrl}>
+         <a className="text-blue-900 p-2" target="_blank" rel="noreferrer" href={patner.webUrl}>
            {patner.name}
          </a>
        </div>
