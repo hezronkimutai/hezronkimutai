@@ -46,6 +46,7 @@
     "react": "^16.12.0",
     "react-animate-on-scroll": "^2.1.5",
     "react-dom": "^16.13.0",
+    "react-paypal-button-v2": "^2.6.2",
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.4",
     "redux-api-handling-middleware": "^1.2.0",
