@@ -2,8 +2,7 @@ import React from 'react';
 import images from '../components/images';
 
 const {
-  github, linkedIn, facebook, twitter, instagram,
-  stackoverflow, fiverr,
+  github, linkedIn
 } = images;
 
 const socialLinks = [{

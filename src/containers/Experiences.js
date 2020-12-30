@@ -54,8 +54,7 @@ const Experiences = () => (
             <div
               key={index}
               data-aos="fade-right"
-              className="m-2 shadow p-2 w-full rounded"
-              style={{ width: '300px' }}
+              className="m-2 shadow p-2 w-5/12 rounded"
             >
               <div className="flex flex-row">
                 <img className="w-10 h-10" src={service.img} alt={service.name} />

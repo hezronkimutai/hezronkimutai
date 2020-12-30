@@ -9,7 +9,7 @@ const services = [
   {
     name: 'Frontend Development',
     description: `I hold good proficiency
-    in the latest frontend technologies. I am an expert
+    in the latest frontend technologies. Moreover, I have good design skills an expert
      in building any specific technology that
     you have in mind.`,
     links: [{ url: '', img: react }, { url: '', img: html }, { url: '', img: css3 }],
@@ -39,28 +39,19 @@ const Profile = () => (
         Services I offer
       </h1>
       <div className="flex flex-row justify-evenly">
-        {/* <img
-          className="servicesLeft"
-          style={{ width: '300px', margin: 'auto' }}
-          src="https://res.cloudinary.com/hezzie/image/upload/v1601262365/imageedit_49_2747896347_mnj3v1.png"
-          alt="welcomePage"
-        /> */}
         <div
-          // data-aos="fade-left"
           className="flex servicesRight flex-wrap justify-evenly"
         >
           {services.map((service, index) => (
-
             <div
               data-aos="fade-left"
               key={index}
-              // style={{ width: '300px' }}
-              className="m-2 p-4 shadow w-1/3 rounded"
+              className="m-2 p-4 shadow w-5/12 rounded"
               style={{
                 minWidth: '300px',
               }}
             >
-              <h1 className="font-bold" style={{}}>{service.name}</h1>
+              <h1 className="font-bold py-2 text-lg" style={{}}>{service.name}</h1>
               <p className=" ">{service.description}</p>
               <div className="flex flex-row ">
                 {

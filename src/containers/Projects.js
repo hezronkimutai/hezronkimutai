@@ -33,7 +33,7 @@ const onePage = (item, index) => (
   <a
     data-aos="zoom-in"
     key={index}
-    className="oneItem whyMe shadow flex flex-row"
+    className="oneItem whyMe w-5/12 shadow flex flex-row"
     style={{}}
     href={item.link}
     rel="noreferrer"
