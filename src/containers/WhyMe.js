@@ -38,7 +38,7 @@ const WhyMe = () => (
       >
         WHY ME?
       </h1>
-      <div style={{}} className="mx-auto w-11/12 flex whyMe">
+      <div style={{}} className="mx-auto w-10/12 flex whyMe">
         <img className="whyMeLeft h-48 w-48 p-3 m-auto" src="https://res.cloudinary.com/hezzie/image/upload/v1602164222/imageedit_88_7354735526_ctyjka.png" alt="hezronKimutai" />
         <div className="whyMeRight shadow p-4">
           <h3

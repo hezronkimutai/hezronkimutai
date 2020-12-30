@@ -1,19 +1,12 @@
-// @import 'App.scss';
-
-
 %projects {
   .projects {
- background-size: 30% 70%;
       background-repeat: no-repeat;
       background-position: right center;
-    padding: 2%;
-    width: 96%;
     margin: auto;
     .abilitiesContainer {
       border-radius: 5px;
      height: auto !important;
       overflow-y: auto;
-  // ;
       div {
         display: flex;
         flex-direction: row;

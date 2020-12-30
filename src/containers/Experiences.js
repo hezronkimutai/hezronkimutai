@@ -46,7 +46,7 @@ const Experiences = () => (
       >
         Experience
       </h1>
-      <div style={{}} className="mx-auto w-11/12 flex flex-row">
+      <div style={{}} className="mx-auto w-10/12 flex flex-row">
         <div
           className="flex flex-wrap justify-evenly experienceLeft"
         >

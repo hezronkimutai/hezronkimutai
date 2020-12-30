@@ -51,7 +51,7 @@ const onePage = (item, index) => (
 );
 
 const Projects = () => (
-  <div className="projects mx-auto w-11/12 py-5" id="abilities">
+  <div className="projects mx-auto w-10/12 py-5" id="abilities">
     <div
       className="abilitiesContainer"
       style={{ overflow: 'visible' }}

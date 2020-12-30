@@ -25,7 +25,7 @@ const services = [
   },
 ];
 const Abilities = () => (
-  <div className=" mx-auto w-11/12 py-5" id="blogs">
+  <div className=" mx-auto w-10/12 py-5" id="blogs">
     <div
       style={{ overflow: 'visible' }}
     >

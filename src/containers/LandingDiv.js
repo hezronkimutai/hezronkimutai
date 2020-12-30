@@ -4,8 +4,8 @@ import propTypes from 'prop-types';
 export const CallToactionBtn = ({ onClick, displayText, className }) => <button className={className} onClick={onClick} type="button">{displayText}</button>;
 
 const LandingDiv = () => (
-  <div className="landingDiv relative mx-auto w-11/12">
-    <div className="welcome">
+  <div className="landingDiv relative mx-auto w-10/12">
+    <div className="welcome w-10/12 m-auto">
       <div
         className="left"
       >

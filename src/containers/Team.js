@@ -48,7 +48,7 @@ const WhyMe = () => (
       >
         PATNERS
       </h1>
-      <div style={{ }} className="mx-auto w-11/12 flex flex-wrap justify-around">
+      <div style={{ }} className="mx-auto w-10/12 flex flex-wrap justify-around">
         {
      patners.map((patner) => (
        <div

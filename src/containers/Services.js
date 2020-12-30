@@ -26,7 +26,7 @@ const services = [
 ];
 const Profile = () => (
   <div
-    className="profile py-5 mx-auto w-11/12"
+    className="profile py-5 mx-auto w-10/12"
     id="profile"
   >
     <div
