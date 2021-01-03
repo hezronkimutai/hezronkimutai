@@ -21,7 +21,7 @@ I am Hezron, a full-stack software developer
 [![GitHub forks](https://img.shields.io/github/forks/badges/shields.svg?style=social&label=Fork&style=plastic)]()
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&style=plastic)]()  
 <br>
-[![GitHub stars](https://img.shields.io/github/stars/tterb/playmusic.svg?style=social&label=Star)](https://github.com/JonSnow/MyBadges)
+[![GitHub stars](https://img.shields.io/github/stars/tterb/playmusic.svg?style=social&label=Star)](https://github.com/hezronkimutai/MyBadges)
 [![GitHub watchers](https://img.shields.io/github/watchers/tterb/playmusic.svg?style=social&label=Watch)](https://github.com/JonSnow/MyBadges)
 [![GitHub forks](https://img.shields.io/github/forks/tterb/playmusic.svg?style=social&label=Fork)](https://github.com/JonSnow/MyBadges)
 [![GitHub followers](https://img.shields.io/github/followers/tterb.svg?style=social&label=Follow)](https://github.com/JonSnow/MyBadges)  
