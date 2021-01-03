@@ -7,9 +7,9 @@ I am Hezron, a full-stack software developer
 
 ### ACTIVITY
 [![Issues](https://img.shields.io/github/issues-raw/tterb/PlayMusic.svg?maxAge=25000)](https://github.com/tterb/Hyde/issues)  
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/cdnjs/cdnjs.svg?style=flat)]()
-[![GitHub last commit](https://img.shields.io/github/last-commit/google/skia.svg?style=flat)]()
-[![GitHub commit activity the past week, 4 weeks](https://img.shields.io/github/commit-activity/y/eslint/eslint.svg?style=flat)]() [![GitHub commits since](https://img.shields.io/github/commits-since/tterb/playmusic/v1.2.0.svg)]() 
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/hezronkimutai/hezronkimutai.svg?style=flat)]()
+[![GitHub last commit](https://img.shields.io/github/last-commit/google/hezronkimutai.svg?style=flat)]()
+[![GitHub commit activity the past week, 4 weeks](https://img.shields.io/github/commit-activity/y/hezronkimutai/hezronkimutai.svg?style=flat)]() [![GitHub commits since](https://img.shields.io/github/commits-since/tterb/playmusic/v1.2.0.svg)]() 
 
 <!-- ### DONATE
 [![Donate](https://img.shields.io/badge/$-support-ff69b4.svg?style=flat)](https://paypal.me/hezron) //--> 
