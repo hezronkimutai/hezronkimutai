@@ -1,11 +1,11 @@
 %projects {
   .projects {
-      background-repeat: no-repeat;
-      background-position: right center;
+    background-repeat: no-repeat;
+    background-position: right center;
     margin: auto;
     .abilitiesContainer {
       border-radius: 5px;
-     height: auto !important;
+      height: auto !important;
       overflow-y: auto;
       div {
         display: flex;
@@ -15,7 +15,7 @@
         width: 100%;
         color: #031e39;
         h1 {
-          font-family: 'Nosifer', cursive !important;
+          font-family: "Nosifer", cursive !important;
         }
       }
       .abilityRatings {
@@ -34,40 +34,31 @@
         }
       }
     }
-    .pagination-container{
+    .pagination-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
-      .oneItem{
-        margin:20px 10px;
+      .oneItem {
+        margin: 20px 10px;
         @media screen {
           @media (max-width: $breakpoint-tablet) {
             width: 100%;
           }
-          }
-  
+        }
       }
-      .pagination-buttons{
+      .pagination-buttons {
         min-width: 100%;
-        margin:10px auto;
-
-justify-content: center;
-        .arrows{
-  
-        }
-        .pages{
-         button{
-           border:#1d83d4 solid 1px;
-          width:24px; 
-          border-radius: 50%;
-        margin:auto 10px;
-        }
-  
+        margin: 10px auto;
+        justify-content: center;
+        .pages {
+          button {
+            border: #1d83d4 solid 1px;
+            width: 24px;
+            border-radius: 50%;
+            margin: auto 10px;
+          }
         }
       }
     }
-  
-  
   }
-
 }

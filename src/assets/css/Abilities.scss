@@ -1,36 +1,24 @@
 %abilities {
   .abilities {
-// background-color: #f6f7e9;
-    // background-image: url('https://res.cloudinary.com/hezzie/image/upload/v1583314741/output-onlinepngtools_ricmka.png');
-    // background-size: 30% 70%;
-    // background-repeat: no-repeat;
-    //background-attachment: fixed;
-    // background-position: left center;
-    // height: auto;
-    // min-height: 90%;
-    // padding: 2%;
-    // width: 96%;
-    // margin: auto;
-    // border-radius: 10px;
-    // margin-top: 1%;
-   >div{
-     >div{
-      .whyMeLeft{
-        @media screen {
-          @media (max-width: $breakpoint-tablet) {
-      display:none;
-      height: 0px;		}
+    > div {
+      > div {
+        .whyMeLeft {
+          @media screen {
+            @media (max-width: $breakpoint-tablet) {
+              display: none;
+              height: 0px;
+            }
           }
+        }
+        .whyMeRight {
+          @media screen {
+            @media (max-width: $breakpoint-tablet) {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
       }
-      .whyMeRight{
-        @media screen {
-          @media (max-width: $breakpoint-tablet) {
-            width:100%;
-            height: 100%;
-          }
-          }
-      }
-     }
-   }
+    }
   }
 }

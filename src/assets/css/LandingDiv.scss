@@ -4,7 +4,6 @@ $breakpoint-tablet: 600px;
 	.landingDiv {
 		min-height: calc(93vh);
 		.welcome {
-			// width: 100%;
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between !important;
@@ -13,7 +12,6 @@ $breakpoint-tablet: 600px;
 					flex-direction: column-reverse;
 				}
 			}
-			// color:#fff;
 			.right {
 				@media screen {
 					@media (max-width: $breakpoint-tablet) {
@@ -37,19 +35,14 @@ $breakpoint-tablet: 600px;
 					height: min-content;
 					text-align: center;
 					max-width: 80%;
-					// margin: 25% auto
 				}
 			}
 		}
 		margin: 0px;
 		padding: 0px;
-		// color: #f6f7e9;
-		// min-height: 93% !important;
 		width: 100%;
 		z-index: 1;
 		display: flex;
-		// background-color: purple;
-		// background-image: url('https://res.cloudinary.com/hezzie/image/upload/v1583343349/Screen_Shot_2020-03-04_at_18.58.45_3_1_eqi6ia.png');
 		background-size: 13% 70%;
 		border-radius: 50% 0% 0% 0%;
 		opacity: 0.9;
@@ -62,7 +55,6 @@ $breakpoint-tablet: 600px;
 .scroll-indicator {
 	bottom: 0;
 	right: 50%;
-	// text-align: center;
 	width: 80px;
 	padding: 20px;
 	margin: 0 auto;

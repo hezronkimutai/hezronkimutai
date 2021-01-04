@@ -13,9 +13,9 @@ const socialLinks = [{
 }
 ];
 const App = () => (
-  <div className='flex flex-row'>
+  <div className='footer flex flex-row'>
     <div className='w-10 m-auto'><Paypal /></div>
-    <div className="footer py-3 m-auto flex flex-row justify-center">
+    <div className=" py-3 m-auto flex flex-row justify-center">
       {socialLinks.map((lnk) => <a rel="noreferrer" href={lnk.link} key={lnk.link} target="_blank"><img alt={lnk.link} className="w-8 h-8 mx-3" src={lnk.imgUrl} /></a>)}
     </div>
   </div>
