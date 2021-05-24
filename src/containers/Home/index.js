@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable react/forbid-prop-types */
 import React, { useState } from 'react';
-import '../assets/css/App.scss';
+import '../../assets/css/App.scss';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import LandingDiv from './LandingDiv';
@@ -12,7 +12,7 @@ import Projects from './Projects';
 import Blogs from './Blogs';
 import Footer from './Footer';
 import Team from './Team';
-import images from '../components/images';
+import images from '../../components/images';
 
 const { github } = images;
 
@@ -27,6 +27,7 @@ const App = () => {
   return (
     <>
       <div
+      
         className={`_container w-full m-auto ${mode === 'light' ? 'text-gray-900 bg-gray-100' : 'text-gray-300 bg-gray-900 '}`}
         onScrollCapture={(e) => {
           e.preventDefault();
@@ -52,4 +53,3 @@ const App = () => {
   );
 };
 export default App;
-AOS.init({ delay: 200, duration: 600 });

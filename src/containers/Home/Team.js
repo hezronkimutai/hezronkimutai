@@ -1,6 +1,6 @@
 import React from 'react';
 // import { CallToactionBtn } from './LandingDiv';
-import images from '../components/images';
+import images from '../../components/images';
 
 const {
   bena,

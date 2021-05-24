@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
-import images from '../components/images';
+import images from '../../components/images';
 
 const {
   andela, eap, pmu, fiverr, noLogo,

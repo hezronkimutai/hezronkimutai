@@ -10,7 +10,8 @@
     "build": "webpack --mode production --config webpack.config.babel.js",
     "start": "HTTPS=true serve -s ./dist",
     "snap:fix": "npm test -- -u",
-    "lint": "eslint --fix ./"
+    "lint": "eslint --fix ./",
+    "deploy":"aws s3 sync dist/ s3://hezronkimutai"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,7 @@
     "@babel/plugin-proposal-class-properties": "^7.7.4",
     "animate.css": "^4.1.1",
     "aos": "^3.0.0-beta.6",
-    "autoprefixer": "^10.0.0",
+    "autoprefixer": "9.8.6",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^24.9.0",
     "babel-plugin-require-context-hook": "^1.0.0",
@@ -40,7 +41,6 @@
     "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "^0.11.2",
     "postcss": "^8.0.5",
-    "postcss-loader": "^4.0.2",
     "postcss-preset-env": "^6.7.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
@@ -89,7 +89,8 @@
     "lint-staged": "^10.0.8",
     "mock-local-storage": "^1.1.11",
     "moxios": "^0.4.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
+    "postcss-loader": "^3.0.0",
     "prettier": "^1.19.1",
     "react-hot-loader": "^4.12.18",
     "redux-mock-store": "^1.5.4",

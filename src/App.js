@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './containers/index';
+import Home from './containers/Home';
+import Blog from './containers/Blog';
+import NavBar from './components/navBar';
 
 const routes = [
   {
@@ -9,10 +11,17 @@ const routes = [
     // auth: false,
     component: Home,
   },
+  {
+    path: '/blog',
+    exact: true,
+    // auth: false,
+    component: Blog,
+  },
 ];
 
 const App = () => (
   <Router>
+    <NavBar />
     <Switch>
       {routes.map(
         (route) => (

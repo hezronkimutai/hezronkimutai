@@ -1,5 +1,5 @@
 import React from 'react';
-import images from '../components/images';
+import images from '../../components/images';
 import { Paypal } from './WhyMe'
 const {
   github, linkedIn } = images;

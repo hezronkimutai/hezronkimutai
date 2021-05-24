@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { CallToactionBtn } from './LandingDiv';
 import { PayPalButton } from "react-paypal-button-v2";
-import { } from '../'
+
 export class Paypal extends Component {
 
   render() {

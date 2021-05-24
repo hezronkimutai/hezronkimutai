@@ -1,6 +1,6 @@
 import React from 'react';
 import Pagination from 'custom_react_pages';
-import Next from '../components/icons/next';
+import Next from '../../components/icons/next';
 
 const projects = [
   {
