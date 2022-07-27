@@ -1,0 +1,10 @@
+.navbar_container {
+  width: max-content;
+  position: fixed;
+  right: 100px;
+  top: 10px;
+  z-index: 1000;
+}
+.nav_link {
+  margin: 5px;
+}
