@@ -11,7 +11,7 @@
     "start": "HTTPS=true serve -s ./dist",
     "snap:fix": "npm test -- -u",
     "lint": "eslint --fix ./",
-    "deploy":"aws s3 sync dist/ s3://hezronkimutai"
+    "deploy": "aws s3 sync dist/ s3://hezronkimutai"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
     "animate.css": "^4.1.1",
     "aos": "^3.0.0-beta.6",
     "autoprefixer": "9.8.6",
+    "axios": "^0.27.2",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^24.9.0",
     "babel-plugin-require-context-hook": "^1.0.0",

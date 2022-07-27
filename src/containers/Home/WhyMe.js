@@ -1,37 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { CallToactionBtn } from './LandingDiv';
-import { PayPalButton } from "react-paypal-button-v2";
 
-export class Paypal extends Component {
 
-  render() {
-    return (
-      <PayPalButton
-        options={{
-          clientId: process.env.REACT_APP_CLIENT_ID,
-          vault: true
-        }}
-        createSubscription={(data, actions) => {
-          console.log(data);
-          return actions.subscription.create({
-            plan_id: process.env.REACT_APP_PLAN_ID
-          });
-        }}
-        onApprove={(data, actions) => {
-          return actions.subscription.get().then(async function (details) {
-            console.log(details, data);
-            console.log("subscription complete");
-            // return await apiCall.post("/payments/subscription/paypal", {
-            //   orderId: data.orderID,
-            //   subscriptionId: data.subscriptionID,
-            //   planId: process.env.REACT_APP_PLAN_ID,
-            // });
-          });
-        }}
-      />
-    );
-  }
-}
 const WhyMe = () => (
   <div className="" id="">
     <div style={{}} className="mx-auto  py-8">
