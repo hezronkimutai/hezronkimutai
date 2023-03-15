@@ -2,6 +2,15 @@
 
 I am Hezron, a full-stack software developer
 
+- Javascript/Node.js/React.js <====> Angular
+- Sql/Nosql
+- HTML, css,sass
+- Java Springboot, Android
+- Devops ===>  AWS/MS Azure ==> Kubernettes ===> Docker
+
+
+
+
 [![GitHub stars](https://img.shields.io/github/stars/tterb/playmusic.svg?style=social&label=Star)](https://github.com/hezronkimutai/MyBadges)
 [![GitHub watchers](https://img.shields.io/github/watchers/tterb/playmusic.svg?style=social&label=Watch)](https://github.com/hezronkimutai/MyBadges)
 [![GitHub forks](https://img.shields.io/github/forks/tterb/playmusic.svg?style=social&label=Fork)](https://github.com/hezronkimutai/MyBadges)
