@@ -5,74 +5,72 @@ import images from '../../components/images';
 const {
   andela, eap, pmu, fiverr, noLogo,
 } = images;
+
 const services = [
   {
     name: 'PickMeUp Technologies',
-    description: `Worked with, 
-    Typescript to build microservices
-     communicating via AMQP(RabitMq) and Http.`,
+    description: `Worked with TypeScript to build microservices communicating via AMQP (RabbitMQ) and HTTP.`,
     img: pmu,
-  }, {
+  },
+  {
     name: 'Andela',
     img: andela,
-    description: `- I worked on the company's product as a full-stack developer,
-    Language: Typescript
-    Framework: ReactJs and NestJs
-    - Collaborate with the team to make the Product ready.
-    - Delivering high-quality work from Team that is by reviewing teammates work and also making sure I delivered tasks as expected.`,
-  }, {
+    description: `- Worked on the company's product as a full-stack developer:
+      - Language: TypeScript
+      - Frameworks: ReactJS and NestJS
+      - Collaborated with the team to deliver high-quality work.`,
+  },
+  {
+    name: 'Valet Seller',
+    img: andela,
+    description: `- Worked on the company's product as a full-stack developer:
+      - Language: TypeScript
+      - Frameworks: ReactJS and NestJS
+      - Collaborated with the team to deliver high-quality work.`,
+  },
+  {
     img: noLogo,
     name: 'Data Systems Limited',
-    description: `I was part of the team of six to be sent by Andela to work for Datasystems Ltd.
-    I built appealing user interfaces for one of Datasystems Ltd products.`,
-  }, {
-    name: 'Fiver',
+    description: `Part of a team sent by Andela to work for Data Systems Limited, focusing on building appealing user interfaces.`,
+  },
+  {
+    name: 'Fiverr',
     img: fiverr,
-    description: `worked on remote projects using ReactJs and NodeJs.
-    - I was able to accomplish several projects with High quality rated by the managers and owners`,
-  }, {
-    name: 'East African Portlands Cement',
+    description: `Worked on remote projects using ReactJS and NodeJS, delivering high-quality work rated highly by managers and owners.`,
+  },
+  {
+    name: 'East African Portland Cement',
     img: eap,
-    description: `- Worked as a maintainer of various electrical equipment.
-    - Installed electrical machines.`,
+    description: `- Maintained various electrical equipment.
+      - Installed electrical machines.`,
   },
 ];
+
 const Experiences = () => (
-  <div className="" id="">
-    <div className="mx-auto py-8">
-      <h1
-        data-aos="flip-right"
-        className="mx-auto text-4xl text-center font-bold"
-      >
-        Experience
-      </h1>
-      <div style={{}} className="mx-auto w-10/12 flex flex-row">
-        <div
-          className="flex flex-wrap justify-evenly experienceLeft"
-        >
-          {services.map((service, index) => (
-            <div
-              key={index}
-              data-aos="fade-right"
-              className="m-2 shadow p-2 w-5/12 rounded"
-              style={{ minWidth: '300px' }}
-            >
-              <div className="flex flex-row">
-                <img className="w-10 h-10" src={service.img} alt={service.name} />
-                <h1 className="font-bold mx-2 text-2xl my-auto" style={{}}>{service.name}</h1>
-              </div>
-              <p className=" ">{service.description}</p>
+  <div className="bg-gray-100 py-12">
+    <div className="container mx-auto px-4">
+      <h1 className="text-4xl font-bold text-center mb-8">Experience</h1>
+      <div className="flex flex-wrap justify-between">
+        {services.map((service, index) => (
+          <div
+            key={index}
+            data-aos="fade-right"
+            className="m-4 p-4 w-full md:w-6/12 lg:w-5/12 shadow-lg rounded"
+          >
+            <div className="flex items-center mb-4">
+              <img
+                className="w-12 h-12 rounded-full mr-4"
+                src={service.img}
+                alt={service.name}
+              />
+              <h2 className="text-xl font-bold">{service.name}</h2>
             </div>
-          ))}
-        </div>
+            <p className="text-xl leading-relaxed">{service.description}</p>
+          </div>
+        ))}
       </div>
     </div>
   </div>
-
 );
-Experiences.propTypes = {
-};
-Experiences.defaultProps = {
-  exp: null,
-};
+
 export default Experiences;

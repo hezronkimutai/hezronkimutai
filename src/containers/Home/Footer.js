@@ -1,41 +1,62 @@
 import React from 'react';
+import axios from 'axios';
 import images from '../../components/images';
 import Paypal from './Paypal';
-import axios from 'axios';
 
-const {
-  github, linkedIn } = images;
-const socialLinks = [{
-  link: 'https://github.com/hezronkimutai',
-  imgUrl: github,
-},
-{
-  link: 'https://www.linkedin.com/in/hezron-kimutai-603b62173/',
-  imgUrl: linkedIn,
-}
+const { github, linkedIn } = images;
+
+const socialLinks = [
+  {
+    link: 'https://github.com/hezronkimutai',
+    imgUrl: github,
+  },
+  {
+    link: 'https://www.linkedin.com/in/hezron-kimutai-603b62173/',
+    imgUrl: linkedIn,
+  },
 ];
+
 const App = () => {
   const handleCheckout = async () => {
-    const res = await axios.get('http://localhost:3000/checkout');
-    console.log({ res: res.data.url });
-    window.location.href = res.data.url;
-  }
+    try {
+      const res = await axios.get('http://localhost:3000/checkout');
+      console.log({ res: res.data.url });
+      window.location.href = res.data.url;
+    } catch (error) {
+      console.error('Error during checkout:', error);
+      // Handle error: display a message to the user or retry logic
+    }
+  };
 
   return (
-    <div className='footer flex flex-row'>
-      <div className='w-10 m-auto'><Paypal /></div>
-      <div className='w-10 bg-blue m-auto'>
-        <button
-          className="bg-blue rounded"
-          style={{ background: 'blue', padding: '3px 5px' }}
-          onClick={handleCheckout}>
-          Stripe Button
-        </button>
-      </div>
-      <div className=" py-3 m-auto flex flex-row justify-center">
-        {socialLinks.map((lnk) => <a rel="noreferrer" href={lnk.link} key={lnk.link} target="_blank"><img alt={lnk.link} className="w-8 h-8 mx-3" src={lnk.imgUrl} /></a>)}
+    <div className="footer flex flex-row justify-center items-center bg-gray-200 py-4">
+      <div className=" mx-2"><Paypal /></div>
+      <button
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        type="button"
+        onClick={handleCheckout}
+      >
+        Stripe Button
+      </button>
+      <div className="flex flex-row ml-2">
+        {socialLinks.map((lnk) => (
+          <a
+            key={lnk.link}
+            href={lnk.link}
+            target="_blank"
+            rel="noreferrer"
+            className="ml-2"
+          >
+            <img
+              className="w-8 h-8"
+              src={lnk.imgUrl}
+              alt="Social Media Icon"
+            />
+          </a>
+        ))}
       </div>
     </div>
-  )
+  );
 };
+
 export default App;

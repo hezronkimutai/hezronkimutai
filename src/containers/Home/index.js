@@ -27,7 +27,6 @@ const App = () => {
   return (
     <>
       <div
-      
         className={`_container w-full m-auto ${mode === 'light' ? 'text-gray-900 bg-gray-100' : 'text-gray-300 bg-gray-900 '}`}
         onScrollCapture={(e) => {
           e.preventDefault();

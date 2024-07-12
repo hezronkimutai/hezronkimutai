@@ -8,7 +8,3 @@ module.exports = {
     require('autoprefixer'),
   ],
 };
-
-
-
-

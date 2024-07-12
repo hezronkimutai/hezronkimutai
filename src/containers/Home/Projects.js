@@ -7,26 +7,19 @@ const projects = [
     name: 'Merigo Round',
     imageUrl: 'https://res.cloudinary.com/hezzie/image/upload/v1600904576/Screenshot_from_2020-09-24_01-42-03_svfftx.png',
     link: 'https://nyongiot-frontend.vercel.app',
-    description: `Merigo round is aimed at automating group funding`,
+    description: 'Merigo round is aimed at automating group funding',
   },
   {
     name: 'POS',
     imageUrl: 'https://res.cloudinary.com/hezzie/image/upload/v1600904576/Screenshot_from_2020-09-24_01-42-03_svfftx.png',
-    link: 'https://nyongiot-frontend.vercel.app',
-    description: `POS or simply Paid Open Source is aimed at increasing the frequency of open source projects by attaching a participatory price tag`,
+    link: 'https://pos-fn-reactjs.vercel.app/',
+    description: 'POS or simply Paid Open Source is aimed at increasing the frequency of open source projects by attaching a participatory price tag',
   },
   {
     name: 'TIC TAC TOE',
     imageUrl: 'https://res.cloudinary.com/hezzie/image/upload/v1600904576/Screenshot_from_2020-09-24_01-42-03_svfftx.png',
     link: 'https://tic-tac-toe-2-zeta.vercel.app/',
-    description: `Tic Tac Toe`,
-  },
-  {
-    name: 'InstaHelp',
-    imageUrl: 'https://res.cloudinary.com/hezzie/image/upload/v1600904576/Screenshot_from_2020-09-24_01-42-03_svfftx.png',
-    link: 'http://www.evenhelp.io/',
-    description: `EvenHelp is a platform that help people get their Resumes, and portfolios quickly at an affordable price, EvenHelp provides a variety of Resume and portfolio templates that you can choose from. It also provides a sub dormain for every portfolios which you can upgrade and use your own domain Name.
-    The future plan is to enable other developers create Resume and portfolio templates and sell it in EvenHelp platform`,
+    description: 'Tic Tac Toe',
   },
   {
     name: 'Havascore',
@@ -57,14 +50,14 @@ const onePage = (item, index) => (
       <img className="w-16 h-16 rounded-full mr-4" src={item.imageUrl} alt={item.link} />
       <h1 className="text-2xl font-bold text-gray-900">{item.name}</h1>
     </div>
-    <div className="p-4 bg-white">
+    <div className="p-2 bg-white my-2">
       <p className="text-gray-700">{item.description}</p>
     </div>
   </a>
 );
 
 const Projects = () => (
-  <div className="projects mx-auto w-11/12 md:w-10/12 py-10" id="abilities">
+  <div className="projects mx-auto w-full  py-10" id="abilities">
     <div className="abilitiesContainer" style={{ overflow: 'visible' }}>
       <h1
         data-aos="flip-right"

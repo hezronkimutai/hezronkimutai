@@ -1,40 +1,36 @@
 import React from 'react';
 import { CallToactionBtn } from './LandingDiv';
 
-
 const WhyMe = () => (
-  <div className="" id="">
-    <div style={{}} className="mx-auto  py-8">
-      <h1
-        data-aos="flip-right"
-        className=" mx-auto text-4xl text-center font-bold"
-      >
-        WHY ME?
-      </h1>
-      <div style={{}} className="mx-auto w-10/12 flex whyMe">
-        <img className="whyMeLeft h-48 w-48 p-3 m-auto" src="https://res.cloudinary.com/hezzie/image/upload/v1602164222/imageedit_88_7354735526_ctyjka.png" alt="hezronKimutai" />
-        <div className="whyMeRight shadow p-4">
-          <h3
-            className="text-l"
-            data-aos="fade-left"
-          >
+  <div className="bg-gray-100 py-12">
+    <div className="container mx-auto px-4">
+      <h1 className="text-4xl font-bold text-center mb-8">WHY ME?</h1>
+      <div className="flex items-center justify-center">
+        <img
+          className="h-48 w-48 rounded-full shadow-lg mr-8"
+          src="https://res.cloudinary.com/hezzie/image/upload/v1602164222/imageedit_88_7354735526_ctyjka.png"
+          alt="hezronKimutai"
+        />
+        <div className="flex-1 bg-white shadow-lg rounded-lg p-8">
+          <p className="text-xl leading-relaxed">
             Over the years, I have acquired relevant skills and experience,
-            which I shall bring to your organization.
-            I have also worked tirelessly on my
-            communication abilities and teamwork
-            skills, which I will put to use in my future career,
-            which would be in your organization if I am selected for the position.
-            I have given my 100% effort in my past
-            companies, and this has enabled me to
-            recognize my capabilities and limitations.
-            If I channelize them further, they will
-            bring fruitful results to me and also to your esteemed organization.
-          </h3>
-          <CallToactionBtn className="text-2xl flex font-semibold my-1 mx-auto p-3 bg-blue-700 rounded text-gray-300 delay-150 duration-300 ease-in-out " onClick={() => 0} displayText="HIRE ME" />
+            which I shall bring to your organization. I have also worked
+            tirelessly on my communication abilities and teamwork skills, which
+            I will put to use in my future career, which would be in your
+            organization if I am selected for the position. I have given my
+            100% effort in my past companies, and this has enabled me to
+            recognize my capabilities and limitations. If I channelize them
+            further, they will bring fruitful results to me and also to your
+            esteemed organization.
+          </p>
+          <CallToactionBtn
+            className="mt-4 bg-blue-700 hover:bg-blue-600 text-gray-300 py-2 px-6 rounded-full text-xl font-semibold transition duration-300 ease-in-out"
+            onClick={() => 0}
+            displayText="HIRE ME"
+          />
         </div>
       </div>
     </div>
-
   </div>
 );
 
