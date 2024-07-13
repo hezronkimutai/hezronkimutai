@@ -9,12 +9,12 @@ const {
 const services = [
   {
     name: 'Frontend Development',
-    description: `Proficient in the latest frontend technologies with strong design skills. Expertise in building tailored solutions.`,
+    description: 'Proficient in the latest frontend technologies with strong design skills. Expertise in building tailored solutions.',
     links: [{ url: '', img: react }, { url: '', img: html }, { url: '', img: css3 }],
   },
   {
     name: 'Backend Development',
-    description: `Experienced in backend web development, staying updated with new technologies and trends to deliver robust solutions.`,
+    description: 'Experienced in backend web development, staying updated with new technologies and trends to deliver robust solutions.',
     links: [{ url: '', img: python }, { url: '', img: nodeJs }],
   },
 ];

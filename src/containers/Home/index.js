@@ -40,10 +40,10 @@ const App = () => {
           <div><button onClick={() => setMode(mode === 'light' ? 'dark' : 'light')} className={`w-10 rounded-full h-6 ${mode === 'light' ? 'bg-gray-900' : 'bg-gray-100 '}`} type="button"><div className={`w-6 h-6 bg-blue-900  rounded-full ${mode === 'light' ? 'float-left' : 'float-right'}`} /></button></div>
         </div>
         <LandingDiv mode={mode} />
+        <Abilities />
         <Profile />
         <Projects />
         <Experiences />
-        <Abilities />
         <Blogs />
         <Team />
         <Footer />

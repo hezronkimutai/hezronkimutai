@@ -9,7 +9,7 @@ const {
 const services = [
   {
     name: 'PickMeUp Technologies',
-    description: `Worked with TypeScript to build microservices communicating via AMQP (RabbitMQ) and HTTP.`,
+    description: 'Worked with TypeScript to build microservices communicating via AMQP (RabbitMQ) and HTTP.',
     img: pmu,
   },
   {
@@ -31,12 +31,12 @@ const services = [
   {
     img: noLogo,
     name: 'Data Systems Limited',
-    description: `Part of a team sent by Andela to work for Data Systems Limited, focusing on building appealing user interfaces.`,
+    description: 'Part of a team sent by Andela to work for Data Systems Limited, focusing on building appealing user interfaces.',
   },
   {
     name: 'Fiverr',
     img: fiverr,
-    description: `Worked on remote projects using ReactJS and NodeJS, delivering high-quality work rated highly by managers and owners.`,
+    description: 'Worked on remote projects using ReactJS and NodeJS, delivering high-quality work rated highly by managers and owners.',
   },
   {
     name: 'East African Portland Cement',

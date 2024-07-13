@@ -12,11 +12,15 @@ const LandingDiv = () => (
     <div className="welcome w-full md:w-10/12 mx-auto flex flex-col md:flex-row items-center justify-center gap-8">
       <div className="md:w-1/2 text-center">
         <i className="italic text-gray-600 text-lg mb-4">
-          "The best way to predict the future is by comparing today and yesterday"
+          &quot;The best way to predict the future is by comparing today and yesterday&quot;
         </i>
         <h1 className="text-4xl font-bold mb-4">Hezron Kimutai</h1>
         <p className="text-xl font-semibold mb-6">
-          Hi, <span role="img" aria-label="hi">👋</span> I am a FullStack Web developer, an open source enthusiast, and a blogger.
+          Hi,
+          {' '}
+          <span role="img" aria-label="hi">👋</span>
+          {' '}
+          I am a FullStack Web developer, an open source enthusiast, and a blogger.
         </p>
         <a
           className="text-lg font-semibold py-3 px-6 bg-blue-700 rounded-full text-gray-100 transition duration-300 ease-in-out hover:bg-blue-900"
@@ -30,7 +34,7 @@ const LandingDiv = () => (
       </div>
       <div className="md:w-1/2">
         <img
-          className="w-full rounded-lg shadow-lg"
+          className="w-full rounded-lg"
           src="https://res.cloudinary.com/hezzie/image/upload/v1601295981/imageedit_69_7065262263_gecypg.png"
           alt="Welcome Page"
         />

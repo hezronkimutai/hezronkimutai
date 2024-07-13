@@ -2,13 +2,12 @@ import React from 'react';
 import { CallToactionBtn } from './LandingDiv';
 
 const WhyMe = () => (
-  <div className="bg-gray-100 py-12">
-    <div className="container mx-auto px-4">
-      <h1 className="text-4xl font-bold text-center mb-8">WHY ME?</h1>
+  <div className="bg-gray-100 py-6">
+    <div className="container mx-auto px-4 ">
       <div className="flex items-center justify-center">
         <img
           className="h-48 w-48 rounded-full shadow-lg mr-8"
-          src="https://res.cloudinary.com/hezzie/image/upload/v1602164222/imageedit_88_7354735526_ctyjka.png"
+          src="https://res.cloudinary.com/hezzie/image/upload/v1720881850/HEEEEEEEEEEEEE_ljnqek.png"
           alt="hezronKimutai"
         />
         <div className="flex-1 bg-white shadow-lg rounded-lg p-8">
