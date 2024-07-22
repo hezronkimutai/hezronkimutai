@@ -33,6 +33,24 @@ const projects = [
     link: 'https://dictaspeak-bj5qb18ee-hezronkimutais-projects.vercel.app/',
     description: 'Speech Dictionary is an interactive platform that helps users learn and understand new words through speech recognition and pronunciation guides.',
   },
+  {
+    name: 'InstaHelp',
+    imageUrl: 'https://res.cloudinary.com/hezzie/image/upload/v1600260595/Screenshot_from_2020-09-16_14-49-19_jbnhre.png',
+    link: 'https://guidde-frontend.vercel.app/',
+    description: 'Instahelp',
+  },
+  {
+    name: 'Ai Image generator',
+    imageUrl: 'https://res.cloudinary.com/hezzie/image/upload/v1600260595/Screenshot_from_2020-09-16_14-49-19_jbnhre.png',
+    link: 'https://cordata-test.vercel.app/',
+    description: 'AI image generator',
+  },
+  {
+    name: 'Cloud Fanatics',
+    imageUrl: 'https://res.cloudinary.com/hezzie/image/upload/v1600260595/Screenshot_from_2020-09-16_14-49-19_jbnhre.png',
+    link: 'https://cloudfanatics.vercel.app/',
+    description: 'Cloud Fanatics',
+  },
 ];
 
 const onePage = (item, index) => (

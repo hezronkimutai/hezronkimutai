@@ -9,7 +9,6 @@ import Profile from './Services';
 import Experiences from './Experiences';
 import Abilities from './WhyMe';
 import Projects from './Projects';
-import Blogs from './Blogs';
 import Footer from './Footer';
 import Team from './Team';
 import images from '../../components/images';
@@ -44,7 +43,6 @@ const App = () => {
         <Profile />
         <Projects />
         <Experiences />
-        <Blogs />
         <Team />
         <Footer />
       </div>
