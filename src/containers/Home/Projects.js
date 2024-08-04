@@ -41,7 +41,7 @@ const projects = [
   },
   {
     name: 'Ai Image generator',
-    imageUrl: 'https://res.cloudinary.com/hezzie/image/upload/v1600260595/Screenshot_from_2020-09-16_14-49-19_jbnhre.png',
+    imageUrl: 'https://res.cloudinary.com/hezzie/image/upload/v1721660120/Featured-image-AI-image-generators-by-Midjourney_ifbtsy.webp',
     link: 'https://cordata-test.vercel.app/',
     description: 'AI image generator',
   },
