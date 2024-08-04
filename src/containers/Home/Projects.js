@@ -36,7 +36,7 @@ const projects = [
   {
     name: 'InstaHelp',
     imageUrl: 'https://res.cloudinary.com/hezzie/image/upload/v1600260595/Screenshot_from_2020-09-16_14-49-19_jbnhre.png',
-    link: 'https://guidde-frontend.vercel.app/',
+    link: 'https://inistahelp.netlify.app/',
     description: 'Instahelp',
   },
   {
