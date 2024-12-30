@@ -66,7 +66,8 @@
 
 <a href="https://ko-fi.com/hezronkimutai"> <img align="left" src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3" height="50" width="210" alt="hezronkimutai" /></a><br><br>
 
-<img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=hezronkimutai&show_icons=true&locale=en&layout=compact" alt="hezronkimutai" /><br><br>
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=anuraghazra)](https://github.com/anuraghazra/github-readme-stats)
+
 
 &nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=hezronkimutai&show_icons=true&locale=en" alt="hezronkimutai" /><br><br>
 
