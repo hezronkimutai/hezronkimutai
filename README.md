@@ -58,7 +58,6 @@
 
 [![Sparkline](https://stars.medv.io/hezronkimutai/hezronkimutai.svg)](https://stars.medv.io/hezronkimutai/hezronkimutai)
 
-[![Stargazers over time](https://starchart.cc/hezronkimutai/hezronkimutai.svg)](https://starchart.cc/hezronkimutai/hezronkimutai)
 
 
 
