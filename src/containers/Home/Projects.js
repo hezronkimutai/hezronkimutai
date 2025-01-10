@@ -1,6 +1,4 @@
 import React from 'react';
-import Pagination from 'custom_react_pages';
-import Next from '../../components/icons/next';
 
 const projects = [
   {
@@ -82,15 +80,7 @@ const Projects = () => (
       >
         Featured Works and Case Studies
       </h1>
-      <Pagination
-        itemsPerPage={4}
-        activePageStyle={{ backgroundColor: '#1d83d4', color: 'white' }}
-        next={<Next left={false} />}
-        prev={<Next left />}
-        data={projects}
-        pageButtons={10}
-        onePage={onePage}
-      />
+      {projects.map(project=><div>{project.name}</div>)}
     </div>
   </div>
 );

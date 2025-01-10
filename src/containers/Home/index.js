@@ -2,8 +2,6 @@
 /* eslint-disable react/forbid-prop-types */
 import React, { useState } from 'react';
 import '../../assets/css/App.scss';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import LandingDiv from './LandingDiv';
 import Profile from './Services';
 import Experiences from './Experiences';
@@ -29,7 +27,6 @@ const App = () => {
         className={`_container w-full m-auto ${mode === 'light' ? 'text-gray-900 bg-gray-100' : 'text-gray-300 bg-gray-900 '}`}
         onScrollCapture={(e) => {
           e.preventDefault();
-          AOS.refresh();
         }}
       >
         <div style={{ width: '98%' }} className="z-10 fixed py-3 justify-between flex flex-row">

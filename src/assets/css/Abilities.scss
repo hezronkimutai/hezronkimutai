@@ -1,10 +1,11 @@
+
 %abilities {
   .abilities {
     > div {
       > div {
         .whyMeLeft {
           @media screen {
-            @media (max-width: $breakpoint-tablet) {
+            @media (max-width: 600px) {
               display: none;
               height: 0px;
             }
@@ -12,7 +13,7 @@
         }
         .whyMeRight {
           @media screen {
-            @media (max-width: $breakpoint-tablet) {
+            @media (max-width: 600px) {
               width: 100%;
               height: 100%;
             }

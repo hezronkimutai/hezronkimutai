@@ -1,9 +1,8 @@
-$breakpoint-tablet: 600px;
 
 %footer {
   .footer {
     color: #e9ead6;
-    @media (max-width: $breakpoint-tablet) {
+    @media (max-width: 600px) {
       flex-direction: column;
     }
   }
