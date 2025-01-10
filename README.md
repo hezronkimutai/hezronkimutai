@@ -45,8 +45,11 @@
 
 <h3 align="left">Stats:</h3>
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=hezronkimutai)](https://github.com/hezronkimutai/github-readme-stats)
+<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: center; text-align: center;">
+  <a href="https://github.com/hezronkimutai/github-readme-stats">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=hezronkimutai" alt="Top Languages" style="max-width: 100%; height: auto;" />
+  </a>
+  <img src="https://github-readme-stats.vercel.app/api?username=hezronkimutai&show_icons=true&locale=en" alt="Hezron's GitHub Stats" style="max-width: 100%; height: auto;" />
+</div>
 
-
-&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=hezronkimutai&show_icons=true&locale=en" alt="hezronkimutai" /><br><br>
 
