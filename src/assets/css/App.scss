@@ -1,12 +1,15 @@
-@import 'LandingDiv.scss';
-@import 'Profile.scss';
-@import 'Experiences.scss';
-@import 'Abilities.scss';
-@import 'Projects.scss';
-@import 'Footer.scss';
-button{
-  outline:none !important;
+@use 'LandingDiv' as LandingDiv;
+@use 'Profile' as Profile;
+@use 'Experiences' as Experiences;
+@use 'Abilities' as Abilities;
+@use 'Projects' as Projects;
+@use 'Footer' as Footer;
+
+
+button {
+  outline: none !important;
 }
+
 .animated {
   -webkit-animation-duration: .5s;
   animation-duration: .5s;
@@ -17,6 +20,7 @@ button{
   animation-iteration-count: infinite;
   -webkit-animation-iteration-count: infinite;
 }
+
 @-webkit-keyframes bounce {
   0%, 100% {
     -webkit-transform: translateY(0);
@@ -25,6 +29,7 @@ button{
     -webkit-transform: translateY(-5px);
   }
 }
+
 @keyframes bounce {
   0%, 100% {
     transform: translateY(0);
@@ -33,44 +38,49 @@ button{
     transform: translateY(-5px);
   }
 }
+
 * {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 300 ;
+  font-weight: 300;
   line-height: 1.4;
   animation-name: bounce;
   animation-duration: 1s;
 }
+
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent;
 }
-html{
+
+html {
   margin: 0px;
   width: 100%;
-    height: 100%;
+  height: 100%;
 }
+
 body {
   margin: 0px;
   width: 100%;
-    height: 100%;
+  height: 100%;
+
   #app {
     width: 100%;
     overflow: hidden;
-    margin:auto; 
-    ._container {
+    margin: auto;
 
-      
+    ._container {
       .sidebar {
         min-height: 40px !important;
         color: #f6f7e9;
         position: sticky;
         top: 0;
         z-index: 999;
-
         background-blend-mode: lighten;
+
         div {
           background-color: transparent;
-          margin:  2px 5px;
+          margin: 2px 5px;
+
           button {
             background-color: #031e39;
             outline: none;
@@ -84,6 +94,8 @@ body {
           }
         }
       }
+
+      // Using @extend should be changed to applying styles directly or using @use
       @extend %landingDiv;
       @extend %profile;
       @extend %experiences;
@@ -94,53 +106,61 @@ body {
   }
 }
 
+.experienceLeft {
+  width: 50%; // Moved above the nested rule
 
-
-.experienceLeft{
   @media screen {
-    @media (max-width: $breakpoint-tablet) {
-      width:100%;
+    @media (max-width: 600px) {
+      width: 100%;
       height: 100%;
     }
-    }
-}
-.experienceRight{
-  @media screen {
-    @media (max-width: $breakpoint-tablet) {
-display:none;
-height: 0px;		}
-    }
-}
-.servicesRight{
-  @media screen {
-    @media (max-width: $breakpoint-tablet) {
-      width:100%;
-      height: 100%;
-    }
-    }
-}
-.servicesLeft{
-  @media screen {
-    @media (max-width: $breakpoint-tablet) {
-display:none;
-height: 0px;		}
-    }
+  }
 }
 
-.blogContainer{
+.experienceRight {
+  @media screen {
+    @media (max-width: 600px) {
+      display: none;
+      height: 0px;
+    }
+  }
+}
+
+.servicesRight {
+  @media screen {
+    @media (max-width: 600px) {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.servicesLeft {
+  @media screen {
+    @media (max-width: 600px) {
+      display: none;
+      height: 0px;
+    }
+  }
+}
+
+.blogContainer {
   width: 30%;
+
   @media screen {
-   @media (max-width: $breakpoint-tablet) {
-     width: 100%;
-   }
-   }
- }
-.whyMe{
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+  }
+}
+
+.whyMe {
   flex-direction: row;
+
   @media screen {
-    @media (max-width: $breakpoint-tablet) {
+    @media (max-width: 600px) {
       text-align: center;
       flex-direction: column;
     }
-    }
+  }
 }

@@ -28,47 +28,22 @@ const webpack = {
         ],
       },
       {
+        test: /\.(scss|sass|css)$/i,  // Added .scss and .sass support
         include: path.resolve(__dirname, './src/assets'),
-        test: /\.(s[ac]ss|css)$/i,
         use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-        ],
-      },
-      {
-        include: path.resolve(__dirname, './node_modules/react-alice-carousel/lib/alice-carousel.css'),
-        test: /\.(s[ac]ss|css)$/i,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-        ],
-      },
-      {
-        include: path.resolve(__dirname, './node_modules/animate.css/animate.min.css'),
-        test: /\.(s[ac]ss|css)$/i,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-        ],
-      },
-      {
-        include: path.resolve(__dirname, './node_modules/aos/dist/aos.css'),
-        test: /\.(s[ac]ss|css)$/i,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
+          'style-loader',  // or MiniCssExtractPlugin.loader for production
+          'css-loader',    // Processes CSS
+          'postcss-loader', // Processes TailwindCSS
+          'sass-loader',    // Adds support for Sass
         ],
       },
       {
         exclude: /node_modules/,
-        test: /\.css$/,
+        test: /\.css$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader', 'postcss-loader',
+          'css-loader',
+          'postcss-loader',
         ],
       },
     ],
@@ -77,7 +52,9 @@ const webpack = {
     extensions: ['*', '.js', '.jsx'],
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'public/'),
+    static: {
+      directory: path.resolve(__dirname, 'public/'),
+    },
     historyApiFallback: true,
     port: 4000,
   },
@@ -92,13 +69,8 @@ const webpack = {
     new Dotenv({
       path: './.env',
       safe: true,
-      systemvars: true,
-      silent: true,
-      defaults: false,
     }),
   ],
-  node: {
-    fs: 'empty',
-  },
 };
+
 export default webpack;

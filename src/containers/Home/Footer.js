@@ -29,10 +29,10 @@ const App = () => {
   };
 
   return (
-    <div className="footer flex flex-row justify-center items-center bg-gray-200 py-4">
-      <div className=" mx-2"><Paypal /></div>
+    <div className="footer flex flex-row justify-center items-center py-4">
+      <div className=" mx-2"></div>
       <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        className="bg-blue-500 hover:bg-blue-700  font-bold py-2 px-4 rounded"
         type="button"
         onClick={handleCheckout}
       >

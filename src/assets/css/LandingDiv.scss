@@ -1,139 +1,51 @@
-$breakpoint-tablet: 600px;
-
 %landingDiv {
 	.landingDiv {
-		min-height: calc(90vh);
-		.welcome {
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between !important;
-			@media screen {
-				@media (max-width: $breakpoint-tablet) {
-					flex-direction: column-reverse;
-				}
-			}
-			.right {
-				@media screen {
-					@media (max-width: $breakpoint-tablet) {
-						display: none;
-						height: 0px;
-					}
-				}
-			}
-			.left {
-				@media screen {
-					@media (max-width: $breakpoint-tablet) {
-						width: 100%;
-						height: 100%;
-					}
-				}
-				width: 50%;
-				position: relative;
-				display: flex;
-				span {
-					margin: auto;
-					height: min-content;
-					text-align: center;
-					max-width: 80%;
-				}
-			}
-		}
-		margin: 0px;
-		padding: 0px;
-		width: 100%;
-		z-index: 1;
+	  margin: 0px; /* Move this declaration above nested rules */
+	  padding: 0px;
+	  width: 100%;
+	  z-index: 1;
+	  display: flex;
+	  background-size: 13% 70%;
+	  border-radius: 50% 0% 0% 0%;
+	  opacity: 0.9;
+	  background-repeat: no-repeat;
+	  background-position: top center;
+	  position: relative;
+  
+	  .welcome {
 		display: flex;
-		background-size: 13% 70%;
-		border-radius: 50% 0% 0% 0%;
-		opacity: 0.9;
-		background-repeat: no-repeat;
-		background-position: top center;
-		position: relative;
-	}
-}
-
-.scroll-indicator {
-	bottom: 0;
-	right: 50%;
-	width: 80px;
-	padding: 20px;
-	margin: 0 auto;
-	position: absolute;
-	opacity: 0.5;
-	&::before,
-	&::after {
-		content: "";
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	&::before {
-		width: 40px;
-		height: 40px;
-		border-radius: 50%;
-		border: 10px solid black;
-		animation: dot 3s infinite ease-in-out;
-	}
-	&::after {
-		width: 18px;
-		height: 18px;
-		border-right: 5px solid black;
-		border-bottom: 5px solid black;
-		transform: rotate(45deg);
-		animation: arrow 3s infinite ease-in-out;
-		animation-delay: 0.75s;
-		opacity: 0.25;
-	}
-	& > div {
-		display: block;
-		&::before,
-		&::after {
-			content: "";
-			display: block;
-			margin: 5px auto;
-			border-radius: 50%;
-			border: 6px solid black;
-			animation: dot 3s infinite ease-in-out;
+		flex-direction: row;
+		justify-content: space-between !important;
+		
+		@media screen and (max-width: 600px) {
+		  flex-direction: column-reverse;
 		}
-		&::before {
-			width: 25px;
-			height: 25px;
-			animation-delay: 0.25s;
+  
+		.right {
+		  @media screen and (max-width: 600px) {
+			display: none;
+			height: 0px;
+		  }
 		}
-		&::after {
-			border: 5px solid black;
-			width: 17px;
-			height: 17px;
-			animation-delay: 0.5s;
+  
+		.left {
+		  width: 50%;
+		  position: relative;
+		  display: flex;
+  
+		  @media screen and (max-width: 600px) {
+			width: 100%;
+			height: 100%;
+		  }
+  
+		  span {
+			margin: auto;
+			height: min-content;
+			text-align: center;
+			max-width: 80%;
+		  }
 		}
+	  }
 	}
-}
-@keyframes dot {
-	0% {
-		transform: scale(0.75);
-		opacity: 0.25;
-	}
-	25% {
-		transform: scale(1);
-		opacity: 1;
-	}
-	100% {
-		transform: scale(0.75);
-		opacity: 0.25;
-	}
-}
-
-@keyframes arrow {
-	0% {
-		transform: scale(0.75) rotate(45deg);
-		opacity: 0.25;
-	}
-	25% {
-		transform: scale(1) rotate(45deg);
-		opacity: 1;
-	}
-	100% {
-		transform: scale(0.75) rotate(45deg);
-		opacity: 0.25;
-	}
-}
+  }
+  
