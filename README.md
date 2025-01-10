@@ -11,7 +11,7 @@
 
 - 🔭 I’m currently working on [tikiti](https://github.com/hezronkimutai/hezronkimutai/)
 
-- 🌱 I’m currently learning **Golang, Flutter and .Net**
+- 🌱 I’m currently learning **AWS, GCP, AZURE, JAVA, Golang, Flutter and .Net**
 
 - 👯 I’m looking to collaborate on [Linux](https://github.com/torvalds/linux)
 
