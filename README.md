@@ -6,11 +6,22 @@
 <h1 align="center">Hi 👋, I'm Hezron Kimutai</h1>
 <h3 align="center">A passionate software developer</h3>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=hezronkimutai&label=Profile%20views&color=0e75b6&style=flat" alt="hezronkimutai" /> </p>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: center; text-align: center;">
+  <p>
+    <img src="https://komarev.com/ghpvc/?username=hezronkimutai&label=Profile%20views&color=0e75b6&style=flat" alt="Profile Views" />
+  </p>
+  <p>
+    <a href="https://github.com/ryo-ma/github-profile-trophy">
+      <img src="https://github-profile-trophy.vercel.app/?username=hezronkimutai" alt="GitHub Profile Trophy" />
+    </a>
+  </p>
+  <p>
+    <a href="https://x.com/ArapNyongiot" target="_blank">
+      <img src="https://img.shields.io/twitter/follow/hezronkimutai?logo=twitter&style=for-the-badge" alt="Follow on Twitter" />
+    </a>
+  </p>
+</div>
 
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=hezronkimutai" alt="hezronkimutai" /></a> </p>
-
-<p align="left"> <a href="https://x.com/ArapNyongiot" target="blank"><img src="https://img.shields.io/twitter/follow/hezronkimutai?logo=twitter&style=for-the-badge" alt="hezronkimutai" /></a> </p>
 
 - 🔭 I’m currently working on [tikiti](https://github.com/hezronkimutai/hezronkimutai/)
 
