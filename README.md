@@ -1,4 +1,4 @@
-<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-around;">
   <img src="https://github.com/user-attachments/assets/a0bb99f7-cb84-45f6-90a0-51ad68c0036e" alt="1000060235" style="flex: 1; height: 200px; object-fit: cover; max-width: 100%;"/>
   <img src="https://github.com/user-attachments/assets/a2211ae1-5856-4f46-82f1-3f8479a9dcdc" alt="1000060237" style="flex: 1; height: 200px; object-fit: cover; max-width: 100%;"/>
 </div>
