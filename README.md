@@ -56,7 +56,6 @@
 
 
 
-[![Sparkline](https://stars.medv.io/hezronkimutai/hezronkimutai.svg)](https://stars.medv.io/hezronkimutai/hezronkimutai)
 
 
 
