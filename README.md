@@ -1,4 +1,3 @@
-<a href="https://git.io/streak-stats"><img src="https://github-readme-streak-stats.herokuapp.com?user=hezronkimutai&theme=dark" alt="GitHub Streak" /></a>
 
 
 <h1 align="center">Hi 👋, I'm Hezron Kimutai</h1>
@@ -40,5 +39,3 @@
 
 &nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=hezronkimutai&show_icons=true&locale=en" alt="hezronkimutai" /><br><br>
 
-
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=hezronkimutai&theme=dark)](https://git.io/streak-stats)
