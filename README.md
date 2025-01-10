@@ -37,7 +37,7 @@
   <p>
     <img src="https://komarev.com/ghpvc/?username=hezronkimutai&label=Profile%20views&color=0e75b6&style=flat" alt="Profile Views" />
     <a href="https://x.com/ArapNyongiot" target="_blank">
-      <img src="https://img.shields.io/twitter/follow/hezronkimutai?logo=twitter&style=for-the-badge" alt="Follow on Twitter" />
+      <img src="https://img.shields.io/twitter/follow/ArapNyongiot?logo=twitter&style=for-the-badge" alt="Follow on Twitter" />
     </a>
   </p>
   <p>
