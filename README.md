@@ -10,6 +10,9 @@
 <a href="https://hezron.netlify.app/" target="_blank">
   <img src="https://img.shields.io/website-up-down-green-red/http/shields.io.svg" alt="Website shields.io">
 </a>
+<a href="https://app.netlify.com/sites/hezron/deploys" target="_blank">
+  <img src="https://api.netlify.com/api/v1/badges/026f20e3-f6df-4da2-a240-1575af64592a/deploy-status" alt="Netlify Status">
+</a>
 <a href="https://dl.circleci.com/status-badge/redirect/circleci/7y1oA14mKUSbssWzipspca/T2d1jPkJ6D3ZnYK9FkB6q4/tree/develop" target="_blank">
   <img src="https://dl.circleci.com/status-badge/img/circleci/7y1oA14mKUSbssWzipspca/T2d1jPkJ6D3ZnYK9FkB6q4/tree/develop.svg?style=svg&circle-token=CCIPRJ_TVZwCLJxa4dGWTcFdPBDZF_bd3dc5ffde5815e746f5e20fcc66c26f051074b6" alt="Build Status">
 </a>
