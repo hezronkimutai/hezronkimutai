@@ -2,7 +2,7 @@ import React from 'react';
 import { CallToactionBtn } from './LandingDiv';
 
 const WhyMe = () => (
-  <div className="bg-gray-100 py-6">
+  <div className="py-6">
     <div className="container mx-auto px-4 ">
       <div className="flex items-center justify-center">
         <img
@@ -10,7 +10,7 @@ const WhyMe = () => (
           src="https://res.cloudinary.com/hezzie/image/upload/v1720881850/HEEEEEEEEEEEEE_ljnqek.png"
           alt="hezronKimutai"
         />
-        <div className="flex-1 bg-white shadow-lg rounded-lg p-8">
+        <div className="flex-1  shadow-lg rounded-lg p-8">
           <p className="text-xl leading-relaxed">
             Over the years, I have acquired relevant skills and experience,
             which I shall bring to your organization. I have also worked

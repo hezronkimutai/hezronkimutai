@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// import AOS from 'aos';
 import App from './App';
 import './styles.css';
-
+import './main.css'
 // Create the root element
 const rootElement = document.getElementById('app');
 
@@ -11,4 +10,3 @@ const rootElement = document.getElementById('app');
 const root = ReactDOM.createRoot(rootElement);
 root.render(<App />);
 
-// AOS.init({ delay: 5, duration: 200 });

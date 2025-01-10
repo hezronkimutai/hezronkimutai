@@ -20,7 +20,7 @@ const socialLinks = [{
 ];
 
 const App = () => {
-  const [mode, setMode] = useState('light');
+  const [mode, setMode] = useState('dark');
   return (
     <>
       <div

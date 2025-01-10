@@ -10,8 +10,8 @@ export const CallToactionBtn = ({ onClick, displayText, className }) => (
 const LandingDiv = () => (
   <div className="landingDiv relative mx-auto w-full md:w-10/12 lg:w-9/12 xl:w-8/12">
     <div className="welcome w-full md:w-10/12 mx-auto flex flex-col md:flex-row items-center justify-center gap-8">
-      <div className="md:w-1/2 text-center">
-        <i className="italic text-gray-600 text-lg mb-4">
+      <div className="md:w-1/2  text-red text-center">
+        <i className="italic  text-lg mb-4">
           &quot;The best way to predict the future is by comparing today and yesterday&quot;
         </i>
         <h1 className="text-4xl font-bold mb-4">Hezron Kimutai</h1>

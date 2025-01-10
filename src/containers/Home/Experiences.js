@@ -47,19 +47,17 @@ const services = [
 ];
 
 const Experiences = () => (
-  <div className="bg-gray-100 py-12">
+  <div className="py-12">
     <div className="container mx-auto px-4">
       <h1 className="text-4xl font-bold text-center mb-8">Experience</h1>
       <div className="flex flex-wrap justify-evenly">
         {services.map((service, index) => (
           <div
             key={index}
-            data-aos="fade-right"
             className="m-4 p-4 w-full md:w-6/12 lg:w-5/12 shadow-lg rounded"
             style={{
               borderTopLeftRadius: "70px",
               borderBottomRightRadius: "70px",
-              background: '#fff'
             }}
           >
             <div className="flex items-center mb-4">

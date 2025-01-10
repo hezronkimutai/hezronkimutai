@@ -20,7 +20,7 @@ const services = [
 ];
 
 const Profile = () => (
-  <div className="bg-gray-100 py-12">
+  <div className=" py-12">
     <div className="container mx-auto px-4">
       <h1 className="text-4xl font-bold text-center mb-8">Services I Offer</h1>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
@@ -28,10 +28,10 @@ const Profile = () => (
           <div
             key={index}
             data-aos="fade-left"
-            className="p-6 bg-white rounded-lg shadow-lg"
+            className="p-6  rounded-lg shadow-lg"
           >
             <h2 className="text-xl font-semibold mb-4">{service.name}</h2>
-            <p className="text-gray-700 leading-relaxed mb-4">{service.description}</p>
+            <p className=" leading-relaxed mb-4">{service.description}</p>
             <div className="flex justify-center">
               {service.links.map((link, key) => (
                 <img
