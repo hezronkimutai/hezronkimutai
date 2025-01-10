@@ -1,4 +1,5 @@
-[![Build Status](https://dl.circleci.com/status-badge/img/circleci/7y1oA14mKUSbssWzipspca/T2d1jPkJ6D3ZnYK9FkB6q4/tree/develop.svg?style=svg&circle-token=CCIPRJ_TVZwCLJxa4dGWTcFdPBDZF_bd3dc5ffde5815e746f5e20fcc66c26f051074b6)](https://dl.circleci.com/status-badge/redirect/circleci/7y1oA14mKUSbssWzipspca/T2d1jPkJ6D3ZnYK9FkB6q4/tree/develop)
+[![Build Status](https://circleci.com/gh/hezronkimutai/hezronkimutai.svg?style=shield)](https://circleci.com/gh/hezronkimutai/hezronkimutai)
+[![Test Status](https://dl.circleci.com/status-badge/img/circleci/7y1oA14mKUSbssWzipspca/T2d1jPkJ6D3ZnYK9FkB6q4/tree/develop.svg?style=svg&circle-token=CCIPRJ_TVZwCLJxa4dGWTcFdPBDZF_bd3dc5ffde5815e746f5e20fcc66c26f051074b6)](https://dl.circleci.com/status-badge/redirect/circleci/7y1oA14mKUSbssWzipspca/T2d1jPkJ6D3ZnYK9FkB6q4/tree/develop)
 [![Coverage Status](https://coveralls.io/repos/github/hezronkimutai/hezronkimutai/badge.svg?branch=develop)](https://coveralls.io/github/hezronkimutai/hezronkimutai?branch=develop)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Version](https://img.shields.io/npm/v/hezronkimutai.svg)](https://npmjs.com/package/hezronkimutai)
