@@ -1,5 +1,11 @@
-[![CircleCI](https://dl.circleci.com/status-badge/img/circleci/7y1oA14mKUSbssWzipspca/T2d1jPkJ6D3ZnYK9FkB6q4/tree/develop.svg?style=svg&circle-token=CCIPRJ_TVZwCLJxa4dGWTcFdPBDZF_bd3dc5ffde5815e746f5e20fcc66c26f051074b6)](https://dl.circleci.com/status-badge/redirect/circleci/7y1oA14mKUSbssWzipspca/T2d1jPkJ6D3ZnYK9FkB6q4/tree/develop)
+[![Build Status](https://dl.circleci.com/status-badge/img/circleci/7y1oA14mKUSbssWzipspca/T2d1jPkJ6D3ZnYK9FkB6q4/tree/develop.svg?style=svg&circle-token=CCIPRJ_TVZwCLJxa4dGWTcFdPBDZF_bd3dc5ffde5815e746f5e20fcc66c26f051074b6)](https://dl.circleci.com/status-badge/redirect/circleci/7y1oA14mKUSbssWzipspca/T2d1jPkJ6D3ZnYK9FkB6q4/tree/develop)
 [![Coverage Status](https://coveralls.io/repos/github/hezronkimutai/hezronkimutai/badge.svg?branch=develop)](https://coveralls.io/github/hezronkimutai/hezronkimutai?branch=develop)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Version](https://img.shields.io/npm/v/hezronkimutai.svg)](https://npmjs.com/package/hezronkimutai)
+[![PRs Open](https://img.shields.io/github/issues-pr/hezronkimutai/hezronkimutai.svg)](https://github.com/hezronkimutai/hezronkimutai/pulls)
+[![Issues Open](https://img.shields.io/github/issues/hezronkimutai/hezronkimutai.svg)](https://github.com/hezronkimutai/hezronkimutai/issues)
+
+
 <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-around;">
   <img src="https://github.com/user-attachments/assets/a0bb99f7-cb84-45f6-90a0-51ad68c0036e" alt="1000060235" style="flex: 1; height: 200px; object-fit: cover; max-width: 100%;"/>
   <img src="https://github.com/user-attachments/assets/a2211ae1-5856-4f46-82f1-3f8479a9dcdc" alt="1000060237" style="flex: 1; height: 200px; object-fit: cover; max-width: 100%;"/>
