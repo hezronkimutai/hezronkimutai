@@ -7,31 +7,82 @@
 <h1 align="center">Hi 👋, I'm Hezron Kimutai</h1>
 <h3 align="center">A passionate software developer</h3>
 
-[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://hezron.netlify.app/)
-[![Build Status](https://dl.circleci.com/status-badge/img/circleci/7y1oA14mKUSbssWzipspca/T2d1jPkJ6D3ZnYK9FkB6q4/tree/develop.svg?style=svg&circle-token=CCIPRJ_TVZwCLJxa4dGWTcFdPBDZF_bd3dc5ffde5815e746f5e20fcc66c26f051074b6)](https://dl.circleci.com/status-badge/redirect/circleci/7y1oA14mKUSbssWzipspca/T2d1jPkJ6D3ZnYK9FkB6q4/tree/develop)
-[![Coverage Status](https://coveralls.io/repos/github/hezronkimutai/hezronkimutai/badge.svg?branch=develop)](https://coveralls.io/github/hezronkimutai/hezronkimutai?branch=develop)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![PRs Open](https://img.shields.io/github/issues-pr/hezronkimutai/hezronkimutai.svg)](https://github.com/hezronkimutai/hezronkimutai/pulls)
-[![Issues Open](https://img.shields.io/github/issues/hezronkimutai/hezronkimutai.svg)](https://github.com/hezronkimutai/hezronkimutai/issues)
-[![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg)](https://www.javascript.com)
-[![GitHub branches](https://badgen.net/github/branches/hezronkimutai/hezronkimutai)](https://github.com/hezronkimutai/hezronkimutai/)
-[![GitHub commits](https://badgen.net/github/commits/hezronkimutai/hezronkimutai)](https://GitHub.com/hezronkimutai/hezronkimutai/commit/)
-[![GitHub latest commit](https://badgen.net/github/last-commit/hezronkimutai/hezronkimutai)](https://GitHub.com/hezronkimutai/hezronkimutai/commit/)
-[![GitHub forks](https://badgen.net/github/forks/hezronkimutai/hezronkimutai/)](https://GitHub.com/hezronkimutai/hezronkimutai/network/)
-[![GitHub stars](https://badgen.net/github/stars/hezronkimutai/hezronkimutai)](https://GitHub.com/hezronkimutai/hezronkimutai/stargazers/)
-[![GitHub watchers](https://badgen.net/github/watchers/hezronkimutai/hezronkimutai/)](https://GitHub.com/hezronkimutai/hezronkimutai/watchers/)
-[![GitHub followers](https://img.shields.io/github/followers/hezronkimutai.svg?style=social&label=Follow&maxAge=2592000)](https://github.com/hezronkimutai?tab=followers)
-[![GitHub contributors](https://img.shields.io/github/contributors/hezronkimutai/hezronkimutai.svg)](https://GitHub.com/hezronkimutai/hezronkimutai/graphs/contributors/)
-[![GitHub issues](https://badgen.net/github/issues/hezronkimutai/hezronkimutai/)](https://GitHub.com/hezronkimutai/hezronkimutai/issues/)
-[![GitHub issues-closed](https://img.shields.io/github/issues-closed/hezronkimutai/hezronkimutai.svg)](https://GitHub.com/hezronkimutai/hezronkimutai/issues?q=is%3Aissue+is%3Aclosed)
-[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/hezronkimutai/hezronkimutai.svg)](http://isitmaintained.com/project/hezronkimutai/hezronkimutai "Average time to resolve an issue")
-[![Percentage of issues still open](http://isitmaintained.com/badge/open/hezronkimutai/hezronkimutai.svg)](http://isitmaintained.com/project/hezronkimutai/hezronkimutai "Percentage of issues still open")
-[![GitHub pull-requests closed](https://img.shields.io/github/issues-pr-closed/hezronkimutai/hezronkimutai.svg)](https://GitHub.com/hezronkimutai/hezronkimutai/pull/)
-[![GitHub pull-requests merged](https://badgen.net/github/merged-prs/hezronkimutai/hezronkimutai)](https://github.com/hezronkimutai/hezronkimutai/pulls?q=is%3Amerged)
-[![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/hezronkimutai)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/hezronkimutai/hezronkimutai/graphs/commit-activity)
-![Maintainer](https://img.shields.io/badge/maintainer-hezronkimutai-blue)
-[![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://hezron.netlify.app/)
+<a href="https://hezron.netlify.app/" target="_blank">
+  <img src="https://img.shields.io/website-up-down-green-red/http/shields.io.svg" alt="Website shields.io">
+</a>
+<a href="https://dl.circleci.com/status-badge/redirect/circleci/7y1oA14mKUSbssWzipspca/T2d1jPkJ6D3ZnYK9FkB6q4/tree/develop" target="_blank">
+  <img src="https://dl.circleci.com/status-badge/img/circleci/7y1oA14mKUSbssWzipspca/T2d1jPkJ6D3ZnYK9FkB6q4/tree/develop.svg?style=svg&circle-token=CCIPRJ_TVZwCLJxa4dGWTcFdPBDZF_bd3dc5ffde5815e746f5e20fcc66c26f051074b6" alt="Build Status">
+</a>
+<a href="https://coveralls.io/github/hezronkimutai/hezronkimutai?branch=develop" target="_blank">
+  <img src="https://coveralls.io/repos/github/hezronkimutai/hezronkimutai/badge.svg?branch=develop" alt="Coverage Status">
+</a>
+<a href="https://opensource.org/licenses/MIT" target="_blank">
+  <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
+</a>
+<a href="https://github.com/hezronkimutai/hezronkimutai/pulls" target="_blank">
+  <img src="https://img.shields.io/github/issues-pr/hezronkimutai/hezronkimutai.svg" alt="PRs Open">
+</a>
+<a href="https://github.com/hezronkimutai/hezronkimutai/issues" target="_blank">
+  <img src="https://img.shields.io/github/issues/hezronkimutai/hezronkimutai.svg" alt="Issues Open">
+</a>
+<a href="https://www.javascript.com" target="_blank">
+  <img src="https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg" alt="Made with JavaScript">
+</a>
+<a href="https://github.com/hezronkimutai/hezronkimutai/" target="_blank">
+  <img src="https://badgen.net/github/branches/hezronkimutai/hezronkimutai" alt="GitHub branches">
+</a>
+<a href="https://GitHub.com/hezronkimutai/hezronkimutai/commit/" target="_blank">
+  <img src="https://badgen.net/github/commits/hezronkimutai/hezronkimutai" alt="GitHub commits">
+</a>
+<a href="https://GitHub.com/hezronkimutai/hezronkimutai/commit/" target="_blank">
+  <img src="https://badgen.net/github/last-commit/hezronkimutai/hezronkimutai" alt="GitHub latest commit">
+</a>
+<a href="https://GitHub.com/hezronkimutai/hezronkimutai/network/" target="_blank">
+  <img src="https://badgen.net/github/forks/hezronkimutai/hezronkimutai/" alt="GitHub forks">
+</a>
+<a href="https://GitHub.com/hezronkimutai/hezronkimutai/stargazers/" target="_blank">
+  <img src="https://badgen.net/github/stars/hezronkimutai/hezronkimutai" alt="GitHub stars">
+</a>
+<a href="https://GitHub.com/hezronkimutai/hezronkimutai/watchers/" target="_blank">
+  <img src="https://badgen.net/github/watchers/hezronkimutai/hezronkimutai/" alt="GitHub watchers">
+</a>
+<a href="https://github.com/hezronkimutai?tab=followers" target="_blank">
+  <img src="https://img.shields.io/github/followers/hezronkimutai.svg?style=social&label=Follow&maxAge=2592000" alt="GitHub followers">
+</a>
+<a href="https://GitHub.com/hezronkimutai/hezronkimutai/graphs/contributors/" target="_blank">
+  <img src="https://img.shields.io/github/contributors/hezronkimutai/hezronkimutai.svg" alt="GitHub contributors">
+</a>
+<a href="https://GitHub.com/hezronkimutai/hezronkimutai/issues/" target="_blank">
+  <img src="https://badgen.net/github/issues/hezronkimutai/hezronkimutai/" alt="GitHub issues">
+</a>
+<a href="https://GitHub.com/hezronkimutai/hezronkimutai/issues?q=is%3Aissue+is%3Aclosed" target="_blank">
+  <img src="https://img.shields.io/github/issues-closed/hezronkimutai/hezronkimutai.svg" alt="GitHub issues-closed">
+</a>
+<a href="http://isitmaintained.com/project/hezronkimutai/hezronkimutai" target="_blank">
+  <img src="http://isitmaintained.com/badge/resolution/hezronkimutai/hezronkimutai.svg" alt="Average time to resolve an issue">
+</a>
+<a href="http://isitmaintained.com/project/hezronkimutai/hezronkimutai" target="_blank">
+  <img src="http://isitmaintained.com/badge/open/hezronkimutai/hezronkimutai.svg" alt="Percentage of issues still open">
+</a>
+<a href="https://GitHub.com/hezronkimutai/hezronkimutai/pull/" target="_blank">
+  <img src="https://img.shields.io/github/issues-pr-closed/hezronkimutai/hezronkimutai.svg" alt="GitHub pull-requests closed">
+</a>
+<a href="https://github.com/hezronkimutai/hezronkimutai/pulls?q=is%3Amerged" target="_blank">
+  <img src="https://badgen.net/github/merged-prs/hezronkimutai/hezronkimutai" alt="GitHub pull-requests merged">
+</a>
+<a href="https://saythanks.io/to/hezronkimutai" target="_blank">
+  <img src="https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg" alt="Say Thanks!">
+</a>
+<a href="https://GitHub.com/hezronkimutai/hezronkimutai/graphs/commit-activity" target="_blank">
+  <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" alt="Maintenance">
+</a>
+<a href="https://hezron.netlify.app/" target="_blank">
+  <img src="https://img.shields.io/badge/maintainer-hezronkimutai-blue" alt="Maintainer">
+</a>
+<a href="https://hezron.netlify.app/" target="_blank">
+  <img src="https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg" alt="Ask Me Anything!">
+</a>
+
 
 <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: center; text-align: center;">
   <p>
@@ -41,7 +92,7 @@
     </a>
   </p>
   <p>
-    <a href="https://github.com/ryo-ma/github-profile-trophy">
+    <a href="https://github.com/ryo-ma/github-profile-trophy" target="_blank">
       <img src="https://github-profile-trophy.vercel.app/?username=hezronkimutai" alt="GitHub Profile Trophy" />
     </a>
   </p>
