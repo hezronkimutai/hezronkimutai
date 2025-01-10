@@ -7,6 +7,7 @@
 <h1 align="center">Hi 👋, I'm Hezron Kimutai</h1>
 <h3 align="center">A passionate software developer</h3>
 
+[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://hezron.netlify.app/)
 [![Build Status](https://dl.circleci.com/status-badge/img/circleci/7y1oA14mKUSbssWzipspca/T2d1jPkJ6D3ZnYK9FkB6q4/tree/develop.svg?style=svg&circle-token=CCIPRJ_TVZwCLJxa4dGWTcFdPBDZF_bd3dc5ffde5815e746f5e20fcc66c26f051074b6)](https://dl.circleci.com/status-badge/redirect/circleci/7y1oA14mKUSbssWzipspca/T2d1jPkJ6D3ZnYK9FkB6q4/tree/develop)
 [![Coverage Status](https://coveralls.io/repos/github/hezronkimutai/hezronkimutai/badge.svg?branch=develop)](https://coveralls.io/github/hezronkimutai/hezronkimutai?branch=develop)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -34,7 +35,6 @@
 
 <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: center; text-align: center;">
   <p>
-    [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://hezron.netlify.app/)
     <img src="https://komarev.com/ghpvc/?username=hezronkimutai&label=Profile%20views&color=0e75b6&style=flat" alt="Profile Views" />
     <a href="https://x.com/ArapNyongiot" target="_blank">
       <img src="https://img.shields.io/twitter/follow/ArapNyongiot?logo=twitter&style=for-the-badge" alt="Follow on Twitter" />
