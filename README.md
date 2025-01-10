@@ -27,7 +27,7 @@
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/hezronkimutai/hezronkimutai.svg)](http://isitmaintained.com/project/hezronkimutai/hezronkimutai "Percentage of issues still open")
 [![GitHub pull-requests closed](https://img.shields.io/github/issues-pr-closed/hezronkimutai/hezronkimutai.svg)](https://GitHub.com/hezronkimutai/hezronkimutai/pull/)
 [![GitHub pull-requests merged](https://badgen.net/github/merged-prs/hezronkimutai/hezronkimutai)](https://github.com/hezronkimutai/hezronkimutai/pulls?q=is%3Amerged)
-[![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg)](https://saythanks.io/to/kennethreitz)
+[![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/hezronkimutai)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/hezronkimutai/hezronkimutai/graphs/commit-activity)
 ![Maintainer](https://img.shields.io/badge/maintainer-hezronkimutai-blue)
 [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://shields.io/)
