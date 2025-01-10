@@ -7,13 +7,11 @@
     "coveralls": "jest  --coverage --coverageReporters=text-lcov | coveralls",
     "test": "jest --coverage",
     "dev": "webpack-dev-server --mode development --hot --open --config webpack.config.babel.js",
-    "build": "webpack --mode production --config webpack.config.babel.js && npm run cpLnx",
+    "build": "webpack --mode production --config webpack.config.babel.js",
     "start": "HTTPS=true serve -s ./dist",
     "snap:fix": "npm test -- -u",
     "lint": "eslint --fix ./",
-    "deploy": "aws s3 sync dist/ s3://hezronkimutai",
-    "cpLnx": "cp sw.js dist/",
-    "cpWin": "cp sw.js dist/"
+    "deploy": "aws s3 sync dist/ s3://hezronkimutai"
   },
   "repository": {
     "type": "git",
