@@ -1,3 +1,4 @@
+
 <h1 align="center">Hi 👋, I'm Hezron Kimutai</h1>
 <h3 align="center">A passionate software developer</h3>
 
@@ -38,4 +39,4 @@
 &nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=hezronkimutai&show_icons=true&locale=en" alt="hezronkimutai" /><br><br>
 
 
-[![GitHub Streak](https://streak-stats.demolab.com/?user=hezronkimutai)](https://git.io/streak-stats)
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=hezronkimutai&theme=dark)](https://git.io/streak-stats)
