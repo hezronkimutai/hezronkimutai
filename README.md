@@ -37,4 +37,4 @@
 
 &nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=hezronkimutai&show_icons=true&locale=en" alt="hezronkimutai" /><br><br>
 
-<img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=hezronkimutai&" alt="hezronkimutai" /></p><br>
+![Hezron's GitHub streak](https://github-readme-streak-stats.herokuapp.com/?user=hezronkimutai&theme=dark&hide_border=true)
