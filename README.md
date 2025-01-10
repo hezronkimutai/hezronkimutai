@@ -30,11 +30,11 @@
 [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/hezronkimutai)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/hezronkimutai/hezronkimutai/graphs/commit-activity)
 ![Maintainer](https://img.shields.io/badge/maintainer-hezronkimutai-blue)
-[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://hezron.netlify.app/)
 [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/hezronkimutai/ama)
 
 <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: center; text-align: center;">
   <p>
+    [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://hezron.netlify.app/)
     <img src="https://komarev.com/ghpvc/?username=hezronkimutai&label=Profile%20views&color=0e75b6&style=flat" alt="Profile Views" />
     <a href="https://x.com/ArapNyongiot" target="_blank">
       <img src="https://img.shields.io/twitter/follow/ArapNyongiot?logo=twitter&style=for-the-badge" alt="Follow on Twitter" />
