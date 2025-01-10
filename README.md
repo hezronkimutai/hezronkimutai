@@ -33,9 +33,17 @@
 - ⚡ Fun fact ** I am awesome **
 
 <h3 align="left">Support:</h3>
-<a href="buymeacoffee.com/hezronchel6"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="hezronkimutai" /></a><br><br>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; align-items: center; text-align: center;">
+  <a href="https://buymeacoffee.com/hezronchel6">
+    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="Buy Me a Coffee Button" />
+  </a>
+  <a href="https://ko-fi.com/hezronchelimo">
+    <img src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3" height="50" width="210" alt="Ko-fi Button" />
+  </a>
+</div>
 
-<a href="https://ko-fi.com/hezronchelimo"> <img align="left" src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3" height="50" width="210" alt="hezronkimutai" /></a><br><br>
+
+<h3 align="left">Stats:</h3>
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=hezronkimutai)](https://github.com/hezronkimutai/github-readme-stats)
 
