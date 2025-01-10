@@ -1,22 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-around;">
   <img src="https://github.com/user-attachments/assets/a0bb99f7-cb84-45f6-90a0-51ad68c0036e" alt="1000060235" style="flex: 1; height: 200px; object-fit: cover; max-width: 100%;"/>
   <img src="https://github.com/user-attachments/assets/a2211ae1-5856-4f46-82f1-3f8479a9dcdc" alt="1000060237" style="flex: 1; height: 200px; object-fit: cover; max-width: 100%;"/>
@@ -54,15 +36,13 @@
 <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: center; text-align: center;">
   <p>
     <img src="https://komarev.com/ghpvc/?username=hezronkimutai&label=Profile%20views&color=0e75b6&style=flat" alt="Profile Views" />
+    <a href="https://x.com/ArapNyongiot" target="_blank">
+      <img src="https://img.shields.io/twitter/follow/hezronkimutai?logo=twitter&style=for-the-badge" alt="Follow on Twitter" />
+    </a>
   </p>
   <p>
     <a href="https://github.com/ryo-ma/github-profile-trophy">
       <img src="https://github-profile-trophy.vercel.app/?username=hezronkimutai" alt="GitHub Profile Trophy" />
-    </a>
-  </p>
-  <p>
-    <a href="https://x.com/ArapNyongiot" target="_blank">
-      <img src="https://img.shields.io/twitter/follow/hezronkimutai?logo=twitter&style=for-the-badge" alt="Follow on Twitter" />
     </a>
   </p>
 </div>
