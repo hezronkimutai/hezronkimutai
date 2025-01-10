@@ -1,3 +1,5 @@
+<a href="https://git.io/streak-stats"><img src="https://github-readme-streak-stats.herokuapp.com?user=hezronkimutai&theme=dark" alt="GitHub Streak" /></a>
+
 
 <h1 align="center">Hi 👋, I'm Hezron Kimutai</h1>
 <h3 align="center">A passionate software developer</h3>
