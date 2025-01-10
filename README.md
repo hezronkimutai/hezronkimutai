@@ -1,8 +1,7 @@
-![1000060235](https://github.com/user-attachments/assets/a0bb99f7-cb84-45f6-90a0-51ad68c0036e)
-
-![1000060237](https://github.com/user-attachments/assets/a2211ae1-5856-4f46-82f1-3f8479a9dcdc)
-
-
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+  <img src="https://github.com/user-attachments/assets/a0bb99f7-cb84-45f6-90a0-51ad68c0036e" alt="1000060235" style="flex: 1; max-width: 100%; object-fit: cover;"/>
+  <img src="https://github.com/user-attachments/assets/a2211ae1-5856-4f46-82f1-3f8479a9dcdc" alt="1000060237" style="flex: 1; max-width: 100%; object-fit: cover;"/>
+</div>
 
 <h1 align="center">Hi 👋, I'm Hezron Kimutai</h1>
 <h3 align="center">A passionate software developer</h3>
