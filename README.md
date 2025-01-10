@@ -3,23 +3,6 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![PRs Open](https://img.shields.io/github/issues-pr/hezronkimutai/hezronkimutai.svg)](https://github.com/hezronkimutai/hezronkimutai/pulls)
 [![Issues Open](https://img.shields.io/github/issues/hezronkimutai/hezronkimutai.svg)](https://github.com/hezronkimutai/hezronkimutai/issues)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg)](https://www.javascript.com)
 [![GitHub branches](https://badgen.net/github/branches/hezronkimutai/hezronkimutai)](https://github.com/hezronkimutai/hezronkimutai/)
 [![GitHub commits](https://badgen.net/github/commits/hezronkimutai/hezronkimutai)](https://GitHub.com/hezronkimutai/hezronkimutai/commit/)
@@ -35,7 +18,6 @@
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/hezronkimutai/hezronkimutai.svg)](http://isitmaintained.com/project/hezronkimutai/hezronkimutai "Percentage of issues still open")
 [![GitHub pull-requests closed](https://img.shields.io/github/issues-pr-closed/hezronkimutai/hezronkimutai.svg)](https://GitHub.com/hezronkimutai/hezronkimutai/pull/)
 [![GitHub pull-requests merged](https://badgen.net/github/merged-prs/hezronkimutai/hezronkimutai)](https://github.com/hezronkimutai/hezronkimutai/pulls?q=is%3Amerged)
-
 [![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg)](https://saythanks.io/to/kennethreitz)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/hezronkimutai/hezronkimutai/graphs/commit-activity)
 ![Maintainer](https://img.shields.io/badge/maintainer-hezronkimutai-blue)
