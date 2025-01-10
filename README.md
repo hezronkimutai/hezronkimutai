@@ -82,15 +82,13 @@
 <a href="https://hezron.netlify.app/" target="_blank">
   <img src="https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg" alt="Ask Me Anything!">
 </a>
-
+<img src="https://komarev.com/ghpvc/?username=hezronkimutai&label=Profile%20views&color=0e75b6&style=flat" alt="Profile Views" />
+<a href="https://x.com/ArapNyongiot" target="_blank">
+  <img src="https://img.shields.io/twitter/follow/ArapNyongiot?logo=twitter&style=for-the-badge" alt="Follow on Twitter" />
+</a>
 
 <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: center; text-align: center;">
-  <p>
-    <img src="https://komarev.com/ghpvc/?username=hezronkimutai&label=Profile%20views&color=0e75b6&style=flat" alt="Profile Views" />
-    <a href="https://x.com/ArapNyongiot" target="_blank">
-      <img src="https://img.shields.io/twitter/follow/ArapNyongiot?logo=twitter&style=for-the-badge" alt="Follow on Twitter" />
-    </a>
-  </p>
+
   <p>
     <a href="https://github.com/ryo-ma/github-profile-trophy" target="_blank">
       <img src="https://github-profile-trophy.vercel.app/?username=hezronkimutai" alt="GitHub Profile Trophy" />
