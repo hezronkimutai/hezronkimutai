@@ -1,5 +1,8 @@
 ![1000060235](https://github.com/user-attachments/assets/a0bb99f7-cb84-45f6-90a0-51ad68c0036e)
 
+![1000060237](https://github.com/user-attachments/assets/a2211ae1-5856-4f46-82f1-3f8479a9dcdc)
+
+
 
 <h1 align="center">Hi 👋, I'm Hezron Kimutai</h1>
 <h3 align="center">A passionate software developer</h3>
@@ -39,5 +42,4 @@
 
 
 &nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=hezronkimutai&show_icons=true&locale=en" alt="hezronkimutai" /><br><br>
-![1000060236](https://github.com/user-attachments/assets/ca033916-5d2f-4381-85aa-be6590cb8574)
 
