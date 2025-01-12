@@ -101,7 +101,7 @@
 
 
 ## 🔭 I’m currently working on
-- <a href="https://github.com/hezronkimutai/hezronkimutai/" target="_blank">tikiti</a>
+- <a href="https://tikiti-theta.vercel.app/" target="_blank">tikiti</a>
 - <a href="https://thesaniakgroup.vercel.app/" target="_blank">thesaniakgroup</a>
 - <a href="https://thenyongigroup.vercel.app/" target="_blank">thenyongigroup</a>
 - <a href="https://lifcommunity.vercel.app/" target="_blank">lifcommunity</a>
