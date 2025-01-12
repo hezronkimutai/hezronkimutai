@@ -106,6 +106,7 @@
 - <a href="https://thenyongigroup.vercel.app/" target="_blank">thenyongigroup</a>
 - <a href="https://lifcommunity.vercel.app/" target="_blank">lifcommunity</a>
 - <a href="https://thehkgroup.vercel.app/" target="_blank">thehkgroup</a>
+- <a href="https://merigoroundangular.vercel.app/home" target="_blank">MerigoRound</a>
 
 
   
