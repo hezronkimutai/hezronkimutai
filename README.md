@@ -100,11 +100,13 @@
 </div>
 
 
-- 🔭 I’m currently working on [tikiti](https://github.com/hezronkimutai/hezronkimutai/)
--  [thesaniakgroup](https://thesaniakgroup.vercel.app/)
--  [thenyongigroup](https://thenyongigroup.vercel.app/)
--  [lifcommunity](https://lifcommunity.vercel.app/)
--  [thehkgroup](https://thehkgroup.vercel.app/)
+## 🔭 I’m currently working on
+-  [tikiti](https://github.com/hezronkimutai/hezronkimutai/){:target="_blank"}
+-  [thesaniakgroup](https://thesaniakgroup.vercel.app/){:target="_blank"}
+-  [thenyongigroup](https://thenyongigroup.vercel.app/){:target="_blank"}
+-  [lifcommunity](https://lifcommunity.vercel.app/){:target="_blank"}
+-  [thehkgroup](https://thehkgroup.vercel.app/){:target="_blank"}
+
   
 - 🌱 I’m currently learning **AWS, GCP, AZURE, JAVA, Golang, Flutter and .Net**
 
