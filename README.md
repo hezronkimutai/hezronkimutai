@@ -101,11 +101,12 @@
 
 
 ## 🔭 I’m currently working on
--  [tikiti](https://github.com/hezronkimutai/hezronkimutai/){:target="_blank"}
--  [thesaniakgroup](https://thesaniakgroup.vercel.app/){:target="_blank"}
--  [thenyongigroup](https://thenyongigroup.vercel.app/){:target="_blank"}
--  [lifcommunity](https://lifcommunity.vercel.app/){:target="_blank"}
--  [thehkgroup](https://thehkgroup.vercel.app/){:target="_blank"}
+- <a href="https://github.com/hezronkimutai/hezronkimutai/" target="_blank">tikiti</a>
+- <a href="https://thesaniakgroup.vercel.app/" target="_blank">thesaniakgroup</a>
+- <a href="https://thenyongigroup.vercel.app/" target="_blank">thenyongigroup</a>
+- <a href="https://lifcommunity.vercel.app/" target="_blank">lifcommunity</a>
+- <a href="https://thehkgroup.vercel.app/" target="_blank">thehkgroup</a>
+
 
   
 - 🌱 I’m currently learning **AWS, GCP, AZURE, JAVA, Golang, Flutter and .Net**
