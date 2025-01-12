@@ -107,6 +107,9 @@
 - <a href="https://lifcommunity.vercel.app/" target="_blank">lifcommunity</a>
 - <a href="https://thehkgroup.vercel.app/" target="_blank">thehkgroup</a>
 - <a href="https://merigoroundangular.vercel.app/home" target="_blank">MerigoRound</a>
+- <a href="https://pos-fn-reactjs.vercel.app/" target="_blank">POS</a>
+
+
 
 
   
