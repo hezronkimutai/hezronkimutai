@@ -101,7 +101,11 @@
 
 
 - 🔭 I’m currently working on [tikiti](https://github.com/hezronkimutai/hezronkimutai/)
-
+-  [thesaniakgroup](https://thesaniakgroup.vercel.app/)
+-  [thenyongigroup](https://thenyongigroup.vercel.app/)
+-  [lifcommunity](https://lifcommunity.vercel.app/)
+-  [thehkgroup](https://thehkgroup.vercel.app/)
+  
 - 🌱 I’m currently learning **AWS, GCP, AZURE, JAVA, Golang, Flutter and .Net**
 
 - 👯 I’m looking to collaborate on [Linux](https://github.com/torvalds/linux)
