@@ -101,6 +101,8 @@
 
 
 ## 🔭 I’m currently working on
+
+- <a href="https://chat.whatsapp.com/Bp5IXXool9fHotsZmkcsua" target="_blank">Join LIF community whatsapp group</a>
 - <a href="https://tikiti-theta.vercel.app/" target="_blank">tikiti</a>
 - <a href="https://thesaniakgroup.vercel.app/" target="_blank">thesaniakgroup</a>
 - <a href="https://thenyongigroup.vercel.app/" target="_blank">thenyongigroup</a>
