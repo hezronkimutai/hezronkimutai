@@ -5,8 +5,7 @@
 </div>
 
 <h1 align="center">Hi 👋, I'm Hezron Kimutai And I Am In The Business Of Building Products</h1>
-<p>I dont know much but I try to learn as much as possible</p>
-<h3 align="center">A passionate software developer</h3>
+<h3 align="center"><i>I don't know much, but I try to learn as much as possible</i></h3>
 
 <a href="https://hezron.netlify.app/" target="_blank">
   <img src="https://img.shields.io/website-up-down-green-red/http/shields.io.svg" alt="Website shields.io">
