@@ -91,12 +91,11 @@
 </a>
 
 <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: center; text-align: center;">
-
-  <p>
-    <a href="https://github.com/ryo-ma/github-profile-trophy" target="_blank">
-      <img src="https://github-profile-trophy.vercel.app/?username=hezronkimutai" alt="GitHub Profile Trophy" />
-    </a>
-  </p>
+<p align="center">
+  <a href="https://github.com/ryo-ma/github-profile-trophy" target="_blank">
+    <img src="https://github-profile-trophy.vercel.app/?username=hezronkimutai" alt="GitHub Profile Trophy" />
+  </a>
+</p>
 </div>
 
 
