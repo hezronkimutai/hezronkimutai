@@ -4,7 +4,8 @@
   <img src="https://github.com/user-attachments/assets/a2211ae1-5856-4f46-82f1-3f8479a9dcdc" alt="1000060237" style="flex: 1; height: 200px; object-fit: cover; max-width: 100%;"/>
 </div>
 
-<h1 align="center">Hi 👋, I'm Hezron Kimutai</h1>
+<h1 align="center">Hi 👋, I'm Hezron Kimutai And I Am In The Business Of Building Products</h1>
+<p>I dont know much but I try to learn as much as possible</p>
 <h3 align="center">A passionate software developer</h3>
 
 <a href="https://hezron.netlify.app/" target="_blank">
