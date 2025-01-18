@@ -7,6 +7,8 @@
 <h1 align="center">Hi 👋, I'm Hezron Kimutai And I Am In The Business Of Building Products</h1>
 <h3 align="center"><i>I don't know much, but I try to learn as much as possible</i></h3>
 
+  <a href="https://chat.whatsapp.com/L1O3rK82azIG54sBwNMeEF" target="_blank"><strong>Join LIF community whatsapp group </strong></a>
+
 <a href="https://hezron.netlify.app/" target="_blank">
   <img src="https://img.shields.io/website-up-down-green-red/http/shields.io.svg" alt="Website shields.io">
 </a>
@@ -96,7 +98,6 @@
 
 ## 🔭 I’m currently working on
 
-- <a href="https://chat.whatsapp.com/L1O3rK82azIG54sBwNMeEF" target="_blank">Join LIF community whatsapp group</a>
 - <a href="https://tikiti-theta.vercel.app/" target="_blank">tikiti</a>
 - <a href="https://thesaniakgroup.vercel.app/" target="_blank">thesaniakgroup</a>
 - <a href="https://thenyongigroup.vercel.app/" target="_blank">thenyongigroup</a>
