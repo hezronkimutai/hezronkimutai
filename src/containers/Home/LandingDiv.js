@@ -25,7 +25,7 @@ const LandingDiv = () => (
         </p>
         <a
           className="text-lg font-semibold py-3 px-6 bg-blue-700 rounded-full text-gray-100 transition duration-300 ease-in-out hover:bg-blue-900"
-          href="https://res.cloudinary.com/hezzie/image/upload/v1601236612/Hezron_Kimutai_Chelimo-Resume_vkewua.pdf"
+          href="https://docs.google.com/document/d/1r5V9Pm0FhYDSiu1G4dtHqJ0QlbUZCq-r52SAM1OHago/edit?usp=sharing"
           rel="noreferrer"
           target="_blank"
           download
