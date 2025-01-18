@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, memo } from 'react';
 
 const projects = [
   {
@@ -51,38 +51,95 @@ const projects = [
   },
 ];
 
-const onePage = (item, index) => (
-  <a
-    data-aos="zoom-in"
-    key={index}
-    className="oneItem whyMe w-auto shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out rounded-lg overflow-hidden"
-    style={{ maxWidth: '300px' }}
-    href={item.link}
-    rel="noreferrer"
-    target="_blank"
-  >
-    <div className="flex p-4 flex-row items-center bg-gray-100">
-      <img className="w-18 h-16  mr-4" src={item.imageUrl} alt={item.link} />
-      <h1 className="text-2xl font-bold text-gray-900">{item.name}</h1>
-    </div>
-    <div className="p-2  my-2">
-      <p className="text-gray-700">{item.description}</p>
-    </div>
-  </a>
-);
 
-const Projects = () => (
-  <div className="projects mx-auto w-full  py-10" id="abilities">
-    <div className="abilitiesContainer px-4 " style={{ overflow: 'visible' }}>
-      <h1
-        data-aos="flip-right"
-        className="text-xl text-center font-bold mb-8 text-gray-900"
-      >
-        Featured Works and Case Studies
-      </h1>
-      {projects.map(project=><div>{project.name}</div>)}
+const ITEMS_PER_PAGE = 3;
+
+const ProjectCard = memo(({ project }) => (
+  <div style={{display:'flex', flexDirection:'column'}} className="bg-white flex flex-col max-w-[300px] shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+    <div className="flex items-center p-4">
+      <a href={project.link} target="_blank" rel="noopener noreferrer">
+        <img
+          src={project.imageUrl}
+          alt={project.name}
+          className="w-20 h-20 object-cover rounded-full mr-4"
+        />
+      </a>
+      <h2 className="text-lg font-bold text-gray-800">
+        <a href={project.link} target="_blank" rel="noopener noreferrer">
+          {project.name}
+        </a>
+      </h2>
+    </div>
+    <div className="p-4">
+      <p className="text-sm text-gray-600">{project.description}</p>
     </div>
   </div>
+));
+
+
+const Pagination = ({ currentPage, totalPages, onNext, onPrev }) => (
+  <div className="flex justify-center items-center mt-6 space-x-4">
+    <button
+      onClick={onPrev}
+      disabled={currentPage === 1}
+      className="px-4 py-2 rounded bg-gray-300 hover:bg-gray-400 text-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
+    >
+      Previous
+    </button>
+    <span className="text-gray-700 font-medium">
+      Page {currentPage} of {totalPages}
+    </span>
+    <button
+      onClick={onNext}
+      disabled={currentPage === totalPages}
+      className="px-4 py-2 rounded bg-gray-300 hover:bg-gray-400 text-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
+    >
+      Next
+    </button>
+  </div>
 );
+
+const Projects = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalPages = Math.ceil(projects.length / ITEMS_PER_PAGE);
+
+  const currentProjects = projects.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  );
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) setCurrentPage((prev) => prev - 1);
+  };
+
+  return (
+    <div className="projects mx-auto w-full py-10" id="abilities">
+      <div className="abilitiesContainer px-4">
+        <h1
+          data-aos="flip-right"
+          className="text-3xl text-center font-bold mb-8 text-gray-900"
+        >
+          Featured Works and Case Studies
+        </h1>
+        <div className="flex flex-wrap justify-center gap-8">
+          {currentProjects.map((project, index) => (
+            <ProjectCard key={index} project={project} />
+          ))}
+        </div>
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onNext={handleNextPage}
+          onPrev={handlePrevPage}
+        />
+      </div>
+    </div>
+  );
+};
 
 export default Projects;
