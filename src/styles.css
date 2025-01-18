@@ -10,3 +10,14 @@
 
 @import "tailwindcss/utilities";
 
+.carousel {
+display: flex;
+gap: 16px;
+overflow: hidden;
+scroll-behavior: smooth;
+}
+.project-card {
+flex-shrink: 0;
+}
+
+

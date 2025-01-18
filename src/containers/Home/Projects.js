@@ -2,6 +2,55 @@ import React, { useState, memo } from 'react';
 
 const projects = [
   {
+    name: 'Tikiti',
+    imageUrl: 'https://via.placeholder.com/300', // Update with the actual image URL
+    link: 'https://tikiti-theta.vercel.app/',
+    description: 'Tikiti is a ticketing platform designed to streamline event management and ticket sales.',
+  },
+  {
+    name: 'The Saniak Group',
+    imageUrl: 'https://via.placeholder.com/300', // Update with the actual image URL
+    link: 'https://thesaniakgroup.vercel.app/',
+    description: 'The Saniak Group is an innovative business solutions provider for small and medium-sized enterprises.',
+  },
+  {
+    name: 'The Nyongi Group',
+    imageUrl: 'https://via.placeholder.com/300', // Update with the actual image URL
+    link: 'https://thenyongigroup.vercel.app/',
+    description: 'The Nyongi Group focuses on impactful community initiatives and business development.',
+  },
+  {
+    name: 'LIF Community',
+    imageUrl: 'https://via.placeholder.com/300', // Update with the actual image URL
+    link: 'https://lifcommunity.vercel.app/',
+    description: 'LIF Community is a platform fostering connections and collaborations within local communities.',
+  },
+  {
+    name: 'The HK Group',
+    imageUrl: 'https://via.placeholder.com/300', // Update with the actual image URL
+    link: 'https://thehkgroup.vercel.app/',
+    description: 'The HK Group provides comprehensive services for business and organizational growth.',
+  },
+  {
+    name: 'Merigo Round Angular',
+    imageUrl: 'https://via.placeholder.com/300', // Update with the actual image URL
+    link: 'https://merigoroundangular.vercel.app/home',
+    description: 'Merigo Round Angular is the Angular version of the Merigo Round project, aimed at automating group funding.',
+  },
+  {
+    name: 'POS FN ReactJS',
+    imageUrl: 'https://via.placeholder.com/300', // Update with the actual image URL
+    link: 'https://pos-fn-reactjs.vercel.app/',
+    description: 'POS FN ReactJS is a refined POS project built using ReactJS, promoting open-source collaboration.',
+  },
+  {
+    name: 'Havalive',
+    imageUrl: 'https://via.placeholder.com/300', // Update with the actual image URL
+    link: 'https://havalive.netlify.app/',
+    description: 'Havalive provides live updates on sports events, including scores, analysis, and lineups.',
+  },
+  // Existing projects remain as they are
+  {
     name: 'Merigo Round',
     imageUrl: 'https://res.cloudinary.com/hezzie/image/upload/v1600904576/Screenshot_from_2020-09-24_01-42-03_svfftx.png',
     link: 'https://nyongiot-frontend.vercel.app',
@@ -55,13 +104,13 @@ const projects = [
 const ITEMS_PER_PAGE = 3;
 
 const ProjectCard = memo(({ project }) => (
-  <div style={{display:'flex', flexDirection:'column'}} className="bg-white flex flex-col max-w-[300px] shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+  <div style={{display:'flex', flexDirection:'column'}} className="bg-white flex flex-col w-[30%] min-w-[320px] shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl">
     <div className="flex items-center p-4">
       <a href={project.link} target="_blank" rel="noopener noreferrer">
         <img
           src={project.imageUrl}
           alt={project.name}
-          className="w-20 h-20 object-cover rounded-full mr-4"
+          className="w-10 h-10 object-cover rounded-full mr-4"
         />
       </a>
       <h2 className="text-lg font-bold text-gray-800">

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import hezPas from '../../assets/images/hezPas.png'
 
 export const CallToactionBtn = ({ onClick, displayText, className }) => (
   <button className={className} onClick={onClick} type="button">
@@ -34,8 +35,8 @@ const LandingDiv = () => (
       </div>
       <div className="md:w-1/2">
         <img
-          className="w-full rounded-lg"
-          src="https://res.cloudinary.com/hezzie/image/upload/v1601295981/imageedit_69_7065262263_gecypg.png"
+          className="w-full rounded-[50%]"
+          src={hezPas}
           alt="Welcome Page"
         />
       </div>

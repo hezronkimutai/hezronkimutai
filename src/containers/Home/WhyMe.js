@@ -5,11 +5,11 @@ const WhyMe = () => (
   <div className="py-6">
     <div className="container mx-auto px-4 ">
       <div className="flex items-center justify-center">
-        <img
+        {/* <img
           className="h-48 w-48 rounded-full shadow-lg mr-8"
           src="https://res.cloudinary.com/hezzie/image/upload/v1720881850/HEEEEEEEEEEEEE_ljnqek.png"
           alt="hezronKimutai"
-        />
+        /> */}
         <div className="flex-1  shadow-lg rounded-lg p-8">
           <p className="text-xl leading-relaxed">
             Over the years, I have acquired relevant skills and experience,
