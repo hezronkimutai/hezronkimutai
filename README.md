@@ -1,8 +1,4 @@
 
-<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-around;">
-  <img src="https://github.com/user-attachments/assets/a0bb99f7-cb84-45f6-90a0-51ad68c0036e" alt="1000060235" style="flex: 1; height: 200px; object-fit: cover; max-width: 100%;"/>
-</div>
-
 <h1 align="center">Hi 👋, I'm Hezron Kimutai And I Am In The Business Of Building Products</h1>
 <h3 align="center"><i>I don't know much, but I try to learn as much as possible</i></h3>
 
