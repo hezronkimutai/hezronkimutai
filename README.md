@@ -94,13 +94,13 @@
 ## 🔭 I’m currently working on
 
 - <a href="https://tikiti-theta.vercel.app/" target="_blank">tikiti</a>
-- <a href="https://thesaniakgroup.vercel.app/" target="_blank">thesaniakgroup</a>
+<!--- <a href="https://thesaniakgroup.vercel.app/" target="_blank">thesaniakgroup</a>
 - <a href="https://thenyongigroup.vercel.app/" target="_blank">thenyongigroup</a>
 - <a href="https://lifcommunity.vercel.app/" target="_blank">lifcommunity</a>
 - <a href="https://thehkgroup.vercel.app/" target="_blank">thehkgroup</a>
 - <a href="https://merigoroundangular.vercel.app/home" target="_blank">MerigoRound</a>
 - <a href="https://pos-fn-reactjs.vercel.app/" target="_blank">POS</a>
-- <a href="https://havalive.netlify.app/" target="_blank">HavaScore</a>
+- <a href="https://havalive.netlify.app/" target="_blank">HavaScore</a>  -->
 
 
 
