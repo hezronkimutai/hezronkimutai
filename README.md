@@ -93,7 +93,7 @@
 
 ## 🔭 I’m currently working on
 
-- <a href="https://tikiti-theta.vercel.app/" target="_blank">tikiti</a>
+- <a href="https://ticketing-web-three.vercel.app/" target="_blank">tikiti</a>
 <!--- <a href="https://thesaniakgroup.vercel.app/" target="_blank">thesaniakgroup</a>
 - <a href="https://thenyongigroup.vercel.app/" target="_blank">thenyongigroup</a>
 - <a href="https://lifcommunity.vercel.app/" target="_blank">lifcommunity</a>
@@ -110,7 +110,7 @@
 
 - 👯 I’m looking to collaborate on [Linux](https://github.com/torvalds/linux)
 
-- 🤝 I’m looking for help with [tikiti](https://tikiti-theta.vercel.app/)
+- 🤝 I’m looking for help with [tikiti](https://ticketing-web-three.vercel.app/)
 
 - 👨‍💻 All of my projects are available at [https://hezron.netlify.app/](https://hezron.netlify.app/)
 
