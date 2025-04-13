@@ -1,78 +1,132 @@
 .container {
-  @apply mx-auto w-full py-10;
+  @apply py-10;
+  
+  // Add subtle gradient background
+  background: linear-gradient(
+    to bottom,
+    theme('colors.gray.50'),
+    transparent
+  );
+  
+  // Dark mode styles
+  @screen dark {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.1),
+      transparent
+    );
+  }
 }
 
 .content {
-  @apply px-4 max-w-7xl mx-auto;
+  @apply container mx-auto px-4;
+  
+  // Add content animation
+  animation: fadeIn 0.5s ease-out;
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 .title {
   @apply text-3xl text-center font-bold mb-8 text-gray-900;
   
-  &[data-aos] {
-    transition: transform 0.5s ease-in-out;
+  // Dark mode styles
+  @screen dark {
+    @apply text-gray-100;
+  }
+  
+  // Add title animation with flip effect
+  &[data-aos="flip-right"] {
+    transform-origin: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    &.aos-animate {
+      transform: rotateY(360deg);
+    }
+  }
+  
+  // Add decorative underline
+  &::after {
+    content: '';
+    @apply block w-24 h-1 bg-blue-500 mx-auto mt-4 rounded;
+    transform: scaleX(0);
+    animation: expandLine 0.5s ease-out 0.5s forwards;
+    
+    @keyframes expandLine {
+      to {
+        transform: scaleX(1);
+      }
+    }
   }
 }
 
 .grid {
-  @apply grid gap-8;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  @apply flex flex-wrap justify-center gap-8;
   
-  @screen md {
-    @apply grid-cols-2;
+  // Add staggered animation for cards
+  & > * {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+    
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.1}s;
+      }
+    }
   }
   
-  @screen lg {
-    @apply grid-cols-3;
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
-.noProjects {
-  @apply text-center py-12 text-gray-600;
+.card {
+  // Add hover interaction with siblings
+  transition: transform 0.3s ease-in-out;
   
-  p {
-    @apply text-lg font-medium;
+  &:hover {
+    transform: translateY(-4px);
+    
+    & ~ .card {
+      transform: translateY(2px);
+    }
   }
 }
 
 .pagination {
-  @apply mt-12;
-}
-
-// Animation classes
-.fadeIn {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.5s ease forwards;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-// Loading state
-.loading {
-  @apply flex justify-center items-center min-h-[200px];
+  @apply mt-8;
   
-  &::after {
-    content: '';
-    @apply w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full;
-    animation: spin 1s linear infinite;
-  }
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  // Add pagination animation
+  animation: fadeIn 0.5s ease-out 0.8s both;
+  
+  // Improve button styles
+  :global {
+    .pagination-button {
+      @apply transition-colors duration-200;
+      
+      &:not(:disabled):hover {
+        @apply bg-blue-600 text-white;
+      }
+      
+      &:disabled {
+        @apply opacity-50 cursor-not-allowed;
+      }
+    }
   }
 }

@@ -34,27 +34,31 @@ const webpackConfig = {
 
       // Handle image files
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|jpe?g|gif|svg)$/i,
         include: path.resolve(__dirname, 'src/assets'),
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]',
-            },
-          },
-        ],
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/[hash][ext][query]',
+        },
       },
 
       // Handle CSS Modules (.module.scss / .module.sass)
       {
         test: /\.module\.(scss|sass)$/i,
         use: [
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              esModule: true, // 👈 Important fix here
+            },
+          },
           {
             loader: 'css-loader',
             options: {
-              modules: true,
+              modules: {
+                localIdentName: '[local]__[hash:base64:5]', // optional but recommended
+              },
+              esModule: true,
             },
           },
           'postcss-loader',
@@ -62,12 +66,17 @@ const webpackConfig = {
         ],
       },
 
-      // Handle global SCSS/SASS (not CSS Modules)
+      // Handle global SCSS/SASS (NOT modules)
       {
         test: /\.(scss|sass)$/i,
         exclude: /\.module\.(scss|sass)$/i,
         use: [
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              esModule: true,
+            },
+          },
           'css-loader',
           'postcss-loader',
           'sass-loader',
@@ -78,7 +87,12 @@ const webpackConfig = {
       {
         test: /\.css$/i,
         use: [
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              esModule: true,
+            },
+          },
           'css-loader',
           'postcss-loader',
         ],
