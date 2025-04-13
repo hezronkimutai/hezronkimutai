@@ -33,7 +33,7 @@ describe('WhyMe Component', () => {
       render(
         <WhyMe 
           description={customDescription}
-          imageUrl={customImageUrl}
+          profileImageUrl={customImageUrl}
         />
       );
       

@@ -2,12 +2,6 @@ import React, { useState } from 'react';
 import { 
   Footer,
   TopBar,
-  // These components will be uncommented as they are migrated
-  // LandingDiv, 
-  // WhyMe, 
-  // Services, 
-  // Projects, 
-  // Team, 
 } from '../../components';
 import styles from './Home.module.scss';
 
@@ -20,13 +14,16 @@ export const Home: React.FC = () => {
     setMode(mode === 'light' ? 'dark' : 'light');
   };
 
-  const handleScrollCapture = (e: React.UIEvent<HTMLDivElement>) => {
+  const handleScrollCapture = (e: React.UIEvent) => {
     e.preventDefault();
+    e.stopPropagation();
   };
 
   return (
     <div
       className={`${styles.container} ${styles[mode]}`}
+      data-testid="home-container"
+      onScroll={handleScrollCapture}
       onScrollCapture={handleScrollCapture}
     >
       <TopBar 
@@ -36,7 +33,7 @@ export const Home: React.FC = () => {
       />
       
       <main className={styles.main}>
-        {/* Uncomment these components as they are migrated */}
+        {/* These components will be uncommented as they are migrated */}
         {/* <LandingDiv /> */}
         {/* <WhyMe /> */}
         {/* <Services /> */}
