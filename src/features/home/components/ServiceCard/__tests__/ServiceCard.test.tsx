@@ -2,7 +2,6 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { ServiceCard } from '../ServiceCard';
-import { Service } from '../../../types/services';
 
 // Mock images object
 jest.mock('../../../../../components/images', () => ({
@@ -12,86 +11,97 @@ jest.mock('../../../../../components/images', () => ({
 }));
 
 describe('ServiceCard Component', () => {
-  const mockService: Service = {
-    name: 'Frontend Development',
-    description: 'Building modern web applications',
+  const defaultProps = {
+    name: 'Test Service',
+    description: 'Test description',
     links: [
-      { url: '', img: 'react', altText: 'React' },
-      { url: '', img: 'html', altText: 'HTML' },
+      { url: 'https://test.com', img: 'react', alt: 'React' },
+      { url: '', img: 'html', alt: 'HTML' },
     ],
   };
 
-  it('renders service information correctly', () => {
-    render(<ServiceCard service={mockService} />);
-    
-    expect(screen.getByText(mockService.name)).toBeInTheDocument();
-    expect(screen.getByText(mockService.description)).toBeInTheDocument();
-  });
+  describe('Rendering', () => {
+    it('renders all content correctly', () => {
+      render(<ServiceCard {...defaultProps} />);
+      
+      // Check heading
+      expect(screen.getByRole('heading')).toHaveTextContent(defaultProps.name);
+      
+      // Check description
+      expect(screen.getByText(defaultProps.description)).toBeInTheDocument();
+      
+      // Check tech icons
+      const images = screen.getAllByRole('img');
+      expect(images).toHaveLength(defaultProps.links.length);
+      expect(images[0]).toHaveAttribute('src', 'react-icon.svg');
+      expect(images[1]).toHaveAttribute('src', 'html-icon.svg');
+    });
 
-  it('renders all technology icons', () => {
-    render(<ServiceCard service={mockService} />);
-    
-    mockService.links.forEach(link => {
-      const icon = screen.getByAltText(link.altText || link.img);
-      expect(icon).toBeInTheDocument();
-      expect(icon).toHaveAttribute('src', expect.stringContaining(link.img));
+    it('applies custom className', () => {
+      const customClass = 'custom-class';
+      const { container } = render(
+        <ServiceCard {...defaultProps} className={customClass} />
+      );
+      expect(container.firstChild).toHaveClass(customClass);
+    });
+
+    it('adds fade-left animation attribute', () => {
+      const { container } = render(<ServiceCard {...defaultProps} />);
+      expect(container.firstChild).toHaveAttribute('data-aos', 'fade-left');
     });
   });
 
-  it('applies custom className', () => {
-    const customClass = 'custom-card';
-    const { container } = render(
-      <ServiceCard service={mockService} className={customClass} />
-    );
-    
-    expect(container.firstChild).toHaveClass(customClass);
-  });
+  describe('Links', () => {
+    it('renders tech links when URL is provided', () => {
+      render(<ServiceCard {...defaultProps} />);
+      const link = screen.getByLabelText('Learn more about React');
+      expect(link).toHaveAttribute('href', 'https://test.com');
+      expect(link).toHaveAttribute('target', '_blank');
+      expect(link).toHaveAttribute('rel', 'noopener noreferrer');
+    });
 
-  it('includes data-aos attribute for animations', () => {
-    const { container } = render(<ServiceCard service={mockService} />);
-    expect(container.firstChild).toHaveAttribute('data-aos', 'fade-left');
-  });
-
-  it('renders icons with lazy loading', () => {
-    render(<ServiceCard service={mockService} />);
-    
-    const icons = screen.getAllByRole('img');
-    icons.forEach(icon => {
-      expect(icon).toHaveAttribute('loading', 'lazy');
+    it('does not render tech links when URL is empty', () => {
+      render(<ServiceCard {...defaultProps} />);
+      // HTML link should not be rendered as it has no URL
+      expect(screen.queryByLabelText('Learn more about HTML')).not.toBeInTheDocument();
     });
   });
 
-  it('maintains proper structure', () => {
-    const { container } = render(<ServiceCard service={mockService} />);
-    
-    expect(container.querySelector('h2')).toHaveClass('title');
-    expect(container.querySelector('p')).toHaveClass('description');
-    expect(container.querySelector('div[class*="links"]')).toBeInTheDocument();
+  describe('Accessibility', () => {
+    it('provides alt text for tech icons', () => {
+      render(<ServiceCard {...defaultProps} />);
+      expect(screen.getByAltText('React')).toBeInTheDocument();
+      expect(screen.getByAltText('HTML')).toBeInTheDocument();
+    });
+
+    it('generates default alt text when alt is not provided', () => {
+      const propsWithoutAlt = {
+        ...defaultProps,
+        links: [{ url: '', img: 'react' }],
+      };
+      render(<ServiceCard {...propsWithoutAlt} />);
+      expect(screen.getByAltText(`${defaultProps.name} technology 1`)).toBeInTheDocument();
+    });
+
+    it('uses proper heading level', () => {
+      render(<ServiceCard {...defaultProps} />);
+      expect(screen.getByRole('heading', { level: 3 })).toBeInTheDocument();
+    });
+
+    it('has proper link text for technology links', () => {
+      render(<ServiceCard {...defaultProps} />);
+      const link = screen.getByLabelText('Learn more about React');
+      expect(link).toBeInTheDocument();
+    });
   });
 
-  it('handles service without links', () => {
-    const serviceWithoutLinks: Service = {
-      name: 'Test Service',
-      description: 'Test Description',
-      links: [],
-    };
-
-    render(<ServiceCard service={serviceWithoutLinks} />);
-    
-    expect(screen.getByText(serviceWithoutLinks.name)).toBeInTheDocument();
-    expect(screen.queryByRole('img')).not.toBeInTheDocument();
-  });
-
-  it('uses fallback alt text when altText is not provided', () => {
-    const serviceWithoutAltText: Service = {
-      name: 'Test Service',
-      description: 'Test Description',
-      links: [{ url: '', img: 'react' }],
-    };
-
-    render(<ServiceCard service={serviceWithoutAltText} />);
-    
-    const icon = screen.getByAltText('react');
-    expect(icon).toBeInTheDocument();
+  describe('Images', () => {
+    it('uses lazy loading for images', () => {
+      render(<ServiceCard {...defaultProps} />);
+      const images = screen.getAllByRole('img');
+      images.forEach(img => {
+        expect(img).toHaveAttribute('loading', 'lazy');
+      });
+    });
   });
 });

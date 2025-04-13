@@ -2,119 +2,105 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { WhyMe } from '../WhyMe';
-import { DEFAULT_WHY_ME_CONTENT } from '../../../types/whyMe';
 
-// Mock window.open
-const mockOpen = jest.fn();
-window.open = mockOpen;
+// Mock the CallToActionBtn component
+jest.mock('../../CallToActionBtn', () => ({
+  CallToActionBtn: ({ onClick, displayText }: { onClick: () => void; displayText: string }) => (
+    <button onClick={onClick}>{displayText}</button>
+  ),
+}));
 
 describe('WhyMe Component', () => {
+  const defaultProps = {
+    onHireClick: jest.fn(),
+  };
+
   beforeEach(() => {
-    mockOpen.mockClear();
+    jest.clearAllMocks();
   });
 
   describe('Rendering', () => {
     it('renders with default content', () => {
-      render(<WhyMe />);
+      render(<WhyMe {...defaultProps} />);
       
-      // Use a more flexible text matching approach
-      const description = screen.getByText((content) => 
-        content.includes('Over the years, I have acquired relevant skills')
-      );
-      expect(description).toBeInTheDocument();
-      expect(screen.getByAltText('Hezron Kimutai - Full Stack Developer')).toBeInTheDocument();
+      // Check for heading
+      expect(screen.getByText('Why Choose Me')).toBeInTheDocument();
+      
+      // Check for default description
+      expect(screen.getByText(/Over the years/)).toBeInTheDocument();
+      
+      // Check for hire button
       expect(screen.getByText('HIRE ME')).toBeInTheDocument();
     });
 
-    it('renders with custom content', () => {
-      const customDescription = 'Custom description';
-      const customImageUrl = 'custom-image.jpg';
-      
-      render(
-        <WhyMe 
-          description={customDescription}
-          profileImageUrl={customImageUrl}
-        />
-      );
+    it('renders with custom description', () => {
+      const customDescription = 'Custom description text';
+      render(<WhyMe {...defaultProps} description={customDescription} />);
       
       expect(screen.getByText(customDescription)).toBeInTheDocument();
-      expect(screen.getByRole('img')).toHaveAttribute('src', customImageUrl);
+    });
+
+    it('renders profile image when URL is provided', () => {
+      const profileImageUrl = 'test-image.jpg';
+      render(<WhyMe {...defaultProps} profileImageUrl={profileImageUrl} />);
+      
+      const image = screen.getByAltText('Hezron Kimutai');
+      expect(image).toBeInTheDocument();
+      expect(image).toHaveAttribute('src', profileImageUrl);
+      expect(image).toHaveAttribute('loading', 'lazy');
+    });
+
+    it('does not render profile image when URL is not provided', () => {
+      render(<WhyMe {...defaultProps} />);
+      expect(screen.queryByRole('img')).not.toBeInTheDocument();
     });
 
     it('applies custom className', () => {
-      const customClass = 'custom-why-me';
-      const { container } = render(<WhyMe className={customClass} />);
-      
+      const customClass = 'custom-class';
+      const { container } = render(<WhyMe {...defaultProps} className={customClass} />);
       expect(container.firstChild).toHaveClass(customClass);
     });
   });
 
-  describe('Image', () => {
-    it('renders with correct attributes', () => {
-      render(<WhyMe />);
-      const image = screen.getByRole('img');
+  describe('Interaction', () => {
+    it('calls onHireClick when hire button is clicked', () => {
+      render(<WhyMe {...defaultProps} />);
       
-      expect(image).toHaveAttribute('src', DEFAULT_WHY_ME_CONTENT.imageUrl);
-      expect(image).toHaveAttribute('alt', 'Hezron Kimutai - Full Stack Developer');
-      expect(image).toHaveAttribute('loading', 'lazy');
-    });
-  });
-
-  describe('Hire Button', () => {
-    it('opens resume in new tab by default', () => {
-      render(<WhyMe />);
-      const hireButton = screen.getByText('HIRE ME');
-      
-      fireEvent.click(hireButton);
-      
-      expect(mockOpen).toHaveBeenCalledWith(
-        DEFAULT_WHY_ME_CONTENT.resumeUrl,
-        '_blank',
-        'noopener,noreferrer'
-      );
+      fireEvent.click(screen.getByText('HIRE ME'));
+      expect(defaultProps.onHireClick).toHaveBeenCalledTimes(1);
     });
 
-    it('calls custom onClick handler when provided', () => {
-      const mockOnClick = jest.fn();
-      render(<WhyMe onHireClick={mockOnClick} />);
+    it('does not throw when onHireClick is not provided', () => {
+      render(<WhyMe />);
       
-      const hireButton = screen.getByText('HIRE ME');
-      fireEvent.click(hireButton);
-      
-      expect(mockOnClick).toHaveBeenCalledTimes(1);
-      expect(mockOpen).not.toHaveBeenCalled();
+      expect(() => {
+        fireEvent.click(screen.getByText('HIRE ME'));
+      }).not.toThrow();
     });
   });
 
   describe('Accessibility', () => {
-    it('maintains proper heading hierarchy', () => {
-      const { container } = render(<WhyMe />);
-      expect(container.querySelector('.description')).toBeInTheDocument();
+    it('has accessible heading with proper structure', () => {
+      render(<WhyMe {...defaultProps} />);
+      
+      const heading = screen.getByRole('heading', { name: 'Why Choose Me' });
+      expect(heading).toBeInTheDocument();
+      expect(heading).toHaveClass('sr-only');
     });
 
-    it('ensures image has proper alt text', () => {
-      render(<WhyMe />);
-      expect(screen.getByAltText('Hezron Kimutai - Full Stack Developer')).toBeInTheDocument();
+    it('associates heading with content section', () => {
+      render(<WhyMe {...defaultProps} />);
+      
+      const section = screen.getByRole('region', { name: 'Why Choose Me' });
+      expect(section).toBeInTheDocument();
+      expect(section).toHaveAttribute('aria-labelledby', 'why-me-heading');
     });
 
-    it('ensures hire button is keyboard accessible', () => {
-      render(<WhyMe />);
-      const button = screen.getByText('HIRE ME');
+    it('provides alt text for profile image when present', () => {
+      render(<WhyMe {...defaultProps} profileImageUrl="test-image.jpg" />);
       
-      button.focus();
-      expect(button).toHaveFocus();
-      
-      // Simulate both click and keypress
-      fireEvent.keyPress(button, { key: 'Enter', code: 'Enter', charCode: 13 });
-      fireEvent.click(button);
-      
-      expect(mockOpen).toHaveBeenCalledTimes(1);
-    });
-
-    it('ensures button has proper ARIA roles', () => {
-      render(<WhyMe />);
-      const button = screen.getByRole('button', { name: 'HIRE ME' });
-      expect(button).toBeInTheDocument();
+      const image = screen.getByAltText('Hezron Kimutai');
+      expect(image).toBeInTheDocument();
     });
   });
 });
