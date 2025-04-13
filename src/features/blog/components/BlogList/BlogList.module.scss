@@ -1,0 +1,152 @@
+.container {
+  @apply py-12;
+  
+  // Add subtle gradient background
+  background: linear-gradient(
+    to bottom,
+    theme('colors.gray.50'),
+    transparent
+  );
+  
+  @screen dark {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.1),
+      transparent
+    );
+  }
+}
+
+.title {
+  @apply text-4xl font-bold text-center mb-12;
+  
+  // Add flip animation
+  &[data-aos="flip-right"] {
+    transform-origin: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    &.aos-animate {
+      transform: rotateY(360deg);
+    }
+  }
+  
+  // Add decorative underline
+  &::after {
+    content: '';
+    @apply block w-24 h-1 bg-blue-500 mx-auto mt-4 rounded;
+    transform: scaleX(0);
+    animation: expandLine 0.5s ease-out 0.5s forwards;
+    
+    @keyframes expandLine {
+      to {
+        transform: scaleX(1);
+      }
+    }
+  }
+  
+  @screen dark {
+    @apply text-gray-100;
+    
+    &::after {
+      @apply bg-blue-400;
+    }
+  }
+}
+
+.grid {
+  @apply grid gap-8 mx-auto max-w-7xl px-4;
+  
+  // Responsive grid layout
+  grid-template-columns: 1fr;
+  
+  @screen sm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @screen lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  // Add staggered animation for posts
+  & > * {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+    
+    @for $i from 1 through 9 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.1}s;
+      }
+    }
+  }
+}
+
+.post {
+  @apply h-full;
+  
+  // Add hover interaction with siblings
+  transition: transform 0.3s ease-in-out;
+  
+  &:hover {
+    transform: translateY(-4px);
+    
+    & ~ .post {
+      transform: translateY(2px);
+    }
+  }
+}
+
+.pagination {
+  @apply mt-12;
+  animation: fadeIn 0.5s ease-out 1s both;
+}
+
+.loading {
+  @apply flex flex-col items-center justify-center py-24;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.spinner {
+  @apply w-12 h-12 mb-4 border-4 border-blue-200 rounded-full;
+  border-top-color: theme('colors.blue.500');
+  animation: spin 1s linear infinite;
+  
+  @screen dark {
+    @apply border-gray-700;
+    border-top-color: theme('colors.blue.400');
+  }
+}
+
+.empty {
+  @apply text-center text-gray-500 py-24;
+  
+  @screen dark {
+    @apply text-gray-400;
+  }
+}
+
+// Animations
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
