@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { NavBarProps } from '../../../types';
-import './NavBar.scss';
+import './NavBar.scss'; 
 
 const defaultLinks = [
   { to: '/', label: 'Home' },
@@ -9,10 +9,11 @@ const defaultLinks = [
 ];
 
 const NavBar: React.FC<NavBarProps> = ({
+  className = '',
   links = defaultLinks,
 }) => {
   return (
-    <nav className="navbar_container">
+    <nav className={"navbar_container " + className.trim()}>
       {links.map(({ to, label }) => (
         <Link
           key={`${to}-${label}`}
