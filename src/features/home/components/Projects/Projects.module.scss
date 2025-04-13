@@ -1,0 +1,78 @@
+.container {
+  @apply mx-auto w-full py-10;
+}
+
+.content {
+  @apply px-4 max-w-7xl mx-auto;
+}
+
+.title {
+  @apply text-3xl text-center font-bold mb-8 text-gray-900;
+  
+  &[data-aos] {
+    transition: transform 0.5s ease-in-out;
+  }
+}
+
+.grid {
+  @apply grid gap-8;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  
+  @screen md {
+    @apply grid-cols-2;
+  }
+  
+  @screen lg {
+    @apply grid-cols-3;
+  }
+}
+
+.noProjects {
+  @apply text-center py-12 text-gray-600;
+  
+  p {
+    @apply text-lg font-medium;
+  }
+}
+
+.pagination {
+  @apply mt-12;
+}
+
+// Animation classes
+.fadeIn {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Loading state
+.loading {
+  @apply flex justify-center items-center min-h-[200px];
+  
+  &::after {
+    content: '';
+    @apply w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

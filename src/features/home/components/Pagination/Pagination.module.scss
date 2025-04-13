@@ -1,0 +1,32 @@
+.container {
+  @apply flex justify-center items-center mt-6 space-x-4;
+}
+
+.button {
+  @apply px-4 py-2 rounded text-gray-800 transition-all duration-300;
+  background-color: theme('colors.gray.300');
+
+  &:hover:not(:disabled) {
+    @apply bg-gray-400;
+    transform: translateY(-1px);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+
+  &:focus {
+    @apply outline-none ring-2 ring-blue-500 ring-offset-2;
+  }
+}
+
+.pageInfo {
+  @apply text-gray-700 font-medium min-w-[120px] text-center;
+  
+  // Prevents content jumping when page numbers change
+  display: inline-block;
+}

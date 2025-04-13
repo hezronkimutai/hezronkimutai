@@ -1,0 +1,47 @@
+.card {
+  @apply bg-white flex flex-col w-[30%] min-w-[320px] shadow-lg rounded-lg overflow-hidden;
+  transform-origin: center;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+
+  &:hover {
+    @apply shadow-2xl;
+    transform: scale(1.05);
+  }
+}
+
+.header {
+  @apply flex items-center p-4;
+}
+
+.imageLink {
+  @apply flex-shrink-0;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    @apply opacity-80;
+  }
+}
+
+.image {
+  @apply w-10 h-10 object-cover rounded-full mr-4;
+}
+
+.title {
+  @apply text-lg font-bold text-gray-800;
+}
+
+.titleLink {
+  @apply hover:text-blue-600 transition-colors duration-300;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.content {
+  @apply p-4 flex-grow;
+}
+
+.description {
+  @apply text-sm text-gray-600 leading-relaxed;
+}
