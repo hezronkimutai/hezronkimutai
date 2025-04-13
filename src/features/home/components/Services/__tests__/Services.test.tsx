@@ -74,8 +74,8 @@ describe('Services Component', () => {
 
     it('maintains proper heading hierarchy', () => {
       render(<Services />);
-      const heading = screen.getByRole('heading', { level: 2 });
-      expect(heading).toHaveTextContent('Services I Offer');
+      const heading = screen.getByText('Services I Offer');
+      expect(heading.tagName).toBe('H2');
     });
   });
 
@@ -87,10 +87,14 @@ describe('Services Component', () => {
     });
 
     it('associates heading with section via aria-labelledby', () => {
-      const { container } = render(<Services />);
-      const section = container.firstChild as HTMLElement;
+      render(<Services />);
+      const section = screen.getByRole('region');
       const headingId = section.getAttribute('aria-labelledby');
-      expect(screen.getByRole('heading')).toHaveAttribute('id', headingId);
+      const heading = document.getElementById(headingId || '');
+      
+      expect(heading).toBeInTheDocument();
+      expect(heading?.tagName).toBe('H2');
+      expect(heading?.textContent).toBe('Services I Offer');
     });
   });
 
