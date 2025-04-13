@@ -1,0 +1,76 @@
+.container {
+  @apply py-12;
+}
+
+.content {
+  @apply container mx-auto px-4;
+}
+
+.title {
+  @apply text-4xl font-bold text-center mb-8 text-gray-900;
+  
+  // Animated underline effect
+  position: relative;
+  
+  &:after {
+    content: '';
+    @apply block w-24 h-1 bg-blue-500 mx-auto mt-4 rounded;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  &:hover:after {
+    transform: scaleX(1);
+  }
+}
+
+.grid {
+  @apply grid gap-6;
+  
+  // Responsive grid layout
+  grid-template-columns: 1fr;
+  
+  @screen md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @screen lg {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @screen xl {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.noServices {
+  @apply text-center py-12;
+  
+  p {
+    @apply text-gray-600 text-lg font-medium;
+  }
+}
+
+// Animation for grid items
+.grid > div {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
+  
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.1}s;
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

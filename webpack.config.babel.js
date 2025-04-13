@@ -5,7 +5,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 const webpack = {
   mode: 'development',
-  entry: path.resolve(__dirname, 'src/index'),
+  entry: path.resolve(__dirname, 'src/index.tsx'), // Updated to .tsx
   output: {
     path: path.resolve(__dirname, 'dist/'),
     filename: 'bundle.js',
@@ -13,6 +13,22 @@ const webpack = {
   },
   module: {
     rules: [
+      {
+        test: /\.(ts|tsx)$/, // Add TypeScript rule
+        include: path.resolve(__dirname, 'src'),
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                '@babel/preset-env',
+                '@babel/preset-react',
+                '@babel/preset-typescript',
+              ],
+            },
+          },
+        ],
+      },
       {
         test: /\.js$/,
         include: path.resolve(__dirname, 'src'),
@@ -49,7 +65,10 @@ const webpack = {
     ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx'], // Add TypeScript extensions
+    alias: {
+      '@': path.resolve(__dirname, 'src'), // Add alias to match tsconfig
+    },
   },
   devServer: {
     static: {
