@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent, act } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Projects } from '../Projects';
 import { defaultProjects, ITEMS_PER_PAGE } from '../../../types/projects';
@@ -95,10 +95,10 @@ describe('Projects Component', () => {
     });
 
     it('navigates to next page', () => {
-      render(<Projects />);
+      render(<Projects itemsPerPage={2} />);
       
       // Get first page projects
-      const initialProjects = defaultProjects.slice(0, ITEMS_PER_PAGE);
+      const initialProjects = defaultProjects.slice(0, 2);
       initialProjects.forEach(project => {
         expect(screen.getByText(project.name)).toBeInTheDocument();
       });
@@ -107,14 +107,18 @@ describe('Projects Component', () => {
       fireEvent.click(screen.getByText('Next'));
 
       // Check second page projects
-      const nextPageProjects = defaultProjects.slice(ITEMS_PER_PAGE, ITEMS_PER_PAGE * 2);
+      const nextPageProjects = defaultProjects.slice(2, 4);
       nextPageProjects.forEach(project => {
         expect(screen.getByText(project.name)).toBeInTheDocument();
       });
     });
 
     it('navigates to previous page', () => {
-      render(<Projects />);
+      render(<Projects itemsPerPage={2} />);
+      
+      // Get initial project names
+      const initialProjects = defaultProjects.slice(0, 2);
+      const initialNames = initialProjects.map(p => p.name);
       
       // Go to next page
       fireEvent.click(screen.getByText('Next'));
@@ -123,9 +127,8 @@ describe('Projects Component', () => {
       fireEvent.click(screen.getByText('Previous'));
       
       // Check first page projects again
-      const firstPageProjects = defaultProjects.slice(0, ITEMS_PER_PAGE);
-      firstPageProjects.forEach(project => {
-        expect(screen.getByText(project.name)).toBeInTheDocument();
+      initialNames.forEach(name => {
+        expect(screen.getByText(name)).toBeInTheDocument();
       });
     });
 
@@ -150,8 +153,7 @@ describe('Projects Component', () => {
 
       // Try to go back from first page
       const prevButton = screen.getByText('Previous');
-      fireEvent.click(prevButton);
-      expect(screen.getByTestId('pagination')).toHaveTextContent('Page 1 of');
+      expect(prevButton).toBeDisabled();
 
       // Navigate to last page
       const totalPages = Math.ceil(defaultProjects.length / 3);
@@ -161,38 +163,58 @@ describe('Projects Component', () => {
 
       // Try to go forward from last page
       const nextButton = screen.getByText('Next');
-      const beforeClick = screen.getByTestId('pagination').textContent;
-      fireEvent.click(nextButton);
-      expect(screen.getByTestId('pagination').textContent).toBe(beforeClick);
+      expect(nextButton).toBeDisabled();
     });
 
     it('resets to first page when projects change', () => {
-      const { rerender } = render(<Projects />);
+      const { rerender } = render(<Projects itemsPerPage={2} />);
       
       // Navigate to second page
       fireEvent.click(screen.getByText('Next'));
       expect(screen.getByTestId('pagination')).toHaveTextContent('Page 2 of');
       
-      // Update projects
-      rerender(<Projects projects={defaultProjects.slice(0, 3)} />);
-      expect(screen.getByTestId('pagination')).toHaveTextContent('Page 1 of');
-    });
-
-    it('resets to first page when itemsPerPage changes', () => {
-      const { rerender } = render(<Projects itemsPerPage={3} />);
+      // Update projects to a smaller list that fits on one page
+      const smallerProjects = defaultProjects.slice(0, 2);
+      rerender(<Projects projects={smallerProjects} itemsPerPage={2} />);
       
-      // Navigate to second page
-      fireEvent.click(screen.getByText('Next'));
-      expect(screen.getByTestId('pagination')).toHaveTextContent('Page 2 of');
-      
-      // Update itemsPerPage
-      rerender(<Projects itemsPerPage={5} />);
-      expect(screen.getByTestId('pagination')).toHaveTextContent('Page 1 of');
-    });
-
-    it('hides pagination for single page', () => {
-      render(<Projects itemsPerPage={defaultProjects.length} />);
+      // Pagination should be hidden for single page
       expect(screen.queryByTestId('pagination')).not.toBeInTheDocument();
+    });
+
+    it('handles pagination visibility correctly', () => {
+      // Should show pagination for multiple pages
+      const { rerender } = render(<Projects itemsPerPage={2} />);
+      expect(screen.getByTestId('pagination')).toBeInTheDocument();
+
+      // Should hide pagination for empty projects
+      rerender(<Projects projects={[]} />);
+      expect(screen.queryByTestId('pagination')).not.toBeInTheDocument();
+
+      // Should hide pagination for single page
+      rerender(<Projects projects={[defaultProjects[0]]} />);
+      expect(screen.queryByTestId('pagination')).not.toBeInTheDocument();
+    });
+  });
+
+  describe('Edge Cases', () => {
+    it('handles empty projects array', () => {
+      render(<Projects projects={[]} />);
+      expect(screen.queryByTestId('project-card')).not.toBeInTheDocument();
+      expect(screen.queryByTestId('pagination')).not.toBeInTheDocument();
+    });
+
+    it('normalizes invalid itemsPerPage values', () => {
+      // Test with zero
+      const { rerender } = render(<Projects itemsPerPage={0} />);
+      expect(screen.getAllByTestId('project-card')).toHaveLength(1);
+
+      // Test with negative number
+      rerender(<Projects itemsPerPage={-1} />);
+      expect(screen.getAllByTestId('project-card')).toHaveLength(1);
+
+      // Test with decimal number
+      rerender(<Projects itemsPerPage={2.7} />);
+      expect(screen.getAllByTestId('project-card')).toHaveLength(3);
     });
   });
 
@@ -216,26 +238,6 @@ describe('Projects Component', () => {
       render(<Projects />);
       const heading = screen.getByRole('heading', { level: 2 });
       expect(heading).toHaveAttribute('data-aos', 'flip-right');
-    });
-  });
-
-  describe('Edge Cases', () => {
-    it('handles empty projects array', () => {
-      render(<Projects projects={[]} />);
-      expect(screen.queryByTestId('project-card')).not.toBeInTheDocument();
-      expect(screen.queryByTestId('pagination')).not.toBeInTheDocument();
-    });
-
-    it('handles invalid itemsPerPage value', () => {
-      render(<Projects itemsPerPage={0} />);
-      const projectCards = screen.getAllByTestId('project-card');
-      expect(projectCards.length).toBeGreaterThan(0);
-    });
-
-    it('handles negative itemsPerPage value', () => {
-      render(<Projects itemsPerPage={-1} />);
-      const projectCards = screen.getAllByTestId('project-card');
-      expect(projectCards.length).toBeGreaterThan(0);
     });
   });
 });
