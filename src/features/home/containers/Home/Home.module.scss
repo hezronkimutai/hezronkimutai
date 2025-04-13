@@ -1,0 +1,70 @@
+// Base container styles
+.container {
+  @apply w-full m-auto min-h-screen flex flex-col;
+  
+  // Light theme
+  &.light {
+    @apply text-gray-900 bg-gray-100;
+    
+    .topBar {
+      background-color: rgba(255, 255, 255, 0.8);
+      border-bottom-color: theme('colors.gray.200');
+    }
+  }
+  
+  // Dark theme
+  &.dark {
+    @apply text-gray-300 bg-gray-900;
+    
+    .topBar {
+      background-color: rgba(17, 24, 39, 0.8);
+      border-bottom-color: theme('colors.gray.700');
+    }
+  }
+}
+
+// Top bar positioning and styling
+.topBar {
+  @apply w-full z-50;
+  backdrop-filter: blur(5px);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+// Main content area
+.main {
+  @apply flex-1 flex flex-col;
+  
+  // Section spacing
+  > * {
+    @apply mb-16;
+    
+    &:last-child {
+      @apply mb-0;
+    }
+  }
+}
+
+// CSS Custom Properties for theme colors
+:root {
+  // Light theme colors
+  --color-text-primary-light: theme('colors.gray.900');
+  --color-text-secondary-light: theme('colors.gray.600');
+  --color-bg-primary-light: theme('colors.gray.100');
+  --color-bg-secondary-light: theme('colors.white');
+  
+  // Dark theme colors
+  --color-text-primary-dark: theme('colors.gray.100');
+  --color-text-secondary-dark: theme('colors.gray.400');
+  --color-bg-primary-dark: theme('colors.gray.900');
+  --color-bg-secondary-dark: theme('colors.gray.800');
+}
+
+// Animation for theme transition
+.container {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  
+  * {
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+  }
+}
