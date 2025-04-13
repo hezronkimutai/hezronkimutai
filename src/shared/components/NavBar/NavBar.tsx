@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { NavBarProps } from '../../../types';
-import styles from './NavBar.module.scss';
+import styles from './NavBar.module.scss'; // ← back to normal import, no "* as"
 
 const defaultLinks = [
   { to: '/', label: 'Home' },

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ProjectCard } from '../ProjectCard';
 import { Pagination } from '../Pagination';
 import { defaultProjects, ITEMS_PER_PAGE } from '../../types/projects';
@@ -33,7 +33,19 @@ export const Projects: React.FC<ProjectsProps> = ({
   itemsPerPage = ITEMS_PER_PAGE,
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = Math.ceil(projects.length / itemsPerPage);
+  const totalPages = Math.max(1, Math.ceil(projects.length / itemsPerPage));
+
+  // Reset page when projects or itemsPerPage changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [projects.length, itemsPerPage]);
+
+  // Ensure current page is valid when totalPages changes
+  useEffect(() => {
+    if (currentPage > totalPages) {
+      setCurrentPage(totalPages);
+    }
+  }, [currentPage, totalPages]);
 
   const currentProjects = projects.slice(
     (currentPage - 1) * itemsPerPage,
@@ -77,13 +89,15 @@ export const Projects: React.FC<ProjectsProps> = ({
           ))}
         </div>
 
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onNext={handleNextPage}
-          onPrev={handlePrevPage}
-          className={styles.pagination}
-        />
+        {totalPages > 1 && (
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onNext={handleNextPage}
+            onPrev={handlePrevPage}
+            className={styles.pagination}
+          />
+        )}
       </div>
     </section>
   );
