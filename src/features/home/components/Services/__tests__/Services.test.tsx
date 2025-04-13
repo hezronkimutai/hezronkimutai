@@ -2,110 +2,107 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Services } from '../Services';
-import { Service } from '../../../types/services';
+import { defaultServices } from '../../../types/services';
 
-// Mock images object
-jest.mock('../../../../../components/images', () => ({
-  react: 'react-icon.svg',
-  html: 'html-icon.svg',
-  css3: 'css3-icon.svg',
+// Mock ServiceCard component
+jest.mock('../../ServiceCard', () => ({
+  ServiceCard: ({ name, description }: { name: string; description: string }) => (
+    <div data-testid="service-card">
+      <h3>{name}</h3>
+      <p>{description}</p>
+    </div>
+  ),
 }));
 
 describe('Services Component', () => {
-  const mockServices: Service[] = [
-    {
-      name: 'Frontend Development',
-      description: 'Building modern web applications',
-      links: [{ url: '', img: 'react', altText: 'React' }],
-    },
-    {
-      name: 'Backend Development',
-      description: 'Server-side development',
-      links: [{ url: '', img: 'html', altText: 'HTML' }],
-    },
-  ];
-
   describe('Rendering', () => {
-    it('renders services section with title', () => {
-      render(<Services services={mockServices} />);
-      expect(screen.getByText('Services I Offer')).toBeInTheDocument();
-    });
-
-    it('renders all provided services', () => {
-      render(<Services services={mockServices} />);
-      
-      mockServices.forEach(service => {
-        expect(screen.getByText(service.name)).toBeInTheDocument();
-        expect(screen.getByText(service.description)).toBeInTheDocument();
-      });
-    });
-
-    it('shows empty state when no services provided', () => {
-      render(<Services services={[]} />);
-      expect(screen.getByText('No services available at the moment.')).toBeInTheDocument();
-    });
-
-    it('uses default services when none provided', () => {
+    it('renders with default props', () => {
       render(<Services />);
-      // Should render DEFAULT_SERVICES from types
-      expect(screen.getByText('Frontend Development')).toBeInTheDocument();
-      expect(screen.getByText('Backend Development')).toBeInTheDocument();
-    });
-  });
-
-  describe('Styling', () => {
-    it('applies custom className', () => {
-      const customClass = 'custom-services';
-      const { container } = render(
-        <Services services={mockServices} className={customClass} />
-      );
       
-      expect(container.firstChild).toHaveClass(customClass);
-    });
-
-    it('maintains grid structure', () => {
-      const { container } = render(<Services services={mockServices} />);
-      expect(container.querySelector('.grid')).toBeInTheDocument();
-    });
-  });
-
-  describe('Service Cards', () => {
-    it('renders correct number of service cards', () => {
-      render(<Services services={mockServices} />);
-      const cards = screen.getAllByRole('heading', { level: 2 });
-      expect(cards).toHaveLength(mockServices.length);
-    });
-
-    it('renders all technology icons', () => {
-      render(<Services services={mockServices} />);
+      // Check title
+      expect(screen.getByText('Services I Offer')).toBeInTheDocument();
       
-      mockServices.forEach(service => {
-        service.links.forEach(link => {
-          expect(screen.getByAltText(link.altText || link.img)).toBeInTheDocument();
-        });
-      });
-    });
-  });
-
-  describe('Edge Cases', () => {
-    it('handles undefined services prop gracefully', () => {
-      render(<Services services={undefined} />);
-      // Should use DEFAULT_SERVICES
-      expect(screen.getByText('Frontend Development')).toBeInTheDocument();
+      // Check number of service cards
+      const cards = screen.getAllByTestId('service-card');
+      expect(cards).toHaveLength(defaultServices.length);
     });
 
-    it('handles service without links', () => {
-      const servicesWithoutLinks: Service[] = [
+    it('renders with custom title', () => {
+      const customTitle = 'Custom Services';
+      render(<Services title={customTitle} />);
+      expect(screen.getByText(customTitle)).toBeInTheDocument();
+    });
+
+    it('renders with custom services', () => {
+      const customServices = [
         {
-          name: 'Test Service',
-          description: 'Test Description',
+          name: 'Custom Service 1',
+          description: 'Description 1',
+          links: [],
+        },
+        {
+          name: 'Custom Service 2',
+          description: 'Description 2',
           links: [],
         },
       ];
 
-      render(<Services services={servicesWithoutLinks} />);
-      expect(screen.getByText('Test Service')).toBeInTheDocument();
-      expect(screen.queryByRole('img')).not.toBeInTheDocument();
+      render(<Services services={customServices} />);
+      
+      // Check custom service names are rendered
+      expect(screen.getByText('Custom Service 1')).toBeInTheDocument();
+      expect(screen.getByText('Custom Service 2')).toBeInTheDocument();
+      
+      // Check custom descriptions are rendered
+      expect(screen.getByText('Description 1')).toBeInTheDocument();
+      expect(screen.getByText('Description 2')).toBeInTheDocument();
+    });
+
+    it('applies custom className', () => {
+      const customClass = 'custom-class';
+      const { container } = render(<Services className={customClass} />);
+      expect(container.firstChild).toHaveClass(customClass);
+    });
+  });
+
+  describe('Layout', () => {
+    it('renders services in a grid', () => {
+      const { container } = render(<Services />);
+      const grid = container.querySelector('div[class*="grid"]');
+      expect(grid).toBeInTheDocument();
+    });
+
+    it('maintains proper heading hierarchy', () => {
+      render(<Services />);
+      const heading = screen.getByRole('heading', { level: 2 });
+      expect(heading).toHaveTextContent('Services I Offer');
+    });
+  });
+
+  describe('Accessibility', () => {
+    it('has section with proper ARIA labeling', () => {
+      render(<Services />);
+      const section = screen.getByRole('region', { name: 'Services I Offer' });
+      expect(section).toBeInTheDocument();
+    });
+
+    it('associates heading with section via aria-labelledby', () => {
+      const { container } = render(<Services />);
+      const section = container.firstChild as HTMLElement;
+      const headingId = section.getAttribute('aria-labelledby');
+      expect(screen.getByRole('heading')).toHaveAttribute('id', headingId);
+    });
+  });
+
+  describe('Content Structure', () => {
+    it('renders service cards in correct order', () => {
+      render(<Services />);
+      const cards = screen.getAllByTestId('service-card');
+      
+      cards.forEach((card, index) => {
+        expect(card).toHaveTextContent(defaultServices[index].name);
+        expect(card).toHaveTextContent(defaultServices[index].description);
+      });
     });
   });
 });

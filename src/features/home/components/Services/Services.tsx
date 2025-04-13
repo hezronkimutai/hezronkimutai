@@ -1,37 +1,54 @@
 import React from 'react';
-import { ServicesProps, DEFAULT_SERVICES } from '../../types/services';
-import { ServiceCard } from '../ServiceCard/ServiceCard';
+import { ServiceCard } from '../ServiceCard';
+import { defaultServices } from '../../types/services';
 import styles from './Services.module.scss';
+
+export interface ServicesProps {
+  /**
+   * Optional className for container styles
+   */
+  className?: string;
+
+  /**
+   * Optional title override
+   */
+  title?: string;
+
+  /**
+   * Optional services data override
+   */
+  services?: typeof defaultServices;
+}
 
 export const Services: React.FC<ServicesProps> = ({
   className = '',
-  services = DEFAULT_SERVICES,
-}) => {
-  if (!services.length) {
-    return (
-      <div className={`${styles.noServices} ${className}`.trim()}>
-        <p>No services available at the moment.</p>
-      </div>
-    );
-  }
-
-  return (
-    <div className={`${styles.container} ${className}`.trim()}>
-      <div className={styles.content}>
-        <h1 className={styles.title}>Services I Offer</h1>
-        
-        <div className={styles.grid}>
-          {services.map((service, index) => (
-            <ServiceCard
-              key={`${service.name}-${index}`}
-              service={service}
-            />
-          ))}
-        </div>
+  title = 'Services I Offer',
+  services = defaultServices,
+}) => (
+  <section 
+    className={`${styles.container} ${className}`.trim()}
+    aria-labelledby="services-title"
+  >
+    <div className={styles.content}>
+      <h2 
+        id="services-title" 
+        className={styles.title}
+      >
+        {title}
+      </h2>
+      
+      <div className={styles.grid}>
+        {services.map((service, index) => (
+          <ServiceCard
+            key={`service-${index}`}
+            {...service}
+            className={styles.card}
+          />
+        ))}
       </div>
     </div>
-  );
-};
+  </section>
+);
 
 Services.displayName = 'Services';
 
