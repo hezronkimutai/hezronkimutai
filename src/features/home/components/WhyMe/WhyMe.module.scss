@@ -1,0 +1,114 @@
+.container {
+  @apply py-6 w-full;
+  background: linear-gradient(to bottom right, #f8fafc, #f1f5f9);
+}
+
+.content {
+  @apply container mx-auto px-4;
+}
+
+.wrapper {
+  @apply flex items-center justify-center gap-8;
+  
+  @screen md {
+    @apply flex-row;
+  }
+  
+  @screen sm {
+    @apply flex-col;
+  }
+}
+
+.imageWrapper {
+  @apply relative;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideIn 0.6s ease-out forwards;
+  
+  @screen sm {
+    @apply w-48 h-48;
+  }
+  
+  @screen md {
+    @apply w-56 h-56;
+  }
+  
+  @screen lg {
+    @apply w-64 h-64;
+  }
+}
+
+.image {
+  @apply rounded-full shadow-lg w-full h-full object-cover;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  
+  &:hover {
+    transform: scale(1.05);
+    @apply shadow-xl;
+  }
+}
+
+.textContent {
+  @apply flex-1 shadow-lg rounded-lg p-8 bg-white;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.6s ease-out 0.3s forwards;
+}
+
+.description {
+  @apply text-xl leading-relaxed text-gray-700;
+  
+  &::first-letter {
+    @apply text-3xl font-semibold text-blue-600;
+  }
+}
+
+.hireButton {
+  @apply mt-4 bg-blue-700 text-gray-300 py-2 px-6 rounded-full text-xl font-semibold;
+  transition: all 0.3s ease-in-out;
+  
+  &:hover {
+    @apply bg-blue-600 transform -translate-y-1;
+  }
+  
+  &:focus {
+    @apply outline-none ring-2 ring-blue-500 ring-offset-2;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+  .container {
+    background: linear-gradient(to bottom right, #1e293b, #0f172a);
+  }
+  
+  .textContent {
+    @apply bg-gray-800;
+  }
+  
+  .description {
+    @apply text-gray-300;
+  }
+}

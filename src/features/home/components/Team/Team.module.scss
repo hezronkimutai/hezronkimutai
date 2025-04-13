@@ -1,0 +1,93 @@
+.container {
+  @apply w-full py-8;
+}
+
+.content {
+  @apply mx-auto w-10/12;
+}
+
+.title {
+  @apply mx-auto text-4xl text-center font-bold mb-8 text-gray-900;
+  
+  &[data-aos] {
+    opacity: 0;
+    transform: rotateX(-45deg);
+    transition: all 0.5s ease-out;
+
+    &.aos-animate {
+      opacity: 1;
+      transform: rotateX(0);
+    }
+  }
+
+  &::after {
+    content: '';
+    @apply block w-24 h-1 bg-blue-500 mx-auto mt-4 rounded;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+.grid {
+  @apply flex flex-wrap justify-around;
+  
+  // Grid layout for different screen sizes
+  display: grid;
+  gap: 2rem;
+  
+  @screen sm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @screen md {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  @screen lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  @screen xl {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  // Add stagger animation for cards
+  @for $i from 1 through 12 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.1}s;
+    }
+  }
+}
+
+.noMembers {
+  @apply text-center py-12;
+  
+  p {
+    @apply text-gray-600 text-lg font-medium;
+  }
+}
+
+// Entrance animation for grid items
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Add hover effect to the entire grid
+.grid:hover {
+  .card:not(:hover) {
+    @apply opacity-75;
+  }
+}

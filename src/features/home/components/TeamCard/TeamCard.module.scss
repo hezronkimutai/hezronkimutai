@@ -1,0 +1,76 @@
+.card {
+  @apply flex flex-col m-2 bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300;
+  
+  &:hover {
+    @apply shadow-lg transform -translate-y-1;
+    
+    .image {
+      transform: scale(1.05);
+    }
+    
+    .name {
+      @apply text-blue-600;
+    }
+  }
+
+  &[data-aos] {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+    &.aos-animate {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+.imageWrapper {
+  @apply relative overflow-hidden;
+  padding-top: 100%; // 1:1 Aspect ratio
+}
+
+.image {
+  @apply absolute top-0 left-0 w-full h-full object-cover rounded-full m-auto;
+  transition: transform 0.3s ease-in-out;
+  
+  // Add subtle shadow for depth
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  @apply flex flex-col items-center p-4 text-center;
+}
+
+.name {
+  @apply text-blue-900 font-semibold text-lg mb-1 hover:underline transition-colors duration-200;
+  
+  &:focus {
+    @apply outline-none ring-2 ring-blue-500 ring-offset-2 rounded;
+  }
+}
+
+.role {
+  @apply text-gray-600 text-sm mb-2;
+  
+  // Add fade-in animation
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.description {
+  @apply text-gray-500 text-sm;
+  
+  // Add fade-in animation with delay
+  animation: fadeIn 0.3s ease-in-out 0.1s both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
