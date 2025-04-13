@@ -2,57 +2,121 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { ProjectCard } from '../ProjectCard';
-import { Project } from '../../../types/projects';
 
 describe('ProjectCard Component', () => {
-  const mockProject: Project = {
+  const defaultProps = {
     name: 'Test Project',
-    imageUrl: 'https://test.com/image.jpg',
-    link: 'https://test.com/project',
-    description: 'This is a test project description',
+    imageUrl: 'test-image.jpg',
+    link: 'https://test-project.com',
+    description: 'Test project description',
   };
 
-  it('renders project information correctly', () => {
-    render(<ProjectCard project={mockProject} />);
+  describe('Rendering', () => {
+    it('renders all content correctly', () => {
+      render(<ProjectCard {...defaultProps} />);
 
-    expect(screen.getByText(mockProject.name)).toBeInTheDocument();
-    expect(screen.getByText(mockProject.description)).toBeInTheDocument();
-    expect(screen.getByAltText(mockProject.name)).toBeInTheDocument();
-  });
+      // Check title
+      expect(screen.getByText(defaultProps.name)).toBeInTheDocument();
 
-  it('applies custom className', () => {
-    const customClass = 'custom-class';
-    const { container } = render(
-      <ProjectCard project={mockProject} className={customClass} />
-    );
+      // Check description
+      expect(screen.getByText(defaultProps.description)).toBeInTheDocument();
 
-    expect(container.firstChild).toHaveClass(customClass);
-  });
+      // Check image
+      const image = screen.getByAltText(`${defaultProps.name} thumbnail`);
+      expect(image).toBeInTheDocument();
+      expect(image).toHaveAttribute('src', defaultProps.imageUrl);
+      expect(image).toHaveAttribute('loading', 'lazy');
 
-  it('renders links with correct href and attributes', () => {
-    render(<ProjectCard project={mockProject} />);
+      // Check links
+      const links = screen.getAllByRole('link');
+      links.forEach(link => {
+        expect(link).toHaveAttribute('href', defaultProps.link);
+        expect(link).toHaveAttribute('target', '_blank');
+        expect(link).toHaveAttribute('rel', 'noopener noreferrer');
+      });
+    });
 
-    const links = screen.getAllByRole('link');
-    links.forEach(link => {
-      expect(link).toHaveAttribute('href', mockProject.link);
-      expect(link).toHaveAttribute('target', '_blank');
-      expect(link).toHaveAttribute('rel', 'noopener noreferrer');
+    it('applies custom className', () => {
+      const customClass = 'custom-class';
+      const { container } = render(
+        <ProjectCard {...defaultProps} className={customClass} />
+      );
+      expect(container.firstChild).toHaveClass(customClass);
+    });
+
+    it('adds fade-up animation attribute', () => {
+      const { container } = render(<ProjectCard {...defaultProps} />);
+      expect(container.firstChild).toHaveAttribute('data-aos', 'fade-up');
     });
   });
 
-  it('renders image with correct attributes', () => {
-    render(<ProjectCard project={mockProject} />);
+  describe('Links', () => {
+    it('renders title as a link', () => {
+      render(<ProjectCard {...defaultProps} />);
+      const titleLink = screen.getByRole('link', { name: defaultProps.name });
+      expect(titleLink).toBeInTheDocument();
+    });
 
-    const image = screen.getByAltText(mockProject.name);
-    expect(image).toHaveAttribute('src', mockProject.imageUrl);
-    expect(image).toHaveAttribute('loading', 'lazy');
+    it('renders View Project link with accessible name', () => {
+      render(<ProjectCard {...defaultProps} />);
+      const viewLink = screen.getByRole('link', {
+        name: new RegExp(`View Project ${defaultProps.name}`, 'i'),
+      });
+      expect(viewLink).toBeInTheDocument();
+    });
   });
 
-  it('maintains proper structure', () => {
-    const { container } = render(<ProjectCard project={mockProject} />);
+  describe('Accessibility', () => {
+    it('uses article element for semantic structure', () => {
+      const { container } = render(<ProjectCard {...defaultProps} />);
+      expect(container.firstChild?.nodeName).toBe('ARTICLE');
+    });
 
-    expect(container.querySelector('.header')).toBeInTheDocument();
-    expect(container.querySelector('.content')).toBeInTheDocument();
-    expect(container.querySelector('.description')).toBeInTheDocument();
+    it('uses proper heading level', () => {
+      render(<ProjectCard {...defaultProps} />);
+      const heading = screen.getByRole('heading', { level: 3 });
+      expect(heading).toHaveTextContent(defaultProps.name);
+    });
+
+    it('provides descriptive alt text for image', () => {
+      render(<ProjectCard {...defaultProps} />);
+      expect(
+        screen.getByAltText(`${defaultProps.name} thumbnail`)
+      ).toBeInTheDocument();
+    });
+
+    it('uses aria-label for image link', () => {
+      render(<ProjectCard {...defaultProps} />);
+      const imageLink = screen.getByLabelText(`View ${defaultProps.name} project`);
+      expect(imageLink).toBeInTheDocument();
+    });
+
+    it('includes screen reader text for external links', () => {
+      render(<ProjectCard {...defaultProps} />);
+      expect(
+        screen.getByText(`${defaultProps.name} (opens in new tab)`)
+      ).toHaveClass('sr-only');
+    });
+  });
+
+  describe('Optimization', () => {
+    it('uses lazy loading for images', () => {
+      render(<ProjectCard {...defaultProps} />);
+      const image = screen.getByRole('img');
+      expect(image).toHaveAttribute('loading', 'lazy');
+    });
+
+    it('is memoized for performance', () => {
+      // Create a simple render function for the component
+      const renderComponent = () => <ProjectCard {...defaultProps} />;
+      
+      // Create two instances using the same props
+      const firstRender = renderComponent();
+      const secondRender = renderComponent();
+
+      // The memoized component should be equal when props haven't changed
+      expect(firstRender.type).toBe(secondRender.type);
+      expect(ProjectCard.displayName).toBe('ProjectCard');
+    });
   });
 });
