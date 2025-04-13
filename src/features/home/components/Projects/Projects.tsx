@@ -30,8 +30,10 @@ export const Projects: React.FC<ProjectsProps> = ({
   className = '',
   title = 'Featured Works and Case Studies',
   projects = defaultProjects,
-  itemsPerPage = ITEMS_PER_PAGE,
+  itemsPerPage: rawItemsPerPage = ITEMS_PER_PAGE,
 }) => {
+  // Ensure itemsPerPage is valid
+  const itemsPerPage = Math.max(1, Math.round(rawItemsPerPage));
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.max(1, Math.ceil(projects.length / itemsPerPage));
 
@@ -47,10 +49,9 @@ export const Projects: React.FC<ProjectsProps> = ({
     }
   }, [currentPage, totalPages]);
 
-  const currentProjects = projects.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
-  );
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = Math.min(startIndex + itemsPerPage, projects.length);
+  const currentProjects = projects.slice(startIndex, endIndex);
 
   const handleNextPage = () => {
     if (currentPage < totalPages) {
@@ -63,6 +64,8 @@ export const Projects: React.FC<ProjectsProps> = ({
       setCurrentPage(prev => prev - 1);
     }
   };
+
+  const showPagination = totalPages > 1 && projects.length > 0;
 
   return (
     <section 
@@ -89,7 +92,7 @@ export const Projects: React.FC<ProjectsProps> = ({
           ))}
         </div>
 
-        {totalPages > 1 && (
+        {showPagination && (
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}

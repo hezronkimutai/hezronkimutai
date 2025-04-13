@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { NavBarProps } from '../../../types';
-import styles from './NavBar.module.scss'; // ← back to normal import, no "* as"
+import './NavBar.scss';
 
 const defaultLinks = [
   { to: '/', label: 'Home' },
@@ -9,15 +9,14 @@ const defaultLinks = [
 ];
 
 const NavBar: React.FC<NavBarProps> = ({
-  className = '',
   links = defaultLinks,
 }) => {
   return (
-    <nav className={`${styles.navbar_container} ${className}`.trim()}>
+    <nav className="navbar_container">
       {links.map(({ to, label }) => (
         <Link
           key={`${to}-${label}`}
-          className={styles.nav_link}
+          className="nav_link"
           to={to}
         >
           {label}
