@@ -95,6 +95,7 @@
 
 - <a href="https://ticketing-web-three.vercel.app/" target="_blank">tikiti</a>
 - <a href="https://web-one-khaki.vercel.app/" target="_blank">Merigo Round</a>
+- <a href="https://chessdau.onrender.com/"> Chess</a>
 <!--- <a href="https://thesaniakgroup.vercel.app/" target="_blank">thesaniakgroup</a>
 - <a href="https://thenyongigroup.vercel.app/" target="_blank">thenyongigroup</a>
 - <a href="https://lifcommunity.vercel.app/" target="_blank">lifcommunity</a>
