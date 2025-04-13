@@ -1,0 +1,78 @@
+.container {
+  @apply fixed top-0 left-0 right-0 z-50 py-3 px-4 flex justify-between items-center;
+  width: 98%; // Match original style
+  margin: 0 auto; // Center it
+  background-color: rgba(255, 255, 255, 0.8); // Semi-transparent background
+  backdrop-filter: blur(5px);
+  border-bottom: 1px solid theme('colors.gray.200');
+  
+  @media (prefers-color-scheme: dark) {
+    background-color: rgba(17, 24, 39, 0.8); // Darker semi-transparent
+    border-bottom-color: theme('colors.gray.700');
+  }
+}
+
+.socialLinks {
+  @apply flex items-center gap-3;
+}
+
+.socialLink {
+  @apply transition-opacity duration-300;
+  
+  &:hover {
+    @apply opacity-75;
+  }
+  
+  &:focus {
+    @apply outline-none ring-2 ring-blue-500 ring-offset-2 rounded-full;
+  }
+}
+
+.socialIcon {
+  @apply w-8 h-8;
+  filter: grayscale(50%); // Slightly desaturated
+  
+  @media (prefers-color-scheme: dark) {
+    filter: brightness(0.8) saturate(0.5);
+  }
+  
+  &:hover {
+    filter: grayscale(0%);
+    @media (prefers-color-scheme: dark) {
+      filter: brightness(1) saturate(1);
+    }
+  }
+}
+
+.themeToggle {
+  // Styles for the theme toggle button container
+}
+
+.toggleButton {
+  @apply w-10 h-6 rounded-full relative cursor-pointer transition-colors duration-300;
+  
+  &.light {
+    @apply bg-gray-900;
+    .toggleIndicator {
+      transform: translateX(0);
+      @apply bg-yellow-400; // Sun color
+    }
+  }
+  
+  &.dark {
+    @apply bg-gray-100;
+    .toggleIndicator {
+      transform: translateX(16px); // Move indicator to the right
+      @apply bg-blue-900; // Moon color
+    }
+  }
+
+  &:focus {
+    @apply outline-none ring-2 ring-blue-500 ring-offset-2;
+  }
+}
+
+.toggleIndicator {
+  @apply w-6 h-6 rounded-full absolute top-0 left-0 transition-transform duration-300 ease-in-out;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}

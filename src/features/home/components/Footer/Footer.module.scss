@@ -1,0 +1,64 @@
+.footer {
+  @apply bg-gray-100 py-4 border-t border-gray-200;
+}
+
+.content {
+  @apply container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4;
+}
+
+.paymentSection {
+  @apply flex flex-col items-center sm:items-start;
+}
+
+.error {
+  @apply text-red-600 text-sm mt-2;
+}
+
+.socialLinks {
+  @apply flex items-center gap-4;
+}
+
+.socialLink {
+  @apply transition-opacity duration-300;
+  
+  &:hover {
+    @apply opacity-75;
+  }
+  
+  &:focus {
+    @apply outline-none ring-2 ring-blue-500 ring-offset-2 rounded-full;
+  }
+}
+
+.socialIcon {
+  @apply w-8 h-8;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+  
+  &:hover {
+    filter: grayscale(0%);
+  }
+}
+
+.copyright {
+  @apply text-gray-600 text-sm text-center sm:text-right;
+}
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+  .footer {
+    @apply bg-gray-900 border-gray-700;
+  }
+  
+  .copyright {
+    @apply text-gray-400;
+  }
+  
+  .socialIcon {
+    filter: brightness(0.8) saturate(0.5);
+    
+    &:hover {
+      filter: brightness(1) saturate(1);
+    }
+  }
+}
