@@ -1,29 +1,46 @@
-.landingDiv {
-  @apply relative mx-auto w-full md:w-10/12 lg:w-9/12 xl:w-8/12;
-}
-
-.welcome {
-  @apply w-full md:w-10/12 mx-auto flex flex-col md:flex-row items-center justify-center gap-8;
+.container {
+  @apply relative mx-auto w-full;
+  
+  @screen md {
+    @apply w-10/12;
+  }
+  
+  @screen lg {
+    @apply w-9/12;
+  }
+  
+  @screen xl {
+    @apply w-8/12;
+  }
 }
 
 .content {
+  @apply w-full mx-auto flex flex-col items-center justify-center gap-8;
+  
+  @screen md {
+    @apply w-10/12 flex-row;
+  }
+}
+
+.textContent {
   @apply md:w-1/2 text-center;
+
+  .quote {
+    @apply italic text-lg mb-4 block;
+  }
+
+  .title {
+    @apply text-4xl font-bold mb-4;
+  }
+
+  .description {
+    @apply text-xl font-semibold mb-6;
+  }
 }
 
-.quote {
-  @apply italic text-lg mb-4 block;
-}
-
-.title {
-  @apply text-4xl font-bold mb-4;
-}
-
-.description {
-  @apply text-xl font-semibold mb-6;
-}
-
-.downloadButton {
-  @apply text-lg font-semibold py-3 px-6 bg-blue-700 rounded-full text-gray-100 transition duration-300 ease-in-out;
+.resumeButton {
+  @apply text-lg font-semibold py-3 px-6 bg-blue-700 rounded-full text-gray-100 inline-block;
+  transition: background-color 0.3s ease-in-out;
 
   &:hover {
     @apply bg-blue-900;
@@ -39,9 +56,22 @@
 }
 
 .profileImage {
-  @apply w-full rounded-[50%] shadow-lg;
+  @apply w-full rounded-[50%];
+  
+  // Add subtle animation on hover
+  transition: transform 0.3s ease-in-out;
   
   &:hover {
-    @apply transform scale-105 transition-transform duration-300;
+    transform: scale(1.02);
   }
+  
+  // Ensure image maintains quality
+  image-rendering: -webkit-optimize-contrast;
+  
+  // Add subtle shadow
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  
+  // Improve image loading performance
+  will-change: transform;
 }

@@ -1,80 +1,90 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { LandingDiv } from '../LandingDiv';
 
-// Mock window.open
-const mockOpen = jest.fn();
-window.open = mockOpen;
-
 // Mock the image import
-jest.mock('../../../../../assets/images/hezPas.png', () => 'test-file-stub');
+jest.mock('../../../../../assets/images/hezPas.png', () => 'mocked-image.png');
 
 describe('LandingDiv Component', () => {
-  beforeEach(() => {
-    mockOpen.mockClear();
+  describe('Rendering', () => {
+    it('renders all main sections', () => {
+      render(<LandingDiv />);
+      
+      // Quote
+      expect(screen.getByText(/The best way to predict the future/)).toBeInTheDocument();
+      
+      // Title
+      expect(screen.getByText('Hezron Kimutai')).toBeInTheDocument();
+      
+      // Description
+      expect(screen.getByText(/I am a FullStack Web developer/)).toBeInTheDocument();
+      
+      // Resume button
+      expect(screen.getByText('Download Resume')).toBeInTheDocument();
+      
+      // Profile image
+      expect(screen.getByAltText('Hezron Kimutai - Profile')).toBeInTheDocument();
+    });
+
+    it('applies custom className', () => {
+      const customClass = 'custom-class';
+      const { container } = render(<LandingDiv className={customClass} />);
+      expect(container.firstChild).toHaveClass(customClass);
+    });
+
+    it('merges custom className with default styles', () => {
+      const customClass = 'custom-class';
+      const { container } = render(<LandingDiv className={customClass} />);
+      expect(container.firstChild).toHaveClass('container', customClass);
+    });
   });
 
-  it('renders main content sections', () => {
-    render(<LandingDiv />);
-    
-    // Check for main heading
-    expect(screen.getByText('Hezron Kimutai')).toBeInTheDocument();
-    
-    // Check for quote
-    expect(screen.getByText(/The best way to predict the future/)).toBeInTheDocument();
-    
-    // Check for description
-    expect(screen.getByText(/I am a FullStack Web developer/)).toBeInTheDocument();
+  describe('Resume Link', () => {
+    it('has correct attributes', () => {
+      render(<LandingDiv />);
+      const resumeLink = screen.getByText('Download Resume');
+      
+      expect(resumeLink).toHaveAttribute('href', expect.stringContaining('docs.google.com'));
+      expect(resumeLink).toHaveAttribute('target', '_blank');
+      expect(resumeLink).toHaveAttribute('rel', 'noreferrer');
+      expect(resumeLink).toHaveAttribute('download');
+    });
   });
 
-  it('renders profile image with correct alt text', () => {
-    render(<LandingDiv />);
-    const image = screen.getByAltText('Hezron Kimutai - FullStack Developer');
-    expect(image).toBeInTheDocument();
-    expect(image).toHaveAttribute('src', 'test-file-stub');
+  describe('Profile Image', () => {
+    it('has correct attributes', () => {
+      render(<LandingDiv />);
+      const image = screen.getByAltText('Hezron Kimutai - Profile');
+      
+      expect(image).toHaveAttribute('src', 'mocked-image.png');
+      expect(image).toHaveAttribute('loading', 'lazy');
+      expect(image).toHaveClass('profileImage');
+    });
   });
 
-  it('opens resume in new tab when clicking download button', () => {
-    render(<LandingDiv />);
-    const downloadButton = screen.getByText('Download Resume');
-    
-    fireEvent.click(downloadButton);
-    
-    expect(mockOpen).toHaveBeenCalledWith(
-      'https://docs.google.com/document/d/1r5V9Pm0FhYDSiu1G4dtHqJ0QlbUZCq-r52SAM1OHago/edit?usp=sharing',
-      '_blank',
-      'noopener,noreferrer'
-    );
-  });
+  describe('Accessibility', () => {
+    it('has emoji with proper aria-label', () => {
+      render(<LandingDiv />);
+      const emoji = screen.getByRole('img', { name: 'hi' });
+      expect(emoji).toBeInTheDocument();
+    });
 
-  it('accepts custom resume URL', () => {
-    const customUrl = 'https://example.com/resume';
-    render(<LandingDiv resumeUrl={customUrl} />);
-    
-    const downloadButton = screen.getByText('Download Resume');
-    fireEvent.click(downloadButton);
-    
-    expect(mockOpen).toHaveBeenCalledWith(
-      customUrl,
-      '_blank',
-      'noopener,noreferrer'
-    );
-  });
+    it('has main heading with proper hierarchy', () => {
+      render(<LandingDiv />);
+      const heading = screen.getByRole('heading', { level: 1 });
+      expect(heading).toHaveTextContent('Hezron Kimutai');
+    });
 
-  it('applies custom className', () => {
-    const customClass = 'custom-landing';
-    const { container } = render(<LandingDiv className={customClass} />);
-    
-    expect(container.firstChild).toHaveClass(customClass);
-  });
+    it('has descriptive image alt text', () => {
+      render(<LandingDiv />);
+      expect(screen.getByAltText('Hezron Kimutai - Profile')).toBeInTheDocument();
+    });
 
-  it('renders emoji with correct accessibility attributes', () => {
-    render(<LandingDiv />);
-    const emoji = screen.getByRole('img', { name: 'hi' });
-    
-    expect(emoji).toBeInTheDocument();
-    expect(emoji).toHaveAttribute('role', 'img');
-    expect(emoji).toHaveAttribute('aria-label', 'hi');
+    it('has proper link text for resume download', () => {
+      render(<LandingDiv />);
+      const link = screen.getByText('Download Resume');
+      expect(link).toHaveAccessibleName('Download Resume');
+    });
   });
 });

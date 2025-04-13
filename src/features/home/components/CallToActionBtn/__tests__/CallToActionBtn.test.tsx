@@ -4,45 +4,75 @@ import '@testing-library/jest-dom';
 import { CallToActionBtn } from '../CallToActionBtn';
 
 describe('CallToActionBtn Component', () => {
-  const mockOnClick = jest.fn();
   const defaultProps = {
-    onClick: mockOnClick,
+    onClick: jest.fn(),
     displayText: 'Click Me',
-    className: 'test-button',
   };
 
   beforeEach(() => {
-    mockOnClick.mockClear();
+    jest.clearAllMocks();
   });
 
-  it('renders with correct text', () => {
-    render(<CallToActionBtn {...defaultProps} />);
-    expect(screen.getByText('Click Me')).toBeInTheDocument();
+  describe('Rendering', () => {
+    it('renders with default props', () => {
+      render(<CallToActionBtn {...defaultProps} />);
+      
+      const button = screen.getByRole('button');
+      expect(button).toBeInTheDocument();
+      expect(button).toHaveTextContent('Click Me');
+      expect(button).toHaveAttribute('type', 'button');
+    });
+
+    it('applies custom className', () => {
+      const className = 'custom-class';
+      render(<CallToActionBtn {...defaultProps} className={className} />);
+      
+      const button = screen.getByRole('button');
+      expect(button).toHaveClass(className);
+    });
+
+    it('merges custom className with base styles', () => {
+      const className = 'custom-class';
+      render(<CallToActionBtn {...defaultProps} className={className} />);
+      
+      const button = screen.getByRole('button');
+      expect(button).toHaveClass('button', className);
+    });
   });
 
-  it('applies custom className', () => {
-    render(<CallToActionBtn {...defaultProps} />);
-    const button = screen.getByRole('button');
-    expect(button).toHaveClass('test-button');
+  describe('Interaction', () => {
+    it('calls onClick when clicked', () => {
+      render(<CallToActionBtn {...defaultProps} />);
+      
+      const button = screen.getByRole('button');
+      fireEvent.click(button);
+      
+      expect(defaultProps.onClick).toHaveBeenCalledTimes(1);
+    });
+
+    it('calls onClick with correct event object', () => {
+      render(<CallToActionBtn {...defaultProps} />);
+      
+      const button = screen.getByRole('button');
+      fireEvent.click(button);
+      
+      const call = defaultProps.onClick.mock.calls[0];
+      expect(call).toBeDefined();
+      expect(call[0]).toBeDefined();
+      expect(call[0].type).toBe('click');
+    });
   });
 
-  it('calls onClick handler when clicked', () => {
-    render(<CallToActionBtn {...defaultProps} />);
-    const button = screen.getByRole('button');
-    
-    fireEvent.click(button);
-    expect(mockOnClick).toHaveBeenCalledTimes(1);
-  });
+  describe('Accessibility', () => {
+    it('has button role', () => {
+      render(<CallToActionBtn {...defaultProps} />);
+      expect(screen.getByRole('button')).toBeInTheDocument();
+    });
 
-  it('renders as a button element', () => {
-    render(<CallToActionBtn {...defaultProps} />);
-    const button = screen.getByRole('button');
-    expect(button.tagName).toBe('BUTTON');
-  });
-
-  it('has type="button"', () => {
-    render(<CallToActionBtn {...defaultProps} />);
-    const button = screen.getByRole('button');
-    expect(button).toHaveAttribute('type', 'button');
+    it('displays text content correctly', () => {
+      const displayText = 'Custom Text';
+      render(<CallToActionBtn {...defaultProps} displayText={displayText} />);
+      expect(screen.getByText(displayText)).toBeInTheDocument();
+    });
   });
 });
