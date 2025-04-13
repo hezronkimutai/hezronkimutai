@@ -5,7 +5,7 @@ import styles from './NavBar.module.scss';
 
 const defaultLinks = [
   { to: '/', label: 'Home' },
-  { to: '/blog', label: 'Blog' }
+  { to: '/blog', label: 'Blog' },
 ];
 
 const NavBar: React.FC<NavBarProps> = ({

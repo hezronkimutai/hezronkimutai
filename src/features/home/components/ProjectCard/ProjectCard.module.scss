@@ -1,47 +1,137 @@
-.card {
-  @apply bg-white flex flex-col w-[30%] min-w-[320px] shadow-lg rounded-lg overflow-hidden;
-  transform-origin: center;
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-
+.container {
+  @apply flex flex-col bg-white shadow-lg rounded-lg overflow-hidden;
+  width: min(100%, 320px);
+  
+  // Add transition for hover effects
+  transition: transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
+  
   &:hover {
     @apply shadow-2xl;
-    transform: scale(1.05);
+    transform: translateY(-4px);
+    
+    .thumbnail {
+      transform: scale(1.05);
+    }
+    
+    .titleLink {
+      @apply text-blue-600;
+    }
+  }
+  
+  // Dark mode styles
+  @screen dark {
+    @apply bg-gray-800;
+    
+    &:hover {
+      @apply shadow-blue-900/20;
+    }
   }
 }
 
 .header {
   @apply flex items-center p-4;
-}
-
-.imageLink {
-  @apply flex-shrink-0;
-  transition: opacity 0.3s ease;
-
-  &:hover {
-    @apply opacity-80;
+  border-bottom: 1px solid theme('colors.gray.200');
+  
+  @screen dark {
+    border-color: theme('colors.gray.700');
   }
 }
 
-.image {
-  @apply w-10 h-10 object-cover rounded-full mr-4;
+.imageLink {
+  @apply mr-4;
+  
+  &:focus {
+    @apply outline-none ring-2 ring-blue-500 ring-offset-2 rounded;
+  }
+}
+
+.thumbnail {
+  @apply w-10 h-10 object-cover rounded-full;
+  transition: transform 0.3s ease-in-out;
+  
+  // Improve image quality
+  image-rendering: -webkit-optimize-contrast;
 }
 
 .title {
-  @apply text-lg font-bold text-gray-800;
-}
-
-.titleLink {
-  @apply hover:text-blue-600 transition-colors duration-300;
+  @apply text-lg font-bold;
   
-  &:hover {
-    text-decoration: underline;
+  // Add subtle text animation on hover
+  .titleLink {
+    @apply text-gray-800 hover:text-blue-600;
+    transition: color 0.2s ease-in-out;
+    
+    // Dark mode styles
+    @screen dark {
+      @apply text-gray-100 hover:text-blue-400;
+    }
+    
+    &:focus {
+      @apply outline-none;
+      text-decoration: underline;
+    }
   }
 }
 
 .content {
-  @apply p-4 flex-grow;
+  @apply p-4 flex flex-col flex-grow;
+  
+  // Add staggered animation on hover
+  animation: fadeIn 0.5s ease-out;
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 .description {
-  @apply text-sm text-gray-600 leading-relaxed;
+  @apply text-sm text-gray-600 mb-4;
+  
+  // Dark mode styles
+  @screen dark {
+    @apply text-gray-300;
+  }
+  
+  // Improve readability
+  line-height: 1.6;
+  max-width: 65ch;
+}
+
+.viewLink {
+  @apply text-sm font-semibold text-blue-600 hover:text-blue-800 mt-auto;
+  
+  // Add link animation
+  transition: all 0.2s ease-in-out;
+  
+  &:hover {
+    text-decoration: underline;
+    transform: translateX(4px);
+  }
+  
+  &:focus {
+    @apply outline-none ring-2 ring-blue-500 ring-offset-2 rounded;
+  }
+  
+  // Dark mode styles
+  @screen dark {
+    @apply text-blue-400 hover:text-blue-300;
+  }
+  
+  // Add arrow icon
+  &::after {
+    content: ' →';
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  &:hover::after {
+    transform: translateX(4px);
+  }
 }

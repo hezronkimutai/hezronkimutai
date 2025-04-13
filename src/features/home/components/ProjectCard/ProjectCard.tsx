@@ -1,43 +1,67 @@
-import React, { memo } from 'react';
-import { ProjectCardProps } from '../../types/projects';
+import React from 'react';
+import type { Project } from '../../types/projects';
 import styles from './ProjectCard.module.scss';
 
-export const ProjectCard: React.FC<ProjectCardProps> = memo(({ 
-  project,
-  className = ''
+export interface ProjectCardProps extends Project {
+  /**
+   * Optional className for container styles
+   */
+  className?: string;
+}
+
+export const ProjectCard: React.FC<ProjectCardProps> = ({
+  name,
+  imageUrl,
+  link,
+  description,
+  className = '',
 }) => (
-  <div className={`${styles.card} ${className}`.trim()}>
-    <div className={styles.header}>
-      <a 
-        href={project.link}
+  <article
+    className={`${styles.container} ${className}`.trim()}
+    data-aos="fade-up"
+  >
+    <header className={styles.header}>
+      <a
+        href={link}
         target="_blank"
         rel="noopener noreferrer"
         className={styles.imageLink}
+        aria-label={`View ${name} project`}
       >
         <img
-          src={project.imageUrl}
-          alt={project.name}
-          className={styles.image}
+          src={imageUrl}
+          alt={`${name} thumbnail`}
+          className={styles.thumbnail}
           loading="lazy"
         />
       </a>
-      <h2 className={styles.title}>
-        <a 
-          href={project.link}
+      <h3 className={styles.title}>
+        <a
+          href={link}
           target="_blank"
           rel="noopener noreferrer"
           className={styles.titleLink}
         >
-          {project.name}
+          {name}
         </a>
-      </h2>
-    </div>
+      </h3>
+    </header>
+    
     <div className={styles.content}>
-      <p className={styles.description}>{project.description}</p>
+      <p className={styles.description}>{description}</p>
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.viewLink}
+      >
+        View Project
+        <span className="sr-only"> {name} (opens in new tab)</span>
+      </a>
     </div>
-  </div>
-));
+  </article>
+);
 
 ProjectCard.displayName = 'ProjectCard';
 
-export default ProjectCard;
+export default React.memo(ProjectCard);
