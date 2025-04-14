@@ -104,16 +104,14 @@ describe('BlogList Component', () => {
     it('renders pagination when there are multiple pages', () => {
       render(<BlogList {...defaultProps} />);
       
-      // First check if navigation div is present
-      const paginationDiv = screen.getByRole('navigation', { name: /pagination/i });
-      expect(paginationDiv).toBeInTheDocument();
-      
-      // Then verify the navigation controls
-      expect(screen.getByRole('button', { name: /previous/i })).toBeInTheDocument();
-      expect(screen.getByRole('button', { name: /next/i })).toBeInTheDocument();
-      
-      // Finally check the page info
-      const pageText = screen.getByText(/page/i).parentElement;
+      // Find the pagination navigation element
+      const paginationNav = screen.getByRole('navigation', { name: /pagination/i });
+      expect(paginationNav).toBeInTheDocument();
+
+      // Verify pagination content within the container
+      within(paginationNav).getByRole('button', { name: /previous/i });
+      within(paginationNav).getByRole('button', { name: /next/i });
+      const pageText = within(paginationNav).getByText(/page/i).parentElement;
       expect(pageText).toHaveTextContent(`Page ${defaultProps.currentPage} of ${defaultProps.totalPages}`);
     });
 
@@ -133,10 +131,11 @@ describe('BlogList Component', () => {
       // Initial render on page 1
       render(<BlogList {...defaultProps} currentPage={1} onPageChange={onPageChange} />);
       
-      // Ensure pagination is rendered initially
-      expect(screen.getByTestId('pagination')).toBeInTheDocument();
+      // Find the pagination navigation element
+      const paginationNav = screen.getByRole('navigation', { name: /pagination/i });
+      expect(paginationNav).toBeInTheDocument();
       
-      // Click next
+      // Click next within the pagination nav
       const nextButton = screen.getByRole('button', { name: /next/i });
       fireEvent.click(nextButton);
       expect(onPageChange).toHaveBeenCalledWith(2);
