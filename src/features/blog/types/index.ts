@@ -2,12 +2,14 @@ export interface Author {
   id: string;
   name: string;
   avatar?: string;
+  avatarUrl?: string;
   bio?: string;
   role?: string;
   title?: string;
 }
 
-export interface BlogPost {
+// Legacy blog post interface
+interface LegacyBlogPost {
   id: string;
   title: string;
   slug: string;
@@ -25,6 +27,55 @@ export interface BlogPost {
     slug: string;
   };
 }
+
+// New blog post interface
+interface NewBlogPost {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  featuredImage?: string;
+  author: Author;
+  publishedAt: string;
+  updatedAt?: string;
+  meta?: {
+    title?: string;
+    description?: string;
+    keywords?: string[];
+  };
+  readingTime: number;
+  categories: Category[];
+}
+
+// Combined type that allows both old and new field names
+export type BlogPost = {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  author: Author;
+  coverImage?: string;
+  featuredImage?: string;
+  createdAt?: string;
+  publishedAt?: string;
+  updatedAt?: string;
+  tags?: string[];
+  meta?: {
+    title?: string;
+    description?: string;
+    keywords?: string[];
+  };
+  readTime?: number;
+  readingTime?: number;
+  category?: {
+    id: string;
+    name: string;
+    slug: string;
+  };
+  categories?: Category[];
+};
 
 export interface Category {
   id: string;

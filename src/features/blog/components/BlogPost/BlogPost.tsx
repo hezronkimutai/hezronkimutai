@@ -46,16 +46,16 @@ export const BlogPost: React.FC<BlogPostProps> = (props) => {
         <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
         <div className="flex items-center text-gray-600">
           <span itemProp="datePublished">
-            {new Date(post.publishedAt).toLocaleDateString()}
+            {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : post.createdAt ? new Date(post.createdAt).toLocaleDateString() : ''}
           </span>
           <span className="mx-2">•</span>
-          <span>{post.readTime} min read</span>
+          <span>{post.readingTime} min read</span>
         </div>
       </header>
 
-      {post.coverImage && (
-        <img 
-          src={post.coverImage} 
+      {post.featuredImage && (
+        <img
+          src={post.featuredImage}
           alt={post.title}
           className="w-full h-64 object-cover rounded-lg mb-8"
           loading="lazy"
