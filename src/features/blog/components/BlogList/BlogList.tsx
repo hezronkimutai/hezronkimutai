@@ -82,5 +82,3 @@ export const BlogList: React.FC<BlogListProps> = ({
     </div>
   );
 };
-
-export default BlogList;
