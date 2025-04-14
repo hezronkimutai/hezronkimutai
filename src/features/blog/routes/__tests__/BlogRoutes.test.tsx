@@ -28,8 +28,12 @@ jest.mock('../../components/BlogPost', () => ({
 
 jest.mock('../../components/BlogCategory', () => {
   const mockComponent = ({ className }: { className?: string }) => (
-    <div data-testid="blog-category" className={className}>
-      Blog Category
+    <div className={className}>
+      <div data-testid="blog-category">Blog Category</div>
+      <div data-testid="blog-list">
+        <h2>Category Posts</h2>
+        {/* Mock blog list content */}
+      </div>
     </div>
   );
   mockComponent.displayName = 'BlogCategory';
