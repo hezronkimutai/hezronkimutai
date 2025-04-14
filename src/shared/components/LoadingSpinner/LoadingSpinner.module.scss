@@ -1,0 +1,23 @@
+.container {
+  @apply flex flex-col items-center justify-center p-4;
+}
+
+.spinner {
+  @apply border-4 border-gray-200 rounded-full;
+  border-top-color: theme('colors.blue.500');
+  animation: spin 1s linear infinite;
+
+  @screen dark {
+    @apply border-gray-700;
+    border-top-color: theme('colors.blue.400');
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

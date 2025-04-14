@@ -96,28 +96,53 @@ type StaticBlogRoute = typeof BLOG_ROUTES[keyof typeof BLOG_ROUTES];
 type StaticRoutePath = Extract<StaticBlogRoute, string>;
 
 /**
+ * Static route paths that don't require slugs
+ */
+const STATIC_ROUTES = [
+  '/blog',
+  '/blog/search',
+  '/blog/archive',
+];
+
+/**
+ * Invalid route paths that should be rejected
+ */
+const INVALID_ROUTES = [
+  '/blog/',
+  '/blog/category',
+  '/blog/category/',
+  '/blog/author',
+  '/blog/author/',
+];
+
+/**
  * Validates that a given string is a valid blog route
  */
 export const isValidBlogRoute = (path: string): boolean => {
-  // Get all static routes
-  const staticRoutes = Object.values(BLOG_ROUTES).filter(
-    (route): route is StaticRoutePath => typeof route === 'string'
-  );
+  // Reject known invalid paths
+  if (INVALID_ROUTES.includes(path)) {
+    return false;
+  }
 
-  // Get all dynamic route patterns
-  const dynamicPatterns = [
-    /^\/blog\/[a-z0-9-]+$/,              // Post route
-    /^\/blog\/category\/[a-z0-9-]+$/,    // Category route
-    /^\/blog\/author\/[a-z0-9-]+$/,      // Author route
-  ];
-
-  // Check if path matches any static route
-  if (staticRoutes.includes(path as StaticRoutePath)) {
+  // Check static routes
+  if (STATIC_ROUTES.includes(path)) {
     return true;
   }
 
-  // Check if path matches any dynamic pattern
-  return dynamicPatterns.some(pattern => pattern.test(path));
+  // Define route patterns
+  const validRoutes = {
+    // Post route - must start and end with alphanumeric, can have hyphens between
+    post: /^\/blog\/[a-z0-9][a-z0-9-]*[a-z0-9]$/,
+
+    // Category route - must have non-empty slug
+    category: /^\/blog\/category\/[a-z0-9][a-z0-9-]*[a-z0-9]$/,
+
+    // Author route - must have non-empty slug
+    author: /^\/blog\/author\/[a-z0-9][a-z0-9-]*[a-z0-9]$/,
+  };
+
+  // Check against each valid pattern
+  return Object.values(validRoutes).some(pattern => pattern.test(path));
 };
 
 /**
@@ -127,19 +152,27 @@ export const getBlogPageTitle = (path: string): string => {
   // Extract parts from path
   const parts = path.split('/').filter(Boolean);
 
-  // Handle special cases
-  switch (parts[1]) {
-    case undefined:
-      return 'Blog';
-    case 'category':
-      return `${parts[2].replace(/-/g, ' ')} - Blog`;
-    case 'search':
-      return 'Search Results - Blog';
-    case 'archive':
-      return 'Archive - Blog';
-    case 'author':
-      return `Author - Blog`;
-    default:
-      return `${parts[1].replace(/-/g, ' ')} - Blog`;
+  // Handle root path
+  if (parts.length === 0 || (parts.length === 1 && parts[0] === 'blog')) {
+    return 'Blog';
   }
+
+  // Handle blog sub-routes
+  if (parts[0] === 'blog' && parts.length > 1) {
+    switch (parts[1]) {
+      case 'category':
+        return parts[2] ? `${parts[2].replace(/-/g, ' ')} - Blog` : 'Categories - Blog';
+      case 'search':
+        return 'Search Results - Blog';
+      case 'archive':
+        return 'Archive - Blog';
+      case 'author':
+        return 'Author - Blog';
+      default:
+        return `${parts[1].replace(/-/g, ' ')} - Blog`;
+    }
+  }
+
+  // Handle invalid paths - return first non-empty part as title
+  return `${parts[0].replace(/-/g, ' ')} - Blog`;
 };
