@@ -1,6 +1,7 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 
-const instance = axios.create({
+// Create axios instance with default configuration
+let instance = axios.create({
   baseURL: process.env.API_URL || 'http://localhost:3000/api',
   headers: {
     'Content-Type': 'application/json',
@@ -8,6 +9,11 @@ const instance = axios.create({
 });
 
 export type ApiResponse<T> = AxiosResponse<T>;
+
+// Allow instance to be replaced for testing
+export const setAxiosInstance = (newInstance: AxiosInstance) => {
+  instance = newInstance;
+};
 
 export const apiClient = {
   get: async <T>(url: string, config?: AxiosRequestConfig): Promise<T> => {
@@ -30,3 +36,5 @@ export const apiClient = {
     return response.data;
   },
 };
+
+export default apiClient;

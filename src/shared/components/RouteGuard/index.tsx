@@ -9,10 +9,21 @@ interface RouteGuardProps {
 const RouteGuard: React.FC<RouteGuardProps> = ({ children, requiredRoles = [] }) => {
   const location = useLocation();
   
-  // TODO: Replace with actual auth logic
+  // Check authentication
   const isAuthenticated = Boolean(localStorage.getItem('token'));
-  const userRoles: string[] = JSON.parse(localStorage.getItem('userRoles') || '[]');
+
+  // Parse user roles with error handling
+  let userRoles: string[] = [];
+  try {
+    userRoles = JSON.parse(localStorage.getItem('userRoles') || '[]');
+    if (!Array.isArray(userRoles)) {
+      userRoles = [];
+    }
+  } catch (error) {
+    userRoles = [];
+  }
   
+  // Check role requirements
   const hasRequiredRoles = requiredRoles.length === 0 || 
     requiredRoles.some(role => userRoles.includes(role));
 
