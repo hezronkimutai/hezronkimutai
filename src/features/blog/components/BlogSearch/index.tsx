@@ -3,11 +3,11 @@ import { useSearchParams, useNavigate } from 'react-router-dom';
 import SearchBar from '../SearchBar';
 import SearchResults from '../SearchResults';
 import SearchHistory from '../SearchHistory';
-import CategoryFilter from '../CategoryFilter';
+import { CategoryFilter } from '../CategoryFilter';
 import FilterTags from '../FilterTag';
 import SortSelect from '../SortSelect';
 import AdvancedFilters from '../AdvancedFilters';
-import { useBlogQueries } from '../../hooks/useBlogQuery';
+import { useBlogQueries } from '../../hooks/useBlogQueries';
 
 const BlogSearch: React.FC = () => {
   const navigate = useNavigate();

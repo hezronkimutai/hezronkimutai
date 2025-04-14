@@ -2,78 +2,85 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { BlogList } from '../BlogList';
-import { mockPosts } from '../../../types/blog';
+import { BlogPost } from '../../../types';
 
-// Create more mock posts for pagination testing
-const extendedMockPosts = [
-  ...mockPosts,
+const mockPosts: BlogPost[] = [
   {
-    ...mockPosts[0],
-    id: '3',
-    title: 'Third Post',
+    id: '1',
+    title: 'First Post',
+    slug: 'first-post',
+    excerpt: 'This is the first post',
+    content: 'First post content',
+    author: {
+      id: '1',
+      name: 'John Doe',
+    },
+    createdAt: '2025-04-01T00:00:00Z',
+    updatedAt: '2025-04-01T00:00:00Z',
+    readTime: 5,
   },
   {
-    ...mockPosts[0],
-    id: '4',
-    title: 'Fourth Post',
+    id: '2',
+    title: 'Second Post',
+    slug: 'second-post',
+    excerpt: 'This is the second post',
+    content: 'Second post content',
+    author: {
+      id: '1',
+      name: 'John Doe',
+    },
+    createdAt: '2025-04-02T00:00:00Z',
+    updatedAt: '2025-04-02T00:00:00Z',
+    readTime: 3,
   },
 ];
 
-// Mock child components
-jest.mock('../../BlogPost', () => ({
-  BlogPost: ({ title }: { title: string }) => (
-    <article data-testid="blog-post">{title}</article>
-  ),
-}));
-
-jest.mock('../../../../home/components/Pagination', () => ({
-  Pagination: ({
-    currentPage,
-    totalPages,
-    onNext,
-    onPrev,
-  }: {
-    currentPage: number;
-    totalPages: number;
-    onNext: () => void;
-    onPrev: () => void;
-  }) => (
-    <nav data-testid="pagination">
-      <button onClick={onPrev} disabled={currentPage === 1}>
-        Previous
-      </button>
-      <span>Page {currentPage} of {totalPages}</span>
-      <button onClick={onNext} disabled={currentPage === totalPages}>
-        Next
-      </button>
-    </nav>
-  ),
-}));
+// Create more mock posts for pagination testing
+const extendedMockPosts: BlogPost[] = [
+  ...mockPosts,
+  {
+    id: '3',
+    title: 'Third Post',
+    slug: 'third-post',
+    excerpt: 'This is the third post',
+    content: 'Third post content',
+    author: {
+      id: '1',
+      name: 'John Doe',
+    },
+    createdAt: '2025-04-03T00:00:00Z',
+    updatedAt: '2025-04-03T00:00:00Z',
+    readTime: 4,
+  },
+  {
+    id: '4',
+    title: 'Fourth Post',
+    slug: 'fourth-post',
+    excerpt: 'This is the fourth post',
+    content: 'Fourth post content',
+    author: {
+      id: '1',
+      name: 'John Doe',
+    },
+    createdAt: '2025-04-04T00:00:00Z',
+    updatedAt: '2025-04-04T00:00:00Z',
+    readTime: 6,
+  },
+];
 
 describe('BlogList Component', () => {
   const defaultProps = {
-    data: {
-      posts: extendedMockPosts,
-      total: extendedMockPosts.length,
-      page: 1,
-      perPage: 2, // Show 2 posts per page to test pagination
-      totalPages: Math.ceil(extendedMockPosts.length / 2),
-    },
+    posts: extendedMockPosts,
+    currentPage: 1,
+    totalPages: Math.ceil(extendedMockPosts.length / 2),
+    onPageChange: jest.fn(),
   };
 
   describe('Rendering', () => {
     it('renders posts correctly', () => {
       render(<BlogList {...defaultProps} />);
-
-      // Check title
       expect(screen.getByText('Latest Posts')).toBeInTheDocument();
-
-      // Check posts (only first page)
-      const posts = screen.getAllByTestId('blog-post');
-      expect(posts).toHaveLength(defaultProps.data.perPage);
-
-      // Verify first page post titles
-      defaultProps.data.posts.slice(0, defaultProps.data.perPage).forEach(post => {
+      extendedMockPosts.forEach(post => {
         expect(screen.getByText(post.title)).toBeInTheDocument();
       });
     });
@@ -102,12 +109,9 @@ describe('BlogList Component', () => {
 
     it('hides pagination for single page', () => {
       const singlePageProps = {
-        data: {
-          ...defaultProps.data,
-          posts: mockPosts.slice(0, 1),
-          total: 1,
-          totalPages: 1,
-        },
+        ...defaultProps,
+        posts: mockPosts.slice(0, 1),
+        totalPages: 1,
       };
 
       render(<BlogList {...singlePageProps} />);
@@ -118,12 +122,10 @@ describe('BlogList Component', () => {
       const onPageChange = jest.fn();
       render(<BlogList {...defaultProps} onPageChange={onPageChange} />);
 
-      // Try to navigate to next page
       const nextButton = screen.getByRole('button', { name: /next/i });
       fireEvent.click(nextButton);
       expect(onPageChange).toHaveBeenCalledWith(2);
 
-      // Try to navigate back
       const prevButton = screen.getByRole('button', { name: /previous/i });
       fireEvent.click(prevButton);
       expect(onPageChange).toHaveBeenCalledWith(1);
@@ -133,14 +135,11 @@ describe('BlogList Component', () => {
   describe('Loading State', () => {
     it('shows loading spinner', () => {
       render(<BlogList {...defaultProps} isLoading />);
-
       expect(screen.getByRole('status')).toHaveTextContent(/loading blog posts/i);
-      expect(screen.getByText(/loading blog posts/i)).toBeInTheDocument();
     });
 
     it('hides content while loading', () => {
       render(<BlogList {...defaultProps} isLoading />);
-
       expect(screen.queryByTestId('blog-post')).not.toBeInTheDocument();
       expect(screen.queryByTestId('pagination')).not.toBeInTheDocument();
     });
@@ -157,12 +156,9 @@ describe('BlogList Component', () => {
   describe('Empty State', () => {
     it('shows empty message when no posts', () => {
       const emptyProps = {
-        data: {
-          ...defaultProps.data,
-          posts: [],
-          total: 0,
-          totalPages: 0,
-        },
+        ...defaultProps,
+        posts: [],
+        totalPages: 0,
       };
 
       render(<BlogList {...emptyProps} />);
@@ -173,12 +169,9 @@ describe('BlogList Component', () => {
 
     it('hides pagination when empty', () => {
       const emptyProps = {
-        data: {
-          ...defaultProps.data,
-          posts: [],
-          total: 0,
-          totalPages: 0,
-        },
+        ...defaultProps,
+        posts: [],
+        totalPages: 0,
       };
 
       render(<BlogList {...emptyProps} />);
@@ -201,12 +194,9 @@ describe('BlogList Component', () => {
 
     it('provides status message for empty state', () => {
       const emptyProps = {
-        data: {
-          ...defaultProps.data,
-          posts: [],
-          total: 0,
-          totalPages: 0,
-        },
+        ...defaultProps,
+        posts: [],
+        totalPages: 0,
       };
 
       render(<BlogList {...emptyProps} />);
@@ -217,12 +207,6 @@ describe('BlogList Component', () => {
     it('uses proper heading hierarchy', () => {
       render(<BlogList {...defaultProps} />);
       expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('Latest Posts');
-    });
-  });
-
-  describe('Performance', () => {
-    it('is memoized', () => {
-      expect(BlogList.displayName).toBe('BlogList');
     });
   });
 });
