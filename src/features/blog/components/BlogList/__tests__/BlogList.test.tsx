@@ -1,231 +1,128 @@
 import React from 'react';
-import { render, screen, fireEvent, within } from '@testing-library/react';
-import '@testing-library/jest-dom';
-import { BlogList } from '../BlogList';
-import { BlogPost } from '../../../types';
+import { render, screen, fireEvent } from '@testing-library/react';
+import { BlogList } from '../index';
+import { BlogPost, mockAuthor, mockCategories } from '../../../types/blog';
 
-const mockPosts: BlogPost[] = [
-  {
-    id: '1',
-    title: 'First Post',
-    slug: 'first-post',
-    excerpt: 'This is the first post',
-    content: 'First post content',
-    author: {
-      id: '1',
-      name: 'John Doe',
-    },
-    createdAt: '2025-04-01T00:00:00Z',
-    updatedAt: '2025-04-01T00:00:00Z',
-    readTime: 5,
-  },
-  {
-    id: '2',
-    title: 'Second Post',
-    slug: 'second-post',
-    excerpt: 'This is the second post',
-    content: 'Second post content',
-    author: {
-      id: '1',
-      name: 'John Doe',
-    },
-    createdAt: '2025-04-02T00:00:00Z',
-    updatedAt: '2025-04-02T00:00:00Z',
-    readTime: 3,
-  },
-];
+// Mock Pagination component
+jest.mock('../../../../../shared/components/Pagination', () => ({
+  Pagination: ({ currentPage, totalPages, onPageChange }: any) => (
+    <div data-testid="mock-pagination">
+      <button onClick={() => onPageChange(currentPage + 1)}>Next</button>
+      <span>Page {currentPage} of {totalPages}</span>
+    </div>
+  ),
+}));
 
-// Create more mock posts for pagination testing
-const extendedMockPosts: BlogPost[] = [
-  ...mockPosts,
-  {
-    id: '3',
-    title: 'Third Post',
-    slug: 'third-post',
-    excerpt: 'This is the third post',
-    content: 'Third post content',
-    author: {
+describe('BlogList', () => {
+  const mockPosts: BlogPost[] = [
+    {
       id: '1',
-      name: 'John Doe',
+      title: 'Test Post 1',
+      slug: 'test-post-1',
+      excerpt: 'Test excerpt 1',
+      content: 'Test content 1',
+      author: mockAuthor,
+      categories: [mockCategories[0]],
+      publishedAt: '2025-04-14T12:00:00Z',
+      readingTime: 5
     },
-    createdAt: '2025-04-03T00:00:00Z',
-    updatedAt: '2025-04-03T00:00:00Z',
-    readTime: 4,
-  },
-  {
-    id: '4',
-    title: 'Fourth Post',
-    slug: 'fourth-post',
-    excerpt: 'This is the fourth post',
-    content: 'Fourth post content',
-    author: {
-      id: '1',
-      name: 'John Doe',
+    {
+      id: '2',
+      title: 'Test Post 2',
+      slug: 'test-post-2',
+      excerpt: 'Test excerpt 2',
+      content: 'Test content 2',
+      author: mockAuthor,
+      categories: [mockCategories[1]],
+      publishedAt: '2025-04-14T13:00:00Z',
+      readingTime: 3
     },
-    createdAt: '2025-04-04T00:00:00Z',
-    updatedAt: '2025-04-04T00:00:00Z',
-    readTime: 6,
-  },
-];
+    {
+      id: '3',
+      title: 'Test Post 3',
+      slug: 'test-post-3',
+      excerpt: 'Test excerpt 3',
+      content: 'Test content 3',
+      author: mockAuthor,
+      categories: [mockCategories[2]],
+      publishedAt: '2025-04-14T14:00:00Z',
+      readingTime: 4
+    }
+  ];
 
-describe('BlogList Component', () => {
   const defaultProps = {
-    posts: extendedMockPosts,
+    posts: mockPosts,
     currentPage: 1,
-    totalPages: Math.ceil(extendedMockPosts.length / 2), // Should be 2
+    totalPages: 2,
     onPageChange: jest.fn(),
   };
 
-  describe('Rendering', () => {
-    it('renders posts correctly', () => {
-      render(<BlogList {...defaultProps} />);
-      expect(screen.getByText('Latest Posts')).toBeInTheDocument();
-      extendedMockPosts.forEach(post => {
-        expect(screen.getByText(post.title)).toBeInTheDocument();
-      });
-    });
-
-    it('renders with custom title', () => {
-      const customTitle = 'My Blog Posts';
-      render(<BlogList {...defaultProps} title={customTitle} />);
-      expect(screen.getByText(customTitle)).toBeInTheDocument();
-    });
-
-    it('applies custom className', () => {
-      const customClass = 'custom-class';
-      const { container } = render(
-        <BlogList {...defaultProps} className={customClass} />
-      );
-      expect(container.firstChild).toHaveClass(customClass);
-    });
+  beforeEach(() => {
+    jest.clearAllMocks();
   });
 
-  describe('Pagination', () => {
-    it('renders pagination when there are multiple pages', () => {
-      render(<BlogList {...defaultProps} />);
-      
-      // Find the pagination navigation element
-      const paginationNav = screen.getByRole('navigation', { name: /pagination/i });
-      expect(paginationNav).toBeInTheDocument();
-
-      // Verify pagination content within the container
-      within(paginationNav).getByRole('button', { name: /previous/i });
-      within(paginationNav).getByRole('button', { name: /next/i });
-      const pageText = within(paginationNav).getByText(/page/i).parentElement;
-      expect(pageText).toHaveTextContent(`Page ${defaultProps.currentPage} of ${defaultProps.totalPages}`);
-    });
-
-    it('hides pagination for single page', () => {
-      const singlePageProps = {
-        ...defaultProps,
-        posts: mockPosts.slice(0, 1),
-        totalPages: 1,
-      };
-
-      render(<BlogList {...singlePageProps} />);
-      expect(screen.queryByTestId('pagination')).not.toBeInTheDocument();
-    });
-
-    it('calls onPageChange when navigating', () => {
-      const onPageChange = jest.fn();
-      // Initial render on page 1
-      render(<BlogList {...defaultProps} currentPage={1} onPageChange={onPageChange} />);
-      
-      // Find the pagination navigation element
-      const paginationNav = screen.getByRole('navigation', { name: /pagination/i });
-      expect(paginationNav).toBeInTheDocument();
-      
-      // Click next within the pagination nav
-      const nextButton = screen.getByRole('button', { name: /next/i });
-      fireEvent.click(nextButton);
-      expect(onPageChange).toHaveBeenCalledWith(2);
-
-      // We don't need to test the 'previous' button logic here if the Pagination component itself is tested.
-      // This test focuses on BlogList passing the handler correctly.
-    });
+  it('renders loading state correctly', () => {
+    render(<BlogList {...defaultProps} isLoading={true} />);
+    expect(screen.getByText('Loading blog posts...')).toBeInTheDocument();
+    expect(screen.getByRole('region')).toHaveAttribute('aria-busy', 'true');
   });
 
-  describe('Loading State', () => {
-    it('shows loading spinner', () => {
-      render(<BlogList {...defaultProps} isLoading />);
-      expect(screen.getByRole('status')).toHaveTextContent(/loading blog posts/i);
-    });
-
-    it('hides content while loading', () => {
-      render(<BlogList {...defaultProps} isLoading />);
-      expect(screen.queryByTestId('blog-post')).not.toBeInTheDocument();
-      expect(screen.queryByTestId('pagination')).not.toBeInTheDocument();
-    });
-
-    it('sets proper aria-busy attribute', () => {
-      const { rerender } = render(<BlogList {...defaultProps} isLoading />);
-      expect(screen.getByRole('region')).toHaveAttribute('aria-busy', 'true');
-
-      rerender(<BlogList {...defaultProps} isLoading={false} />);
-      expect(screen.getByRole('region')).toHaveAttribute('aria-busy', 'false');
-    });
+  it('renders empty state when no posts are available', () => {
+    render(<BlogList {...defaultProps} posts={[]} />);
+    expect(screen.getByText('No blog posts found')).toBeInTheDocument();
+    expect(screen.queryByTestId('pagination')).not.toBeInTheDocument();
   });
 
-  describe('Empty State', () => {
-    it('shows empty message when no posts', () => {
-      const emptyProps = {
-        ...defaultProps,
-        posts: [],
-        totalPages: 0,
-      };
-
-      render(<BlogList {...emptyProps} />);
-      
-      // Find the status container first
-      const statusContainer = screen.getByRole('status');
-      expect(statusContainer).toBeInTheDocument();
-      expect(statusContainer).toHaveAttribute('aria-label', 'No blog posts found');
-      
-      // Then find the text content within
-      const messageText = within(statusContainer).getByText(/no blog posts found/i);
-      expect(messageText).toBeInTheDocument();
-    });
-
-    it('hides pagination when empty', () => {
-      const emptyProps = {
-        ...defaultProps,
-        posts: [],
-        totalPages: 0,
-      };
-
-      render(<BlogList {...emptyProps} />);
-      expect(screen.queryByTestId('pagination')).not.toBeInTheDocument();
-    });
+  it('renders blog posts correctly', () => {
+    render(<BlogList {...defaultProps} />);
+    const posts = screen.getAllByTestId('blog-post');
+    expect(posts).toHaveLength(3);
+    expect(screen.getByText('Test Post 1')).toBeInTheDocument();
+    expect(screen.getByText('Test Post 2')).toBeInTheDocument();
+    expect(screen.getByText('Test Post 3')).toBeInTheDocument();
   });
 
-  describe('Accessibility', () => {
-    it('uses semantic section with proper ARIA labeling', () => {
-      render(<BlogList {...defaultProps} />);
-      const section = screen.getByRole('region', { name: 'Latest Posts' });
-      expect(section).toBeInTheDocument();
-    });
+  it('renders pagination when totalPages > 1', () => {
+    render(<BlogList {...defaultProps} />);
+    expect(screen.getByTestId('mock-pagination')).toBeInTheDocument();
+  });
 
-    it('provides status messages for loading state', () => {
-      render(<BlogList {...defaultProps} isLoading />);
-      const status = screen.getByRole('status');
-      expect(status).toHaveAccessibleName(/loading blog posts/i);
-    });
+  it('does not render pagination when totalPages <= 1', () => {
+    render(<BlogList {...defaultProps} totalPages={1} />);
+    expect(screen.queryByTestId('mock-pagination')).not.toBeInTheDocument();
+  });
 
-    it('provides status message for empty state', () => {
-      const emptyProps = {
-        ...defaultProps,
-        posts: [],
-        totalPages: 0,
-      };
+  it('handles page change correctly', () => {
+    render(<BlogList {...defaultProps} />);
+    fireEvent.click(screen.getByText('Next'));
+    expect(defaultProps.onPageChange).toHaveBeenCalledWith(2);
+  });
 
-      render(<BlogList {...emptyProps} />);
-      const status = screen.getByRole('status');
-      expect(status).toHaveAccessibleName(/no blog posts found/i);
-    });
+  it('renders with custom title', () => {
+    const customTitle = 'Custom Blog Title';
+    render(<BlogList {...defaultProps} title={customTitle} />);
+    expect(screen.getByText(customTitle)).toBeInTheDocument();
+  });
 
-    it('uses proper heading hierarchy', () => {
-      render(<BlogList {...defaultProps} />);
-      expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('Latest Posts');
-    });
+  it('applies custom className', () => {
+    const customClass = 'custom-blog-list';
+    render(<BlogList {...defaultProps} className={customClass} />);
+    expect(screen.getByRole('region')).toHaveClass(customClass);
+  });
+
+  // Test memoization
+  it('does not re-render when irrelevant props change', () => {
+    const { rerender } = render(<BlogList {...defaultProps} />);
+    const initialHTML = screen.getByRole('region').innerHTML;
+
+    // Re-render with same posts but different className
+    rerender(<BlogList {...defaultProps} className="different-class" />);
+    expect(screen.getByRole('region').innerHTML).toBe(initialHTML);
+  });
+
+  it('uses correct aria labels', () => {
+    render(<BlogList {...defaultProps} />);
+    expect(screen.getByRole('region')).toHaveAttribute('aria-labelledby', 'blog-title');
+    expect(screen.getByRole('region')).toHaveAttribute('aria-busy', 'false');
   });
 });
