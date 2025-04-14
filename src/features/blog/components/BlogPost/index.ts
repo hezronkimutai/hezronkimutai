@@ -1,2 +1,5 @@
-export { default as BlogPost } from './BlogPost';
-export type { BlogPostProps } from './BlogPost';
+import { BlogPost, BlogPostProps, BlogPostPreviewProps, BlogPostFullProps } from './BlogPost';
+
+export { BlogPost };
+export type { BlogPostProps, BlogPostPreviewProps, BlogPostFullProps };
+export default BlogPost;

@@ -4,8 +4,12 @@ import { BlogList } from '../components/BlogList';
 import { BlogPost } from '../components/BlogPost';
 import BlogCategory from '../components/BlogCategory';
 import { BlogListResponse } from '../types';
+import { RouteConfig } from '../../../types/route';
+import { Routes, Route } from 'react-router-dom';
 
-const BlogListPage: React.FC = () => {
+const createRoute = (config: RouteConfig): RouteConfig => config;
+
+const BlogListPage: React.ComponentType = () => {
   const { data, isLoading, error } = useBlogQuery() as {
     data: BlogListResponse | undefined;
     isLoading: boolean;
@@ -26,10 +30,11 @@ const BlogListPage: React.FC = () => {
   );
 };
 
-const BlogPostPage: React.FC = () => {
+const BlogPostPage: React.ComponentType = () => {
   // Add proper fetching logic for single post
   return (
-    <BlogPost 
+    <BlogPost
+      mode="full"
       post={{
         id: '1',
         title: 'Test Post',
@@ -51,22 +56,43 @@ const BlogPostPage: React.FC = () => {
           slug: 'test-category'
         },
         tags: ['test', 'blog']
-      }} 
+      }}
     />
   );
 };
 
-export const blogRoutes = [
-  {
+const routes: RouteConfig[] = [
+  createRoute({
     path: '/blog',
-    element: <BlogListPage />,
-  },
-  {
+    exact: true,
+    component: BlogListPage,
+  }),
+  createRoute({
     path: '/blog/:slug',
-    element: <BlogPostPage />,
-  },
-  {
+    exact: false,
+    component: BlogPostPage,
+  }),
+  createRoute({
     path: '/blog/category/:categoryId',
-    element: <BlogCategory />,
-  },
+    exact: false,
+    component: BlogCategory,
+  }),
 ];
+
+export const blogRoutes = routes;
+
+interface BlogRoutesProps {
+  className?: string;
+}
+
+export const BlogRoutes: React.FC<BlogRoutesProps> = ({ className }) => {
+  return (
+    <div className={className}>
+      <Routes>
+        {blogRoutes.map(({ path, component: Component }) => (
+          <Route key={path} path={path} element={<Component />} />
+        ))}
+      </Routes>
+    </div>
+  );
+};

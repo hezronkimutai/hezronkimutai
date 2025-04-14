@@ -1,111 +1,97 @@
 import React from 'react';
 import { BlogPost as BlogPostType } from '../../types';
-import * as styles from './BlogPost.module.scss';
 
-interface BlogPostProps {
-  post: BlogPostType;
+export interface BlogPostPreviewProps {
+  mode: 'preview';
+  title: string;
+  slug?: string;
+  className?: string;
 }
 
-export const BlogPostComponent: React.FC<BlogPostProps> = ({ post }) => {
+export interface BlogPostFullProps {
+  mode: 'full';
+  post: BlogPostType;
+  className?: string;
+}
+
+export type BlogPostProps = BlogPostPreviewProps | BlogPostFullProps;
+
+export const BlogPost: React.FC<BlogPostProps> = (props) => {
+  if (props.mode === 'preview') {
+    return (
+      <article className={`bg-white p-6 rounded-lg shadow ${props.className || ''}`} data-testid="blog-post">
+        <h2 className="text-2xl font-semibold mb-4">
+          <a href={`/blog/${props.slug}`}>{props.title}</a>
+        </h2>
+        {props.slug && (
+          <a 
+            href={`/blog/${props.slug}`}
+            className="text-blue-600 hover:text-blue-800 transition-colors"
+          >
+            Read more →
+          </a>
+        )}
+      </article>
+    );
+  }
+
+  const { post, className } = props;
   return (
-    <article className={styles.container}>
-      <header className={styles.header}>
-        <h1 className={styles.title}>{post.title}</h1>
-        <div className={styles.meta}>
-          <div className={styles.metaItem}>
-            <span>{new Date(post.createdAt).toLocaleDateString()}</span>
-            <span className={styles.metaDivider}>•</span>
-            <span>{post.readTime} min read</span>
-          </div>
-          <div className={styles.author}>
-            {post.author.avatar && (
-              <img
-                src={post.author.avatar}
-                alt={post.author.name}
-                className={styles.authorAvatar}
-              />
-            )}
-            <div className={styles.authorInfo}>
-              <span className={styles.authorName}>{post.author.name}</span>
-              <span className={styles.authorTitle}>{post.author.title}</span>
-            </div>
-          </div>
+    <article 
+      className={`container mx-auto bg-white p-6 rounded-lg shadow ${className || ''}`}
+      itemScope
+      itemType="http://schema.org/BlogPosting"
+    >
+      <header className="mb-8">
+        <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
+        <div className="flex items-center text-gray-600">
+          <span itemProp="datePublished">
+            {new Date(post.createdAt).toLocaleDateString()}
+          </span>
+          <span className="mx-2">•</span>
+          <span>{post.readTime} min read</span>
         </div>
       </header>
 
       {post.coverImage && (
-        <img
-          src={post.coverImage}
+        <img 
+          src={post.coverImage} 
           alt={post.title}
-          className={styles.coverImage}
+          className="w-full h-64 object-cover rounded-lg mb-8"
+          loading="lazy"
+          itemProp="image"
         />
       )}
 
-      <div className={styles.content}>
-        <div
-          className={styles.body}
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
+      <div 
+        className="prose max-w-none"
+        itemProp="articleBody"
+      >
+        {post.content}
+      </div>
 
-        {post.tags && post.tags.length > 0 && (
-          <div className={styles.tags}>
-            {post.tags.map((tag) => (
-              <a key={tag} href={`/blog/tag/${tag}`} className={styles.tag}>
-                #{tag}
-              </a>
-            ))}
+      <footer className="mt-8 pt-8 border-t">
+        <div className="flex items-center" itemProp="author" itemScope itemType="http://schema.org/Person">
+          <div className="flex-shrink-0">
+            {post.author.avatar && (
+              <img
+                src={post.author.avatar}
+                alt={post.author.name}
+                className="h-10 w-10 rounded-full"
+                loading="lazy"
+              />
+            )}
           </div>
-        )}
-
-        <div className={styles.share}>
-          <h3 className={styles.shareTitle}>Share this post</h3>
-          <div className={styles.shareButtons}>
-            <button
-              onClick={() => window.open(`https://twitter.com/intent/tweet?url=${window.location.href}`, '_blank')}
-              className={styles.shareButton}
-              aria-label="Share on Twitter"
-            >
-              <TwitterIcon />
-            </button>
-            <button
-              onClick={() => window.open(`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`, '_blank')}
-              className={styles.shareButton}
-              aria-label="Share on Facebook"
-            >
-              <FacebookIcon />
-            </button>
-            <button
-              onClick={() => window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`, '_blank')}
-              className={styles.shareButton}
-              aria-label="Share on LinkedIn"
-            >
-              <LinkedInIcon />
-            </button>
+          <div className="ml-3">
+            <p className="text-sm font-medium" itemProp="name">{post.author.name}</p>
+            {post.author.bio && (
+              <p className="text-sm text-gray-500" itemProp="description">{post.author.bio}</p>
+            )}
           </div>
         </div>
-      </div>
+      </footer>
     </article>
   );
 };
 
-const TwitterIcon = () => (
-  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5 0-.278-.028-.556-.08-.83A7.72 7.72 0 0 0 23 3z" />
-  </svg>
-);
-
-const FacebookIcon = () => (
-  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-  </svg>
-);
-
-const LinkedInIcon = () => (
-  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-    <rect x="2" y="9" width="4" height="12" />
-    <circle cx="4" cy="4" r="2" />
-  </svg>
-);
-
-export default BlogPostComponent;
+BlogPost.displayName = 'BlogPost';

@@ -5,9 +5,9 @@ import Home from './containers/Home';
 import NotFound from './shared/components/NotFound';
 import RouteGuard from './shared/components/RouteGuard';
 import { QueryProvider } from './shared/providers/QueryProvider';
-import { blogRoutes } from './features/blog/routes/blogRoutes';
 import './assets/css/App.scss';
-import { RouteConfig } from './types/route';
+import type { RouteConfig } from './types/route';
+import { blogRoutes } from './features/blog/routes/BlogRoutes';
 
 const routes: RouteConfig[] = [
   {
@@ -28,17 +28,17 @@ const App: React.FC = () => (
         </div>
       }>
         <Routes>
-          {routes.map((route) => (
+          {routes.map(({ path, exact, component: Component, meta }) => (
             <Route
-              key={route.path}
-              path={route.path}
+              key={path}
+              path={path}
               element={
-                route.meta?.requiresAuth ? (
-                  <RouteGuard requiredRoles={route.meta?.roles}>
-                    <route.component />
+                meta?.requiresAuth ? (
+                  <RouteGuard requiredRoles={meta?.roles}>
+                    <Component />
                   </RouteGuard>
                 ) : (
-                  <route.component />
+                  <Component />
                 )
               }
             />

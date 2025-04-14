@@ -1,10 +1,11 @@
 import React from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { useBlogQueries } from '../../hooks/useBlogQuery';
-import { BlogSearchParams, BlogListResponse, BlogPost } from '../../types';
+import { useBlogQueries } from '../../hooks/useBlogQueries';
+import { BlogSearchParams } from '../../types';
+import { Pagination } from '../../../../shared/components/Pagination';
 
 export const SearchResults: React.FC = () => {
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('q') || '';
 
   const searchParameters: BlogSearchParams = {
@@ -13,9 +14,16 @@ export const SearchResults: React.FC = () => {
     limit: 10,
     sortBy: (searchParams.get('sortBy') as BlogSearchParams['sortBy']) || 'relevance'
   };
-const { useSearchQuery } = useBlogQueries();
-const { data, isLoading, error } = useSearchQuery(searchParameters);
 
+  const { useSearchQuery } = useBlogQueries();
+  const { data, isLoading, error } = useSearchQuery(searchParameters);
+
+  const handlePageChange = (page: number) => {
+    setSearchParams(prev => {
+      prev.set('page', page.toString());
+      return prev;
+    });
+  };
 
   if (isLoading) {
     return (
@@ -89,32 +97,11 @@ const { data, isLoading, error } = useSearchQuery(searchParameters);
 
       {data.totalPages > 1 && (
         <div className="flex justify-center mt-8">
-          {/* Pagination controls will be added here */}
-          <div className="flex space-x-2">
-            {Array.from({ length: data.totalPages }, (_, i) => i + 1).map(
-              (page) => (
-                <button
-                  key={page}
-                  className={`px-4 py-2 rounded ${
-                    page === data.currentPage
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                  }`}
-                  onClick={() => {
-                    searchParams.set('page', page.toString());
-                    // Update URL with new search params
-                    window.history.pushState(
-                      {},
-                      '',
-                      `${window.location.pathname}?${searchParams.toString()}`
-                    );
-                  }}
-                >
-                  {page}
-                </button>
-              )
-            )}
-          </div>
+          <Pagination
+            currentPage={data.currentPage}
+            totalPages={data.totalPages}
+            onPageChange={handlePageChange}
+          />
         </div>
       )}
     </div>

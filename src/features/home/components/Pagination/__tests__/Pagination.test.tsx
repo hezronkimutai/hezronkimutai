@@ -7,8 +7,7 @@ describe('Pagination Component', () => {
   const defaultProps = {
     currentPage: 2,
     totalPages: 5,
-    onNext: jest.fn(),
-    onPrev: jest.fn(),
+    onPageChange: jest.fn(),
   };
 
   beforeEach(() => {
@@ -20,16 +19,16 @@ describe('Pagination Component', () => {
     expect(screen.getByText('Page 2 of 5')).toBeInTheDocument();
   });
 
-  it('calls onNext when next button is clicked', () => {
+  it('calls onPageChange with next page when next button is clicked', () => {
     render(<Pagination {...defaultProps} />);
     fireEvent.click(screen.getByLabelText('Next page'));
-    expect(defaultProps.onNext).toHaveBeenCalledTimes(1);
+    expect(defaultProps.onPageChange).toHaveBeenCalledWith(3);
   });
 
-  it('calls onPrev when previous button is clicked', () => {
+  it('calls onPageChange with previous page when previous button is clicked', () => {
     render(<Pagination {...defaultProps} />);
     fireEvent.click(screen.getByLabelText('Previous page'));
-    expect(defaultProps.onPrev).toHaveBeenCalledTimes(1);
+    expect(defaultProps.onPageChange).toHaveBeenCalledWith(1);
   });
 
   it('disables previous button on first page', () => {
@@ -63,8 +62,7 @@ describe('Pagination Component', () => {
         <Pagination
           currentPage={1}
           totalPages={1}
-          onNext={defaultProps.onNext}
-          onPrev={defaultProps.onPrev}
+          onPageChange={defaultProps.onPageChange}
         />
       );
       
@@ -78,8 +76,7 @@ describe('Pagination Component', () => {
         <Pagination
           currentPage={0}
           totalPages={0}
-          onNext={defaultProps.onNext}
-          onPrev={defaultProps.onPrev}
+          onPageChange={defaultProps.onPageChange}
         />
       );
       

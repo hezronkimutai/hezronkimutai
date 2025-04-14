@@ -53,16 +53,8 @@ export const Projects: React.FC<ProjectsProps> = ({
   const endIndex = Math.min(startIndex + itemsPerPage, projects.length);
   const currentProjects = projects.slice(startIndex, endIndex);
 
-  const handleNextPage = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage(prev => prev + 1);
-    }
-  };
-
-  const handlePrevPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(prev => prev - 1);
-    }
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
   };
 
   const showPagination = totalPages > 1 && projects.length > 0;
@@ -96,8 +88,7 @@ export const Projects: React.FC<ProjectsProps> = ({
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}
-            onNext={handleNextPage}
-            onPrev={handlePrevPage}
+            onPageChange={handlePageChange}
             className={styles.pagination}
           />
         )}

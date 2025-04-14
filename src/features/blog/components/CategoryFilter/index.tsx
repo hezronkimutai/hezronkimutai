@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { useBlogQueries } from '../../hooks/useBlogQuery';
+import { useBlogQueries } from '../../hooks/useBlogQueries';
 import { Category } from '../../types';
 
 interface CategoryFilterProps {
