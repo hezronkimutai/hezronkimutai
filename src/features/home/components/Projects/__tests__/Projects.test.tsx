@@ -183,7 +183,7 @@ describe('Projects Component', () => {
       }
 
       // Try to go forward from last page
-      const nextButton = screen.getByRole('button', { name: 'Next' });
+      const nextButton = screen.getByRole('button', { name: 'Next page' });
       expect(nextButton).toBeDisabled();
     });
 

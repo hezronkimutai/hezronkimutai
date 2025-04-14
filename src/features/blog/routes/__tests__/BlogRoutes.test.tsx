@@ -26,16 +26,22 @@ jest.mock('../../components/BlogPost', () => ({
   ),
 }));
 
-jest.mock('../../components/BlogCategory', () => ({
-  default: ({ className }: { className?: string }) => (
+jest.mock('../../components/BlogCategory', () => {
+  const mockComponent = ({ className }: { className?: string }) => (
     <div data-testid="blog-category" className={className}>
       Blog Category
     </div>
-  )
-}));
+  );
+  mockComponent.displayName = 'BlogCategory';
+  return {
+    __esModule: true,
+    default: mockComponent,
+    BlogCategory: mockComponent
+  };
+});
 
-// Mock NotFound component using relative path
-jest.mock('../../../shared/components/NotFound', () => {
+// Mock NotFound component using module mapper
+jest.mock('@/shared/components/NotFound', () => {
   return {
     __esModule: true,
     default: () => (

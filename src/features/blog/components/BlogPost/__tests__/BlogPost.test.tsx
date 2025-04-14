@@ -15,16 +15,18 @@ const defaultPost: BlogPostType = {
     name: 'John Doe',
     bio: 'Test bio',
   },
-  createdAt: '2025-04-01T00:00:00Z',
+  publishedAt: '2025-04-01T00:00:00Z',
   updatedAt: '2025-04-01T00:00:00Z',
-  readTime: 5,
-  category: {
+  readingTime: 5,
+  categories: [{
     id: '1',
     name: 'Test Category',
     slug: 'test-category'
-  },
-  coverImage: 'https://example.com/image.jpg',
-  tags: ['test', 'blog']
+  }],
+  featuredImage: 'https://example.com/image.jpg',
+  meta: {
+    keywords: ['test', 'blog']
+  }
 };
 
 describe('BlogPost Component', () => {
@@ -37,7 +39,7 @@ describe('BlogPost Component', () => {
 
       // Check meta information
       expect(screen.getByText(defaultPost.author.name)).toBeInTheDocument();
-      expect(screen.getByText(/min read/)).toHaveTextContent(`${defaultPost.readTime} min read`);
+      expect(screen.getByText(/min read/)).toHaveTextContent(`${defaultPost.readingTime} min read`);
 
       // Check content
       expect(screen.getByRole('article')).toHaveTextContent(defaultPost.content);
@@ -52,8 +54,8 @@ describe('BlogPost Component', () => {
     it('handles missing optional fields', () => {
       const minimalPost: BlogPostType = {
         ...defaultPost,
-        coverImage: undefined,
-        tags: undefined,
+        featuredImage: undefined,
+        meta: undefined,
         author: {
           id: defaultPost.author.id,
           name: defaultPost.author.name,
@@ -73,7 +75,7 @@ describe('BlogPost Component', () => {
     it('formats dates correctly', () => {
       const post: BlogPostType = {
         ...defaultPost,
-        createdAt: '2025-04-13T12:00:00Z',
+        publishedAt: '2025-04-13T12:00:00Z',
         updatedAt: '2025-04-14T12:00:00Z',
       };
 
@@ -114,14 +116,15 @@ describe('BlogPost Component', () => {
       expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
     });
 
-    it('provides descriptive alt text for images', () => {
-      render(<BlogPost mode="full" post={defaultPost} />);
+    it('provides descriptive alt text when image is present', () => {
+      const postWithImage = {
+        ...defaultPost,
+        featuredImage: 'https://example.com/image.jpg'
+      };
+      render(<BlogPost mode="full" post={postWithImage} />);
 
-      const images = screen.getAllByRole('img');
-      images.forEach(img => {
-        expect(img).toHaveAttribute('alt');
-        expect(img.getAttribute('alt')).not.toBe('');
-      });
+      const image = screen.getByRole('img');
+      expect(image).toHaveAttribute('alt', postWithImage.title);
     });
 
     it('includes schema.org markup', () => {
@@ -132,13 +135,15 @@ describe('BlogPost Component', () => {
       expect(article).toHaveAttribute('itemType', 'http://schema.org/BlogPosting');
     });
 
-    it('uses lazy loading for images', () => {
-      render(<BlogPost mode="full" post={defaultPost} />);
+    it('uses lazy loading for featured image', () => {
+      const postWithImage = {
+        ...defaultPost,
+        featuredImage: 'https://example.com/image.jpg'
+      };
+      render(<BlogPost mode="full" post={postWithImage} />);
 
-      const images = screen.getAllByRole('img');
-      images.forEach(img => {
-        expect(img).toHaveAttribute('loading', 'lazy');
-      });
+      const image = screen.getByRole('img');
+      expect(image).toHaveAttribute('loading', 'lazy');
     });
   });
 
