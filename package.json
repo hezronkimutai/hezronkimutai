@@ -29,7 +29,7 @@
     "@tanstack/react-query": "^5.74.0",
     "animate.css": "^4.1.1",
     "aos": "^3.0.0-beta.6",
-    "axios": "^1.7.9",
+    "axios": "^1.8.4",
     "babel-core": "^7.0.0-bridge.0",
     "babel-plugin-require-context-hook": "^1.0.0",
     "dotenv": "^16.4.7",
