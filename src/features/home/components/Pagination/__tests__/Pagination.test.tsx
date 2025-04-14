@@ -16,7 +16,8 @@ describe('Pagination Component', () => {
 
   it('renders pagination information correctly', () => {
     render(<Pagination {...defaultProps} />);
-    expect(screen.getByText('Page 2 of 5')).toBeInTheDocument();
+    const pageInfo = screen.getByText((content) => content.includes('Page') && content.includes(`${defaultProps.currentPage}`));
+    expect(pageInfo.parentElement).toHaveTextContent(`Page ${defaultProps.currentPage} of ${defaultProps.totalPages}`);
   });
 
   it('calls onPageChange with next page when next button is clicked', () => {
@@ -68,7 +69,8 @@ describe('Pagination Component', () => {
       
       expect(screen.getByLabelText('Previous page')).toBeDisabled();
       expect(screen.getByLabelText('Next page')).toBeDisabled();
-      expect(screen.getByText('Page 1 of 1')).toBeInTheDocument();
+      const pageInfo = screen.getByText((content) => content.includes('Page') && content.includes('1'));
+      expect(pageInfo.parentElement).toHaveTextContent('Page 1 of 1');
     });
 
     it('renders correctly with zero pages', () => {
@@ -79,8 +81,8 @@ describe('Pagination Component', () => {
           onPageChange={defaultProps.onPageChange}
         />
       );
-      
-      expect(screen.getByText('Page 0 of 0')).toBeInTheDocument();
+      const pageInfo = screen.getByText((content) => content.includes('Page') && content.includes('0'));
+      expect(pageInfo.parentElement).toHaveTextContent('Page 0 of 0');
     });
   });
 });

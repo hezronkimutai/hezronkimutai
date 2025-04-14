@@ -42,10 +42,12 @@ const BlogList: React.FC<BlogListProps> = memo(({
   if (posts.length === 0) {
     return (
       <section className={containerClasses} role="region" aria-busy="false">
-        <div role="status" aria-label="No blog posts found">
+        <div role="status">
           <h2 className="text-2xl font-bold mb-6">{title}</h2>
           <div className="flex justify-center items-center py-8">
-            <span className="text-gray-600">No blog posts found</span>
+            <span className="text-gray-600" role="alert" aria-label="No blog posts found">
+              No blog posts found
+            </span>
           </div>
         </div>
       </section>
@@ -69,11 +71,11 @@ const BlogList: React.FC<BlogListProps> = memo(({
         ))}
       </div>
       {totalPages > 1 && (
-        <div className="mt-8">
+        <div className="mt-8" data-testid="pagination">
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}
-            onPageChange={onPageChange}
+            onPageChange={(page) => onPageChange(page)}
           />
         </div>
       )}

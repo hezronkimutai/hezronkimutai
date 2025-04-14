@@ -46,7 +46,7 @@ export const BlogPost: React.FC<BlogPostProps> = (props) => {
         <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
         <div className="flex items-center text-gray-600">
           <span itemProp="datePublished">
-            {new Date(post.createdAt).toLocaleDateString()}
+            {new Date(post.publishedAt).toLocaleDateString()}
           </span>
           <span className="mx-2">•</span>
           <span>{post.readTime} min read</span>
@@ -73,9 +73,9 @@ export const BlogPost: React.FC<BlogPostProps> = (props) => {
       <footer className="mt-8 pt-8 border-t">
         <div className="flex items-center" itemProp="author" itemScope itemType="http://schema.org/Person">
           <div className="flex-shrink-0">
-            {post.author.avatar && (
+            {post.author.avatarUrl && (
               <img
-                src={post.author.avatar}
+                src={post.author.avatarUrl}
                 alt={post.author.name}
                 className="h-10 w-10 rounded-full"
                 loading="lazy"

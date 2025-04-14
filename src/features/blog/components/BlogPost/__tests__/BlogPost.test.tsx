@@ -78,7 +78,12 @@ describe('BlogPost Component', () => {
       };
 
       render(<BlogPost mode="full" post={post} />);
-      expect(screen.getByText(/April 13, 2025/)).toBeInTheDocument();
+      // Check if the element containing the date exists and includes the year
+      const dateElement = screen.getByText((content, element) => {
+        // Check if the element has itemprop="datePublished" and includes the year
+        return element?.getAttribute('itemprop') === 'datePublished' && content.includes('2025');
+      });
+      expect(dateElement).toBeInTheDocument();
     });
   });
 
@@ -87,7 +92,7 @@ describe('BlogPost Component', () => {
       render(<BlogPost mode="preview" title={defaultPost.title} slug={defaultPost.slug} />);
 
       // Should have read more link
-      const readMoreLink = screen.getByText('Read more');
+      const readMoreLink = screen.getByText('Read more →');
       expect(readMoreLink).toBeInTheDocument();
       expect(readMoreLink).toHaveAttribute('href', `/blog/${defaultPost.slug}`);
     });

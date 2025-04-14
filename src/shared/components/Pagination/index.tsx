@@ -13,6 +13,38 @@ export const Pagination: React.FC<PaginationProps> = ({
   onPageChange,
   className = '',
 }) => {
+  // Handle case when there are no pages
+  if (totalPages === 0) {
+    return (
+      <nav
+        className={`flex items-center justify-center space-x-4 ${className}`.trim()}
+        aria-label="Pagination"
+      >
+        <button
+          disabled={true}
+          className="px-4 py-2 text-sm font-medium rounded-md bg-gray-100 text-gray-400 cursor-not-allowed"
+          aria-label="Previous page"
+        >
+          Previous
+        </button>
+
+        <span className="text-sm text-gray-700">
+          <span className="font-medium">Page 0</span>
+          {' of '}
+          <span className="font-medium">0</span>
+        </span>
+
+        <button
+          disabled={true}
+          className="px-4 py-2 text-sm font-medium rounded-md bg-gray-100 text-gray-400 cursor-not-allowed"
+          aria-label="Next page"
+        >
+          Next
+        </button>
+      </nav>
+    );
+  }
+
   const canGoPrevious = currentPage > 1;
   const canGoNext = currentPage < totalPages;
 
