@@ -4,19 +4,23 @@ import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import '@testing-library/jest-dom';
 import { BlogRoutes } from '../BlogRoutes';
 import { mockPosts } from '../../types/blog';
-import { MockLoadingSpinner, MockBlogList, MockBlogPost } from '../mocks/components';
 
-// Mock components
+// Mock child components
 jest.mock('../../components/BlogList', () => ({
-  BlogList: MockBlogList,
+  BlogList: ({ data, className }: { data: any; className?: string }) => (
+    <div data-testid="blog-list" className={className}>
+      Posts: {data.posts.length}
+      Page: {data.page}
+    </div>
+  ),
 }));
 
 jest.mock('../../components/BlogPost', () => ({
-  BlogPost: MockBlogPost,
-}));
-
-jest.mock('../../../shared/components/LoadingSpinner/LoadingSpinner', () => ({
-  LoadingSpinner: MockLoadingSpinner,
+  BlogPost: ({ title, className }: { title: string; className?: string }) => (
+    <article data-testid="blog-post" className={className}>
+      {title}
+    </article>
+  ),
 }));
 
 describe('BlogRoutes Component', () => {
@@ -76,9 +80,9 @@ describe('BlogRoutes Component', () => {
   describe('Loading States', () => {
     it('shows loading spinner initially', () => {
       renderWithRouter('/blog');
-      expect(screen.getByTestId('loading-spinner')).toHaveTextContent(
-        'Loading blog content...'
-      );
+      // Using CSS class instead of data-testid since we're using inline component
+      expect(screen.getByText('Loading blog content...')).toBeInTheDocument();
+      expect(screen.getByText('Loading blog content...').parentElement?.querySelector('.animate-spin')).toBeInTheDocument();
     });
   });
 
@@ -115,7 +119,7 @@ describe('BlogRoutes Component', () => {
     it('passes className to loading spinner container', () => {
       renderWithRouter('/blog', className);
 
-      const spinnerContainer = screen.getByTestId('loading-spinner').parentElement;
+      const spinnerContainer = screen.getByText('Loading blog content...').parentElement?.parentElement;
       expect(spinnerContainer).toHaveClass(className);
     });
   });
