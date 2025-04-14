@@ -3,9 +3,16 @@ import { Routes, Route, Navigate, useParams, useSearchParams } from 'react-route
 import { isValidBlogRoute } from './types';
 import { BlogList } from '../components/BlogList';
 import { BlogPost } from '../components/BlogPost';
-import { LoadingSpinner } from '../../../shared/components/LoadingSpinner';
 import type { BlogPostsResponse } from '../types/blog';
 import { mockPosts } from '../types/blog';
+
+// Manual loading spinner component to avoid path issues
+const LoadingSpinner: React.FC<{ text?: string }> = ({ text }) => (
+  <div className="flex items-center justify-center p-4">
+    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" />
+    {text && <span className="ml-2">{text}</span>}
+  </div>
+);
 
 export interface BlogRoutesProps {
   /**
