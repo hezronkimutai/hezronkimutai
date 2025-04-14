@@ -1,2 +1,1 @@
-export { default as BlogList } from './BlogList';
-export type { BlogListProps } from './BlogList';
+export { BlogList } from './BlogList';
