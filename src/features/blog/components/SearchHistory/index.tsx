@@ -14,10 +14,12 @@ export const SearchHistory: React.FC<SearchHistoryProps> = ({ className = '' }) 
     const history = localStorage.getItem(SEARCH_HISTORY_KEY);
     return history ? JSON.parse(history) : [];
   });
-
-  React.useEffect(() => {
+React.useEffect(() => {
+  if (searchHistory.length > 0) {
     localStorage.setItem(SEARCH_HISTORY_KEY, JSON.stringify(searchHistory));
-  }, [searchHistory]);
+  }
+}, [searchHistory]);
+
 
   const addToHistory = (query: string) => {
     if (!query.trim()) return;
@@ -35,10 +37,9 @@ export const SearchHistory: React.FC<SearchHistoryProps> = ({ className = '' }) 
   const removeFromHistory = (query: string) => {
     setSearchHistory(prev => prev.filter(item => item !== query));
   };
-
   const clearHistory = () => {
-    setSearchHistory([]);
     localStorage.removeItem(SEARCH_HISTORY_KEY);
+    setSearchHistory([]);
   };
 
   if (!searchHistory.length) {

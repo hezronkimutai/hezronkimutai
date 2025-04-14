@@ -73,9 +73,9 @@ export const SearchResults: React.FC = () => {
             key={post.id}
             className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
           >
-            {post.coverImage && (
+            {post.featuredImage && (
               <img
-                src={post.coverImage}
+                src={post.featuredImage}
                 alt={post.title}
                 className="w-full h-48 object-cover"
               />
@@ -86,9 +86,9 @@ export const SearchResults: React.FC = () => {
                 {post.excerpt}
               </p>
               <div className="flex items-center text-sm text-gray-500">
-                <span>{new Date(post.createdAt).toLocaleDateString()}</span>
+                <span>{post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : ''}</span>
                 <span className="mx-2">•</span>
-                <span>{post.readTime} min read</span>
+                <span>{post.readingTime} min read</span>
               </div>
             </div>
           </article>
