@@ -57,7 +57,7 @@ export const BlogList: React.FC<BlogListProps> = memo(({
   if (posts.length === 0) {
     return (
       <section className={containerClasses} role="region" aria-busy="false">
-        <div role="status" aria-label="No blog posts found">
+        <div role="status" aria-label="No blog posts found" aria-live="polite">
           <h2 className="text-2xl font-bold mb-6">{title}</h2>
           <div className="flex justify-center items-center py-8">
             <span className="text-gray-600">No blog posts found</span>

@@ -2,6 +2,14 @@ import React, { memo } from 'react';
 import { BlogPost } from '../../types';
 import { Pagination } from '../../../../shared/components/Pagination';
 
+/**
+ * BlogList component displays a list of blog posts with pagination.
+ *
+ * Accessibility:
+ * - Uses role="region" for the main container with aria-busy to indicate loading state
+ * - Uses role="status" for empty state messaging to announce content changes
+ * - Maintains proper heading hierarchy with h2 for section title and h3 for post titles
+ */
 interface BlogListBaseProps {
   posts: BlogPost[];
   currentPage: number;
@@ -42,12 +50,15 @@ const BlogList: React.FC<BlogListProps> = memo(({
   if (posts.length === 0) {
     return (
       <section className={containerClasses} role="region" aria-busy="false">
-        <div role="status">
-          <h2 className="text-2xl font-bold mb-6">{title}</h2>
-          <div className="flex justify-center items-center py-8">
-            <span className="text-gray-600" role="alert" aria-label="No blog posts found">
-              No blog posts found
-            </span>
+        <h2 className="text-2xl font-bold mb-6">{title}</h2>
+        <div className="text-center py-4">
+          <div
+            role="status"
+            aria-live="polite"
+            aria-label="No blog posts found"
+            data-testid="empty-state"
+          >
+            No blog posts found
           </div>
         </div>
       </section>
@@ -75,7 +86,7 @@ const BlogList: React.FC<BlogListProps> = memo(({
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}
-            onPageChange={(page) => onPageChange(page)}
+            onPageChange={onPageChange}
           />
         </div>
       )}

@@ -1,153 +1,162 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { BlogPost } from './BlogPost';
-import { BlogPost as BlogPostType } from '../../types';
-import { mockAuthor, mockPosts } from '../../types/blog';
+import { BlogPost, FullBlogPost } from './blog-post';
+import { BlogPost as BlogPostType } from '../../types/blog';
+import { mockCategories } from '../../types/blog';
 
-describe('BlogPost', () => {
-  describe('Preview Mode', () => {
-    const defaultPreviewProps = {
-      mode: 'preview' as const,
+describe('Blog Post Components', () => {
+  describe('BlogPost Preview', () => {
+    const defaultProps = {
       title: 'Test Blog Post',
-      slug: 'test-blog-post',
+      slug: 'test-blog-post'
     };
 
-    it('renders preview mode correctly', () => {
-      render(<BlogPost {...defaultPreviewProps} />);
+    it('renders with required props', () => {
+      render(<BlogPost {...defaultProps} />);
       expect(screen.getByText('Test Blog Post')).toBeInTheDocument();
       expect(screen.getByText('Read more →')).toBeInTheDocument();
     });
 
-    it('applies custom className in preview mode', () => {
-      const customClass = 'custom-preview';
-      render(<BlogPost {...defaultPreviewProps} className={customClass} />);
-      expect(screen.getByTestId('blog-post')).toHaveClass(customClass);
-    });
-
-    it('renders without slug', () => {
-      const propsWithoutSlug = {
-        mode: 'preview' as const,
-        title: 'Test Blog Post',
-      };
-      render(<BlogPost {...propsWithoutSlug} />);
+    it('renders preview without Read more link when no slug provided', () => {
+      render(<BlogPost title={defaultProps.title} />);
       expect(screen.getByText('Test Blog Post')).toBeInTheDocument();
       expect(screen.queryByText('Read more →')).not.toBeInTheDocument();
     });
+
+    it('creates correct blog post link', () => {
+      render(<BlogPost {...defaultProps} />);
+      const link = screen.getByText('Read more →');
+      expect(link).toHaveAttribute('href', `/blog/${defaultProps.slug}`);
+      expect(link).toHaveClass('text-blue-600', 'hover:text-blue-800', 'transition-colors');
+    });
+
+    it('applies correct classes to article element', () => {
+      render(<BlogPost {...defaultProps} />);
+      const article = screen.getByTestId('blog-post');
+      expect(article).toHaveClass('bg-white', 'p-6', 'rounded-lg', 'shadow');
+    });
+
+    it('renders title with correct styling', () => {
+      render(<BlogPost {...defaultProps} />);
+      const heading = screen.getByRole('heading', { level: 2 });
+      expect(heading).toHaveClass('text-2xl', 'font-semibold', 'mb-4');
+      expect(heading).toHaveTextContent('Test Blog Post');
+    });
   });
 
-  describe('Full Mode', () => {
+  describe('FullBlogPost', () => {
     const mockPost: BlogPostType = {
-      ...mockPosts[0],
+      id: '1',
+      title: 'Test Full Blog Post',
+      slug: 'test-full-blog-post',
+      excerpt: 'Test excerpt',
+      content: 'Test content',
       publishedAt: '2025-04-14T12:00:00Z',
-      createdAt: '2025-04-13T12:00:00Z',
       readingTime: 5,
       author: {
-        ...mockAuthor,
-        avatarUrl: 'https://example.com/avatar.jpg',
+        id: '1',
+        name: 'Test Author',
+        avatar: 'https://example.com/avatar.jpg',
         bio: 'Test author bio'
       },
-      featuredImage: 'https://example.com/image.jpg'
+      categories: [mockCategories[0]],
+      featuredImage: 'https://example.com/cover.jpg'
     };
 
-    const defaultFullProps = {
-      mode: 'full' as const,
-      post: mockPost,
-    };
-
-    it('renders full mode correctly', () => {
-      render(<BlogPost {...defaultFullProps} />);
-      expect(screen.getByText(mockPost.title)).toBeInTheDocument();
-      expect(screen.getByText('5 min read')).toBeInTheDocument();
+    it('renders full blog post correctly', () => {
+      render(<FullBlogPost post={mockPost} />);
+      expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(mockPost.title);
       expect(screen.getByText(mockPost.content)).toBeInTheDocument();
+      expect(screen.getByText('5 min read')).toBeInTheDocument();
       expect(screen.getByText(mockPost.author.name)).toBeInTheDocument();
-      expect(screen.getByText(mockPost.author.bio!)).toBeInTheDocument();
     });
 
-    it('applies custom className in full mode', () => {
-      const customClass = 'custom-full';
-      render(<BlogPost {...defaultFullProps} className={customClass} />);
-      expect(screen.getByRole('article')).toHaveClass(customClass);
+    it('formats date correctly from publishedAt', () => {
+      render(<FullBlogPost post={mockPost} />);
+      const formattedDate = new Date(mockPost.publishedAt!).toLocaleDateString();
+      expect(screen.getByText(formattedDate)).toBeInTheDocument();
     });
 
-    it('renders with Schema.org markup', () => {
-      render(<BlogPost {...defaultFullProps} />);
-      const article = screen.getByRole('article');
-      expect(article).toHaveAttribute('itemScope', '');
-      expect(article).toHaveAttribute('itemType', 'http://schema.org/BlogPosting');
-      expect(screen.getByText(mockPost.author.name).closest('[itemType="http://schema.org/Person"]'))
-        .toBeInTheDocument();
-    });
-
-    it('renders featured image when provided', () => {
-      render(<BlogPost {...defaultFullProps} />);
-      const img = screen.getByAltText(mockPost.title);
-      expect(img).toBeInTheDocument();
-      expect(img).toHaveAttribute('src', mockPost.featuredImage);
-      expect(img).toHaveAttribute('itemProp', 'image');
-    });
-
-    it('renders without featured image', () => {
-      const postWithoutImage = {
+    it('uses createdAt when publishedAt is not available', () => {
+      const postWithCreatedAt = {
         ...mockPost,
-        featuredImage: undefined
+        publishedAt: undefined,
+        createdAt: '2025-04-13T12:00:00Z'
       };
-      render(<BlogPost mode="full" post={postWithoutImage} />);
-      expect(screen.queryByRole('img', { name: postWithoutImage.title })).not.toBeInTheDocument();
+      render(<FullBlogPost post={postWithCreatedAt} />);
+      const formattedDate = new Date(postWithCreatedAt.createdAt!).toLocaleDateString();
+      expect(screen.getByText(formattedDate)).toBeInTheDocument();
     });
 
-    it('renders without author avatar', () => {
-      const postWithoutAvatar = {
-        ...mockPost,
-        author: {
-          ...mockPost.author,
-          avatarUrl: undefined
-        }
-      };
-      render(<BlogPost mode="full" post={postWithoutAvatar} />);
-      expect(screen.queryByAltText(postWithoutAvatar.author.name)).not.toBeInTheDocument();
-    });
-
-    it('renders without author bio', () => {
-      const postWithoutBio = {
-        ...mockPost,
-        author: {
-          ...mockPost.author,
-          bio: undefined
-        }
-      };
-      render(<BlogPost mode="full" post={postWithoutBio} />);
-      expect(screen.queryByText(mockPost.author.bio!)).not.toBeInTheDocument();
-    });
-
-    it('formats dates correctly', () => {
-      const { rerender } = render(<BlogPost {...defaultFullProps} />);
-      
-      // With publishedAt
-      if (mockPost.publishedAt) {
-        const publishDate = new Date(mockPost.publishedAt).toLocaleDateString();
-        expect(screen.getByText(publishDate)).toBeInTheDocument();
-      }
-
-      // With only createdAt
-      const postWithoutPublishedAt = {
-        ...mockPost,
-        publishedAt: undefined
-      };
-      rerender(<BlogPost mode="full" post={postWithoutPublishedAt} />);
-      
-      if (postWithoutPublishedAt.createdAt) {
-        const createDate = new Date(postWithoutPublishedAt.createdAt).toLocaleDateString();
-        expect(screen.getByText(createDate)).toBeInTheDocument();
-      }
-
-      // Without any dates
+    it('shows "No date" when no dates are available', () => {
       const postWithoutDates = {
         ...mockPost,
         publishedAt: undefined,
         createdAt: undefined
       };
-      rerender(<BlogPost mode="full" post={postWithoutDates} />);
-      expect(screen.getByText('•')).toBeInTheDocument(); // Bullet point should still be there
+      render(<FullBlogPost post={postWithoutDates} />);
+      expect(screen.getByText('No date')).toBeInTheDocument();
+    });
+
+    it('renders featured image when provided', () => {
+      render(<FullBlogPost post={mockPost} />);
+      const img = screen.getByAltText(mockPost.title);
+      expect(img).toHaveAttribute('src', mockPost.featuredImage);
+      expect(img).toHaveClass('w-full', 'h-64', 'object-cover', 'rounded-lg', 'mb-8');
+    });
+
+    it('skips featured image when not provided', () => {
+      const postWithoutImage = { ...mockPost, featuredImage: undefined };
+      render(<FullBlogPost post={postWithoutImage} />);
+      expect(screen.queryByRole('img', { name: mockPost.title })).not.toBeInTheDocument();
+    });
+
+    it('renders author avatar when provided', () => {
+      render(<FullBlogPost post={mockPost} />);
+      const avatar = screen.getByAltText(mockPost.author.name);
+      expect(avatar).toHaveAttribute('src', mockPost.author.avatar);
+      expect(avatar).toHaveClass('h-10', 'w-10', 'rounded-full');
+    });
+
+    it('skips author avatar when not provided', () => {
+      const postWithoutAvatar = {
+        ...mockPost,
+        author: { ...mockPost.author, avatar: undefined }
+      };
+      render(<FullBlogPost post={postWithoutAvatar} />);
+      expect(screen.queryByRole('img', { name: mockPost.author.name })).not.toBeInTheDocument();
+    });
+
+    it('renders author bio when provided', () => {
+      render(<FullBlogPost post={mockPost} />);
+      expect(screen.getByText(mockPost.author.bio!)).toBeInTheDocument();
+    });
+
+    it('skips author bio when not provided', () => {
+      const postWithoutBio = {
+        ...mockPost,
+        author: { ...mockPost.author, bio: undefined }
+      };
+      render(<FullBlogPost post={postWithoutBio} />);
+      expect(screen.queryByText('Test author bio')).not.toBeInTheDocument();
+    });
+
+    it('applies correct container classes', () => {
+      render(<FullBlogPost post={mockPost} />);
+      const article = screen.getByRole('article');
+      expect(article).toHaveClass('container', 'mx-auto', 'bg-white', 'p-6', 'rounded-lg', 'shadow');
+    });
+
+    it('renders content with proper typography', () => {
+      render(<FullBlogPost post={mockPost} />);
+      const content = screen.getByText(mockPost.content).parentElement;
+      expect(content).toHaveClass('prose', 'max-w-none');
+    });
+
+    it('renders author section with correct layout', () => {
+      render(<FullBlogPost post={mockPost} />);
+      const footer = screen.getByText(mockPost.author.name).closest('footer');
+      expect(footer).toHaveClass('mt-8', 'pt-8', 'border-t');
     });
   });
 });
