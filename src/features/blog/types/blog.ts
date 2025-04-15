@@ -1,236 +1,77 @@
-/**
- * Blog post category
- */
-export interface Category {
-  /**
-   * Unique identifier for the category
-   */
-  id: string;
-
-  /**
-   * Display name of the category
-   */
-  name: string;
-
-  /**
-   * URL-friendly slug
-   */
-  slug: string;
-
-  /**
-   * Optional description
-   */
-  description?: string;
-}
-
-/**
- * Blog post author
- */
 export interface Author {
-  /**
-   * Unique identifier for the author
-   */
   id: string;
-
-  /**
-   * Author's name
-   */
   name: string;
-
-  /**
-   * Author's avatar URL
-   */
-  avatarUrl?: string;
-
-  /**
-   * Author's bio
-   */
+  avatar?: string;
   bio?: string;
-
-  /**
-   * Social media links
-   */
-  socials?: {
-    twitter?: string;
-    github?: string;
-    linkedin?: string;
-  };
 }
 
-/**
- * Blog post
- */
-export interface BlogPost {
-  /**
-   * Unique identifier for the post
-   */
+export interface Category {
   id: string;
-
-  /**
-   * Post title
-   */
-  title: string;
-
-  /**
-   * URL-friendly slug
-   */
+  name: string;
   slug: string;
+}
 
-  /**
-   * Post excerpt/summary
-   */
+export interface BlogPost {
+  id: string;
+  title: string;
+  slug: string;
   excerpt: string;
-
-  /**
-   * Full post content
-   */
   content: string;
-
-  /**
-   * Post author
-   */
   author: Author;
-
-  /**
-   * Post categories
-   */
   categories: Category[];
-
-  /**
-   * Featured image URL
-   */
-  featuredImage?: string;
-
-  /**
-   * Publication date
-   */
-  publishedAt: string;
-
-  /**
-   * Last update date
-   */
-  updatedAt?: string;
-
-  /**
-   * Reading time in minutes
-   */
+  publishedAt?: string;
+  createdAt?: string;
   readingTime: number;
-
-  /**
-   * SEO metadata
-   */
-  meta?: {
-    title?: string;
-    description?: string;
-    keywords?: string[];
-  };
+  featuredImage?: string;
 }
 
-/**
- * Blog post list response
- */
-export interface BlogPostsResponse {
-  /**
-   * List of blog posts
-   */
-  posts: BlogPost[];
+// Mock data for testing
+export const mockAuthor: Author = {
+  id: '1',
+  name: 'Test Author',
+  avatar: 'https://example.com/avatar.jpg',
+  bio: 'Test author bio'
+};
 
-  /**
-   * Total number of posts
-   */
-  total: number;
-
-  /**
-   * Current page number
-   */
-  page: number;
-
-  /**
-   * Number of posts per page
-   */
-  perPage: number;
-
-  /**
-   * Total number of pages
-   */
-  totalPages: number;
-}
-
-/**
- * Mock data for testing
- */
 export const mockCategories: Category[] = [
   {
     id: '1',
-    name: 'TypeScript',
-    slug: 'typescript',
-    description: 'Articles about TypeScript development',
+    name: 'Technology',
+    slug: 'technology'
   },
   {
     id: '2',
-    name: 'React',
-    slug: 'react',
-    description: 'Articles about React development',
+    name: 'Programming',
+    slug: 'programming'
   },
   {
     id: '3',
-    name: 'Testing',
-    slug: 'testing',
-    description: 'Articles about testing practices',
-  },
+    name: 'Development',
+    slug: 'development'
+  }
 ];
 
-/**
- * Mock author data
- */
-export const mockAuthor: Author = {
-  id: '1',
-  name: 'John Doe',
-  avatarUrl: 'https://via.placeholder.com/150',
-  bio: 'Full Stack Developer passionate about TypeScript and React',
-  socials: {
-    twitter: 'https://twitter.com/johndoe',
-    github: 'https://github.com/johndoe',
-    linkedin: 'https://linkedin.com/in/johndoe',
-  },
-};
-
-/**
- * Mock blog posts for testing
- */
 export const mockPosts: BlogPost[] = [
   {
     id: '1',
-    title: 'Getting Started with TypeScript and React',
-    slug: 'getting-started-with-typescript-and-react',
-    excerpt: 'Learn how to set up a new React project with TypeScript and best practices.',
-    content: 'Full article content here...',
+    title: 'Test Post 1',
+    slug: 'test-post-1',
+    excerpt: 'Test excerpt 1',
+    content: 'Test content 1',
     author: mockAuthor,
-    categories: [mockCategories[0], mockCategories[1]],
-    featuredImage: 'https://via.placeholder.com/800x400',
-    publishedAt: '2025-04-13T12:00:00Z',
-    readingTime: 5,
-    meta: {
-      title: 'TypeScript and React Guide',
-      description: 'Complete guide to using TypeScript with React',
-      keywords: ['typescript', 'react', 'javascript', 'web development'],
-    },
+    categories: [mockCategories[0]],
+    publishedAt: '2025-04-14T12:00:00Z',
+    readingTime: 5
   },
   {
     id: '2',
-    title: 'Testing React Components',
-    slug: 'testing-react-components',
-    excerpt: 'A comprehensive guide to testing React components with Jest and Testing Library.',
-    content: 'Full article content here...',
+    title: 'Test Post 2',
+    slug: 'test-post-2',
+    excerpt: 'Test excerpt 2',
+    content: 'Test content 2',
     author: mockAuthor,
-    categories: [mockCategories[1], mockCategories[2]],
-    featuredImage: 'https://via.placeholder.com/800x400',
-    publishedAt: '2025-04-12T12:00:00Z',
-    readingTime: 8,
-    meta: {
-      title: 'React Testing Guide',
-      description: 'Learn how to test React components effectively',
-      keywords: ['react', 'testing', 'jest', 'testing library'],
-    },
-  },
+    categories: [mockCategories[1]],
+    publishedAt: '2025-04-14T13:00:00Z',
+    readingTime: 3
+  }
 ];
