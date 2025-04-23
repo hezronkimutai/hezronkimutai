@@ -36,14 +36,6 @@ export interface Service {
   icon: string;
 }
 
-export interface TeamMember {
-  id: string;
-  name: string;
-  role: string;
-  imageUrl: string;
-  socialLinks: SocialLink[];
-}
-
 export interface Experience {
   id: string;
   company: string;
@@ -58,7 +50,6 @@ export interface Experience {
 export interface HomeState {
   projects: Project[];
   services: Service[];
-  team: TeamMember[];
   experiences: Experience[];
   loading: boolean;
   error: string | null;
@@ -68,7 +59,6 @@ export interface HomeState {
 export enum HomeActionTypes {
   FETCH_PROJECTS = 'FETCH_PROJECTS',
   FETCH_SERVICES = 'FETCH_SERVICES',
-  FETCH_TEAM = 'FETCH_TEAM',
   FETCH_EXPERIENCES = 'FETCH_EXPERIENCES',
   SET_LOADING = 'SET_LOADING',
   SET_ERROR = 'SET_ERROR',
