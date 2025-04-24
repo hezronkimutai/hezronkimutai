@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import hezPas from '../../assets/images/hezPas.png'
-
 export const CallToactionBtn = ({ onClick, displayText, className }) => (
   <button className={className} onClick={onClick} type="button">
     {displayText}
@@ -9,9 +8,10 @@ export const CallToactionBtn = ({ onClick, displayText, className }) => (
 );
 
 const LandingDiv = () => (
-  <div className="landingDiv relative mx-auto w-full md:w-10/12 lg:w-9/12 xl:w-8/12">
-    <div className="welcome w-full md:w-10/12 mx-auto flex flex-col md:flex-row items-center justify-center gap-8">
-      <div className="md:w-1/2  text-red text-center">
+  <div className="landingDiv relative mx-auto w-full md:w-10/12 lg:w-9/12 xl:w-8/12 overflow-hidden min-h-[80vh]">
+    <div className="welcome w-full md:w-10/12 mx-auto flex flex-col md:flex-row items-center justify-center gap-8 relative z-10">
+      <div className="md:w-1/2 text-white text-center relative">
+        <div className="backdrop-blur-sm p-6 rounded-lg shadow-xl">
         <i className="italic  text-lg mb-4">
           &quot;The best way to predict the future is by comparing today and yesterday&quot;
         </i>
@@ -24,7 +24,7 @@ const LandingDiv = () => (
           I am a FullStack Web developer, an open source enthusiast, and a blogger.
         </p>
         <a
-          className="text-lg font-semibold py-3 px-6 bg-blue-700 rounded-full text-gray-100 transition duration-300 ease-in-out hover:bg-blue-900"
+          className="text-lg font-semibold py-3 px-6 bg-blue-600 rounded-full text-white transition duration-300 ease-in-out hover:bg-blue-700 shadow-lg"
           href="https://docs.google.com/document/d/1r5V9Pm0FhYDSiu1G4dtHqJ0QlbUZCq-r52SAM1OHago/edit?usp=sharing"
           rel="noreferrer"
           target="_blank"
@@ -32,6 +32,7 @@ const LandingDiv = () => (
         >
           Download Resume
         </a>
+        </div>
       </div>
       <div className="md:w-1/2">
         <img
