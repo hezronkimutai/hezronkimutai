@@ -12,11 +12,11 @@ const NavBar: React.FC<NavBarProps> = ({
   links = defaultLinks,
 }) => {
   return (
-    <nav className={`fixed right-[100px] top-[10px] z-[1000] w-max ${className}`.trim()}>
+    <nav className={`text-white fixed right-[100px] top-[10px] z-[1000] w-max ${className}`.trim()}>
       {links.map(({ to, label }) => (
         <Link
           key={`${to}-${label}`}
-          className="mx-1.5 no-underline font-medium text-primary hover:text-orange transition-colors duration-300"
+          className="mx-1.5 no-underline font-medium text-white hover:text-orange transition-colors duration-300"
           to={to}
         >
           {label}
