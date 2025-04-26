@@ -22,13 +22,13 @@ export const Pagination: React.FC<PaginationProps> = ({
       >
         <button
           disabled={true}
-          className="px-4 py-2 text-sm font-medium rounded-md bg-gray-100 text-gray-400 cursor-not-allowed"
+          className="px-4 py-2 text-sm font-medium rounded-md opacity-50 cursor-not-allowed"
           aria-label="Previous page"
         >
           Previous
         </button>
 
-        <span className="text-sm text-gray-700">
+        <span className="text-sm text-primary/80">
           <span className="font-medium">Page 0</span>
           {' of '}
           <span className="font-medium">0</span>
@@ -36,7 +36,7 @@ export const Pagination: React.FC<PaginationProps> = ({
 
         <button
           disabled={true}
-          className="px-4 py-2 text-sm font-medium rounded-md bg-gray-100 text-gray-400 cursor-not-allowed"
+          className="px-4 py-2 text-sm font-medium rounded-md opacity-50 cursor-not-allowed"
           aria-label="Next page"
         >
           Next
@@ -57,18 +57,19 @@ export const Pagination: React.FC<PaginationProps> = ({
         onClick={() => onPageChange(currentPage - 1)}
         disabled={!canGoPrevious}
         className={`px-4 py-2 text-sm font-medium rounded-md
+          transition-all duration-300 ease-out
           ${canGoPrevious
-            ? 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-300'
-            : 'bg-gray-100 text-gray-400 cursor-not-allowed'
+            ? 'text-primary hover:text-orange'
+            : 'opacity-50 cursor-not-allowed'
           }`}
         aria-label="Previous page"
       >
         Previous
       </button>
 
-      <span className="text-sm text-gray-700">
+      <span className="text-sm text-primary flex items-center space-x-1">
         <span className="font-medium">Page {currentPage}</span>
-        {' of '}
+        <span className="text-primary/60">of</span>
         <span className="font-medium">{totalPages}</span>
       </span>
 
@@ -76,9 +77,10 @@ export const Pagination: React.FC<PaginationProps> = ({
         onClick={() => onPageChange(currentPage + 1)}
         disabled={!canGoNext}
         className={`px-4 py-2 text-sm font-medium rounded-md
+          transition-all duration-300 ease-out
           ${canGoNext
-            ? 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-300'
-            : 'bg-gray-100 text-gray-400 cursor-not-allowed'
+            ? 'text-primary hover:text-orange'
+            : 'opacity-50 cursor-not-allowed'
           }`}
         aria-label="Next page"
       >

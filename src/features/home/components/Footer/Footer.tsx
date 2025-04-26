@@ -3,7 +3,6 @@ import axios, { AxiosError } from 'axios';
 import { FooterProps, DEFAULT_SOCIAL_LINKS, ERROR_MESSAGES } from '../../types/footer';
 import { PaymentButton, handleStripeCheckout } from '../PaymentButton/PaymentButton';
 import images from '../../../../components/images';
-import styles from './Footer.module.scss';
 
 export const Footer: React.FC<FooterProps> = ({
   className = '',
@@ -21,8 +20,7 @@ export const Footer: React.FC<FooterProps> = ({
     try {
       await handleStripeCheckout(onCheckoutSuccess, (err: AxiosError | Error) => {
         setError(ERROR_MESSAGES.CHECKOUT_FAILED);
-        // Pass the error, regardless of its specific type (AxiosError or generic Error)
-        onCheckoutError?.(err as AxiosError); // Cast for the prop if needed, or adjust prop type
+        onCheckoutError?.(err as AxiosError);
       });
     } catch (err) {
       // Error already handled by the callback
@@ -32,31 +30,38 @@ export const Footer: React.FC<FooterProps> = ({
   };
 
   return (
-    <footer className={`${styles.footer} ${className}`.trim()}>
-      <div className={styles.content}>
+    <footer className={`bg-primary/5 py-12 mt-16 border-t border-gold/20 ${className}`.trim()}>
+      <div className="container mx-auto px-4 flex flex-col items-center">
         {!disablePayments && (
-          <div className={styles.paymentSection}>
+          <div className="mb-8">
             <PaymentButton
               onCheckout={handleCheckout}
               isLoading={isLoading}
               disabled={isLoading}
             />
-            {error && <p className={styles.error}>{error}</p>}
+            {error && (
+              <p className="mt-2 text-red text-sm text-center animate-[fadeIn_0.3s_ease-out]">
+                {error}
+              </p>
+            )}
           </div>
         )}
         
-        <div className={styles.socialLinks}>
+        <div className="flex justify-center gap-6 mb-8">
           {socialLinks.map((link) => (
             <a
               key={link.link}
               href={link.link}
               target="_blank"
               rel="noopener noreferrer"
-              className={styles.socialLink}
+              className="group transition-transform duration-300 hover:scale-110
+                focus:outline-none focus:ring-2 focus:ring-orange focus:ring-offset-2 rounded-full"
               title={link.title}
             >
               <img
-                className={styles.socialIcon}
+                className="w-8 h-8 transition-all duration-300
+                  filter saturate-50 group-hover:saturate-100
+                  group-hover:shadow-lg group-hover:shadow-gold/20"
                 src={images[link.imgUrl as keyof typeof images]}
                 alt={`${link.title} icon`}
                 loading="lazy"
@@ -65,7 +70,8 @@ export const Footer: React.FC<FooterProps> = ({
           ))}
         </div>
         
-        <div className={styles.copyright}>
+        <div className="text-primary/80 text-sm text-center
+          dark:text-gold/80">
           © {new Date().getFullYear()} Hezron Kimutai. All rights reserved.
         </div>
       </div>

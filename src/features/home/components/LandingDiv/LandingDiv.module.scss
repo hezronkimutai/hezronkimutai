@@ -26,28 +26,31 @@
   @apply md:w-1/2 text-center;
 
   .quote {
-    @apply italic text-lg mb-4 block;
+    @apply italic text-lg mb-4 block text-gold;
   }
 
   .title {
-    @apply text-4xl font-bold mb-4;
+    @apply text-4xl font-bold mb-4 text-primary;
   }
 
   .description {
-    @apply text-xl font-semibold mb-6;
+    @apply text-xl font-semibold mb-6 text-orange;
   }
 }
 
 .resumeButton {
-  @apply text-lg font-semibold py-3 px-6 bg-blue-700 rounded-full text-gray-100 inline-block;
+  @apply text-lg font-semibold py-3 px-6 rounded-full text-gray-100 inline-block;
+  background-color: theme('colors.primary');
   transition: background-color 0.3s ease-in-out;
 
   &:hover {
-    @apply bg-blue-900;
+    background-color: theme('colors.red');
   }
 
   &:focus {
-    @apply outline-none ring-2 ring-blue-500 ring-offset-2;
+    @apply outline-none ring-2;
+    ring-color: theme('colors.gold');
+    @apply ring-offset-2;
   }
 }
 
@@ -68,9 +71,9 @@
   // Ensure image maintains quality
   image-rendering: -webkit-optimize-contrast;
   
-  // Add subtle shadow
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  // Add subtle shadow with our theme color
+  box-shadow: 0 4px 6px -1px rgba(16, 46, 80, 0.2),
+              0 2px 4px -1px rgba(16, 46, 80, 0.1);
   
   // Improve image loading performance
   will-change: transform;

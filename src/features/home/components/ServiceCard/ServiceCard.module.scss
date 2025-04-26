@@ -1,8 +1,8 @@
 .container {
   @apply p-6 rounded-lg shadow-lg;
   
-  // Add glass effect
-  background: rgba(255, 255, 255, 0.8);
+  // Add glass effect with primary color
+  background: rgba(16, 46, 80, 0.05);
   backdrop-filter: blur(8px);
   
   // Add hover effect
@@ -11,20 +11,21 @@
   &:hover {
     transform: translateY(-4px);
     @apply shadow-xl;
+    background: rgba(16, 46, 80, 0.08);
   }
   
   // Dark mode styles
   @screen dark {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(16, 46, 80, 0.2);
     
     &:hover {
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(16, 46, 80, 0.25);
     }
   }
 }
 
 .title {
-  @apply text-xl font-semibold mb-4;
+  @apply text-xl font-semibold mb-4 text-primary;
   
   // Add title animation
   animation: slideIn 0.5s ease-out;
@@ -42,7 +43,7 @@
 }
 
 .description {
-  @apply leading-relaxed mb-4;
+  @apply leading-relaxed mb-4 text-primary/80;
   
   // Improve readability
   max-width: 65ch;
@@ -77,13 +78,14 @@
     .techIcon {
       transform: scale(1.1);
       filter: brightness(1.1);
+      border-color: theme('colors.gold');
     }
   }
 }
 
 .techIcon {
-  @apply h-10 p-1;
-  transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+  @apply h-10 p-1 border-2 border-transparent rounded-full;
+  transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out, border-color 0.2s ease-in-out;
   
   // Add subtle desaturation effect
   filter: saturate(0.9);
@@ -95,9 +97,11 @@
 .techLink {
   @apply absolute inset-0;
   
-  // Add focus styles
+  // Add focus styles with theme colors
   &:focus {
-    @apply outline-none ring-2 ring-blue-500 ring-offset-2 rounded-md;
+    @apply outline-none rounded-md;
+    box-shadow: 0 0 0 2px theme('colors.orange'),
+                0 0 0 4px rgba(231, 139, 72, 0.3);
   }
   
   // Hide link but keep it accessible

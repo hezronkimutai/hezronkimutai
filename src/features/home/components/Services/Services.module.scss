@@ -4,14 +4,14 @@
   // Add subtle gradient background
   background: linear-gradient(
     to bottom,
-    theme('colors.gray.50'),
+    rgba(16, 46, 80, 0.05),
     transparent
   );
   
   @screen dark {
     background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.1),
+      rgba(16, 46, 80, 0.15),
       transparent
     );
   }
@@ -36,7 +36,7 @@
 }
 
 .title {
-  @apply text-4xl font-bold text-center mb-8;
+  @apply text-4xl font-bold text-center mb-8 text-primary;
   
   // Add title animation
   animation: slideIn 0.5s ease-out;
@@ -55,7 +55,8 @@
   // Add decorative underline
   &::after {
     content: '';
-    @apply block w-24 h-1 bg-blue-500 mx-auto mt-4 rounded;
+    @apply block w-24 h-1 mx-auto mt-4 rounded;
+    background-color: theme('colors.gold');
     transform: scaleX(0);
     animation: expandLine 0.5s ease-out 0.5s forwards;
     
@@ -107,10 +108,13 @@
   }
   
   // Add hover state interaction with siblings
-  transition: transform 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px -1px rgba(16, 46, 80, 0.1);
   
   &:hover {
     transform: translateY(-4px);
+    box-shadow: 0 8px 12px -1px rgba(16, 46, 80, 0.15);
+    border-color: theme('colors.orange');
     
     & ~ .card {
       transform: translateY(2px);

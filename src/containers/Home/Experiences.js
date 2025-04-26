@@ -1,4 +1,3 @@
-/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import images from '../../components/images';
 
@@ -47,33 +46,43 @@ const services = [
 ];
 
 const Experiences = () => (
-  <div className="py-12">
+  <section className="py-16">
     <div className="container mx-auto px-4">
-      <h1 className="text-4xl font-bold text-center mb-8">Experience</h1>
-      <div className="flex flex-wrap justify-evenly">
+      <h2 className="text-4xl font-bold text-center mb-12">
+        Experience
+      </h2>
+      <div className="flex flex-wrap justify-center gap-8">
         {services.map((service, index) => (
           <div
-            key={index}
-            className="m-4 p-4 w-full md:w-6/12 lg:w-5/12 shadow-lg rounded"
-            style={{
-              borderTopLeftRadius: "70px",
-              borderBottomRightRadius: "70px",
-            }}
+            key={service.name}
+            className="w-full md:w-6/12 lg:w-5/12"
           >
-            <div className="flex items-center mb-4">
-              <img
-                className="w-12 h-12 rounded-full mr-4"
-                src={service.img}
-                alt={service.name}
-              />
-              <h2 className="text-xl font-bold">{service.name}</h2>
+            <div className="p-6 rounded-[2rem] shadow-lg
+              border border-black/10 dark:border-white/10
+              transform hover:-translate-y-2
+              transition-all duration-500 ease-out">
+              <div className="flex items-center mb-4">
+                <img
+                  className="w-12 h-12 rounded-full mr-4 
+                    border-2 border-black/10 dark:border-white/10
+                    transition-all duration-300"
+                  src={service.img}
+                  alt={service.name}
+                />
+                <h3 className="text-xl font-bold">
+                  {service.name}
+                </h3>
+              </div>
+              <p className="text-base leading-relaxed whitespace-pre-line 
+                opacity-80">
+                {service.description}
+              </p>
             </div>
-            <p className="text-xl leading-relaxed">{service.description}</p>
           </div>
         ))}
       </div>
     </div>
-  </div>
+  </section>
 );
 
 export default Experiences;

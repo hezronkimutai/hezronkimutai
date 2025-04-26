@@ -1,19 +1,16 @@
 .navbar_container {
+  @apply fixed z-[1000];
   width: max-content;
-  position: fixed;
   right: 100px;
   top: 10px;
-  z-index: 1000;
 }
 
 .nav_link {
-  margin: 5px;
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
+  @apply mx-1.5 no-underline font-medium;
+  color: theme('colors.primary');
   transition: color 0.3s ease;
 
   &:hover {
-    color: #007bff;
+    color: theme('colors.orange');
   }
 }

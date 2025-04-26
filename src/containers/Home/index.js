@@ -1,8 +1,5 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
-/* eslint-disable react/forbid-prop-types */
-import React, { useState } from 'react';
-import '../../assets/css/App.scss';
-import BackgroundAnimation from '../../components/BackgroundAnimation'; // Import BackgroundAnimation
+import React, { useState, useEffect } from 'react';
+import BackgroundAnimation from '../../components/BackgroundAnimation';
 import LandingDiv from './LandingDiv';
 import Profile from './Services';
 import Experiences from './Experiences';
@@ -16,42 +13,99 @@ const { github } = images;
 const socialLinks = [{
   link: 'https://github.com/hezronkimutai/portfolio',
   imgUrl: github,
-},
-];
+  title: 'GitHub'
+}];
 
-const App = () => {
-  const [mode, setMode] = useState('dark');
+const Home = () => {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setIsDark(true);
+      document.documentElement.classList.add('dark');
+    }
+  }, []);
+
+  const toggleDarkMode = () => {
+    setIsDark(!isDark);
+    document.documentElement.classList.toggle('dark');
+  };
+
   return (
-    <div className="relative min-h-screen"> {/* Add relative positioning and min height */}
+    <div className="relative min-h-screen">
       {/* Background Animation Container */}
-      <div className="fixed inset-0 z-0 overflow-hidden">
+      <div className="fixed inset-0 z-0 overflow-hidden opacity-5">
         <BackgroundAnimation />
       </div>
 
       {/* Main Content Container */}
       <div
-        className={`_container w-full m-auto relative z-10 ${mode === 'light' ? 'text-gray-900' : 'text-gray-300'}`} // Remove background colors, add relative z-10
+        className="relative z-10"
         onScrollCapture={(e) => {
           e.preventDefault();
         }}
       >
         {/* Top Bar */}
-        <div style={{ width: '98%' }} className="z-20 fixed py-3 justify-between flex flex-row"> {/* Ensure top bar is above content */}
-          <div className="flex flex-row">
-            {socialLinks.map((lnk) => <a rel="noreferrer" href={lnk.link} key={lnk.link} target="_blank"><img alt={lnk.link} className="w-8 h-8 mx-3" src={lnk.imgUrl} /></a>)}
+        <div className="fixed top-0 left-0 right-0 z-20 backdrop-blur-sm">
+          <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+            {/* Social Links */}
+            <div className="flex items-center space-x-4">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.link}
+                  href={link.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="transition-transform hover:scale-110 
+                    focus:outline-none focus:ring-2 focus:ring-offset-2 
+                    rounded-full group"
+                  title={link.title}
+                >
+                  <div className="relative">
+                    <img
+                      alt={link.title}
+                      className="w-8 h-8 rounded-full 
+                        border-2 border-black/10 dark:border-white/10
+                        transition-all duration-300"
+                      src={link.imgUrl}
+                    />
+                  </div>
+                </a>
+              ))}
+            </div>
+
+            {/* Dark Mode Toggle */}
+            <button
+              onClick={toggleDarkMode}
+              className="w-12 h-6 rounded-full flex items-center 
+                transition-colors duration-200 
+                focus:outline-none focus:ring-2 focus:ring-offset-2"
+              type="button"
+              title="Toggle dark mode"
+            >
+              <div className={`
+                w-5 h-5 rounded-full transform duration-200 shadow-md
+                ${isDark 
+                  ? 'translate-x-7 bg-white' 
+                  : 'translate-x-1 bg-black'
+                }
+              `} />
+            </button>
           </div>
-          <div><button onClick={() => setMode(mode === 'light' ? 'dark' : 'light')} className={`w-10 rounded-full h-6 ${mode === 'light' ? 'bg-gray-900' : 'bg-gray-100 '}`} type="button"><div className={`w-6 h-6 bg-blue-900  rounded-full ${mode === 'light' ? 'float-left' : 'float-right'}`} /></button></div>
         </div>
 
         {/* Page Sections */}
-        <LandingDiv mode={mode} />
-        <Abilities />
-        <Profile />
-        <Projects />
-        <Experiences />
-        <Footer />
+        <div className="pt-20">
+          <LandingDiv />
+          <Abilities />
+          <Profile />
+          <Projects />
+          <Experiences />
+          <Footer />
+        </div>
       </div>
     </div>
   );
 };
-export default App;
+
+export default Home;
