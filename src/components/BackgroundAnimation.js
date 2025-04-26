@@ -1,17 +1,13 @@
 import React from 'react';
 
 const BackgroundAnimation = () => (
-  <div className="background-animation w-full h-full">
-    <svg 
-      xmlns="http://www.w3.org/2000/svg" 
-      viewBox="0 0 800 800" 
+  <div className="background-animation w-full h-full relative">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
       className="w-full h-full"
       style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        zIndex: -1,
-        opacity: 0.3
+        opacity: 0.8
       }}
     >
       <style>
@@ -30,15 +26,15 @@ const BackgroundAnimation = () => (
             }
           }
           
-          .path1 { stroke: #4cc3ff; animation-delay: 0s; }
-          .path2 { stroke: #4cffa1; animation-delay: 1s; }
-          .path3 { stroke: #ff4ca6; animation-delay: 2s; }
+          .path1 { stroke: #ff6b6b; animation-delay: 0s; }
+          .path2 { stroke: #4ecdc4; animation-delay: 0.5s; }
+          .path3 { stroke: #45b7d1; animation-delay: 1s; }
           
           .animated-path {
             stroke-width: 2;
             fill: none;
             stroke-dasharray: 1000;
-            animation: drawLine 4s ease-out infinite;
+            animation: drawLine 6s ease-in-out infinite;
           }
         `}
       </style>

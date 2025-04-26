@@ -1,5 +1,6 @@
 import React from 'react';
-import hezPas from '../../../../assets/images/hezPas.png';
+import ThreeAnimation from '../../../../components/ThreeAnimation';
+import styles from './LandingDiv.module.scss';
 
 export interface LandingDivProps {
   /**
@@ -11,9 +12,9 @@ export interface LandingDivProps {
 export const LandingDiv: React.FC<LandingDivProps> = ({
   className = '',
 }) => (
-  <div className={`relative mx-auto w-full md:w-10/12 lg:w-9/12 xl:w-8/12 ${className}`.trim()}>
-    <div className="w-full mx-auto flex flex-col items-center justify-center gap-8 md:w-10/12 md:flex-row">
-      <div className="md:w-1/2 text-center">
+  <div className={`${styles.container} ${className}`.trim()}>
+    <div className={styles.content}>
+      <div className={styles.textContent}>
         <i className="block italic text-lg mb-4 text-gold">
           &quot;The best way to predict the future is by comparing today and yesterday&quot;
         </i>
@@ -35,13 +36,8 @@ export const LandingDiv: React.FC<LandingDivProps> = ({
           Download Resume
         </a>
       </div>
-      <div className="md:w-1/2">
-        <img
-          className="w-full rounded-[50%] transition-transform duration-300 hover:scale-102 shadow-lg"
-          src={hezPas}
-          alt="Hezron Kimutai - Profile"
-          loading="lazy"
-        />
+      <div className={styles.animationContainer}>
+        <ThreeAnimation />
       </div>
     </div>
   </div>

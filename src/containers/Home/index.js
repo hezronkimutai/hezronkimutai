@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import BackgroundAnimation from '../../components/BackgroundAnimation';
+import ThreeAnimation from '../../components/ThreeAnimation'; // Changed import
 import LandingDiv from './LandingDiv';
 import Profile from './Services';
 import Experiences from './Experiences';
@@ -29,15 +29,15 @@ const Home = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-primary text-gold">
-      {/* Background Animation Container */}
-      <div className="fixed inset-0 z-0 overflow-hidden opacity-5">
-        <BackgroundAnimation />
+    <div className="relative min-h-screen text-gold"> {/* Removed bg-primary */}
+      {/* Fullscreen 3D Animation Background */}
+      <div className="fixed inset-0 z-0 overflow-hidden"> {/* Removed opacity */}
+        <ThreeAnimation />
       </div>
 
       {/* Main Content Container */}
       <div
-        className="relative z-10"
+        className="relative z-10 bg-primary/90" // Added semi-transparent background
         onScrollCapture={(e) => {
           e.preventDefault();
         }}
