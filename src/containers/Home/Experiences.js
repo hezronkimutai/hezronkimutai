@@ -46,9 +46,9 @@ const services = [
 ];
 
 const Experiences = () => (
-  <section className="py-16">
+  <section className="py-16 bg-primary/50">
     <div className="container mx-auto px-4">
-      <h2 className="text-4xl font-bold text-center mb-12">
+      <h2 className="text-4xl font-bold text-center mb-12 text-gold">
         Experience
       </h2>
       <div className="flex flex-wrap justify-center gap-8">
@@ -58,23 +58,25 @@ const Experiences = () => (
             className="w-full md:w-6/12 lg:w-5/12"
           >
             <div className="p-6 rounded-[2rem] shadow-lg
-              border border-black/10 dark:border-white/10
+              bg-primary/80
+              border border-gold/20 hover:border-gold/40
               transform hover:-translate-y-2
+              hover:shadow-xl hover:shadow-gold/20
               transition-all duration-500 ease-out">
               <div className="flex items-center mb-4">
                 <img
                   className="w-12 h-12 rounded-full mr-4 
-                    border-2 border-black/10 dark:border-white/10
+                    border-2 border-gold/20 hover:border-gold/60
                     transition-all duration-300"
                   src={service.img}
                   alt={service.name}
                 />
-                <h3 className="text-xl font-bold">
+                <h3 className="text-xl font-bold text-gold">
                   {service.name}
                 </h3>
               </div>
               <p className="text-base leading-relaxed whitespace-pre-line 
-                opacity-80">
+                text-gold/80">
                 {service.description}
               </p>
             </div>
