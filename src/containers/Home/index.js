@@ -80,13 +80,6 @@ const Home = () => {
               type="button"
               title="Toggle dark mode"
             >
-              <div className={`
-                w-5 h-5 rounded-full transform duration-200 shadow-md
-                ${isDark 
-                  ? 'translate-x-7 bg-gold' 
-                  : 'translate-x-1 bg-orange'
-                }
-              `} />
             </button>
           </div>
         </div>
