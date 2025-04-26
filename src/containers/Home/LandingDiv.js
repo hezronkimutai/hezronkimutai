@@ -12,14 +12,14 @@ const LandingDiv = () => (
   <div className="relative mx-auto w-full md:w-10/12 lg:w-9/12 xl:w-8/12 min-h-[80vh]">
     <div className="w-full md:w-10/12 mx-auto flex flex-col md:flex-row items-center justify-center gap-8">
       <div className="md:w-1/2 text-center">
-        <div className="backdrop-blur-sm p-6 rounded-lg shadow-lg">
-          <i className="block italic text-lg mb-4 opacity-80">
+        <div className="backdrop-blur-sm p-6 rounded-lg shadow-lg bg-primary/50">
+          <i className="block italic text-lg mb-4 text-gold/80">
             &quot;The best way to predict the future is by comparing today and yesterday&quot;
           </i>
-          <h1 className="text-4xl font-bold mb-4">
+          <h1 className="text-4xl font-bold mb-4 text-gold">
             Hezron Kimutai
           </h1>
-          <p className="text-xl font-semibold mb-6 opacity-80">
+          <p className="text-xl font-semibold mb-6 text-gold/80">
             Hi,
             {' '}
             <span role="img" aria-label="hi" className="animate-bounce inline-block">👋</span>
@@ -27,10 +27,11 @@ const LandingDiv = () => (
             I am a FullStack Web developer, an open source enthusiast, and a blogger.
           </p>
           <a
-            className="inline-flex items-center px-8 py-3 text-lg font-semibold text-white
-              bg-red hover:bg-orange rounded-full
+            className="inline-flex items-center px-8 py-3 text-lg font-semibold
+              bg-red hover:bg-orange text-white rounded-full
               transform transition-all duration-300 hover:scale-105
-              shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2"
+              shadow-lg hover:shadow-xl hover:shadow-orange/20
+              focus:outline-none focus:ring-2 focus:ring-orange focus:ring-offset-2"
             href="https://docs.google.com/document/d/1r5V9Pm0FhYDSiu1G4dtHqJ0QlbUZCq-r52SAM1OHago/edit?usp=sharing"
             rel="noreferrer"
             target="_blank"
@@ -51,8 +52,9 @@ const LandingDiv = () => (
             loading="lazy"
           />
           <div className="absolute inset-0 rounded-full
-            opacity-0 group-hover:opacity-100 transition-opacity duration-700
-            border border-black/10 dark:border-white/10" 
+            bg-gradient-to-tr from-gold/20 to-transparent
+            opacity-0 group-hover:opacity-100 
+            transition-opacity duration-700" 
           />
         </div>
       </div>

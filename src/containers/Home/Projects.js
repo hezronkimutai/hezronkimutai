@@ -32,49 +32,35 @@ const projects = [
     link: 'https://thehkgroup.vercel.app/',
     description: 'The HK Group provides comprehensive services for business and organizational growth.',
   },
-  {
-    name: 'Merigo Round Angular',
-    imageUrl: 'https://via.placeholder.com/300',
-    link: 'https://merigoroundangular.vercel.app/home',
-    description: 'Merigo Round Angular is the Angular version of the Merigo Round project, aimed at automating group funding.',
-  },
-  {
-    name: 'POS FN ReactJS',
-    imageUrl: 'https://via.placeholder.com/300',
-    link: 'https://pos-fn-reactjs.vercel.app/',
-    description: 'POS FN ReactJS is a refined POS project built using ReactJS, promoting open-source collaboration.',
-  },
-  {
-    name: 'Havalive',
-    imageUrl: 'https://via.placeholder.com/300',
-    link: 'https://havalive.netlify.app/',
-    description: 'Havalive provides live updates on sports events, including scores, analysis, and lineups.',
-  },
-  // Rest of the projects...
 ];
 
 const ITEMS_PER_PAGE = 3;
 
 const ProjectCard = memo(({ project }) => (
   <div style={{display:'flex', flexDirection:'column'}} 
-    className="flex flex-col w-[30%] min-w-[320px] shadow-lg rounded-lg overflow-hidden 
-      transform transition duration-500 hover:scale-105 hover:shadow-xl">
-    <div className="flex items-center p-4">
+    className="flex flex-col w-[30%] min-w-[320px] bg-primary/80
+      shadow-lg rounded-lg overflow-hidden 
+      border border-gold/20 hover:border-gold/40
+      transform hover:scale-105 hover:shadow-2xl hover:shadow-gold/20
+      transition-all duration-500">
+    <div className="flex items-center p-4 border-b border-gold/20">
       <a href={project.link} target="_blank" rel="noopener noreferrer">
         <img
           src={project.imageUrl}
           alt={project.name}
-          className="w-10 h-10 object-cover rounded-full mr-4"
+          className="w-10 h-10 object-cover rounded-full mr-4
+            border-2 border-gold/20 hover:border-gold/60
+            transition-all duration-300"
         />
       </a>
-      <h2 className="text-lg font-bold text-primary">
+      <h2 className="text-lg font-bold text-gold">
         <a href={project.link} target="_blank" rel="noopener noreferrer">
           {project.name}
         </a>
       </h2>
     </div>
     <div className="p-4">
-      <p className="text-sm text-primary/80">{project.description}</p>
+      <p className="text-sm text-gold/80">{project.description}</p>
     </div>
   </div>
 ));
@@ -93,19 +79,21 @@ const Pagination = ({ currentPage, totalPages, onNext, onPrev }) => (
     <button
       onClick={onPrev}
       disabled={currentPage === 1}
-      className="px-4 py-2 rounded font-medium transition duration-300 
-        text-primary hover:text-orange disabled:opacity-50 disabled:cursor-not-allowed"
+      className="px-4 py-2 rounded font-medium
+        text-gold hover:text-orange disabled:opacity-50 
+        disabled:cursor-not-allowed transition-all duration-300"
     >
       Previous
     </button>
-    <span className="font-medium text-primary">
+    <span className="font-medium text-gold">
       Page {currentPage} of {totalPages}
     </span>
     <button
       onClick={onNext}
       disabled={currentPage === totalPages}
-      className="px-4 py-2 rounded font-medium transition duration-300 
-        text-primary hover:text-orange disabled:opacity-50 disabled:cursor-not-allowed"
+      className="px-4 py-2 rounded font-medium
+        text-gold hover:text-orange disabled:opacity-50 
+        disabled:cursor-not-allowed transition-all duration-300"
     >
       Next
     </button>
@@ -136,11 +124,11 @@ const Projects = () => {
   };
 
   return (
-    <div className="mx-auto w-full py-12" id="projects">
+    <div className="mx-auto w-full py-12 bg-primary/50" id="projects">
       <div className="container mx-auto px-4">
         <h1
           data-aos="flip-right"
-          className="text-4xl text-center font-bold mb-12 text-primary"
+          className="text-4xl text-center font-bold mb-12 text-gold"
         >
           Featured Works and Case Studies
         </h1>

@@ -17,13 +17,10 @@ const socialLinks = [{
 }];
 
 const Home = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setIsDark(true);
-      document.documentElement.classList.add('dark');
-    }
+    document.documentElement.classList.add('dark');
   }, []);
 
   const toggleDarkMode = () => {
@@ -32,7 +29,7 @@ const Home = () => {
   };
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen bg-primary text-gold">
       {/* Background Animation Container */}
       <div className="fixed inset-0 z-0 overflow-hidden opacity-5">
         <BackgroundAnimation />
@@ -46,7 +43,7 @@ const Home = () => {
         }}
       >
         {/* Top Bar */}
-        <div className="fixed top-0 left-0 right-0 z-20 backdrop-blur-sm">
+        <div className="fixed top-0 left-0 right-0 z-20 backdrop-blur-sm bg-primary/80">
           <div className="container mx-auto px-4 py-3 flex justify-between items-center">
             {/* Social Links */}
             <div className="flex items-center space-x-4">
@@ -57,7 +54,7 @@ const Home = () => {
                   target="_blank"
                   rel="noreferrer"
                   className="transition-transform hover:scale-110 
-                    focus:outline-none focus:ring-2 focus:ring-offset-2 
+                    focus:outline-none focus:ring-2 focus:ring-orange focus:ring-offset-2 
                     rounded-full group"
                   title={link.title}
                 >
@@ -65,7 +62,7 @@ const Home = () => {
                     <img
                       alt={link.title}
                       className="w-8 h-8 rounded-full 
-                        border-2 border-black/10 dark:border-white/10
+                        border-2 border-gold/30 hover:border-gold
                         transition-all duration-300"
                       src={link.imgUrl}
                     />
@@ -78,16 +75,16 @@ const Home = () => {
             <button
               onClick={toggleDarkMode}
               className="w-12 h-6 rounded-full flex items-center 
-                transition-colors duration-200 
-                focus:outline-none focus:ring-2 focus:ring-offset-2"
+                bg-primary-light transition-colors duration-200 
+                focus:outline-none focus:ring-2 focus:ring-orange focus:ring-offset-2"
               type="button"
               title="Toggle dark mode"
             >
               <div className={`
                 w-5 h-5 rounded-full transform duration-200 shadow-md
                 ${isDark 
-                  ? 'translate-x-7 bg-white' 
-                  : 'translate-x-1 bg-black'
+                  ? 'translate-x-7 bg-gold' 
+                  : 'translate-x-1 bg-orange'
                 }
               `} />
             </button>
