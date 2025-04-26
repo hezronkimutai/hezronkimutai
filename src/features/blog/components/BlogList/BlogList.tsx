@@ -34,7 +34,7 @@ export const BlogList: React.FC<BlogListProps> = memo(({
         <div role="status" aria-label="Error loading blog posts">
           <h2 className="text-2xl font-bold mb-6">{title}</h2>
           <div className="flex justify-center items-center py-8">
-            <span className="text-red-600">Error loading blog posts: {error.message}</span>
+            <span>Error loading blog posts: {error.message}</span>
           </div>
         </div>
       </section>
@@ -47,7 +47,7 @@ export const BlogList: React.FC<BlogListProps> = memo(({
         <div role="status" aria-label="Loading blog posts">
           <h2 className="text-2xl font-bold mb-6">{title}</h2>
           <div className="flex justify-center items-center py-8">
-            <span className="text-gray-600">Loading blog posts...</span>
+            <span className="opacity-60">Loading blog posts...</span>
           </div>
         </div>
       </section>
@@ -60,7 +60,7 @@ export const BlogList: React.FC<BlogListProps> = memo(({
         <div role="status" aria-label="No blog posts found" aria-live="polite">
           <h2 className="text-2xl font-bold mb-6">{title}</h2>
           <div className="flex justify-center items-center py-8">
-            <span className="text-gray-600">No blog posts found</span>
+            <span className="opacity-60">No blog posts found</span>
           </div>
         </div>
       </section>
@@ -74,7 +74,8 @@ export const BlogList: React.FC<BlogListProps> = memo(({
         {posts.map((post) => (
           <article
             key={post.id}
-            className="bg-white rounded-lg shadow-md overflow-hidden"
+            className="rounded-lg shadow-lg overflow-hidden
+              border border-black/10 dark:border-white/10"
             data-testid="blog-post"
           >
             <div className="p-4">

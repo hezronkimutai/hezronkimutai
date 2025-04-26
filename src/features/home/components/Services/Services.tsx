@@ -1,7 +1,6 @@
 import React from 'react';
 import { ServiceCard } from '../ServiceCard';
 import { defaultServices } from '../../types/services';
-import styles from './Services.module.scss';
 
 export interface ServicesProps {
   /**
@@ -26,24 +25,34 @@ export const Services: React.FC<ServicesProps> = ({
   services = defaultServices,
 }) => (
   <section 
-    className={`${styles.container} ${className}`.trim()}
+    className={`py-16 ${className}`.trim()}
     aria-labelledby="services-title"
   >
-    <div className={styles.content}>
+    <div className="container mx-auto px-4 animate-[fadeIn_0.5s_ease-out]">
       <h2 
         id="services-title" 
-        className={styles.title}
+        className="text-4xl font-bold text-center mb-12 text-primary dark:text-gold
+          relative animate-[slideIn_0.5s_ease-out]"
       >
         {title}
+        <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 
+          bg-gold/80 dark:bg-orange/80 rounded mt-4
+          scale-x-0 animate-[expandWidth_0.5s_ease-out_0.5s_forwards]"
+        />
       </h2>
       
-      <div className={styles.grid}>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
         {services.map((service, index) => (
-          <ServiceCard
+          <div
             key={`service-${index}`}
-            {...service}
-            className={styles.card}
-          />
+            className="opacity-0 animate-[fadeInUp_0.5s_ease-out_forwards]"
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
+            <ServiceCard
+              {...service}
+              className="h-full transform transition-all duration-500 hover:-translate-y-2"
+            />
+          </div>
         ))}
       </div>
     </div>

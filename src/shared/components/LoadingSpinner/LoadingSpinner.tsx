@@ -13,11 +13,6 @@ export interface LoadingSpinnerProps {
   size?: number;
 
   /**
-   * Optional color override
-   */
-  color?: string;
-
-  /**
    * Optional loading text
    */
   text?: string;
@@ -26,7 +21,6 @@ export interface LoadingSpinnerProps {
 export const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
   className = '',
   size = 40,
-  color = 'currentColor',
   text = 'Loading...',
 }) => (
   <div 
@@ -39,7 +33,6 @@ export const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
       style={{
         width: size,
         height: size,
-        borderTopColor: color,
       }}
     />
     <span className="sr-only">{text}</span>

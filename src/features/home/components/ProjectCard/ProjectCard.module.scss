@@ -8,32 +8,36 @@
   &:hover {
     @apply shadow-2xl;
     transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(16, 46, 80, 0.1),
+                0 10px 10px -5px rgba(16, 46, 80, 0.04);
     
     .thumbnail {
       transform: scale(1.05);
     }
     
     .titleLink {
-      @apply text-blue-600;
+      color: theme('colors.orange');
     }
   }
   
   // Dark mode styles
   @screen dark {
-    @apply bg-gray-800;
+    background: rgba(16, 46, 80, 0.1);
     
     &:hover {
-      @apply shadow-blue-900/20;
+      background: rgba(16, 46, 80, 0.15);
+      box-shadow: 0 20px 25px -5px rgba(245, 196, 94, 0.1),
+                  0 10px 10px -5px rgba(245, 196, 94, 0.04);
     }
   }
 }
 
 .header {
   @apply flex items-center p-4;
-  border-bottom: 1px solid theme('colors.gray.200');
+  border-bottom: 1px solid theme('colors.gold');
   
   @screen dark {
-    border-color: theme('colors.gray.700');
+    border-color: theme('colors.gold');
   }
 }
 
@@ -41,13 +45,16 @@
   @apply mr-4;
   
   &:focus {
-    @apply outline-none ring-2 ring-blue-500 ring-offset-2 rounded;
+    @apply outline-none rounded;
+    box-shadow: 0 0 0 2px theme('colors.orange'),
+                0 0 0 4px rgba(231, 139, 72, 0.3);
   }
 }
 
 .thumbnail {
   @apply w-10 h-10 object-cover rounded-full;
   transition: transform 0.3s ease-in-out;
+  border: 2px solid theme('colors.primary');
   
   // Improve image quality
   image-rendering: -webkit-optimize-contrast;
@@ -58,17 +65,21 @@
   
   // Add subtle text animation on hover
   .titleLink {
-    @apply text-gray-800 hover:text-blue-600;
+    color: theme('colors.primary');
     transition: color 0.2s ease-in-out;
     
     // Dark mode styles
     @screen dark {
-      @apply text-gray-100 hover:text-blue-400;
+      color: theme('colors.gold');
+      &:hover {
+        color: theme('colors.orange');
+      }
     }
     
     &:focus {
       @apply outline-none;
       text-decoration: underline;
+      text-decoration-color: theme('colors.orange');
     }
   }
 }
@@ -92,11 +103,12 @@
 }
 
 .description {
-  @apply text-sm text-gray-600 mb-4;
+  @apply text-sm mb-4;
+  color: theme('colors.primary');
   
   // Dark mode styles
   @screen dark {
-    @apply text-gray-300;
+    color: rgba(245, 196, 94, 0.8);
   }
   
   // Improve readability
@@ -105,23 +117,30 @@
 }
 
 .viewLink {
-  @apply text-sm font-semibold text-blue-600 hover:text-blue-800 mt-auto;
+  @apply text-sm font-semibold mt-auto;
+  color: theme('colors.orange');
   
   // Add link animation
   transition: all 0.2s ease-in-out;
   
   &:hover {
+    color: theme('colors.red');
     text-decoration: underline;
     transform: translateX(4px);
   }
   
   &:focus {
-    @apply outline-none ring-2 ring-blue-500 ring-offset-2 rounded;
+    @apply outline-none rounded;
+    box-shadow: 0 0 0 2px theme('colors.orange'),
+                0 0 0 4px rgba(231, 139, 72, 0.3);
   }
   
   // Dark mode styles
   @screen dark {
-    @apply text-blue-400 hover:text-blue-300;
+    color: theme('colors.gold');
+    &:hover {
+      color: theme('colors.orange');
+    }
   }
   
   // Add arrow icon

@@ -1,62 +1,82 @@
 import React from 'react';
-import axios from 'axios';
 import images from '../../components/images';
-import Paypal from './Paypal';
 
-const { github, linkedIn } = images;
+const {
+  github,
+  twitter,
+  stackoverflow,
+  linkedin,
+  instagram,
+  facebook,
+} = images;
 
 const socialLinks = [
   {
+    title: 'GitHub',
     link: 'https://github.com/hezronkimutai',
     imgUrl: github,
   },
   {
-    link: 'https://www.linkedin.com/in/hezron-kimutai-603b62173/',
-    imgUrl: linkedIn,
+    title: 'Twitter',
+    link: 'https://twitter.com/hezronkimutai',
+    imgUrl: twitter,
+  },
+  {
+    title: 'Stack Overflow',
+    link: 'https://stackoverflow.com/users/11361590/hezron-kimutai',
+    imgUrl: stackoverflow,
+  },
+  {
+    title: 'LinkedIn',
+    link: 'https://www.linkedin.com/in/hezron-kimutai-chelimo/',
+    imgUrl: linkedin,
+  },
+  {
+    title: 'Instagram',
+    link: 'https://www.instagram.com/hezronkimutai/',
+    imgUrl: instagram,
+  },
+  {
+    title: 'Facebook',
+    link: 'https://www.facebook.com/hezron.kimutai',
+    imgUrl: facebook,
   },
 ];
 
-const App = () => {
-  const handleCheckout = async () => {
-    try {
-      const res = await axios.get('http://localhost:3000/checkout');
-      console.log({ res: res.data.url });
-      window.location.href = res.data.url;
-    } catch (error) {
-      console.error('Error during checkout:', error);
-      // Handle error: display a message to the user or retry logic
-    }
-  };
-
-  return (
-    <div className="footer flex flex-row justify-center items-center py-4">
-      <div className=" mx-2"></div>
-      <button
-        className="bg-blue-500 hover:bg-blue-700  font-bold py-2 px-4 rounded"
-        type="button"
-        onClick={handleCheckout}
-      >
-        Stripe Button
-      </button>
-      <div className="flex flex-row ml-2">
-        {socialLinks.map((lnk) => (
+const Footer = () => (
+  <footer className="py-12 border-t border-black/10 dark:border-white/10">
+    <div className="container mx-auto px-4">
+      <div className="flex flex-wrap justify-center items-center gap-6">
+        {socialLinks.map((link) => (
           <a
-            key={lnk.link}
-            href={lnk.link}
+            key={link.link}
+            href={link.link}
             target="_blank"
             rel="noreferrer"
-            className="ml-2"
+            className="transition-transform hover:scale-110 
+              focus:outline-none focus:ring-2 focus:ring-offset-2 
+              rounded-full group"
+            title={link.title}
           >
-            <img
-              className="w-8 h-8"
-              src={lnk.imgUrl}
-              alt="Social Media Icon"
-            />
+            <div className="relative">
+              <img
+                alt={link.title}
+                className="w-8 h-8 rounded-full 
+                  border-2 border-black/10 dark:border-white/10
+                  transition-all duration-300"
+                src={link.imgUrl}
+              />
+            </div>
           </a>
         ))}
       </div>
+      <div className="text-center mt-8">
+        <p className="text-sm opacity-80">
+          © {new Date().getFullYear()} Hezron Kimutai. All rights reserved.
+        </p>
+      </div>
     </div>
-  );
-};
+  </footer>
+);
 
-export default App;
+export default Footer;
