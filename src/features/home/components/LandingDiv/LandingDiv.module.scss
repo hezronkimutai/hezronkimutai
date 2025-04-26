@@ -54,27 +54,35 @@
   }
 }
 
-.imageContainer {
-  @apply md:w-1/2;
-}
-
-.profileImage {
-  @apply w-full rounded-[50%];
+.animationContainer {
+  @apply md:w-1/2 h-[400px] relative overflow-hidden rounded-lg;
   
-  // Add subtle animation on hover
-  transition: transform 0.3s ease-in-out;
+  // Add a gradient overlay
+  &::before {
+    content: '';
+    @apply absolute inset-0 z-10;
+    background: linear-gradient(
+      45deg,
+      rgba(255, 107, 107, 0.1),
+      rgba(78, 205, 196, 0.1),
+      rgba(69, 183, 209, 0.1)
+    );
+  }
+
+  // Add a subtle border
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  
+  // Enhanced shadow
+  box-shadow: 0 8px 32px rgba(16, 46, 80, 0.15);
+  
+  // Glass effect
+  backdrop-filter: blur(4px);
+  
+  // Smooth transitions
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   
   &:hover {
-    transform: scale(1.02);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(16, 46, 80, 0.2);
   }
-  
-  // Ensure image maintains quality
-  image-rendering: -webkit-optimize-contrast;
-  
-  // Add subtle shadow with our theme color
-  box-shadow: 0 4px 6px -1px rgba(16, 46, 80, 0.2),
-              0 2px 4px -1px rgba(16, 46, 80, 0.1);
-  
-  // Improve image loading performance
-  will-change: transform;
 }

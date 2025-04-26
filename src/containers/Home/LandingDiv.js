@@ -41,23 +41,7 @@ const LandingDiv = () => (
           </a>
         </div>
       </div>
-      <div className="md:w-1/2">
-        <div className="relative group">
-          <img
-            className="w-full rounded-full shadow-xl
-              transform transition-transform duration-700
-              group-hover:scale-[1.02]"
-            src={hezPas}
-            alt="Hezron Kimutai Profile"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 rounded-full
-            bg-gradient-to-tr from-gold/20 to-transparent
-            opacity-0 group-hover:opacity-100 
-            transition-opacity duration-700" 
-          />
-        </div>
-      </div>
+      {/* Image section removed */}
     </div>
   </div>
 );
