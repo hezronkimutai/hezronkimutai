@@ -184,26 +184,7 @@ const Experiences = () => (
         </div>
       </div>
 
-      {/* Education Section */}
-      <div className="mt-20 text-center">
-        <h3 className="text-3xl font-bold text-white mb-8">Education</h3>
-        <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10 max-w-2xl mx-auto">
-          <div className="flex items-center justify-center mb-4">
-            <div className="w-16 h-16 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 
-              flex items-center justify-center text-3xl mr-6">
-              🎓
-            </div>
-            <div className="text-left">
-              <h4 className="text-2xl font-bold text-white">Bachelor of Science</h4>
-              <p className="text-purple-300 font-medium">Electrical Engineering</p>
-            </div>
-          </div>
-          <div className="space-y-2 text-gray-300">
-            <p><span className="text-gray-400">Institution:</span> Machakos University, Kenya</p>
-            <p><span className="text-gray-400">Graduated:</span> 2019</p>
-          </div>
-        </div>
-      </div>
+
     </div>
   </section>
 );
