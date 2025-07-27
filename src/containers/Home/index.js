@@ -1,20 +1,38 @@
 import React, { useState, useEffect } from 'react';
-import ThreeAnimation from '../../components/ThreeAnimation'; // Changed import
+import ThreeAnimation from '../../components/ThreeAnimation';
 import LandingDiv from './LandingDiv';
-import Profile from './Services';
+import TechnicalSkills from './TechnicalSkills';
 import Experiences from './Experiences';
-import Abilities from './WhyMe';
 import Projects from './Projects';
+import Contact from './Contact';
 import Footer from './Footer';
-import images from '../../components/images';
 
-const { github } = images;
-
-const socialLinks = [{
-  link: 'https://github.com/hezronkimutai/portfolio',
-  imgUrl: github,
-  title: 'GitHub'
-}];
+const socialLinks = [
+  {
+    link: 'https://github.com/hezronkimutai',
+    icon: '🔗',
+    title: 'GitHub',
+    color: 'hover:text-purple-400'
+  },
+  {
+    link: 'https://www.linkedin.com/in/hezron-kimutai',
+    icon: '💼',
+    title: 'LinkedIn',
+    color: 'hover:text-blue-400'
+  },
+  {
+    link: 'mailto:hezronchelimo.hc@gmail.com',
+    icon: '📧',
+    title: 'Email',
+    color: 'hover:text-green-400'
+  },
+  {
+    link: 'tel:+254790717147',
+    icon: '📱',
+    title: 'Phone',
+    color: 'hover:text-yellow-400'
+  }
+];
 
 const Home = () => {
   const [isDark, setIsDark] = useState(true);
@@ -29,70 +47,46 @@ const Home = () => {
   };
 
   return (
-    <div className="relative min-h-screen text-gold"> {/* Removed bg-primary */}
-      {/* Fullscreen 3D Animation Background */}
-      <div className="fixed inset-0 z-0 overflow-hidden"> {/* Removed opacity */}
+    <div className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      {/* Animated Background */}
+      <div className="fixed inset-0 z-0">
         <ThreeAnimation />
       </div>
 
-      {/* Main Content Container */}
-      <div
-        className="relative z-10 bg-primary/90" // Added semi-transparent background
-        onScrollCapture={(e) => {
-          e.preventDefault();
-        }}
-      >
-        {/* Top Bar */}
-        <div className="fixed top-0 left-0 right-0 z-20 backdrop-blur-sm bg-primary/80">
-          <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-            {/* Social Links */}
-            <div className="flex items-center space-x-4">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.link}
-                  href={link.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="transition-transform hover:scale-110 
-                    focus:outline-none focus:ring-2 focus:ring-orange focus:ring-offset-2 
-                    rounded-full group"
-                  title={link.title}
-                >
-                  <div className="relative">
-                    <img
-                      alt={link.title}
-                      className="w-8 h-8 rounded-full 
-                        border-2 border-gold/30 hover:border-gold
-                        transition-all duration-300"
-                      src={link.imgUrl}
-                    />
-                  </div>
-                </a>
-              ))}
-            </div>
-
-            {/* Dark Mode Toggle */}
-            <button
-              onClick={toggleDarkMode}
-              className="w-12 h-6 rounded-full flex items-center 
-                bg-primary-light transition-colors duration-200 
-                focus:outline-none focus:ring-2 focus:ring-orange focus:ring-offset-2"
-              type="button"
-              title="Toggle dark mode"
+      {/* Floating Navigation */}
+      <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-black/20 backdrop-blur-lg rounded-full px-6 py-3 border border-white/10">
+        <div className="flex items-center space-x-6">
+          {socialLinks.map((link) => (
+            <a
+              key={link.link}
+              href={link.link}
+              target="_blank"
+              rel="noreferrer"
+              className={`text-2xl transition-all duration-300 hover:scale-125 ${link.color}`}
+              title={link.title}
             >
-            </button>
-          </div>
+              {link.icon}
+            </a>
+          ))}
+          
+          <button
+            onClick={toggleDarkMode}
+            className="ml-4 text-2xl hover:scale-125 transition-transform duration-300"
+            title="Toggle theme"
+          >
+            {isDark ? '🌙' : '☀️'}
+          </button>
         </div>
+      </nav>
 
-        {/* Page Sections */}
-        <div className="pt-20">
-          <LandingDiv />
-          <Abilities />
-          <Profile />
-          <Projects />
-          <Experiences />
-          <Footer />
-        </div>
+      {/* Main Content */}
+      <div className="relative z-10">
+        <LandingDiv />
+        <TechnicalSkills />
+        <Experiences />
+        <Projects />
+        <Contact />
+        <Footer />
       </div>
     </div>
   );
