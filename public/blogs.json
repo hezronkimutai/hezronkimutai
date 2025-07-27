@@ -1,22 +1,40 @@
 {
   "posts": [
     {
-      "filename": "hello-world.md",
-      "slug": "hello-world",
-      "title": "Hello World - My First Blog Post",
-      "date": "2024-04-26",
+      "filename": "building-scalable-microservices.md",
+      "slug": "building-scalable-microservices",
+      "title": "Building Scalable Microservices with Golang and Docker",
+      "date": "2024-12-15",
       "author": "Hezron Kimutai",
-      "description": "An introduction to my new blog series",
-      "tags": ["introduction", "blog", "tech"]
+      "description": "A comprehensive guide to building and deploying scalable microservices using Golang, Docker, and Kubernetes",
+      "tags": ["golang", "microservices", "docker", "kubernetes", "backend"]
     },
     {
-      "filename": "clean-code-principles.md",
-      "slug": "clean-code-principles",
-      "title": "Clean Code Principles Every Developer Should Know",
+      "filename": "react-performance-optimization.md",
+      "slug": "react-performance-optimization",
+      "title": "React Performance Optimization Techniques",
+      "date": "2024-11-20",
+      "author": "Hezron Kimutai",
+      "description": "Advanced techniques for optimizing React applications for better performance and user experience",
+      "tags": ["react", "javascript", "performance", "frontend", "optimization"]
+    },
+    {
+      "filename": "aws-serverless-architecture.md",
+      "slug": "aws-serverless-architecture",
+      "title": "Building Serverless Applications with AWS Lambda and DynamoDB",
+      "date": "2024-10-10",
+      "author": "Hezron Kimutai",
+      "description": "Complete guide to building scalable serverless applications using AWS Lambda, DynamoDB, and API Gateway",
+      "tags": ["aws", "serverless", "lambda", "dynamodb", "cloud"]
+    },
+    {
+      "filename": "test-blog.md",
+      "slug": "test-blog",
+      "title": "Test Blog Post",
       "date": "2024-04-26",
       "author": "Hezron Kimutai",
-      "description": "Essential principles for writing clean, maintainable, and efficient code",
-      "tags": ["programming", "best-practices", "clean-code", "software-engineering"]
+      "description": "A test blog post for our markdown system",
+      "tags": ["test", "markdown"]
     }
   ]
 }

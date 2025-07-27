@@ -14,7 +14,10 @@ const routes: RouteConfig[] = [
     exact: true,
     component: Home,
   },
-  ...blogRoutes
+  ...blogRoutes.map(route => ({
+    ...route,
+    path: `/blog${route.path ? `/${route.path}` : ''}`
+  }))
 ];
 
 const App: React.FC = () => (

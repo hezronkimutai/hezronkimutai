@@ -112,7 +112,7 @@ const webpackConfig = {
       directory: path.resolve(__dirname, 'public/'),
     },
     historyApiFallback: true,
-    port: 4000,
+    port: process.env.PORT || 3000,
     open: true,
   },
 
