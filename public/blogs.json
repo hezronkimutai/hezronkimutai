@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "filename": "hello-world.md",
+      "slug": "hello-world",
+      "title": "Hello World - My First Blog Post",
+      "date": "2024-04-26",
+      "author": "Hezron Kimutai",
+      "description": "An introduction to my new blog series",
+      "tags": ["introduction", "blog", "tech"]
+    },
+    {
+      "filename": "clean-code-principles.md",
+      "slug": "clean-code-principles",
+      "title": "Clean Code Principles Every Developer Should Know",
+      "date": "2024-04-26",
+      "author": "Hezron Kimutai",
+      "description": "Essential principles for writing clean, maintainable, and efficient code",
+      "tags": ["programming", "best-practices", "clean-code", "software-engineering"]
+    }
+  ]
+}

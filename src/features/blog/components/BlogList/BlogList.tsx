@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { BlogPost } from '../../types';
+import { BlogPost } from '../../utils/markdownConverter';
 import { Pagination } from '../../../../shared/components/Pagination';
 
 interface BlogListBaseProps {
@@ -71,15 +71,32 @@ export const BlogList: React.FC<BlogListProps> = memo(({
     <section className={containerClasses} role="region" aria-labelledby="blog-title" aria-busy="false">
       <h2 id="blog-title" className="text-2xl font-bold mb-6">{title}</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {posts.map((post) => (
+        {posts.map((post: BlogPost) => (
           <article
-            key={post.id}
-            className="rounded-lg shadow-lg overflow-hidden
+            key={post.slug}
+            className="rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300
               border border-black/10 dark:border-white/10"
             data-testid="blog-post"
           >
-            <div className="p-4">
-              <h3 className="text-lg font-semibold mb-2">{post.title}</h3>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-2 hover:text-blue-600">
+                <a href={`/blog/${post.slug}`}>{post.metadata.title}</a>
+              </h3>
+              <p className="text-gray-600 mb-4">{post.metadata.description}</p>
+              <div className="flex items-center justify-between text-sm text-gray-500">
+                <span>{post.metadata.author}</span>
+                <span>{new Date(post.metadata.date).toLocaleDateString()}</span>
+              </div>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {post.metadata.tags.map(tag => (
+                  <span
+                    key={tag}
+                    className="px-2 py-1 bg-gray-100 text-gray-600 rounded-full text-sm"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           </article>
         ))}
