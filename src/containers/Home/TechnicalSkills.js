@@ -46,10 +46,13 @@ const TechnicalSkills = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r 
-            from-white to-gray-300 bg-clip-text text-transparent">
+            from-white to-gray-100 bg-clip-text text-transparent 
+            drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)]">
             Technical Expertise
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-100 max-w-3xl mx-auto 
+            drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] bg-slate-900/40 backdrop-blur-sm 
+            rounded-lg p-4 border border-white/10">
             Proficient in modern technologies and frameworks for building scalable, 
             high-performance applications and distributed systems.
           </p>
@@ -60,9 +63,9 @@ const TechnicalSkills = () => {
           {skillCategories.map((category, index) => (
             <div
               key={category.title}
-              className="group relative bg-white/5 backdrop-blur-sm rounded-xl p-6 
-                border border-white/10 hover:border-white/20 transition-all duration-300
-                hover:transform hover:scale-105"
+              className="group relative bg-slate-900/60 backdrop-blur-md rounded-xl p-6 
+                border border-white/20 hover:border-white/30 transition-all duration-300
+                hover:transform hover:scale-105 shadow-lg hover:shadow-xl"
               style={{
                 animationDelay: `${index * 0.1}s`
               }}
@@ -73,7 +76,7 @@ const TechnicalSkills = () => {
                   flex items-center justify-center text-2xl mr-4`}>
                   {category.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-white">
+                <h3 className="text-xl font-semibold text-white drop-shadow-sm">
                   {category.title}
                 </h3>
               </div>
@@ -84,12 +87,13 @@ const TechnicalSkills = () => {
                   <div
                     key={skill}
                     className="flex items-center justify-between p-3 rounded-lg 
-                      bg-white/5 hover:bg-white/10 transition-all duration-200"
+                      bg-slate-800/40 hover:bg-slate-800/60 transition-all duration-200
+                      border border-white/10 hover:border-white/20"
                     style={{
                       animationDelay: `${(index * 0.1) + (skillIndex * 0.05)}s`
                     }}
                   >
-                    <span className="text-gray-300 font-medium">{skill}</span>
+                    <span className="text-gray-100 font-medium drop-shadow-sm">{skill}</span>
                     <div className="flex space-x-1">
                       {[...Array(5)].map((_, i) => (
                         <div

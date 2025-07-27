@@ -44,22 +44,27 @@ const LandingDiv = () => {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r 
-            from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
-            HEZRON KIMUTAI
+            from-white via-purple-100 to-blue-100 bg-clip-text text-transparent 
+            drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)]">
+            <span className="drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)]">HEZRON KIMUTAI</span>
             <br />
-            <span className="text-3xl md:text-4xl font-normal text-gray-300">
+            <span className="text-3xl md:text-4xl font-normal text-gray-100 
+              drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)]">
               CHELIMO
             </span>
           </h1>
           
           <div className="h-16 mb-8">
-            <p className="text-xl md:text-2xl text-purple-300 font-light">
+            <p className="text-xl md:text-2xl text-purple-200 font-light 
+              drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
               {displayText}
               <span className="animate-pulse">|</span>
             </p>
           </div>
           
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto mb-12 leading-relaxed
+            drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] bg-slate-900/30 backdrop-blur-sm 
+            rounded-lg p-6 border border-white/10">
             Results-driven engineer with extensive experience designing high-performance, 
             scalable web and mobile applications. Passionate about microservices architecture, 
             cloud solutions, and building secure, optimized systems.
@@ -68,28 +73,36 @@ const LandingDiv = () => {
 
         {/* Contact Info Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-          <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
+          <div className="bg-slate-900/60 backdrop-blur-md rounded-lg p-4 border border-white/20 
+            hover:border-purple-500/70 hover:bg-slate-900/70 transition-all duration-300 
+            shadow-lg hover:shadow-purple-500/20">
             <div className="text-2xl mb-2">📱</div>
-            <div className="text-sm text-gray-400">Phone</div>
-            <div className="text-white font-medium">+254 790 717 147</div>
+            <div className="text-sm text-gray-300">Phone</div>
+            <div className="text-white font-medium drop-shadow-sm">+254 790 717 147</div>
           </div>
           
-          <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10 hover:border-blue-500/50 transition-all duration-300">
+          <div className="bg-slate-900/60 backdrop-blur-md rounded-lg p-4 border border-white/20 
+            hover:border-blue-500/70 hover:bg-slate-900/70 transition-all duration-300 
+            shadow-lg hover:shadow-blue-500/20">
             <div className="text-2xl mb-2">📧</div>
-            <div className="text-sm text-gray-400">Email</div>
-            <div className="text-white font-medium text-sm">hezronchelimo.hc@gmail.com</div>
+            <div className="text-sm text-gray-300">Email</div>
+            <div className="text-white font-medium text-sm drop-shadow-sm">hezronchelimo.hc@gmail.com</div>
           </div>
           
-          <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10 hover:border-green-500/50 transition-all duration-300">
+          <div className="bg-slate-900/60 backdrop-blur-md rounded-lg p-4 border border-white/20 
+            hover:border-green-500/70 hover:bg-slate-900/70 transition-all duration-300 
+            shadow-lg hover:shadow-green-500/20">
             <div className="text-2xl mb-2">💼</div>
-            <div className="text-sm text-gray-400">LinkedIn</div>
-            <div className="text-white font-medium text-sm">hezron-kimutai</div>
+            <div className="text-sm text-gray-300">LinkedIn</div>
+            <div className="text-white font-medium text-sm drop-shadow-sm">hezron-kimutai</div>
           </div>
           
-          <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10 hover:border-yellow-500/50 transition-all duration-300">
+          <div className="bg-slate-900/60 backdrop-blur-md rounded-lg p-4 border border-white/20 
+            hover:border-yellow-500/70 hover:bg-slate-900/70 transition-all duration-300 
+            shadow-lg hover:shadow-yellow-500/20">
             <div className="text-2xl mb-2">🔗</div>
-            <div className="text-sm text-gray-400">GitHub</div>
-            <div className="text-white font-medium">hezronkimutai</div>
+            <div className="text-sm text-gray-300">GitHub</div>
+            <div className="text-white font-medium drop-shadow-sm">hezronkimutai</div>
           </div>
         </div>
 

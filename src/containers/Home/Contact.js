@@ -94,10 +94,13 @@ const Contact = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r 
-            from-white to-gray-300 bg-clip-text text-transparent">
+            from-white to-gray-100 bg-clip-text text-transparent 
+            drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)]">
             Let's Work Together
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-100 max-w-3xl mx-auto 
+            drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] bg-slate-900/40 backdrop-blur-sm 
+            rounded-lg p-4 border border-white/10">
             Ready to build something amazing? I'm available for new opportunities 
             and exciting projects. Let's discuss how we can bring your ideas to life.
           </p>
@@ -105,8 +108,8 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10">
-            <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
+          <div className="bg-slate-900/60 backdrop-blur-md rounded-xl p-8 border border-white/20 shadow-lg">
+            <h3 className="text-2xl font-bold text-white mb-6 drop-shadow-sm">Send a Message</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

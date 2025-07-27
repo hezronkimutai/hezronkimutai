@@ -173,6 +173,20 @@
   color: #f87171 !important;
 }
 
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .blog-content h1 {

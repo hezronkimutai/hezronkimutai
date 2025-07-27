@@ -3,6 +3,27 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import './styles.css';
 import './main.css';
+import './styles/text-contrast.css';
+
+// Add floating animation styles
+const floatingStyles = `
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+`;
+
+const styleSheet = document.createElement('style');
+styleSheet.textContent = floatingStyles;
+document.head.appendChild(styleSheet);
 
 // Get the root element
 const rootElement = document.getElementById('app');

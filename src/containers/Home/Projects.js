@@ -68,10 +68,13 @@ const Projects = () => (
       {/* Section Header */}
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r 
-          from-white to-gray-300 bg-clip-text text-transparent">
+          from-white to-gray-100 bg-clip-text text-transparent 
+          drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)]">
           Featured Projects
         </h2>
-        <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+        <p className="text-xl text-gray-100 max-w-3xl mx-auto 
+          drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] bg-slate-900/40 backdrop-blur-sm 
+          rounded-lg p-4 border border-white/10">
           A showcase of innovative solutions, from enterprise applications to open-source 
           contributions that demonstrate technical expertise and problem-solving skills.
         </p>
@@ -82,9 +85,9 @@ const Projects = () => (
         {projects.map((project, index) => (
           <div
             key={project.name}
-            className="group bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden 
-              border border-white/10 hover:border-white/20 transition-all duration-300
-              hover:transform hover:scale-105"
+            className="group bg-slate-900/60 backdrop-blur-md rounded-xl overflow-hidden 
+              border border-white/20 hover:border-white/30 transition-all duration-300
+              hover:transform hover:scale-105 shadow-lg hover:shadow-xl"
             style={{
               animationDelay: `${index * 0.1}s`
             }}

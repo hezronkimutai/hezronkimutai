@@ -99,10 +99,13 @@ const Experiences = () => (
       {/* Section Header */}
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r 
-          from-white to-gray-300 bg-clip-text text-transparent">
+          from-white to-gray-100 bg-clip-text text-transparent 
+          drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)]">
           Professional Experience
         </h2>
-        <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+        <p className="text-xl text-gray-100 max-w-3xl mx-auto 
+          drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] bg-slate-900/40 backdrop-blur-sm 
+          rounded-lg p-4 border border-white/10">
           A journey of building scalable solutions, optimizing systems, and leading 
           development teams across various industries and technologies.
         </p>
@@ -131,8 +134,9 @@ const Experiences = () => (
               <div className={`ml-16 md:ml-0 md:w-5/12 ${
                 index % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'
               }`}>
-                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 
-                  hover:border-white/20 transition-all duration-300 hover:transform hover:scale-105">
+                <div className="bg-slate-900/60 backdrop-blur-md rounded-xl p-6 border border-white/20 
+                  hover:border-white/30 transition-all duration-300 hover:transform hover:scale-105 
+                  shadow-lg hover:shadow-xl">
                   
                   {/* Company Header */}
                   <div className="flex items-center mb-4">
@@ -141,8 +145,8 @@ const Experiences = () => (
                       {exp.icon}
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-white">{exp.company}</h3>
-                      <p className="text-purple-300 font-medium">{exp.position}</p>
+                      <h3 className="text-xl font-bold text-white drop-shadow-sm">{exp.company}</h3>
+                      <p className="text-purple-200 font-medium drop-shadow-sm">{exp.position}</p>
                     </div>
                   </div>
 
