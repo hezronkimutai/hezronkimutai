@@ -31,7 +31,7 @@ module.exports = {
     '^@animations/(.*)$': '<rootDir>/src/shared/components/Animations/$1',
     '\\.(css|scss)$': 'identity-obj-proxy',
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
-      '<rootDir>/src/__mocks__/fileMock.js'
+      '<rootDir>/src/__mocks__/fileMock.ts'
   },
   transformIgnorePatterns: [
     'node_modules/(?!(react-router|@remix-run|@babel/runtime)/)'

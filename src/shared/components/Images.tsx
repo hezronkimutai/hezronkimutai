@@ -1,21 +1,22 @@
-import andela from '../../assets/images/andela.png';
-import eap from '../../assets/images/eap.jpg';
-import pmu from '../../assets/images/pmu.png';
-import fiverr from '../../assets/images/fiverr.png';
-import noLogo from '../../assets/images/noLogo.jpg';
-import css3 from '../../assets/images/css-3.png';
-import react from '../../assets/images/react.png';
-import html from '../../assets/images/html.png';
-import python from '../../assets/images/python.png';
-import nodeJs from '../../assets/images/nodejs.png';
-import contact from '../../assets/images/contact.png';
-import fork from '../../assets/images/fork.png';
-import github from '../../assets/images/github.png';
-import linkedIn from '../../assets/images/linkedIn.png';
-import facebook from '../../assets/images/facebook.png';
-import twitter from '../../assets/images/twitter.png';
-import instagram from '../../assets/images/instagram.png';
-import stackoverflow from '../../assets/images/stackoverflow.png';
+// Import images from assets
+const andela = require('../../assets/images/andela.png');
+const eap = require('../../assets/images/eap.jpg');
+const pmu = require('../../assets/images/pmu.png');
+const fiverr = require('../../assets/images/fiverr.png');
+const noLogo = require('../../assets/images/noLogo.jpg');
+const css3 = require('../../assets/images/css-3.png');
+const react = require('../../assets/images/react.png');
+const html = require('../../assets/images/html.png');
+const python = require('../../assets/images/python.png');
+const nodeJs = require('../../assets/images/nodejs.png');
+const contact = require('../../assets/images/contact.png');
+const fork = require('../../assets/images/fork.png');
+const github = require('../../assets/images/github.png');
+const linkedIn = require('../../assets/images/linkedIn.png');
+const facebook = require('../../assets/images/facebook.png');
+const twitter = require('../../assets/images/twitter.png');
+const instagram = require('../../assets/images/instagram.png');
+const stackoverflow = require('../../assets/images/stackoverflow.png');
 
 interface Images {
   andela: string;

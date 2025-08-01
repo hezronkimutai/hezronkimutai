@@ -4,4 +4,3 @@ export { default as Pagination } from './Pagination';
 export { default as RouteGuard } from './RouteGuard';
 export { default as Images } from './Images';
 export * from './Animations';
-export * from './Icons';
