@@ -1,6 +1,15 @@
 {
   "posts": [
     {
+      "filename": "expanding-into-iot-embedded-systems.md",
+      "slug": "expanding-into-iot-embedded-systems",
+      "title": "Expanding Beyond Software: My Journey into IoT, Embedded Systems, and Physical Computing",
+      "date": "2025-01-01",
+      "author": "Hezron Kimutai",
+      "description": "A comprehensive exploration of expanding from software engineering into IoT systems, embedded programming, control systems, and electronics",
+      "tags": ["iot", "embedded-systems", "electronics", "arduino", "hardware", "physical-computing", "career-development"]
+    },
+    {
       "filename": "building-scalable-microservices.md",
       "slug": "building-scalable-microservices",
       "title": "Building Scalable Microservices with Golang and Docker",

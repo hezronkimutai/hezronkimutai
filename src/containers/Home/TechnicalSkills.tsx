@@ -148,6 +148,87 @@ const TechnicalSkills: React.FC = () => {
           </div>
         </div>
 
+        {/* Emerging Interests & Learning Areas */}
+        <div className="mb-16">
+          <h3 className="text-3xl font-bold text-white mb-12 text-center">
+            Emerging Interests & Learning Journey
+          </h3>
+          <div className="bg-slate-900/40 backdrop-blur-sm rounded-xl p-8 border border-white/10">
+            <div className="text-center mb-8">
+              <p className="text-gray-300 text-lg leading-relaxed max-w-4xl mx-auto">
+                Expanding beyond traditional software development into the fascinating world of physical computing, 
+                hardware integration, and intelligent systems that bridge the digital and physical realms.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-white/5 rounded-xl p-6 border border-white/10 hover:border-blue-500/30 transition-all duration-300 text-center group">
+                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🔌</div>
+                <h4 className="text-lg font-bold text-white mb-3">IoT Systems</h4>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  Connecting everyday objects to the internet, creating smart environments and data-driven insights.
+                </p>
+                <div className="mt-4 text-xs text-blue-300">
+                  Learning: Arduino, ESP32, MQTT, Cloud Integration
+                </div>
+              </div>
+
+              <div className="bg-white/5 rounded-xl p-6 border border-white/10 hover:border-green-500/30 transition-all duration-300 text-center group">
+                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🤖</div>
+                <h4 className="text-lg font-bold text-white mb-3">Embedded Systems</h4>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  Programming microcontrollers and developing firmware for specialized hardware applications.
+                </p>
+                <div className="mt-4 text-xs text-green-300">
+                  Learning: C/C++, ARM, Raspberry Pi, Real-time Systems
+                </div>
+              </div>
+
+              <div className="bg-white/5 rounded-xl p-6 border border-white/10 hover:border-orange-500/30 transition-all duration-300 text-center group">
+                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">⚙️</div>
+                <h4 className="text-lg font-bold text-white mb-3">Control Systems</h4>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  Designing automated systems that regulate and control mechanical and electrical processes.
+                </p>
+                <div className="mt-4 text-xs text-orange-300">
+                  Learning: PID Controllers, Automation, Industrial Systems
+                </div>
+              </div>
+
+              <div className="bg-white/5 rounded-xl p-6 border border-white/10 hover:border-purple-500/30 transition-all duration-300 text-center group">
+                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">⚡</div>
+                <h4 className="text-lg font-bold text-white mb-3">Electronics</h4>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  Understanding circuit design, component integration, and the fundamentals of electronic systems.
+                </p>
+                <div className="mt-4 text-xs text-purple-300">
+                  Learning: Circuit Design, PCB Layout, Sensor Integration
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 p-6 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg border border-blue-500/20">
+              <h4 className="text-xl font-bold text-white mb-4 text-center">Why This Expansion Matters</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                <div>
+                  <h5 className="font-semibold text-blue-200 mb-2">🌐 Holistic Problem Solving</h5>
+                  <p className="text-gray-300">
+                    Combining software expertise with hardware understanding opens doors to comprehensive solutions 
+                    that span the entire technology stack.
+                  </p>
+                </div>
+                <div>
+                  <h5 className="font-semibold text-purple-200 mb-2">🚀 Innovation Opportunities</h5>
+                  <p className="text-gray-300">
+                    The intersection of software, hardware, and physical systems is where the most exciting 
+                    innovations in technology are happening today.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Philosophy Statement */}
         <div className="text-center bg-slate-900/40 backdrop-blur-sm rounded-xl p-8 border border-white/10">
           <h3 className="text-2xl font-bold text-white mb-6">

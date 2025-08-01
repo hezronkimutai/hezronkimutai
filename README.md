@@ -1,6 +1,18 @@
 
 <h1 align="center">Hi 👋, I'm Hezron Kimutai And I Am In The Business Of Building Products</h1>
-<h3 align="center"><i>I don't know much, but I try to learn as much as possible</i></h3>
+<h3 align="- 🌱 I'm currently learning **AWS, GCP, AZURE, JAVA, Golang, Flutter, .Net, IoT Systems, Embedded Programming, Control Systems, and Electronics**
+
+- 🔬 Exploring **Arduino, Raspberry Pi, Microcontrollers, Sensor Integration, and Hardware-Software Integration**
+
+- 👯 I'm looking to collaborate on [Linux](https://github.com/torvalds/linux) and IoT Projects
+
+- 🤝 I'm looking for help with [tikiti](https://ticketing-web-three.vercel.app/) and embedded system prototypes
+
+- 👨‍💻 All of my projects are available at [https://hezron.netlify.app/](https://hezron.netlify.app/)
+
+- 📝 I regularly write articles on [https://hezron.netlify.app/blog](https://hezron.netlify.app/blog)
+
+- 💬 Ask me about **Javascript(React, NodeJS, VueJs, Angular, NestJs), Java(Spring boot, Android), C#(.NET), C++, C, Cloud(AWS, GCP, MS AZURE, Vercel, Render, Netlify, Digital Ocean), IoT & Embedded Systems**I don't know much, but I try to learn as much as possible</i></h3>
 
   <a href="https://chat.whatsapp.com/L1O3rK82azIG54sBwNMeEF" target="_blank"><strong>Join LIF community whatsapp group </strong></a>
 

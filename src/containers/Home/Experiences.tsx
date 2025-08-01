@@ -107,6 +107,70 @@ const Experiences: React.FC = () => (
         </div>
       </div>
 
+      {/* Emerging Tech Interests */}
+      <div className="mb-12">
+        <h3 className="text-3xl font-bold text-white mb-8 text-center">
+          Expanding Into Physical Computing
+        </h3>
+        
+        <div className="bg-slate-900/40 backdrop-blur-sm rounded-xl p-8 border border-white/10">
+          <div className="text-center mb-8">
+            <p className="text-gray-300 text-lg leading-relaxed max-w-4xl mx-auto">
+              Leveraging my software engineering foundation to explore hardware integration, 
+              IoT systems, and the exciting frontier where digital meets physical.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10 hover:border-blue-500/30 transition-all duration-300 text-center">
+              <div className="text-4xl mb-4">🔌</div>
+              <h4 className="text-lg font-bold text-white mb-2">IoT Development</h4>
+              <p className="text-gray-300 text-sm">Arduino, ESP32, Sensor Networks</p>
+              <div className="mt-3 text-xs text-blue-300">Beginner • Exploring</div>
+            </div>
+
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10 hover:border-green-500/30 transition-all duration-300 text-center">
+              <div className="text-4xl mb-4">🤖</div>
+              <h4 className="text-lg font-bold text-white mb-2">Embedded Programming</h4>
+              <p className="text-gray-300 text-sm">Microcontrollers, Firmware, C/C++</p>
+              <div className="mt-3 text-xs text-green-300">Learning • Passionate</div>
+            </div>
+
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10 hover:border-orange-500/30 transition-all duration-300 text-center">
+              <div className="text-4xl mb-4">⚙️</div>
+              <h4 className="text-lg font-bold text-white mb-2">Control Systems</h4>
+              <p className="text-gray-300 text-sm">Automation, PID, Industrial IoT</p>
+              <div className="mt-3 text-xs text-orange-300">Interested • Studying</div>
+            </div>
+
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10 hover:border-purple-500/30 transition-all duration-300 text-center">
+              <div className="text-4xl mb-4">⚡</div>
+              <h4 className="text-lg font-bold text-white mb-2">Electronics Design</h4>
+              <p className="text-gray-300 text-sm">Circuits, PCB, Hardware Integration</p>
+              <div className="mt-3 text-xs text-purple-300">Novice • Curious</div>
+            </div>
+          </div>
+
+          <div className="mt-8 p-6 bg-gradient-to-r from-green-500/10 to-blue-500/10 rounded-lg border border-green-500/20">
+            <h4 className="text-lg font-bold text-white mb-3 text-center">🎯 Learning Roadmap</h4>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+              <div className="text-center">
+                <h5 className="font-semibold text-green-200 mb-2">Phase 1: Foundations</h5>
+                <p className="text-gray-300">Arduino basics, sensor integration, simple IoT projects</p>
+              </div>
+              <div className="text-center">
+                <h5 className="font-semibold text-blue-200 mb-2">Phase 2: Integration</h5>
+                <p className="text-gray-300">Cloud connectivity, real-time data processing, mobile controls</p>
+              </div>
+              <div className="text-center">
+                <h5 className="font-semibold text-purple-200 mb-2">Phase 3: Innovation</h5>
+                <p className="text-gray-300">Custom PCBs, advanced automation, full-stack IoT solutions</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Recent Highlights */}
       <div className="bg-slate-900/40 backdrop-blur-sm rounded-xl p-8 border border-white/10">
         <h3 className="text-2xl font-bold text-white mb-6 text-center">

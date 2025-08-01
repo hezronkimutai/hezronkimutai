@@ -8,6 +8,7 @@ const LandingDiv: React.FC = () => {
     'Fullstack Software Engineer',
     'Cloud Solutions Architect', 
     'Mobile App Developer',
+    'IoT & Embedded Systems Enthusiast',
     'System Optimization Expert'
   ];
 
@@ -68,6 +69,10 @@ const LandingDiv: React.FC = () => {
             I'm a Fullstack Software Engineer focused on building scalable, efficient, and secure systems 
             across web and mobile platforms. My work spans startups, foundations, and distributed teams, 
             where I've consistently shipped production-ready systems using technologies like Golang, React, AWS, and Kubernetes.
+            <br /><br />
+            <strong className="text-cyan-300">Currently expanding into IoT systems, embedded programming, control systems, and electronics</strong> 
+            — bridging the gap between software intelligence and physical world interaction. From Arduino prototypes to industrial automation, 
+            I'm exploring how software engineering principles apply to hardware integration and smart systems.
             <br /><br />
             Beyond engineering, I'm the founding member of two initiatives: 
             <strong className="text-purple-300"> LIF (Learning Is Fun)</strong> - a community platform making learning collaborative and playful, 
