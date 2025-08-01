@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ThreeAnimation from './ThreeAnimation';
+import ChessAnimation from './ChessAnimation';
 import ParticleField from './ParticleField';
 import FloatingShapes from './FloatingShapes';
 
@@ -56,7 +56,7 @@ const StrategicBackground: React.FC<StrategicBackgroundProps> = ({ children }) =
     <div className="relative">
       {/* Strategic 3D Background */}
       <div className="fixed inset-0 z-0">
-        <ThreeAnimation section={currentSection} />
+        <ChessAnimation section={currentSection} />
       </div>
       
       {/* Interactive Particle Field */}
