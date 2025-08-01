@@ -62,12 +62,19 @@ const LandingDiv = () => {
             </p>
           </div>
           
-          <p className="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto mb-12 leading-relaxed
+          <p className="text-lg md:text-xl text-gray-100 max-w-4xl mx-auto mb-12 leading-relaxed
             drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] bg-slate-900/30 backdrop-blur-sm 
             rounded-lg p-6 border border-white/10">
-            Results-driven engineer with extensive experience designing high-performance, 
-            scalable web and mobile applications. Passionate about microservices architecture, 
-            cloud solutions, and building secure, optimized systems.
+            I'm a Fullstack Software Engineer focused on building scalable, efficient, and secure systems 
+            across web and mobile platforms. My work spans startups, foundations, and distributed teams, 
+            where I've consistently shipped production-ready systems using technologies like Golang, React, AWS, and Kubernetes.
+            <br /><br />
+            Beyond engineering, I'm the founding member of two initiatives: 
+            <strong className="text-purple-300"> LIF (Learning Is Fun)</strong> - a community platform making learning collaborative and playful, 
+            and <strong className="text-blue-300">HK Group</strong> - where refined ideas evolve into real products and companies.
+            <br /><br />
+            My work lives at the intersection of learning, systems, and entrepreneurship. 
+            I believe in staying healthy and building wealth through strategic thinking and continuous growth.
           </p>
         </div>
 
