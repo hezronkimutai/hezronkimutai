@@ -37,31 +37,6 @@ const LandingDiv: React.FC = () => {
       <div className="max-w-6xl mx-auto text-center">
         {/* Main Hero Content */}
         <div className="mb-12">
-          <div className="inline-block mb-6">
-            <span className="px-4 py-2 bg-gradient-to-r from-purple-500/20 to-blue-500/20 
-              rounded-full text-sm font-medium text-purple-300 border border-purple-500/30">
-              Available for new opportunities
-            </span>
-          </div>
-          
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r 
-            from-white via-purple-100 to-blue-100 bg-clip-text text-transparent 
-            drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)]">
-            <span className="drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)]">HEZRON KIMUTAI</span>
-            <br />
-            <span className="text-3xl md:text-4xl font-normal text-gray-100 
-              drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)]">
-              CHELIMO
-            </span>
-          </h1>
-          
-          <div className="h-16 mb-8">
-            <p className="text-xl md:text-2xl text-purple-200 font-light 
-              drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-              {displayText}
-              <span className="animate-pulse">|</span>
-            </p>
-          </div>
           
           <p className="text-lg md:text-xl text-gray-100 max-w-4xl mx-auto mb-12 leading-relaxed
             drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] bg-slate-900/30 backdrop-blur-sm 

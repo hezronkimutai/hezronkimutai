@@ -7,15 +7,6 @@ export interface Route {
   component: React.ComponentType;
 }
 
-export interface NavBarProps {
-  className?: string;
-  children?: ReactNode;
-  links?: Array<{
-    to: string;
-    label: string;
-  }>;
-}
-
 // Component Props
 export interface BlogProps {
   title?: string;

@@ -1,8 +1,7 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { NavBar } from './shared/components/NavBar';
 import Home from './containers/Home';
-import NotFound from './shared/components/NotFound';
+import { NotFound } from './shared/components';
 import RouteGuard from './shared/components/RouteGuard';
 import { QueryProvider } from './shared/providers/QueryProvider';
 import type { RouteConfig } from './types/route';
@@ -24,7 +23,6 @@ const App: React.FC = () => (
   <QueryProvider>
     <Router>
       <div className="min-h-screen">
-        <NavBar />
         <Suspense fallback={
           <div className="flex items-center justify-center min-h-screen">
             <div className="flex flex-col items-center gap-4">

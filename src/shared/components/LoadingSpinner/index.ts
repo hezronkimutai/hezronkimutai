@@ -1,2 +1,2 @@
-export { default as LoadingSpinner } from './LoadingSpinner';
+export { LoadingSpinner as default } from './LoadingSpinner';
 export type { LoadingSpinnerProps } from './LoadingSpinner';

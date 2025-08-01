@@ -1,13 +1,76 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-.carousel {
-    display: flex;
-    gap: 16px;
-    overflow: hidden;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  html {
     scroll-behavior: smooth;
-    }
-    .project-card {
-    flex-shrink: 0;
-    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-3 rounded-full font-medium transition-all duration-300
+      focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .carousel {
+    @apply flex gap-4 overflow-hidden;
+    scroll-behavior: smooth;
+  }
+
+  .project-card {
+    @apply flex-shrink-0;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.5s ease-out forwards;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes slideIn {
+  from { 
+    opacity: 0; 
+    transform: translateX(-20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateX(0); 
+  }
+}
+
+@keyframes expandWidth {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+:focus {
+  @apply outline-none ring-black/50 dark:ring-white/50 ring-offset-2;
+}
     

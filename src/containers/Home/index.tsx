@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import StrategicBackground from '../../components/StrategicBackground';
+import { StrategicBackground } from '../../shared/components/Animations';
 import LandingDiv from './LandingDiv';
 import TechnicalSkills from './TechnicalSkills';
 import Experiences from './Experiences';

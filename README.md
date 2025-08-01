@@ -1,23 +1,93 @@
 
-<h1 align="center">Hi 👋, I'm Hezron Kimutai And I Am In The Business Of Building Products</h1>
-<h3 align="- 🌱 I'm currently learning **AWS, GCP, AZURE, JAVA, Golang, Flutter, .Net, IoT Systems, Embedded Programming, Control Systems, and Electronics**
+# Hezron Kimutai - Personal Portfolio
 
-- 🔬 Exploring **Arduino, Raspberry Pi, Microcontrollers, Sensor Integration, and Hardware-Software Integration**
+<h1 align="center">Hi 👋, I'm Hezron Kimutai</h1>
 
-- 👯 I'm looking to collaborate on [Linux](https://github.com/torvalds/linux) and IoT Projects
+<p align="center">
+  <a href="https://hezron.netlify.app/" target="_blank">
+    <img src="https://img.shields.io/website-up-down-green-red/http/shields.io.svg" alt="Website shields.io">
+  </a>
+</p>
 
-- 🤝 I'm looking for help with [tikiti](https://ticketing-web-three.vercel.app/) and embedded system prototypes
+## 🚀 About Me
 
-- 👨‍💻 All of my projects are available at [https://hezron.netlify.app/](https://hezron.netlify.app/)
+I'm a Fullstack Software Engineer focused on building scalable, efficient, and secure systems across web and mobile platforms. My work spans startups, foundations, and distributed teams, where I've consistently shipped production-ready systems using technologies like Golang, React, AWS, and Kubernetes.
 
-- 📝 I regularly write articles on [https://hezron.netlify.app/blog](https://hezron.netlify.app/blog)
+Currently expanding into IoT systems, embedded programming, control systems, and electronics— bridging the gap between software intelligence and physical world interaction. From Arduino prototypes to industrial automation, I'm exploring how software engineering principles apply to hardware integration and smart systems.
 
-- 💬 Ask me about **Javascript(React, NodeJS, VueJs, Angular, NestJs), Java(Spring boot, Android), C#(.NET), C++, C, Cloud(AWS, GCP, MS AZURE, Vercel, Render, Netlify, Digital Ocean), IoT & Embedded Systems**I don't know much, but I try to learn as much as possible</i></h3>
+Beyond engineering, I'm the founding member of two initiatives: LIF (Learning Is Fun) - a community platform making learning collaborative and playful, and HK Group - where refined ideas evolve into real products and companies.
 
-  <a href="https://chat.whatsapp.com/L1O3rK82azIG54sBwNMeEF" target="_blank"><strong>Join LIF community whatsapp group </strong></a>
+My work lives at the intersection of learning, systems, and entrepreneurship. I believe in staying healthy and building wealth through strategic thinking and continuous growth.
 
-<a href="https://hezron.netlify.app/" target="_blank">
-  <img src="https://img.shields.io/website-up-down-green-red/http/shields.io.svg" alt="Website shields.io">
+## 🛠️ Tech Stack
+
+**Frontend:** React, TypeScript, Tailwind CSS, Three.js  
+**Backend:** Node.js, Java Spring Boot, .NET  
+**Cloud:** AWS, GCP, Azure  
+**IoT/Embedded:** Arduino, Raspberry Pi, C/C++  
+
+## 📁 Project Structure
+
+```
+src/
+├── assets/           # Static assets (images, CSS)
+├── containers/       # Page-level components
+├── features/         # Feature-based modules
+├── shared/           # Shared utilities and components
+│   ├── api/         # API utilities
+│   ├── components/  # Reusable components
+│   │   ├── Animations/  # Animation components
+│   │   ├── Icons/       # Icon components
+│   │   ├── LoadingSpinner/
+│   │   ├── NotFound/
+│   │   ├── Pagination/
+│   │   └── RouteGuard/
+│   └── providers/   # Context providers
+├── types/           # TypeScript type definitions
+└── __tests__/       # Test files
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/hezronkimutai/hezronkimutai.git
+cd hezronkimutai
+```
+
+2. Install dependencies
+```bash
+npm install
+```
+
+3. Start the development server
+```bash
+npm run dev
+```
+
+4. Build for production
+```bash
+npm run build
+```
+
+### Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run test` - Run tests
+- `npm run lint` - Run ESLint
+- `npm run deploy` - Deploy to AWS S3
+
+## 🤝 Community
+
+<a href="https://chat.whatsapp.com/L1O3rK82azIG54sBwNMeEF" target="_blank">
+  <strong>Join LIF community WhatsApp group</strong>
 </a>
 <a href="https://app.netlify.com/sites/hezron/deploys" target="_blank">
   <img src="https://api.netlify.com/api/v1/badges/026f20e3-f6df-4da2-a240-1575af64592a/deploy-status" alt="Netlify Status">
