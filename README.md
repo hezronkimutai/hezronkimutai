@@ -1,10 +1,12 @@
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&multiline=true&width=600&height=100&lines=Hi+👋+I'm+Hezron+Kimutai;Fullstack+Software+Engineer;IoT+%26+Systems+Architect" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&multiline=true&width=600&height=150&lines=Hi+👋+I'm+Hezron+Kimutai;Fullstack+Software+Engineer;IoT+%26+Systems+Architect" alt="Typing SVG" />
 </div>
+
+<br/>
 
 <p align="center">
   <a href="https://hezron.netlify.app/" target="_blank">
-    <img src="https://img.shields.io/website-up-down-green-red/http/shields.io.svg?style=for-the-badge" alt="Portfolio">
+    <img src="https://img.shields.io/website-up-down-green-red/https/hezron.netlify.app.svg?style=for-the-badge&label=Portfolio" alt="Portfolio">
   </a>
   <a href="mailto:hezronchelimo.hc@gmail.com">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
