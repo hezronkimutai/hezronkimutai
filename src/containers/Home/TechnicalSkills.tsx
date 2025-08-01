@@ -1,7 +1,15 @@
 import React from 'react';
 
-const TechnicalSkills = () => {
-  const coreValues = [
+interface CoreValue {
+  title: string;
+  icon: string;
+  description: string;
+  philosophy: string;
+  color: string;
+}
+
+const TechnicalSkills: React.FC = () => {
+  const coreValues: CoreValue[] = [
     {
       title: 'Strategic Thinking',
       icon: '🎯',

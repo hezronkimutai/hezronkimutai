@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Experiences = () => (
+const Experiences: React.FC = () => (
   <section className="py-20 px-4" id="experience">
     <div className="max-w-6xl mx-auto">
       {/* Section Header */}

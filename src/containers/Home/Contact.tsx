@@ -1,21 +1,33 @@
 import React, { useState } from 'react';
 
-const Contact = () => {
-  const [formData, setFormData] = useState({
+interface FormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
+interface ContactMethod {
+  icon: string;
+  title: string;
+}
+
+const Contact: React.FC = () => {
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     subject: '',
     message: ''
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Create mailto link with form data
     const mailtoLink = `mailto:hezronchelimo.hc@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
@@ -24,7 +36,7 @@ const Contact = () => {
     window.location.href = mailtoLink;
   };
 
-  const contactMethods = [
+  const contactMethods: ContactMethod[] = [
     {
       icon: '📧',
       title: 'Email',

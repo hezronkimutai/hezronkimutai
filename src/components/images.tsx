@@ -17,7 +17,28 @@ import twitter from '../assets/images/twitter.png';
 import instagram from '../assets/images/instagram.png';
 import stackoverflow from '../assets/images/stackoverflow.png';
 
-export default {
+interface Images {
+  andela: string;
+  eap: string;
+  pmu: string;
+  fiverr: string;
+  noLogo: string;
+  html: string;
+  react: string;
+  python: string;
+  nodeJs: string;
+  css3: string;
+  contact: string;
+  github: string;
+  fork: string;
+  linkedIn: string;
+  facebook: string;
+  twitter: string;
+  instagram: string;
+  stackoverflow: string;
+}
+
+const images: Images = {
   andela,
   eap,
   pmu,
@@ -37,3 +58,5 @@ export default {
   instagram,
   stackoverflow,
 };
+
+export default images;

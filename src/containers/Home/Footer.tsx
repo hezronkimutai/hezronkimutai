@@ -1,7 +1,14 @@
 import React from 'react';
 
-const Footer = () => {
-  const socialLinks = [
+interface SocialLink {
+  title: string;
+  link: string;
+  icon: string;
+  color: string;
+}
+
+const Footer: React.FC = () => {
+  const socialLinks: SocialLink[] = [
     {
       title: 'GitHub',
       link: 'https://github.com/hezronkimutai',

@@ -2,5 +2,5 @@
 import React from 'react';
 import '../../assets/css/App.scss';
 
-const App = () => (<div>Blog</div>);
-export default App;
+const Blog: React.FC = () => (<div>Blog</div>);
+export default Blog;

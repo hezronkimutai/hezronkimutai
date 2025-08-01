@@ -1,7 +1,13 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
 
-const services = [
+interface Service {
+  name: string;
+  description: string;
+  link: string;
+}
+
+const services: Service[] = [
   {
     name: 'Hosting your app on Heroku',
     description: 'Step-by-step procedure for hosting your app on Heroku.',
@@ -29,7 +35,7 @@ const services = [
   },
 ];
 
-const Abilities = () => (
+const Blogs: React.FC = () => (
   <div className="bg-gray-100 py-12">
     <div className="container mx-auto px-4">
       <h1 className="text-4xl font-bold text-center mb-8">Blogs</h1>
@@ -52,4 +58,4 @@ const Abilities = () => (
   </div>
 );
 
-export default Abilities;
+export default Blogs;

@@ -1,7 +1,7 @@
 import React from 'react';
 import './navBar.css';
 
-const NavBar = () => (
+const NavBar: React.FC = () => (
   <div className="navbar_container">
     {/* <Link className="nav_link" to="/blog">Blog</Link>
     <Link className="nav_link" to="/">Home</Link> */}

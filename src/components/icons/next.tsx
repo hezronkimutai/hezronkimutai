@@ -1,7 +1,10 @@
 import React from 'react';
-import propTypes from 'prop-types';
 
-const Next = ({ left }) => (
+interface NextProps {
+  left: boolean;
+}
+
+const Next: React.FC<NextProps> = ({ left }) => (
   <svg style={{ transform: left ? 'rotate(180deg)' : '' }} id="color" enableBackground="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
     <path d="m12 0c-6.617 0-12 5.383-12 12s5.383 12 12 12 12-5.383 12-12-5.383-12-12-12z" fill="#2196f3" />
     <path d="m12 0c-6.617 0-12 5.383-12 12s5.383 12 12 12z" fill="#1d83d4" />
@@ -9,7 +12,5 @@ const Next = ({ left }) => (
     <path d="m5 12h15c0 .204-.083.399-.23.541l-6.5 6.25c-.15.144-.334.209-.514.209-.385 0-.756-.298-.756-.75v-3.25h-5.75c-.689 0-1.25-.561-1.25-1.25z" fill="#dedede" />
   </svg>
 );
-Next.propTypes = {
-  left: propTypes.bool.isRequired,
-};
+
 export default Next;

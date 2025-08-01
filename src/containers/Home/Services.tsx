@@ -5,7 +5,18 @@ const {
   html, react, python, nodeJs, css3,
 } = images;
 
-const services = [
+interface ServiceLink {
+  url: string;
+  img: string;
+}
+
+interface Service {
+  name: string;
+  description: string;
+  links: ServiceLink[];
+}
+
+const services: Service[] = [
   {
     name: 'Frontend Development',
     description: 'Proficient in the latest frontend technologies with strong design skills. Expertise in building tailored solutions.',
@@ -18,7 +29,7 @@ const services = [
   },
 ];
 
-const Profile = () => (
+const Services: React.FC = () => (
   <section className="py-16 bg-primary/50">
     <div className="container mx-auto px-4">
       <h1 className="text-4xl font-bold text-center mb-12 text-gold">
@@ -69,4 +80,4 @@ const Profile = () => (
   </section>
 );
 
-export default Profile;
+export default Services;
