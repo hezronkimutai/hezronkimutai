@@ -2,10 +2,6 @@
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&multiline=true&width=600&height=100&lines=Hi+👋+I'm+Hezron+Kimutai;Fullstack+Software+Engineer;IoT+%26+Systems+Architect" alt="Typing SVG" />
 </div>
 
-<div align="center">
-  <img src="https://github.com/hezronkimutai/hezronkimutai/blob/develop/public/hezPas.png?raw=true" alt="Hezron Kimutai" width="200" style="border-radius: 50%; border: 3px solid #00D9FF;" />
-</div>
-
 <p align="center">
   <a href="https://hezron.netlify.app/" target="_blank">
     <img src="https://img.shields.io/website-up-down-green-red/http/shields.io.svg?style=for-the-badge" alt="Portfolio">
