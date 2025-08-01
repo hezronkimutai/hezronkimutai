@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-  <img src="https://github.com/hezronkimutai/hezronkimutai/blob/main/public/hezPas.png?raw=true" alt="Hezron Kimutai" width="200" style="border-radius: 50%; border: 3px solid #00D9FF;" />
+  <img src="https://github.com/hezronkimutai/hezronkimutai/blob/develop/public/hezPas.png?raw=true" alt="Hezron Kimutai" width="200" style="border-radius: 50%; border: 3px solid #00D9FF;" />
 </div>
 
 <p align="center">
