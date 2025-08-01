@@ -1,3 +1,4 @@
+
 <div align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&multiline=true&width=600&height=100&lines=Hi+👋+I'm+Hezron+Kimutai;Fullstack+Software+Engineer;IoT+%26+Systems+Architect" alt="Typing SVG" />
 </div>
@@ -16,7 +17,6 @@
   <a href="https://x.com/ArapNyongiot" target="_blank">
     <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter">
   </a>
-  <img src="https://komarev.com/ghpvc/?username=hezronkimutai&label=Profile%20views&color=0e75b6&style=for-the-badge" alt="Profile Views" />
 </p>
 
 ---
@@ -140,6 +140,9 @@ Currently expanding my expertise in:
 
 </div>
 
+<div align="center">
+  <img src="https://komarev.com/ghpvc/?username=hezronkimutai&label=Profile%20views&color=0e75b6&style=for-the-badge" alt="Profile Views" />
+</div>
 ## 💖 Support My Work
 
 <div align="center">
@@ -164,3 +167,86 @@ If you find my projects helpful or interesting, consider supporting my work:
 *Building the future, one commit at a time* 🚀
 
 </div>
+<a href="https://GitHub.com/hezronkimutai/hezronkimutai/issues?q=is%3Aissue+is%3Aclosed" target="_blank">
+  <img src="https://img.shields.io/github/issues-closed/hezronkimutai/hezronkimutai.svg" alt="GitHub issues-closed">
+</a>
+<a href="http://isitmaintained.com/project/hezronkimutai/hezronkimutai" target="_blank">
+  <img src="http://isitmaintained.com/badge/resolution/hezronkimutai/hezronkimutai.svg" alt="Average time to resolve an issue">
+</a>
+<a href="http://isitmaintained.com/project/hezronkimutai/hezronkimutai" target="_blank">
+  <img src="http://isitmaintained.com/badge/open/hezronkimutai/hezronkimutai.svg" alt="Percentage of issues still open">
+</a>
+<a href="https://GitHub.com/hezronkimutai/hezronkimutai/pull/" target="_blank">
+  <img src="https://img.shields.io/github/issues-pr-closed/hezronkimutai/hezronkimutai.svg" alt="GitHub pull-requests closed">
+</a>
+<a href="https://github.com/hezronkimutai/hezronkimutai/pulls?q=is%3Amerged" target="_blank">
+  <img src="https://badgen.net/github/merged-prs/hezronkimutai/hezronkimutai" alt="GitHub pull-requests merged">
+</a>
+<a href="https://saythanks.io/to/hezronkimutai" target="_blank">
+  <img src="https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg" alt="Say Thanks!">
+</a>
+<a href="https://GitHub.com/hezronkimutai/hezronkimutai/graphs/commit-activity" target="_blank">
+  <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" alt="Maintenance">
+</a>
+<a href="https://hezron.netlify.app/" target="_blank">
+  <img src="https://img.shields.io/badge/maintainer-hezronkimutai-blue" alt="Maintainer">
+</a>
+<a href="https://hezron.netlify.app/" target="_blank">
+  <img src="https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg" alt="Ask Me Anything!">
+</a>
+<a href="#"><img src="https://komarev.com/ghpvc/?username=hezronkimutai&label=Profile%20views&color=0e75b6&style=flat" alt="Profile Views" /></a>
+<a href="https://x.com/ArapNyongiot" target="_blank">
+  <img src="https://img.shields.io/twitter/follow/ArapNyongiot?logo=twitter&style=for-the-badge" alt="Follow on Twitter" />
+</a>
+  <a href="https://github.com/ryo-ma/github-profile-trophy" target="_blank">
+    <img src="https://github-profile-trophy.vercel.app/?username=hezronkimutai" alt="GitHub Profile Trophy" />
+  </a>
+
+
+## 🔭 I’m currently working on
+
+- <a href="https://ticketing-web-three.vercel.app/" target="_blank">tikiti</a>
+- <a href="https://web-one-khaki.vercel.app/" target="_blank">Merigo Round</a>
+- <a href="https://chessdau.onrender.com/"> Chess</a>
+<!--- <a href="https://thesaniakgroup.vercel.app/" target="_blank">thesaniakgroup</a>
+- <a href="https://thenyongigroup.vercel.app/" target="_blank">thenyongigroup</a>
+- <a href="https://lifcommunity.vercel.app/" target="_blank">lifcommunity</a>
+- <a href="https://thehkgroup.vercel.app/" target="_blank">thehkgroup</a>
+- <a href="https://merigoroundangular.vercel.app/home" target="_blank">MerigoRound</a>
+- <a href="https://pos-fn-reactjs.vercel.app/" target="_blank">POS</a>
+- <a href="https://havalive.netlify.app/" target="_blank">HavaScore</a>  -->
+
+
+
+
+  
+- 🌱 I’m currently learning **AWS, GCP, AZURE, JAVA, Golang, Flutter and .Net**
+
+- 👯 I’m looking to collaborate on [Linux](https://github.com/torvalds/linux)
+
+- 🤝 I’m looking for help with [tikiti](https://ticketing-web-three.vercel.app/)
+
+- 👨‍💻 All of my projects are available at [https://hezron.netlify.app/](https://hezron.netlify.app/)
+
+- 📝 I regularly write articles on [https://hezron.netlify.app/blog](https://hezron.netlify.app/blog)
+
+- 💬 Ask me about **Javascript(React, NodeJS, VueJs, Angular, NestJs), Java(Spring boot, Android), C#(.NET), C++, C, Cloud(AWS, GCP, MS AZURE, Vercel, Render, Netlify, Digital Ocean)**
+
+- 📫 How to reach me **hezronchelimo.hc@gmail.com / +254790717147 /+254700323490**
+
+- 📄 Know about my experiences [https://hezron.netlify.app/](https://hezron.netlify.app/experience)
+
+- ⚡ Fun fact ** I am awesome **
+
+<h3 align="left">Support:</h3>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; align-items: center; text-align: center;">
+  <a href="https://buymeacoffee.com/hezronchel6">
+    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="Buy Me a Coffee Button" />
+  </a>
+  <a href="https://ko-fi.com/hezronchelimo">
+    <img src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3" height="50" width="210" alt="Ko-fi Button" />
+  </a>
+</div>
+
+
+
