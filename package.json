@@ -18,7 +18,13 @@
     "url": "https://github.com/hezronkimutai/hezronkimutai"
   },
   "author": "Hezron Kimutai",
-  "keywords": ["portfolio", "react", "typescript", "blog", "personal-website"],
+  "keywords": [
+    "portfolio",
+    "react",
+    "typescript",
+    "blog",
+    "personal-website"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/hezronkimutai/hezronkimutai/issues"
@@ -41,6 +47,7 @@
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-decorators": "^7.28.0",
     "@babel/plugin-transform-runtime": "^7.25.9",
     "@babel/preset-env": "^7.26.0",
     "@babel/preset-react": "^7.26.3",
@@ -63,6 +70,7 @@
     "autoprefixer": "^10.4.20",
     "babel-jest": "^29.7.0",
     "babel-loader": "^9.2.1",
+    "babel-plugin-require-context-hook": "^1.0.0",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^7.1.2",
     "dotenv-webpack": "^8.1.0",
