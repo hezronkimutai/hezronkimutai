@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StrategicBackground } from '../../shared/components/Animations';
+import { StrategicBackground, LinuxTribute } from '../../shared/components';
 import LandingDiv from './LandingDiv';
 import TechnicalSkills from './TechnicalSkills';
 import Experiences from './Experiences';
@@ -38,6 +38,12 @@ const socialLinks: SocialLink[] = [
     icon: '📱',
     title: 'Phone',
     color: 'hover:text-yellow-400'
+  },
+  {
+    link: 'https://github.com/torvalds/linux',
+    icon: '🐧',
+    title: 'Linux Love',
+    color: 'hover:text-green-300'
   }
 ];
 
@@ -105,6 +111,11 @@ const Home: React.FC = () => {
           {/* Hero Section */}
           <section id="hero" className="min-h-screen">
             <LandingDiv />
+          </section>
+
+          {/* Linux Tribute Section */}
+          <section id="linux-tribute" className="min-h-screen">
+            <LinuxTribute />
           </section>
 
           {/* Skills Section */}

@@ -9,7 +9,8 @@ const LandingDiv: React.FC = () => {
     'Cloud Solutions Architect', 
     'Mobile App Developer',
     'IoT & Embedded Systems Enthusiast',
-    'System Optimization Expert'
+    'System Optimization Expert',
+    'Unix Philosophy Advocate'
   ];
 
   useEffect(() => {
@@ -94,7 +95,7 @@ const LandingDiv: React.FC = () => {
         </div>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
           <a
             href="https://docs.google.com/document/d/1r5V9Pm0FhYDSiu1G4dtHqJ0QlbUZCq-r52SAM1OHago/edit?usp=sharing"
             target="_blank"
@@ -114,6 +115,15 @@ const LandingDiv: React.FC = () => {
           >
             💬 Let's Connect
           </a>
+        </div>
+
+        {/* Unix Philosophy Quote */}
+        <div className="text-center mb-12">
+          <p className="text-sm text-gray-400 font-mono italic max-w-2xl mx-auto">
+            <span className="text-green-400">🐧</span> "Do one thing and do it well" - Unix Philosophy
+            <br />
+            <span className="text-xs text-gray-500">Inspired by Linus Torvalds and the timeless design principles of Unix</span>
+          </p>
         </div>
 
         {/* Scroll Indicator */}

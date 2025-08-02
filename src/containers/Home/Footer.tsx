@@ -38,6 +38,12 @@ const Footer: React.FC = () => {
       link: 'https://chat.whatsapp.com/L1O3rK82azIG54sBwNMeEF',
       icon: '💬',
       color: 'hover:text-green-500'
+    },
+    {
+      title: 'Linux Kernel',
+      link: 'https://github.com/torvalds/linux',
+      icon: '🐧',
+      color: 'hover:text-green-300'
     }
   ];
 
@@ -161,8 +167,12 @@ const Footer: React.FC = () => {
 
         {/* Fun Fact */}
         <div className="text-center mt-8">
-          <p className="text-purple-300 text-sm italic">
+          <p className="text-purple-300 text-sm italic mb-2">
             "I am awesome" - Fun fact about me 😄
+          </p>
+          <p className="text-green-300 text-xs font-mono">
+            <span className="text-gray-500">$ echo</span> "Built on the shoulders of Unix giants 🐧" 
+            <span className="text-gray-500"> # Thanks Linus!</span>
           </p>
         </div>
       </div>
