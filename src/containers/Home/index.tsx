@@ -62,39 +62,7 @@ const Home: React.FC = () => {
   return (
     <StrategicBackground>
       <div className="min-h-screen bg-gradient-to-br from-slate-900/50 via-purple-900/30 to-slate-900/50">
-        {/* Enhanced Floating Navigation */}
-        <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-black/30 backdrop-blur-xl rounded-full px-8 py-4 border border-white/20 shadow-2xl">
-          <div className="flex items-center space-x-8">
-            {socialLinks.map((link) => (
-              <a
-                key={link.link}
-                href={link.link}
-                target="_blank"
-                rel="noreferrer"
-                className={`text-2xl transition-all duration-300 hover:scale-125 transform hover:rotate-12 ${link.color} relative group`}
-                title={link.title}
-              >
-                {link.icon}
-                <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-black/80 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                  {link.title}
-                </span>
-              </a>
-            ))}
-
-            <div className="w-px h-6 bg-white/20"></div>
-
-            <button
-              onClick={toggleDarkMode}
-              className="text-2xl hover:scale-125 transition-all duration-300 transform hover:rotate-180 relative group"
-              title="Toggle theme"
-            >
-              {isDark ? '🌙' : '☀️'}
-              <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-black/80 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                Toggle Theme
-              </span>
-            </button>
-          </div>
-        </nav>
+        {/* Navbar removed as requested */}
 
         {/* Scroll Progress Indicator */}
         <div className="fixed top-0 left-0 w-full h-1 z-50">
