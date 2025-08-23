@@ -63,16 +63,7 @@ The collaborative spirit that transforms individual brilliance into collective a
 
 ## 🔭 Current Projects
 
-<div align="center">
-
-| Project | Description | Tech Stack | Status |
-|---------|-------------|------------|--------|
-| [🎫 **Tikiti**](https://ticketing-web-three.vercel.app/) | Modern event ticketing platform | React, Node.js, AWS | 🚀 Live |
-| [🎯 **Merigo Round**](https://web-one-khaki.vercel.app/) | Strategic gaming platform | TypeScript, React | 🚀 Live |
-| [♟️ **Chess Platform**](https://chessdau.onrender.com/) | Interactive chess gaming | React, WebSocket | 🚀 Live |
-| [📚 **LIF Community**](https://chat.whatsapp.com/L1O3rK82azIG54sBwNMeEF) | Learning collaboration platform | Community Building | 🌱 Growing |
-
-</div>
+I am building awesome stuff slowly, secretely and perfectly.   A demo before lauch costs $10
 
 ## 🌱 Learning Journey
 
